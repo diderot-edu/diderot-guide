@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment name='chapter'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Diderot Guide
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Diderot Guide
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+ch:guide
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::start
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::start
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Let’s start with creating and uploading chapters. Let’s use the "Slides" book that I created (you can create as many books as you want, see below). Go to "Manage Books" from the "Links" on the center right, to the left of search bar on top. Now you can create a chapter. Here is a direct link to</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Let's start with creating and uploading chapters.  Let's use the
+"Slides" book that I created (you can create as many books as you
+want, see below).  Go to "Manage Books" from the "Links" on the center
+right, to the left of search bar on top.  Now you can create a
+chapter.  Here is a direct link to
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Chapter Creation
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Chapter Creation
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:guide::creation
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::label
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Label
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Label
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::label
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Give the chapter a number and a unique label (unique within the book), e.g., <code>ch:kleene</code>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Give the chapter a number and a unique label (unique within the book), e.g., \ttt{ch:kleene}.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::released
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Released versus Unreleased
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Released versus Unreleased
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::released
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>A chapter is either <strong><em>released</em></strong> and <strong><em>unreleased</em></strong> . Released chapters are visible to the students and unreleased ones are not. Unreleased chapters are visible to course staff.</p>
+<p>How to use this? You can upload your lectures a bit ahead of time and ask for your TAs to look over them and give you feedback (on diderot). You can then fix the problems, reupload, and then release them. After you release a chapter, there are several ways to update. I will explain these in a subsequent email. As an example, create now a chapter for your second slide deck from your Fall 2018 site.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+A chapter is either \defn{released} and \defn{unreleased}. 
+Released chapters are visible to the students and unreleased ones are not. Unreleased chapters are visible to course staff.  
+
+How to use this? You can upload your lectures a bit ahead of time and ask for your TAs to look over them and give you feedback (on diderot).  You can then fix the problems, reupload, and then release them.  After you release a chapter, there are several ways to update.  I will explain these in a subsequent email.  As an example, create now a chapter for your second slide deck from your Fall 2018 site.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::release
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Release Dates and Schedule
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Release Dates and Schedule
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::release
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can assign release dates to your chapters and this will automatically construct (and maintain) a schedule for you. Let’s skip this step for now. So leave these fields empty. You can edit them later.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can assign release dates to your chapters and this will
+automatically construct (and maintain) a schedule for you.  Let's skip
+this step for now.  So leave these fields empty.  You can edit them
+later.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::assignments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Assignments
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Assignments
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::assignments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can "assign" users to a chapter. The intention here is to designate <strong><em>discussion chairs</em></strong> , who are usually TAs for each chapter. They will be assigned the questions asked on that content. Again, skip, can edit later.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can "assign" users to a chapter.  The intention here is to
+designate \defn{discussion chairs}, who are usually TAs for each
+chapter. 
+They will be assigned the questions asked on that content.
+Again, skip, can edit later.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::uploading
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Uploading Content
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Uploading Content
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::uploading
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To upload contents into a chapter, move the mouse over the chapter and select upload content. Here you can upload either an XML file or a PDF. Let’s start with PDF. Select the PDF from slides and select the PDF file to upload, and upload.</p>
+<p>Now you will see a spinning wheel. This will take some time maybe a minute or two. What is going on is that the PDF is split into pages and the text is extracted from it. When it is finished, click on the chapter and you should be able to view it.</p>
+<p>An important point: because the text is extracted from the slides, all uploaded slides are searchable through the search bar above. Note however, that unreleased chapters will not be searchable (so students won’t see unreleased content).</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To upload contents into a chapter, move the mouse over the chapter and
+select upload content.  Here you can upload either an XML
+file or a PDF.  Let's start with PDF.  Select the PDF from
+slides and select the PDF file to upload, and upload.  
+
+Now you will see a spinning wheel.  This will take some time maybe a
+minute or two.  What is going on is that the PDF is split into pages
+and the text is extracted from it.  When it is finished, click on the
+chapter and you should be able to view it.  
+
+An important point: because the text is extracted from the slides, all
+uploaded slides are searchable through the search bar above.  Note
+however, that unreleased chapters will not be searchable (so students
+won't see unreleased content).
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::usage
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Usage
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Usage
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::usage
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Once you upload a chapter, it becomes "actionable". If unreleased students can send feedback and open other discussions. Once released, all the students could do the same.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Once you upload a chapter, it becomes "actionable".  If unreleased students can send feedback and open other discussions. Once released, all the students could do the same.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::updating
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Updating a Chapter
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Updating a Chapter
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::updating
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>For unreleased chapters, simply re-upload the contents. This will recreate the chapter and delete all prior discussions on it.</p>
+<p>For released chapters, you can unrelease and re-upload, but this will delete all content, including student created content (private notes, questions, etc). So I don’t recommend this. There are more advanced ways to upload released content. We can get into these later.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+For unreleased chapters, simply re-upload the contents.  This will
+recreate the chapter and delete all prior discussions on it.  
+
+For released chapters, you can unrelease and re-upload, but this will
+delete all content, including student created content (private notes,
+questions, etc).  So I don't recommend this.  There are more advanced
+ways to upload released content.  We can get into these later.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Books
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Books
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:guide::books
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::create
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Create a book
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Create a book
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::create
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can create new books and as many as you want. I usually create one for textbook, one for recitations, one for assignments, one for additional materials (misc). Many courses create a "Slides" book.</p>
+<p>To create a book go to "links" right next to search bar and then press manage books. You will give your book a unique label (e.g, "textbook", "recitations", "misc"...) and a unique"rank" which is the order it will be shown but is otherwise immaterial. You will see a book is actually a "booklet" by default. A booklet consists of a sequence of chapter. If you want "parts" and chapters, then uncheck this. For example, in my algorithms course, the main textbook has parts but the rest don’t. A book can contain PDFs or XMLs (generated by my compiler).</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can create new books and as many as you want.  I usually create one for textbook, one for recitations, one for assignments, one for additional materials (misc).  Many courses create a "Slides" book.  
+
+To create a book go to "links" right next to search bar and then press
+manage books.  You will give your book a unique label (e.g,
+"textbook", "recitations", "misc"...) and a unique"rank" which is the
+order it will be shown but is otherwise immaterial.  You will see a
+book is actually a "booklet" by default.  A booklet consists of a
+sequence of chapter.  If you want "parts" and chapters, then uncheck
+this.  For example, in my algorithms course, the main textbook has
+parts but the rest don't.  A book can contain PDFs or XMLs (generated
+by my compiler).
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::edit
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::edit
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To edit the book, create and upload chapters, go to "Manage Books" and select your book. Now you can create a chapter and edit existing chapters.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To edit the book, create and upload chapters, go to "Manage Books" and select your book.  Now you can create a chapter and edit existing chapters.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+User Accounts
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+User Accounts
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:guide::user
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:guide::creation
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Creation
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Creation
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:guide::creation
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To create user accounts, you can upload a roster in CSV format, which will email them all. I usually wait to do that until the first day of the class or right before it but you can create accounts for your TAs a bit ahead of time so that they can start playing with things (TAs and undergrads seem to pick things up super quickly). When you create accounts, the students receive email notifications and instructions to log on.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To create user accounts, you can upload a roster in CSV format, which will email them all.  I usually wait to do that until the first day of the class or right before it but you can create accounts for your TAs a bit ahead of time so that they can start playing with things (TAs and undergrads seem to pick things up super quickly).  When you create accounts, the students receive email notifications and instructions to log on.
+]]>
+</field> <!-- body_src -->
+
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- section -->
+
+</segment> <!-- chapter -->
