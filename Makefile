@@ -1,7 +1,7 @@
 PDFLATEX = pdflatex
 LATEX = latex
 
-PREAMBLE = templates/preamble.tex
+PREAMBLE = templates/preamble-diderot.tex
 PANDOC = pandoc --verbose --mathjax -f latex
 
 
