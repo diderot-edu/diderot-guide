@@ -1,0 +1,1984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment name='chapter'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+SkylineLab
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+SkylineLab
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+ch:skylinelab
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::assignment
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='preamble'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+prmbl:skylinelab::assignment
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>This assignment is designed to give you more practice with divide-and-conquer algorithms as well as provide an introduction to using the sequence function <code>scan</code>. You will analyze and solve the <em>skyline problem</em>, which is a geometric problem in 2 dimensions. This lab is conceptually difficult, so be sure to get started early!</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+This assignment is designed to give you more practice with divide-and-conquer
+algorithms as well as provide an introduction to using the sequence function
+\sml{scan}. You will analyze and solve the \emph{skyline problem}, which is a
+geometric problem in 2 dimensions. This lab is conceptually difficult, so be
+sure to get started early!
+]]>
+</field> <!-- body_src -->
+</atom> <!-- preamble -->
+
+</segment> <!-- cluster -->
+
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Files
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Files
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:skylinelab::files
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::skylinelab
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::skylinelab
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>After downloading the assignment tarball from Diderot, extract the files by running:</p>
+<blockquote>
+<p><code>tar -xvf skylinelab-handout.tgz</code></p>
+</blockquote>
+<p>from a terminal window.</p>
+<p>Some of the files worth looking at are listed below. The files denoted by <strong>*</strong> will be handed in by the submission script.</p>
+<ol>
+<li><p><code>Makefile</code></p></li>
+<li><p><strong>*</strong> <code>MkSkyline.sml</code></p></li>
+<li><p><code>Sandbox.sml</code></p></li>
+<li><p><code>Tests.sml</code></p></li>
+</ol>
+<p>Additionally, you should create a file called <code>written.pdf</code> which contains the answers to the written parts of the assignment.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\begin{filesInstructions}{skylinelab}
+  \filestar{MkSkyline.sml}
+  \file{Sandbox.sml}
+  \file{Tests.sml}
+\end{filesInstructions}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Submission
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Submission
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:skylinelab::submission
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::_2_
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::_1_
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To submit the code portion of the assignment, run <code>make package</code> and upload the resulting <code>handin.tgz</code> to Diderot. You should ensure your code compiles by checking for a score of 0 under the <code>Compilation</code> section on Diderot. Note that Diderot can take up to around 10 minutes to compile code submissions.</p>
+<p>Submit the written portion by uploading your <code>written.pdf</code> to Gradescope.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\makeSubmissionInstructions{SkylineLab}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+The Skyline Problem
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+The Skyline Problem
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:skylinelab::skyline
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::width
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::width
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p><img src="./skyline/media/pittsburgh.png" alt="image" style="width:5in" /></p>
+<p>Feast your eyes upon downtown Pittsburgh. From our perspective, most of the buildings are roughly rectangular (the exceptions being those like PPG Place), so let’s assume from now on that all buildings are rectangles. We’ll also assume that the ground is perfectly flat so that all the rectangles rest on the same line. The <em>skyline</em> of these rectangles is their silhouette.</p>
+<p><img src="./skyline/media/buildings.png" alt="image" style="width:5in" /></p>
+<p><img src="./skyline/media/silhouette.png" alt="image" style="width:5in" /></p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\begin{center}
+  \includegraphics[width=5in]{./skyline/media/pittsburgh.png}
+\end{center}
+
+Feast your eyes upon downtown Pittsburgh. From our perspective, most
+of the buildings are roughly rectangular (the exceptions being those like PPG
+Place), so let's assume from now on that all buildings are rectangles. We'll
+also assume that the ground is perfectly flat so that all the rectangles rest
+on the same line. The \emph{skyline} of these rectangles is their
+silhouette.
+
+
+\begin{center}
+  \includegraphics[width=5in]{./skyline/media/buildings.png}
+
+  \includegraphics[width=5in]{./skyline/media/silhouette.png}
+
+\end{center}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::buildings
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Buildings
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Buildings
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::buildings
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Under the assumptions given, each building can be represented by a triple <span class="math inline">\((\ell,h,r)\)</span> which describes a rectangle with corners <span class="math inline">\((\ell, 0)\)</span>, <span class="math inline">\((\ell, h)\)</span>, <span class="math inline">\((r, h)\)</span>, and <span class="math inline">\((r, 0)\)</span>. We will assume <span class="math inline">\(\ell &lt; r\)</span> so that <span class="math inline">\(\ell\)</span> and <span class="math inline">\(r\)</span> are the left and right sides of the building, and <span class="math inline">\(h\)</span> is the height of the building.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Under the assumptions given, each building can be represented by a triple
+$(\ell,h,r)$ which describes a rectangle with corners $(\ell, 0)$, $(\ell, h)$,
+$(r, h)$, and $(r, 0)$. We will assume $\ell < r$ so that $\ell$ and $r$ are
+the left and right sides of the building, and $h$ is the height of the building.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::skyline
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='definition'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+def:skylinelab::skyline
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The skyline of a set of buildings <span class="math inline">\(B\)</span> is <span class="math display">\[\left\{ (x, H(x)) : x \in X\ \Big|\  
+   x = \min X \;\lor\; H(x) \neq H(\text{prev}(x)) \right\}\]</span> where <span class="math inline">\(X\)</span> is the set of all <span class="math inline">\(x\)</span>-coordinates in <span class="math inline">\(B\)</span>, <span class="math inline">\(H(x)\)</span> is the max height at <span class="math inline">\(x\)</span>, and <span class="math inline">\(\text{prev}(x)\)</span> is the nearest <span class="math inline">\(x&#39;\)</span> to the left of <span class="math inline">\(x\)</span>, given by <span class="math display">\[\begin{aligned}
+  X &amp;= \bigcup_{(\ell,h,r) \in B} \{\ell, r\} \\  
+  H(x) &amp;= \max \big\{ h : (\ell, h, r) \in B\ \big|\ \ell \leq x &lt; r \big\} \\  
+  \text{prev}(x) &amp;= \max \big\{ x&#39; \in X\ \big|\ x&#39; &lt; x \big\}  \end{aligned}\]</span></p>
+<p>In other words, the <span class="math inline">\(x\)</span>-coordinates in the skyline are exactly those which appear in <span class="math inline">\(B\)</span>, and the <span class="math inline">\(y\)</span>-coordinate for any particular <span class="math inline">\(x\)</span> is the height <span class="math inline">\(h\)</span> of the tallest building <span class="math inline">\((\ell, h, r)\)</span> for which <span class="math inline">\(\ell \leq x &lt; r\)</span>. We do not include <strong>redundant</strong> points: points whose height is unchanged from the nearest point to the left.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The skyline of a set of buildings $B$ is
+\[ \left\{ (x, H(x)) : x \in X\ \Big|\
+   x = \min X \;\lor\; H(x) \neq H(\text{prev}(x)) \right\} \]
+where $X$ is the set of all $x$-coordinates in $B$, $H(x)$ is the max height
+at $x$, and $\text{prev}(x)$ is the nearest $x'$ to the left of $x$, given by
+\begin{align*}
+  X &= \bigcup_{(\ell,h,r) \in B} \{\ell, r\} \\
+  H(x) &= \max \big\{ h : (\ell, h, r) \in B\ \big|\ \ell \leq x < r \big\} \\
+  \text{prev}(x) &= \max \big\{ x' \in X\ \big|\ x' < x \big\}
+\end{align*}
+
+In other words, the $x$-coordinates in the skyline are exactly those which
+appear in $B$, and the $y$-coordinate for any particular $x$ is the height $h$
+of the tallest building $(\ell, h, r)$ for which $\ell \leq x < r$. We do not
+include \textbf{redundant} points: points whose height is unchanged from the
+nearest point to the left.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- definition -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::diagrams
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+xmpl:skylinelab::buildings
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Buildings:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\ell\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(h\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(r\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">15</td>
+</tr>
+</tbody>
+</table>
+<p>Skyline:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(y\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<p>In the diagrams below, skyline points are marked with <img src="./skyline/media/circ.png" alt="image" style="width:0.2in" />. Redundant points are marked in the first diagram with <img src="./skyline/media/x.png" alt="image" style="width:0.2in" />.</p>
+<p><img src="./skyline/media/skyline.png" alt="image" style="width:5in" /></p>
+<p><img src="./skyline/media/silhouette-points.png" alt="image" style="width:5in" /></p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Buildings:
+\begin{tabular}[t]{ccc}
+  $\ell$ & $h$ & $r$ \\\hline
+  2 & 3 & 4 \\
+  3 & 2 & 11 \\
+  6 & 7 & 8 \\
+  7 & 4 & 10 \\
+  13 & 5 & 15 \\
+\end{tabular}
+
+Skyline:
+\begin{tabular}[t]{cc}
+  $x$ & $y$ \\\hline
+  2 & 3 \\
+% 3 & 3 \\ % duplicate
+  4 & 2 \\
+  6 & 7 \\
+% 7 & 7 \\ % duplicate
+  8 & 4 \\
+  10 & 2 \\
+  11 & 0 \\
+  13 & 5 \\
+  15 & 0 \\
+\end{tabular}
+
+In the diagrams below, skyline points are marked with
+\includegraphics[width=0.2in]{./skyline/media/circ.png}. Redundant points are
+marked in the first diagram with
+\includegraphics[width=0.2in]{./skyline/media/x.png}.
+
+\includegraphics[width=5in]{./skyline/media/skyline.png}
+
+\includegraphics[width=5in]{./skyline/media/silhouette-points.png}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Implementation
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Implementation
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:skylinelab::implementation
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::define
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::define
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>We define <code>type skyline = (int * int) Seq.t</code>. We maintain the convention that all skylines are <strong>sorted by <span class="math inline">\(x\)</span>-coordinate</strong>, and <strong>do not contain redundant points</strong>. Throughout, we assume that all <span class="math inline">\(x\)</span>-coordinates are unique and non-negative, and that all heights are strictly positive.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+We define \sml{type skyline = (int * int) Seq.t}. We maintain the convention
+that all skylines are \textbf{sorted by $x$-coordinate}, and \textbf{do not
+contain redundant points}. Throughout, we assume that all $x$-coordinates are
+unique and non-negative, and that all heights are strictly positive.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::given
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::given
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Given a sequence of buildings <span class="math inline">\(B\)</span> in no particular order, your goal is to write a divide-and-conquer algorithm for the skyline problem of the following form:</p>
+<pre><code>fun skyline B =  
+  case Seq.splitMid B of  
+    Seq.EMPTY =&gt; Seq.empty ()  
+  | Seq.ONE x =&gt; singleton x  
+  | Seq.PAIR (L, R) =&gt;  
+      combine (Primitives.par (fn () =&gt; skyline L,  
+                               fn () =&gt; skyline R))  </code></pre>
+<p><code>singleton</code> has been implemented for you in <code>MkSkyline.sml</code> and has constant work and span. All you have to do is implement <code>combine</code>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Given a sequence of buildings $B$ in no particular order, your goal is to write
+a divide-and-conquer algorithm for the skyline problem of the following form:
+\begin{verbatim}
+fun skyline B =
+  case Seq.splitMid B of
+    Seq.EMPTY => Seq.empty ()
+  | Seq.ONE x => singleton x
+  | Seq.PAIR (L, R) =>
+      combine (Primitives.par (fn () => skyline L,
+                               fn () => skyline R))
+\end{verbatim}
+\sml{singleton} has been implemented for you in \sml{MkSkyline.sml} and has
+constant work and span. All you have to do is implement \sml{combine}.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::assume
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+nt:skylinelab::assume
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You may assume all <span class="math inline">\(x\)</span>-coordinates in <span class="math inline">\(B\)</span> are unique.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You may assume all $x$-coordinates in $B$ are unique.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::behavior
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::behavior
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The behavior of this code is identical to the following, which uses <code>reduce</code> to “automate” the divide-and-conquer process.</p>
+<pre><code>fun skyline B =  
+  Seq.reduce combine (Seq.empty ()) (Seq.map singleton B)  </code></pre>
+<p>(60 points) In <code>MkSkyline.sml</code>, implement the following function.</p>
+<pre><code>val combine : skyline * skyline -&gt; skyline  </code></pre>
+<p><code>combine (S1, S2)</code> should evaluate to the skyline of all buildings from both <span class="math inline">\(S_1\)</span> and <span class="math inline">\(S_2\)</span>. Your implementation must have <span class="math inline">\(\mathop{O}\left(|S_1| + |S_2|\right)\)</span> work and <span class="math inline">\(\mathop{O}\left(\log|S_1| + \log|S_2|\right)\)</span> span.</p>
+<p>You will probably find the functions <code>merge</code>, <code>scan</code>/<code>scanIncl</code>, and <code>filter</code>/<code>filterIdx</code> useful. In particular, take a close look at <code>scan</code>. For constant-work functions <span class="math inline">\(f\)</span>, <code>scan f b s</code> has <span class="math inline">\(O(|s|)\)</span> work and <span class="math inline">\(O(\log|s|)\)</span> span. The cost bounds of <code>scanIncl</code> are identical.</p>
+<p>In <code>scan f b s</code>, the function <span class="math inline">\(f\)</span> must be <em>associative</em>, meaning that for all inputs <span class="math inline">\(a,b,c\)</span>, <span class="math display">\[f(f(a,b),c) = f(a,f(b,c))\]</span></p>
+<p>As usual, assume <span class="math inline">\(\texttt{Seq} = \texttt{ArraySequence}\)</span> for cost analysis.</p>
+<p>Don’t forget about removing redundant points!</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\begin{remark}
+The behavior of this code is identical to the following, which uses
+\sml{reduce} to ``automate'' the divide-and-conquer process.
+\begin{verbatim}
+fun skyline B =
+  Seq.reduce combine (Seq.empty ()) (Seq.map singleton B)
+\end{verbatim}
+\end{remark}
+\begin{task}[1]
+\label{task:skylinelab:1}
+(60 points)
+In \texttt{MkSkyline.sml}, implement the following function.
+\begin{verbatim}
+val combine : skyline * skyline -> skyline
+\end{verbatim}
+\sml{combine (S1, S2)} should evaluate to the skyline of all buildings
+from both $S_1$ and $S_2$. Your implementation must have $\bigO {|S_1| + |S_2|}$ work
+and $\bigO {\log|S_1| + \log|S_2|}$ span.
+\end{task}
+\begin{hint}
+You will probably find the functions \sml{merge},
+\sml{scan}/\sml{scanIncl}, and \sml{filter}/\sml{filterIdx}
+useful. In particular, take a close look at \sml{scan}.
+For constant-work functions $f$, \sml{scan f b s} has $O(|s|)$ work and
+$O(\log|s|)$ span. The cost bounds of \sml{scanIncl} are identical.
+\end{hint}
+\begin{important}
+In \sml{scan f b s}, the function $f$ must be \emph{associative}, meaning that
+for all inputs $a,b,c$,
+\[ f(f(a,b),c) = f(a,f(b,c)) \]
+\end{important}
+\begin{note}
+As usual, assume $\sml{Seq} = \sml{ArraySequence}$ for cost analysis.
+\end{note}
+\begin{note}
+Don't forget about removing redundant points!
+\end{note}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Testing
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Testing
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:skylinelab::testing
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::thoroughly
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::thoroughly
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>It is very important that you thoroughly test your code before you submit. After the deadline, we will grade your code with a private set of test cases.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+It is very important that you thoroughly test your code before you
+submit. After the deadline, we will grade your code with a private set of test
+cases.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::provide
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::provide
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>We provide two ways to test your code with SML/NJ.</p>
+<ol>
+<li><p>In <code>Sandbox.sml</code>, write whatever testing code you’d like. You can then access the sandbox at the REPL:</p>
+<pre><code>- CM.make &quot;sandbox.cm&quot;;  
+...  
+- open Sandbox;  </code></pre></li>
+<li><p>In <code>Tests.sml</code>, add test cases according to the instructions given. Then run the autograder:</p>
+<pre><code>- CM.make &quot;autograder.cm&quot;;  
+...  
+- Autograder.run ();  </code></pre></li>
+</ol>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+We provide two ways to test your code with SML/NJ.
+\begin{enumerate}
+  \item
+  In \texttt{Sandbox.sml}, write whatever testing code you'd like. You can then
+  access the sandbox at the REPL:
+\begin{verbatim}
+- CM.make "sandbox.cm";
+...
+- open Sandbox;
+\end{verbatim}
+
+  \item
+  In \texttt{Tests.sml}, add test cases according to the instructions given.
+  Then run the autograder:
+\begin{verbatim}
+- CM.make "autograder.cm";
+...
+- Autograder.run ();
+\end{verbatim}
+\end{enumerate}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Performance Evaluation
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Performance Evaluation
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:skylinelab::performance
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::included
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+nt:skylinelab::included
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>All tasks in this section should be included in your <code>written.pdf</code> submitted to Gradescope.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+All tasks in this section should be included in your \texttt{written.pdf}
+submitted to Gradescope.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::efficient
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::efficient
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>How efficient is your parallel code? To answer this question, we might begin by splitting it into two distinct issues:</p>
+<ol>
+<li><p>How parallel is your code? That is, how much faster does it get as we use more processors?</p></li>
+<li><p>How much extra work does your code do, in order to be parallel?</p></li>
+</ol>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+How efficient is your parallel code? To answer this question, we might begin by
+splitting it into two distinct issues:
+\begin{enumerate}
+\item How parallel is your code? That is, how much faster does it get as we use more processors?
+\item How much extra work does your code do, in order to be parallel?
+\end{enumerate}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Introduction and Definitions
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Introduction and Definitions
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+subsub:defns
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::tackle
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::tackle
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>We can tackle these questions by measuring speedup and overhead. In particular, for a fixed input, let <span class="math inline">\(T^*\)</span> be the amount of time it takes to solve that input using a fast sequential program, and let <span class="math inline">\(T_P\)</span> be the amount of time it takes your parallel program on <span class="math inline">\(P\)</span> processors (and similarly <span class="math inline">\(T_1\)</span> is your program’s runtime on 1 processor). We can then compute:</p>
+<ol>
+<li><p>The self-speedup on <span class="math inline">\(P\)</span> processors, <span class="math inline">\(T_1 / T_P\)</span>.</p></li>
+<li><p>The overhead, <span class="math inline">\(T_1 / T^*\)</span>.</p></li>
+</ol>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+We can tackle these questions by measuring speedup and overhead. In particular,
+for a fixed input, let $T^*$ be the amount of time it takes to solve that
+input using a fast sequential program, and let $T_P$ be the amount of time it
+takes your parallel program on $P$ processors (and similarly $T_1$ is your program's
+runtime on 1 processor). We can then compute:
+\begin{enumerate}
+\item The self-speedup on $P$ processors, $T_1 / T_P$.
+\item The overhead, $T_1 / T^*$.
+\end{enumerate}
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::points
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='task'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+tsk:skylinelab::points
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+2.
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>(5 points) Ideally, what is a lower bound on <span class="math inline">\(T_P\)</span>? Consequently, what is an upper bound on the self-speedup on <span class="math inline">\(P\)</span> processors? Give your answers in terms of <span class="math inline">\(P\)</span> and <span class="math inline">\(T_1\)</span>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+(5 points)
+Ideally, what is a lower bound on $T_P$? Consequently, what is an upper bound on
+the self-speedup on $P$ processors? Give your answers in terms of $P$ and $T_1$.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- task -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::upper
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='task'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+tsk:skylinelab::upper
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+3.
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>(5 points) Is <span class="math inline">\(T_1\)</span> an upper bound on <span class="math inline">\(T^*\)</span>? Briefly justify your answer.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+(5 points)
+Is $T_1$ an upper bound on $T^*$? Briefly justify your answer.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- task -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Experiments
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Experiments
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:skylinelab::experiments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='flex'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::experimentally
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::experimentally
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You will now experimentally measure <span class="math inline">\(T^*\)</span>, <span class="math inline">\(T_1\)</span>, and <span class="math inline">\(T_P\)</span>. To facilitate these experiments, we’ve implemented a sequential skyline solution and a small testing harness in the <code>mpl/</code> subdirectory. The sequential solution, in <code>mpl/FastSequentialSkyline.sml</code>, will be used for calculating <span class="math inline">\(T^*\)</span>. The parallel solution in <code>mpl/ParallelSkyline.sml</code> uses your <code>combine</code> function, and it will be used to calculate <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_P\)</span>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You will now experimentally measure $T^*$, $T_1$, and $T_P$. To facilitate these
+experiments, we've implemented a sequential skyline solution and a small testing
+harness in the \texttt{mpl/} subdirectory. The sequential solution, in
+\sml{mpl/FastSequentialSkyline.sml}, will be used for calculating $T^*$.
+The parallel solution in \sml{mpl/ParallelSkyline.sml} uses your \sml{combine}
+function, and it will be used to calculate $T_1$ and $T_P$.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+nt:skylinelab::welcome
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You’re welcome to read the sequential solution if you so desire, but it’s not necessary to complete the assignment.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You're welcome to read the sequential solution if you so desire, but it's not
+necessary to complete the assignment.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- note -->
+
+</segment> <!-- flex -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::experiments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grm:skylinelab::experiments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can run experiments by <code>cd</code>’ing into the <code>mpl/</code> subdirectory, running <code>make skyline</code> to compile, and then running <code>./report</code>. This will run 5 trials of each program, reporting the runtime of each trial as well as the average (of the 5 trials). The test harness will automatically select a number of processors to use which is appropriate for the machine you are on.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can run experiments by \texttt{cd}'ing into the \texttt{mpl/} subdirectory,
+running \texttt{make skyline} to compile, and then running \texttt{./report}. This will
+run 5 trials of each program, reporting the runtime of each trial as well as the
+average (of the 5 trials). The test harness will automatically select a number
+of processors to use which is appropriate for the machine you are on.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='flex'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::write
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='task'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+tsk:skylinelab::experiments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+4.
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>(7 points) Run the experiments, and write down the reported values of <span class="math inline">\(T^*\)</span>, <span class="math inline">\(T_1\)</span>, and <span class="math inline">\(T_P\)</span>. (For each, use the reported average of the 5 runs.) Also write down the number of processors <span class="math inline">\(P\)</span> that were used for <span class="math inline">\(T_P\)</span>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+(7 points)
+Run the experiments, and write down the reported values of $T^*$, $T_1$, and
+$T_P$. (For each, use the reported average of the 5 runs.) Also write down the
+number of processors $P$ that were used for $T_P$.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- task -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+nt:skylinelab::reference
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>For reference, our <span class="math inline">\(T_1\)</span> is (depending on the machine) between 3 and 7 seconds.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+For reference, our $T_1$ is (depending on the machine) between 3 and 7 seconds.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- note -->
+
+</segment> <!-- flex -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::calculate
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='task'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+tsk:skylinelab::calculate
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+5.
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>(3 points) Calculate the self-speedup and overhead of your code, using the equations given in the <a href="#subsub:defns" data-reference-type="ref" data-reference="subsub:defns">[subsub:defns]</a> subsection.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+(3 points)
+Calculate the self-speedup and overhead of your code, using the equations
+given in the \ref{subsub:defns} subsection.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- task -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::black-box
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='task'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+tsk:skylinelab::assume
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+10.
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>(15 points) Assume you have a black-box algorithm <span class="math inline">\(\mathit{skyline}\)</span> which solves the skyline problem. Write pseudocode for a function <span class="math display">\[\mathit{sort}~:~int~seq~\to~int~seq\]</span> which sorts the input. Note that any function calls to <span class="math inline">\(\mathit{skyline}\)</span> must satisfy any preconditions we assumed when implementing it above. Your solution must have <span class="math inline">\(\mathop{O}\left(n + \mathcal{W}_\mathit{skyline}(n)\right)\)</span> work. For the sake of simplicity, you may assume the input contains only non-negative numbers and no duplicates.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+(15 points)
+Assume you have a black-box algorithm $\mathit{skyline}$ which solves the
+skyline problem. Write pseudocode for a function
+\[
+  \mathit{sort}~:~int~seq~\to~int~seq
+\]
+which sorts the input. Note that any function calls to $\mathit{skyline}$ must
+satisfy any preconditions we assumed when implementing it above.
+Your solution must have $\bigO {n + \mathcal{W}_\mathit{skyline}(n)}$ work.
+For the sake of simplicity, you may assume the input contains only non-negative
+numbers and no duplicates.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- task -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::lines
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+nt:skylinelab::lines
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Our solution is 4 lines long.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Our solution is 4 lines long.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:skylinelab::explain
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='task'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+tsk:skylinelab::explain
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+11.
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>(5 points) Briefly explain why this reduction proves that <span class="math inline">\(\mathit{skyline}\)</span> must have <span class="math inline">\(\Omega\left(n \log n\right)\)</span> work.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+(5 points)
+Briefly explain why this reduction proves that $\mathit{skyline}$ must have
+$\bigOmega{n \log n}$ work.
+]]>
+</field> <!-- body_src -->
+</atom> <!-- task -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+</segment> <!-- section -->
+
+</segment> <!-- chapter -->

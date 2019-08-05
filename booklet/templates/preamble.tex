@@ -1,0 +1,88 @@
+\usepackage{xcolor}
+\newcommand{\sml}[1]{\texttt{#1}}
+\newcommand{\seq}[1]{\left\langle {#1} \right\rangle}
+
+\newcommand{\bigO}[1]{\mathop{O}\left(#1\right)}
+\newcommand{\bigTheta}[1]{\Theta\left(#1\right)}
+\newcommand{\bigOmega}[1]{\Omega\left(#1\right)}
+
+\newcommand{\WW}[1]{\mathop{\mathcal{W}}\left(#1\right)}
+\renewcommand{\SS}[1]{\mathop{\mathcal{S}}\left(#1\right)}
+
+\newcommand{\PP}[1]{\mathop{\textbf{Pr}}\left[ #1 \right]}
+\newcommand{\PPBig}[1]{\mathop{\textbf{Pr}}\Big[ #1 \Big]}
+\newcommand{\PPbig}[1]{\mathop{\textbf{Pr}}\big[ #1 \big]}
+\newcommand{\EE}[1]{\mathop{\textbf{E}}\left[ #1 \right]}
+\newcommand{\EEBig}[1]{\mathop{\textbf{E}}\Big[ #1 \Big]}
+\newcommand{\EEbig}[1]{\mathop{\textbf{E}}\big[ #1 \big]}
+
+\newcommand{\cdvar}[1]{{\mathit{#1}}}
+\newcommand{\kw}[1]{{\texttt{#1}}}
+
+% \newcommand{\boruvka}{Bor\r{u}vka}
+% Pangod won't permit the accent on the u?
+\newcommand{\boruvka}{Boruvka}
+
+\newcommand\mdoubleplus{\mathbin{+\mkern-8mu+}}
+
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\newcommand{\file}[1]{\item \texttt{#1}}
+\newcommand{\filestar}[1]{\item \textbf{*} \texttt{#1}}
+\newenvironment{filesInstructions}[1]{
+  After downloading the assignment tarball from Diderot, extract the files by
+  running:
+    \begin{quote}
+      \sml{tar -xvf #1-handout.tgz}
+    \end{quote}
+  from a terminal window. 
+
+  Some of the files worth looking at are listed below.
+  The files denoted by \textbf{*} will be handed in by the submission script.
+    \begin{enumerate}
+        \file{Makefile}
+}{
+  \end{enumerate}
+  Additionally, you should create a file called \sml{written.pdf}
+  which contains the answers to the written parts of the assignment.
+}
+
+\newenvironment{filesInstructionsNoWritten}[1]{
+  After downloading the assignment tarball from Diderot, extract the files by
+  running:
+    \begin{quote}
+      \sml{tar -xvf #1-handout.tgz}
+    \end{quote}
+  from a terminal window. Some of the files worth looking at are listed below.
+  The files denoted by \textbf{*} will be handed in by the submission script.
+    \begin{enumerate}
+        \file{Makefile}
+}{
+  \end{enumerate}
+}
+
+\newcommand{\makeSubmissionInstructions}[1]{
+  To submit the code portion of the assignment, run \sml{make package} and
+  upload the resulting \sml{handin.tgz} to Diderot. You should ensure your code
+  compiles by checking for a score of 0 under the \sml{Compilation} section on Diderot.
+  Note that Diderot can take up to around 10 minutes to compile code submissions.
+
+  Submit the written portion by uploading your \sml{written.pdf} to Gradescope.
+}
+
+\newcommand{\makeSubmissionInstructionsNoWritten}[1]{
+  To submit the code portion of the assignment, run \sml{make package} and
+  upload the resulting \sml{handin.tgz} to Diderot. You should ensure your code
+  compiles by checking for a score of 0 under the \sml{Compilation} section on Diderot.
+  Note that Diderot can take up to around 10 minutes to compile code submissions.
+}
+
+\newenvironment{smltesting}{
+  \begin{quote}
+    \sml{\$ smlnj}\\
+    \sml{Standard ML of New Jersey v110.xx}\\
+    \sml{- CM.make "sources.cm";}\\
+    \sml{...}\\
+}
+{\end{quote}}
+

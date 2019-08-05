@@ -1,0 +1,4 @@
+Make the assumption about unique x-coordinates clearer. This is particularly
+relevant for the lower bound question where students produce an input to
+black-box skyline. Some students wrote solutions that did not have unique
+x-coordinates, despite understanding the reduction perfectly well.

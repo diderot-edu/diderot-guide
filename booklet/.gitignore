@@ -1,0 +1,7 @@
+build/
+*_core.tex
+*_core.dex
+*.html
+*.mlx
+*.xml
+.vscode/
