@@ -16,16 +16,25 @@ chapter.
 
 \begin{gram}[Chapter Creation]
 \label{guide:chapter::create}
-You can add a chapter to a book.  From the book's table of contents, press the ``settings'' icon next to its title.  This will take you to the book's management screen.  Here press ``Create Chapter.''
-%
-You can reach the same management screen from the "Manage Books" link
-from the "Links" button on the center right, to the left of search bar
-on top.  
+You can add a chapter to a book.  
+\begin{itemize}
+\item Go to course home page.
+\item Find the book that you want to edit and press the ``wheel''
+  (settings) icon next to its title.  This will take you to the book's
+  management screen.  You can reach the same management screen from
+  the "Manage Books" link from the "Links" button on the center right,
+  to the left of search bar on top.
 
-When creating a chapter, assign the chapter a unique number and a unique label \ttt{ch:kleene}.  The label needs to be unique only within the book---no two chapters of the same book can have the same label.
+\item  Press ``Create chapter'' and follow the instructions.  To create a chapter in its most basic form, you can leave all of the rest of the fields empty.  The additional field are discussed below.
+\end{itemize}
+%
+
+When creating a chapter, assign the chapter a unique number and a unique label, e.g., \ttt{ch:kleene}.  
+%
+The label needs to be unique only within the book---no two chapters of
+the same book can have the same label.
 %
 If the chosen label does not meet this criteria, you will receive an error message and can choose another one.
-
 
 As an example, create now a chapter for your second slide deck from
 your Fall 2018 site and give it the label \ttt{ch:kleene}.
@@ -40,7 +49,7 @@ A chapter is either released or unreleased.
 
 This is designed to allow for a ``feedback cycle'' before releasing chapters to students.  
 %
-For example, I typically  upload my lectures a bit ahead of time and ask my TAs to look over them and give me feedback.
+For example, I typically  upload my lectures a bit ahead of time and before releasing them, ask my TAs to look over them and give feedback.
 %
 To give feedback, the TA's simply select the relevant atom and create a feedback, e.g., they might note a typo.
 %
@@ -80,7 +89,7 @@ chapter and you should be able to view it.
 As an example, upload your second slide deck from your Fall 2018 site to the chapter that you have created above.
 \end{gram}
 
-\begin{important} 
+\begin{important}[Unreleased chapters are not searchable]
 When a PDF document is uploaded, its text is extracted from and stored into an index, allowing the document to be searchable via the search bar when the chapter is released.
 %
 Unreleased chapters will not be searchable (so students won't see
@@ -92,20 +101,19 @@ Currently, pdf documents themselves are shown as JPEG images.  We are in the pro
 \end{note}
 
 
-\begin{gram}[Actions on Chapters]
-Once a chapter is uploaded, it becomes "actionable".  
+\begin{gram}[Interactive Chapters]
+Once a chapter is uploaded, it becomes interactive.
 
 \begin{itemize}
 \item
-If unreleased, course staff can send feedback and open other discussions. 
+If unreleased, course staff may send feedback and open other discussions. 
 \item
-If released: all the students could send feedback, ask questions, take private notes on the content.
+If released: all the students and staff may send feedback, ask questions, take private notes on the content, etc.
 \end{itemize}
 \end{gram}
 
 
 \begin{gram}[Updating a Chapter]
-
 For unreleased chapters, simply re-upload the contents.  This will
 recreate the chapter and delete all prior discussions on it.  
 
@@ -116,7 +124,7 @@ questions, etc).
 Unreleasing and re-uploading could be thought as the same as deleting the chapter and recreating it.
 %
 Because it deletes all related content, we discourage using this
-feature.
+feature (after a course starts).  If you don't currently have students and are developing content, you may release chapters, and re-upload them as you wish.
 
 There are more advanced ways to upload released content. We will see
 these later.
@@ -128,16 +136,15 @@ these later.
 \begin{gram}[Create a book]
 You can create new books and as many as you want.  I usually create one for textbook, one for recitations, one for assignments, one for additional materials (misc).  Many courses create a "Slides" book.  
 
-To create a book go to "links" right next to search bar and then press
+To create a book go to "links" to the right of the search bar and then press
 manage books.  You will give your book a unique label (e.g,
 "textbook", "recitations", "misc"...) and a unique"rank" which is the
 order it will be shown but is otherwise immaterial.  
 
-
 By default, a book is selected to be a \defn{booklet}, which
 consists of a sequence of chapter.  
 %
-Iuf you want the book to contain "parts" as an organization element
+If you want the book to contain "parts" as an organization element
 above chapters, uncheck the ``booklet'' box.  
 
 A book can contain PDFs or XMLs (generated by a compiler).
@@ -152,9 +159,9 @@ the rest of the books don't.  So all the books except for the textbook are bookl
 \begin{gram}[Editing a Book]
 To edit the book, create and upload chapters, go to "Manage Books" and select your book.  Here you can edit various properties of the book, 
 %
-\href{create chapters}{guide:chapter::create}, 
+\href{guide:chapter::create}{create chapters}
 %
-\href{upload content}{guide:chapter::upload}, etc.
+\href{guide:chapter::upload}{upload content}
 \end{gram}
 
 

@@ -17,7 +17,7 @@ else
 	endif
 endif
 
-#MTL_HOME = ~/MTL
+MTL_HOME = ~/MTL
 
 TEX2XML = $(MTL_HOME)/texml
 TEX2XMLDBG = $(MTL_HOME)/texml.dbg
