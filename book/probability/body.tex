@@ -1,0 +1,1471 @@
+\chapter{Probability Theory}
+\label{ch:probability}
+{ 
+
+\newcommand{\qsort}{quicksort}
+\newcommand{\Qsort}{Quicksort}
+
+
+\newcommand{\SSpace}{\ensuremath{\Omega}}
+\newcommand{\EventE}{\mathcal{E}}
+
+We present a brief review of basic discrete probability theory that we
+shall use in this book.
+%
+The  chapter is organized into three sections.  In the first section,
+we describe probabilistic models, events, probabilities and
+conditional probabilities. 
+%
+In the second section, we describe random variables, which correspond
+closely with events, because as events, they can be thought as
+assigning probabilities to subsets of the sample space.
+%
+The structure of this section follows that of the first section,
+reflecting various forms of probability laws on events to random
+variables.
+%
+In the third and final part, we describe expectations, which can be
+used to summarize random variables by their average or mean value.
+%
+
+
+\section{Probabilistic Models}
+\label{sec:probability}
+
+Let's begin with an example.
+
+\begin{example}
+Suppose we have two \emph{fair} dice, meaning that each is equally
+likely to land on any of its six sides.  If we toss the dice, what is
+the chance that their numbers sum to $4$?  
+%
+You can probably figure out
+that the answer is
+\begin{equation*}
+\frac
+{\text{\# of outcomes that sum to}~4}
+{\text{\# of total possible outcomes}} 
+= 
+\frac{3}{36} = \frac{1}{12}
+\end{equation*}
+since there are three ways the dice could sum to 4 (1 and 3, 2 and 2,
+and 3 and 1), out of the $6 \times 6 = 36$ total possibilities.
+\end{example}
+%
+
+Probability theory is a mathematical study of uncertain situations
+such as the dice game in our example.
+%
+In probability theory, we think of a game such as our dice game as an
+\defn{experiment}, because it is an ``experiment'' that we can repeat
+to obtain a number of outcomes.
+
+%
+The idea behind probability theory is to use a \defn{probabilistic
+  model} that models the situation in precise, mathematical terms.
+%
+A probability model consists of a \defn{sample space} and a
+\defn{probability function}, also called \defn{probability law} that
+satisfies certain axioms that we shall see.
+
+\paragraph{Sample Spaces and Events.} 
+A \defn{sample space} \SSpace{} is an arbitrary and possibly infinite
+(but countable) set of possible outcomes of a probabilistic
+experiment. 
+%
+For the dice game, the sample space is the 36 possible outcomes of the
+dice.  
+%
+An \defn{event} is any subset of $\SSpace$ and
+most often representing some property common to multiple outcomes.  
+%
+We typically denote events by capital letters from the start
+of the alphabet, e.g. $A$, $B$, $C$.
+
+
+\begin{definition}[Probabilistic Model]
+  A probabilistic model for an experiment consists of a \defn{sample
+    space} that represents the outcomes of that experiment and a
+  \defn{probability law} or   \defn{probability function} that assigns to an event $A$ a value
+  representing the likelihood of that event occurring.
+
+Probability law must satisfy the following axioms.
+
+\begin{itemize}
+\item \textbf{Nonnegativitiy:} $\prob{A} \in [0,1]$.
+
+\item \textbf{Additivity:} for any two disjoint events $A$ and $B$, $\prob{A \cup B} =
+  \prob{A} + \prob{B}$.
+
+\item \textbf{Normalization:} $\prob{\SSpace} = 1$.
+\end{itemize}
+
+\end{definition}
+
+Note that when defining the probabilistic model, we have not specified
+carefully what kinds of events, we may be interested in, because they
+may differ based on the experiment and what we are interested in.
+%
+We do, however, must take care when setting up the probabilistic model
+to reason about the experiment correctly. 
+%
+For example, each element of the sample space must correspond to one
+unique outcome of the experiment.  In other words, they must be
+mutually exclusive. 
+%
+Similarly, any actual outcome of the experiment must have a
+corresponding representation in the sample space.
+
+When working with discrete probabilistic models, it is common practice
+to consider each outcome on its own and assign to it a probability.
+%
+The probability for any event can then be computed by using the
+additivity  property of the probability law and summing up the
+probabilities of the outcomes constituting the event.
+
+\begin{example}
+  For our example of throwing two dice, the sample space
+  consists of all of the $36$ possible pairs of values of the dice:
+\[
+\SSpace = \{(1,1),(1,2),\ldots,(2,1),\ldots,(6,6)\}.
+\]
+%
+Each pair in the sample space corresponds to an outcome of the experiment.
+%
+The outcomes are mutually exclusive and cover all possible outcomes of
+the experiment.
+
+
+For example, having the first dice show up $1$ and the second $4$ is
+an outcome and corresponds to  the element $(1,4)$ of the sample space $\Omega$.
+
+The event that the ``the first dice is 3'' corresponds to the
+set
+\[
+A = \csetf{(d_1,d_2) \in \Omega}{d_1 = 3} =
+\{(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)\}.
+\]
+The event that ``the dice sum to 4'' corresponds to the set
+\[
+B = \csetf{(d_1,d_2) \in \Omega}{d_1 + d_2 = 4} =
+\{(1,3),(2,2),(3,1)\}.
+\]
+
+Assuming the dice are unbiased, the probability law over
+the sample space can be written as 
+\[
+\prob{x} = 1/36.
+\]
+
+The probability of the event $A$ (that the first dice
+is 3) is thus 
+\[
+\prob{A} = \sum_{x \in A} \prob{x} = \frac{6}{36} = \frac{1}{6}. 
+\]
+
+If the dice were biased so the probability that it shows up with a
+particular value is proportional to the value, then the probability
+function would be $\prob{(x,y)} = \frac{x}{21} \times \frac{y}{21}$,
+and the probability of the event $B$ (that the dice add to 4) would be
+\[
+\prob{B} = \sum_{x \in B} \prob{x} = \frac{1 \times 3 + 2 \times 2
+  + 3 \times 1}{21 \times 21} = \frac{10}{441}. 
+\]
+
+\begin{notesonly}
+One way to do these sums in class is no note that (1 + ... + 6) is
+repeated and it adds up to 21.
+\end{notesonly}
+\end{example}
+
+\paragraph{Properties of Probability Laws.}
+
+Given a probabilistic model, 
+we can prove several properties of probability laws by using the
+three axioms that they must satisfy.
+
+For example, if for two events $A$ and $B$.  We have
+\begin{itemize}
+\item if $A \subseteq B$, then  $\prob{A} \le \prob{B}$,
+\item $\prob{A \cup B} = \prob{A}  + \prob{B} -  \prob{A \cap B}$.
+\end{itemize}
+
+\paragraph{The Union Bound.}  
+
+The union bound, also known as Boole's inequality, is a simple way to
+obtain an upper bound on the probability of any of a collection of events
+happening.  Specifically for a collection of events
+$A_0, A_2, \ldots, A_{n-1}$ the bound is:
+\[
+\prob{\bigcup_{0 \leq i < n} A_i} \leq \sum_{i=0}^{n-1} \prob{A_i} 
+\]
+This bound is true unconditionally.
+%
+To see why the bound holds we note that the primitive events
+in the union on the left are all included in the sum on the right
+(since the union comes from the same set of events).  
+%
+In fact they
+might be included multiple times in the sum on the right, hence the
+inequality.  In fact sum on the right could add to more than one, in
+which case the bound is not useful.  
+%
+The union bound can be useful in generating high-probability bounds
+for algorithms. For example, when the probability of each of $n$
+events is very low, e.g. $1/n^5$ and the sum remains very low,
+e.g. $1/n^4$.
+
+
+
+\paragraph{Conditional probability}
+
+
+Conditional probability allows us to reason about dependencies between
+observations.  
+%
+For example, suppose that  your friend rolled a pair of dice and told
+you that they sum up to $6$, what is the probability that the one of
+dice has come up $1$?  
+%
+Conditional probability has many practical applications in the real
+world.  
+%
+For example, given that medical test for a disease comes up
+positive, we might want to know  the probability that the patient has the disease. 
+%
+Or, given that your computer has been working fine for the past 2
+years, you might want to know the probability that it will continue
+working for one more year.
+
+
+
+\begin{definition}
+For a given probabilistic model consisting of a sample space and
+probability function, we define the conditional probability of an
+event $A$ given $B$, as the probability of $A$ occurring given that
+$B$ occurs as 
+\[
+\prob{A \given B} = \frac{\prob{A \cap B}}{\prob{B}}. 
+\]
+
+The conditional probability measures the probability that the event
+$A$ occurs given that $B$ does.  It is defined only when $\prob{B} > 0$.
+\end{definition}
+
+Conditional probability satisfies the three axioms of probability
+laws and thus itself a probability law.
+%
+\begin{notesonly}
+$\prob{A \given B} \ge 0$ holds because $\prob{A \cap B}$ is
+nonnegative.
+
+Given disjoint $A_0$ and $A_1$.
+\[
+\begin{array}{lll}
+
+\prob{(A_0 \cup A_1) \given B} & = & \prob{(A_0 \cup A_1) \cap B)} /
+\prob{B}
+\\[2mm]
+& = & \prob{(A_0 \cap B) \cup (A_1 \cap B)} / \prob{B}
+\\
+& = & \prob{(A_0 \cap B)} / \prob{B} +  \prob{(A_1 \cap B) \mbox(by
+  additivity because the two sets are disjoint}
+\\
+& = & ...
+\end{array}
+\]
+The final property holds trivially because $\SSpace \cap B = B$. 
+
+Thus conditional probabilities simple mass probabilities over the
+event $B$ that we are interested in. 
+
+\end{notesonly}
+
+%
+We can thus treat conditional probabilities just as ordinary
+probabilities.  Intuitively, conditional probability can be thought as
+a focusing and re-normalization of the probabilities on the
+assumed event $B$.
+%
+
+
+\begin{example}
+Consider throwing two fair dice and calculate the probability that the
+first dice comes us $1$ given that the sum of the two dice is $4$. 
+%
+Let $A$ be the event  that the first dice comes up $1$ and $B$ the
+event that the sum is $4$.
+%
+We can write $A$ and $B$ in terms of outcomes as 
+\[
+\begin{array}{lll}
+A & = & \{ (1,1), (1,2), (1,3), (1,4), (1,5), (1,6) \}~\mbox{and}
+\\
+B & = & \{ (1,3), (2,2), (3,1) \}.
+\end{array}
+\]
+We thus have $A \cap B = \{ (1,3) \}$.
+%
+Since each outcome is equally likely, 
+\[
+\prob{A \given B} = \frac{\prob{A \cap B}}{\prob{B}} 
+%
+= 
+%
+\frac{|A \cap B|}{|B|} = \frac{1}{3}.
+\]
+\end{example}
+
+\begin{example}
+Consider throwing two fair dice and calculate the probability that the
+first dice comes up $1$ given that the second dice comes up $2$. 
+%
+Let $A$ be the event  that the first dice comes up $1$ and let $B$ the
+event that the second dice comes up $2$.
+%
+We can write $A$ and $B$ in terms of outcomes as 
+\[
+\begin{array}{lll}
+A & = & \{ (1,1), (1,2), (1,3), (1,4), (1,5), (1,6) \}~\mbox{and}
+\\
+B & = & \{ (1,2), (2,2), (3,2), (4,2), (5,2), (6,2) \}~\mbox{and}
+\end{array}
+\]
+We thus have $A \cap B = \{ (1,2) \}$.
+%
+Since each outcome is equally likely, 
+\[
+\prob{A \given B} = \frac{\prob{A \cap B}}{\prob{B}} 
+%
+= 
+%
+\frac{|A \cap B|}{|B|} = \frac{1}{6}.
+\]
+
+Since $\prob{A} = \frac{|A|}{|\SSpace|} = \frac{1}{6}$, we have
+concluded that $\prob{A \given B} = \prob{A}$, that is $A$ is
+independent of $B$.  We shall see more about independence later in this
+section.
+
+\end{example}
+
+
+\paragraph{Total Probability Law.}
+Conditional probabilities can be useful in estimating the probability
+of an event that may depend on a selection of choices.
+%
+The total probability theorem can be handy in such circumstances.
+
+\begin{theorem}[Total Probability Law]
+Consider a probabilistic model with sample space $\SSpace$ and let
+$A_0, \ldots, A_{n-1}$ be a partition of $\SSpace$ such that $\prob{A_i} >
+0$ for all $0 \le i < n$. 
+%
+For any event $B$ the following holds
+\[
+\begin{array}{lll}
+\prob{B} 
+& = & 
+\prob{B \cap A_0} + \prob{B \cap A_1} + \ldots + \prob{B \cap A_{n-1}}
+\\
+& = & 
+\prob{A_0}\prob{B  \given A_0} + \prob{A_1}\prob{B \given A_1} + \ldots + \prob{A_{n-1}}\prob{B \given A_{n-1}}
+\end{array}
+\]
+\end{theorem}
+
+\begin{example}
+Your favorite social network partitions your connections into two
+kinds, near and far.
+%
+The social network has calculated that the probability that you react
+to a post by one of your far connections is $0.1$ but the same
+probability is $0.8$ for a post by one of your near connections.
+%
+Suppose that the social network shows you a post by a near and far
+connection with probability $0.6$ and $0.4$ respectively. 
+%
+
+Let's calculate the probability that you react to a post that you see
+on the network.
+%
+Let $A_0$ and $A_1$ be the event that the post is near and far
+respectively.
+%
+We have $\prob{A_0} = 0.6$ and   $\prob{A_1} = 0.4$.
+%
+Let $B$ the event that you react, we know that  $\prob{B \given A_0} =
+0.8$ and $\prob{B \given A_1} = 0.1$.
+%
+
+We want to calculate $\prob{B}$, which by total probability theorem we
+know to be 
+\[
+\begin{array}{lll}
+\prob{B} 
+& = &   \prob{B \cap A_0} + \prob{B \cap  A_1} 
+\\
+& = &  \prob{A_0}\prob{B \given A_0} + \prob{A_1}\prob{B \given  A_1}. 
+\\
+& = &  0.6 \cdot 0.8 +  0.4 \cdot 0.1
+\\
+& = &  0.52.
+\end{array}
+\] 
+
+\end{example}
+
+\begin{comment}
+
+\paragraph{Bayes' Rule and Inference}
+
+An important application of conditional probabilities is \defn{Bayes'
+  Rule}, which can be stated as follows.
+%
+For any event $A$ and $B$ such that $\prob{B} > 0$, 
+\[
+\prob{A \given B} 
+= 
+\frac
+{\prob{A} \prob{B \given A}}
+{\prob{B}}.
+\]
+%
+Bayes' rule follows easily by the definition of conditional
+probability, because $\prob{A} \prob{B \given A} = \prob{A \cap B}$.
+
+The importance of Bayes' rule is that it allows us to reverse the
+direction of the conditional probability: when we are given the
+probability of $B$ given $A$, we can infer the probability of $A$
+given $B$.
+%
+This is sometimes referred as \defn{probabilistic inference}.
+
+
+A common application of Bayes' Rule in the real world is inferring of
+causes of an effect.  
+%
+More precisely, suppose that we observe an effect $B$ and we know the
+probability that we would observe $B$ given $A$, i.e., $\prob{B \given
+  A}$.
+%
+We want to know the probability that that the cause is indeed $A$,
+i.e., $\prob{A \given B}$, which we can by using Bayes' Rule.
+
+\begin{example}
+We know that the probability of seeing smoke $B$ when there is fire
+$A$ is $\prob{B \given A} = 0.9$ and that probability of seeing smoke
+even when there is no fire is $\prob{B \given A^c} = 0.005$.
+%
+We also know independently that the probability
+of having a fire at any time  is $\prob{A} = 0.001$.
+%
+Let's assume that we see some smoke and calculate the probability that
+there is fire.
+%
+Let's consider the event $A^c$ that we don't see any fire, i.e., the
+complement of $A$.  We have $\prob{A^c} = 0.009$. 
+%
+By using the total probability theorem, we have 
+\[
+\prob{B} = \prob{A} \prob{B | A} +  \prob{A^c} \prob{B | A^c}.
+\]
+This we can calculate as 
+\[
+\prob{B} = 0.001 \cdot  0.9 +  0.009 \cdot 0.005 = 0.000945
+\]
+
+%
+By Bayes rule, we know that 
+\[
+\begin{array}{lll}
+\prob{A \given B} 
+& = &  
+\frac
+{\prob{A} \prob{B \given A}}
+{\prob{B}}.
+\\
+& = & 
+\frac
+{0.001 \cdot 0.9}
+{0.000945}
+\\
+& = & 0.953 
+\end{array}
+\]
+
+
+\end{example}
+
+
+\end{comment}
+
+
+
+
+
+
+
+
+\paragraph{Independence.}
+
+It is sometimes important to talk about the dependency relationship
+between events.
+%
+Intuitively we say that two events are independent if  the occurrence
+of one does not affect the probability of the other.
+%
+More precisely, we define independence as follows.  
+
+\begin{definition}
+Two events $A$ and $B$ are \defn{independent}   if 
+\[
+\prob{A \cap B} = \prob{A} \cdot \prob{B}.
+\]  
+%
+We say that multiple events $A_0, \dots, A_{n-1}$  are \defn{mutually
+  independent} if and only if, for any non-empty subset $I \subseteq \{0, \dots, n-1\}$,
+\[
+\prob{\bigcap_{i \in I} A_i} = \prod_{i\in I} \prob{A_i}.
+\]
+\end{definition}
+
+Recall that  $\prob{A \given B} = \frac{\prob{A \cap
+    B}}{\prob{B}}$ when $\prob{B} > 0$. Thus if $\prob{A \given B} = \prob{A}$ then
+ $\prob{A \cap B} = \prob{A} \cdot \prob{B}$.
+%
+We can thus define independence in terms of conditional probability
+but this works only when $\prob{B} > 0$. 
+
+
+
+\begin{example}
+For two dice, the events $A = \csetf{(d_1,d_2) \in
+  \SSpace}{d_1=1}$ (the first dice is 1) and $B = \csetf{(d_1,d_2) \in
+  \SSpace}{d_2=1}$ (the second dice is 1) are independent since
+%
+\[
+\begin{array}{llccl}\
+& \prob{A} \times \prob{B} & = & \frac{1}{6} \times \frac{1}{6} & = \frac{1}{36} \\[4mm]
+= & \prob{A \cap B} & = & \prob{\cset{(1,1)}} & = \frac{1}{36}~.
+\end{array}
+\]
+%
+However, the event $C \equiv \event{X}{4}$ (the dice add to 4) is not independent of $A$
+since 
+\[
+\begin{array}{llccl}
+& \prob{A} \times \prob{C} & = &\frac{1}{6} \times \frac{3}{36} & = \frac{1}{72} \\[4mm]
+\neq & \prob{A \cap C} & = & \prob{\cset{(1,3)}} & = \frac{1}{36}~.
+\end{array}
+\]
+$A$ and $C$ are not
+independent since the fact that the first dice is 1 increases the
+probability they sum to $4$ (from $\frac{1}{12}$ to $\frac{1}{6}$).
+
+\end{example}
+
+\begin{simpleexample}
+%% This is also a problem.
+
+For two dice, let $A$ be the event that first roll is $1$ and $B$ be
+the event that the sum of the rolls is $5$.
+Show that they are independent.
+\end{simpleexample}
+
+
+\begin{simpleexample}
+For two dice, let $A$ be the event that first roll is $1$ and $B$ be
+the event that the sum of the rolls is $5$.
+
+  Are these independent,
+they turn out to be so.....
+
+How about minimum is $2$ and so is the maximum?  They turn out not.
+
+\end{simpleexample}
+
+\begin{simpleexample}
+Prove that disjoint events are never independent.
+\end{simpleexample}
+
+\section{Random Variables} 
+A \defn{random variable} $X$ is a real-valued function on the outcomes
+of an experiment, i.e., $X : \SSpace \to \R$, i.e., it assigns a real
+number to each outcome.
+%
+For a sample space there can be many random variables, each keeping
+track of some quantity of a probabilistic experiment.
+%
+We typically denote random variables by capital letters from
+the end of the alphabet, e.g. $X$, $Y$, and $Z$.
+%
+We say that a random variable is \defn{discrete} if its range is
+finite or countable infinite.  Throughout this book, we only consider
+discrete random variables. 
+
+\begin{example}
+Consider rolling a dice.  The sample space is $\SSpace = \{1, 2, 3, 4,
+5, 6 \}$.
+%
+We can define a random variable $X$ to map each primitive event to $0$
+if the dice comes up an even number, or $1$ if the dice comes up an
+odd number.
+%
+This random number is an indicator number indicating whether the dice
+comes up an odd or an even number.
+\end{example}
+
+A random variable is called an \defn{indicator random variable} if it
+takes on the value~$1$ when some condition is true and~$0$
+otherwise.
+%
+
+For a random variable $X$ and a value $x \in \R$, we use the following
+shorthand for the event corresponding to $X$ equaling $x$:
+\[\event{X}{x} \equiv \csetf{y \in \SSpace}{X(y)  = x}~.\]
+
+
+\begin{example}
+For throwing two dice, we can define random variable as the sum of
+the two dice:
+\[
+X(d_1,d_2) = d_1+d_2.
+\]
+We can define an indicator random variable
+to getting doubles (the two dice have the same value):
+\[
+Y(d_1,d_2) =
+\left\{
+\begin{array}{ll}
+1 & \mbox{if}~d_1 = d_2
+\\
+0 & \mbox{if}~d_1 \not= d_2
+\end{array}
+\right.
+\]
+Using our shorthand, the event $\event{X}{4}$ corresponds
+to the event ``the dice sum to 4''.
+\label{ex:rand::randvar}
+\end{example}
+
+\begin{remark}
+The term random variable might seem counter-intuitive
+since it is actually a function not a variable, and it is not really
+random at all since it is a well defined deterministic function on the
+sample space.  However if you think of it in conjunction with the
+random experiment that selects a primitive element, then it is a
+variable that takes on its value based on a random process.
+\end{remark}
+
+\paragraph{Probability Mass Function.}
+
+For a discrete random variable $X$, we define its \defn{probability
+  mass function} or \defn{PMF}, written $\pmf{X}(\cdot)$, for short as
+a function mapping each element $x$ in the range of the random
+variable to the probability of the event $\event{X}{x}$, i.e.,
+\[
+\pmf{X}(x) = \prob{\event{X}{x}}.
+\]
+
+\begin{example}
+The probability mass function for the indicator random variable $X$
+indicating whether the outcome of a roll of dice is comes up even is 
+\[
+\begin{array}{lll}
+\pmf{X}(0) = \prob{\event{X}{0}} = \prob{\{1, 3, 5\}} =
+1/2,~\mbox{and}
+\\
+\pmf{X}(1) = \prob{\event{X}{1}} = \prob{\{2, 4, 6\}} =
+1/2.
+\end{array}
+\]
+
+The probability mass function for the random variable $X$
+that maps each outcome in a roll of dice to the smallest Mersenne
+prime number no less than the outcome is
+\[
+\begin{array}{lll}
+\pmf{X}(3) = \prob{\event{X}{3}} = \prob{\{1, 3\}} =
+1/3,~\mbox{and}
+\\
+\pmf{X}(7) = \prob{\event{X}{7}} = \prob{\{2, 4, 5, 6\}} =
+2/3.
+\end{array}
+\]
+\end{example}
+
+Note that much like a probability law, a probability mass function is
+a non-negative function.
+%
+It is also additive in a similar sense: for any $x$ and $x'$, the
+events $\event{X}{x}$ and $\event{X}{x'}$ are disjoint.
+%
+Thus for any set $\bar{x}$ of values of $X$, we have 
+\[
+\prob{X \in \bar{x}} = \sum_{x \in \bar{x}}{\pmf{X}(x)}.
+\]
+%
+Furthermore, since $X$ is a function on the sample space, the events
+corresponding to the different values of $X$ partition the sample
+space, and we have
+\[
+\sum_{x}{\pmf{X}{x}} = 1.
+\]
+%
+These are the important properties of probability mass functions: they
+are non-negative, normalizing, and are additive in a certain sense. 
+
+
+We can also compute the probability mass function for multiple random
+variables defined for the same probabilistic model, i.e., same sample
+space and probability law.
+%
+For example, the \defn{joint probability mass function} for two random
+variables $X$ and $Y$, written $\pmf{X,Y}(x,y)$ denotes the
+probability of the event $\event{X}{x} \cap \event{Y}{y}$, i.e.,
+\[
+\pmf{X,Y}(x,y) = \prob{\event{X}{x} \cap \event{Y}{y}} = \prob{X = x, Y = y}.
+\]
+%
+Here
+ $\prob{X = x, Y = y}$ is shorthand for   $\prob{\event{X}{x} \cap \event{Y}{y}}$.
+
+Given joint probability mass function for a pair of random variables
+$X$ and $Y$, we can calculate the probability mass function for any of
+them, which is also called the \defn{marginal probability mass
+  function} as follows
+\[
+\pmf{X}(x) = \sum_{y}{\pmf{X,Y}(x,y)},~\mbox{and}
+\\
+\pmf{Y}(y) = \sum_{x}{\pmf{X,Y}(x,y)}.
+\]
+
+In our analysis or randomized algorithms, we shall repeatedly
+encounter a number of well-known random variables and create new ones
+from existing ones by composition.
+
+\paragraph{Bernoulli Random Variable.}
+Suppose that we toss a  coin that comes up a head with probability $p$
+and a tail with probability $1-p$.
+%
+The \defn{Bernoulli random variable} takes the value $1$ if the coin
+comes up heads and $0$ if it comes up tails.
+%
+In other words, it is an indicator random variable indicating heads.
+%
+Its probability mass function is 
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{ll}
+p & \mbox{if}~x = 1
+\\
+1-p & \mbox{if}~x = 0.
+\end{array}
+\right.
+\]
+
+\paragraph{Binomial Random Variable.}  
+
+Consider $n$ Bernoulli trials with probability $p$.  We call the
+random variable $X$ denoting the number of heads in the $n$ trials as
+the \defn{Binomial random variable}.
+%
+Its probability mass function for any $0 \le x \le n$ is 
+%
+\[
+\pmf{X}(x) = {n \choose x}\,p^x\,(1-p)^{n-x}.
+\]
+
+
+\paragraph{Geometric Random Variable.}  
+Consider performing Bernoulli trials with probability $p$ until the
+coin comes up heads and  $X$ denote the number of trials needed to
+observe the first head. 
+%
+The random variable $X$ is called the \defn{geometric random variable}.
+%
+Its probability mass function for any $0 \le x$ is 
+%
+\[
+\pmf{X}(x) = (1-p)^{x-1} p.
+\]
+
+\paragraph{Functions of random variables.}
+
+A real-valued function $f$ of random variable is also a random
+variable. 
+%
+We can thus define new random variables by applying a function on a
+known random variable.
+%
+The probability mass function for the new variable can be computed by
+``massing'' the probabilities for each value.
+%
+For example, for a function of a random variable $Y = f(X)$, we can
+write the probability mass function as 
+\[
+\pmf{Y}(y) = \sum_{x \sucht f(x) = y}{\pmf{X}(x)}.
+\]
+%
+Similarly, for a function of two random variables $Z = g(X,Y)$ defined
+on the same probabilistic model, we can write the probability mass
+function as
+\[
+\pmf{Z}(z) = \sum_{(x,y) \sucht g(x,y) = z}{\pmf{X,Y}(x,y)}.
+\]
+
+\begin{example}
+Let $X$ be a Bernoulli random variable with parameter $p$.  We can
+define a new random variable $Y$ as a transformation of $X$ by a
+function $f(\cdot)$.  For example, $Y = f(X) = 9X + 3$ is random
+variable that transforms $X$, e.g., $X = 1$ would be transformed to $Y
+= 12$.
+%
+The probability mass function for $Y$ reflects that of $X$,
+%
+Its probability mass function is 
+\[
+\pmf{Y}(y) = 
+\left\{
+\begin{array}{ll}
+p & \mbox{if}~y = 12
+\\
+1-p & \mbox{if}~y = 3.
+\end{array}
+\right.
+\]
+
+\end{example}
+
+\begin{example}
+Consider the random variable $X$ with the probability mass function 
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{lll}
+0.25  & \mbox{if} & x = -2
+\\
+0.25  & \mbox{if} & x = -1
+\\
+0.25  & \mbox{if} & x = 0
+\\
+0.25  & \mbox{if} & x = 1
+\end{array}
+\right.
+\]
+
+We can calculate the probability mass function for the random variable
+$Y = X^2$ as follows $\pmf{Y}(y) = \sum_{x \sucht x^2 =
+  y}\pmf{X}(x)$.
+%
+This yields
+\[
+\pmf{Y}(y) = 
+\left\{
+\begin{array}{lll}
+0.25  & \mbox{if} & y = 0
+\\
+0.5  & \mbox{if} & y = 1
+\\
+0.25  & \mbox{if} & y = 4.
+\end{array}
+\right.
+\]
+
+\end{example}
+
+\paragraph{Conditioning.}
+
+In the same way that we can condition an event on another, we can also
+condition a random variable on an event or on another random variable.
+%
+Consider a random variable $X$ and an event $A$ in the same probabilistic
+model, we define the \defn{conditional probability mass function} of
+$X$ conditioned on  $A$ as 
+\[
+\pmf{X \given A} = \prob{X = x \given A} = \frac{\prob{\event{X}{x} \cap A}}{\prob{A}}.
+\]
+%
+Since for different values of $x$, $\event{X}{x} \cap A$'s are
+disjoint and since $X$ is a function over the sample space,
+conditional probability mass functions are normalizing just like
+ordinary probability mass functions, i.e., $\pmf{X \given A}(x) = 1$.
+%
+Thus just as we can treat conditional probabilities as ordinary
+probabilities, we can treat conditional probability  mass functions
+also as ordinary probability mass functions.
+
+\begin{notesonly}
+Note that the events $\event{X}{x} \cap A$ are disjoint for different
+values of $x$ and thus their union is $P(A)$.  We thus have $\pmf{X
+  \given A}(x) = 1$.
+\end{notesonly}
+
+\begin{example}
+Roll a pair of dice and let $X$ be the sum of the face values.  Let
+$A$ be the event that the second roll came up $6$.
+%
+We can find the conditional probability mass function 
+\[
+\begin{array}{lll}
+\pmf{X \given A}{x} & = & \frac{\prob{\event{X}{x} \cap A}}{\prob{A}}
+\\
+& = & 
+\left\{
+\begin{array}{ll}
+\frac{1/36}{1/6} = 1/6 & \mbox{if}~x = 7,  \ldots, 12.
+\\
+0 & \mbox{otherwise}
+\end{array}
+\right.
+\end{array}
+\]
+ 
+\end{example}
+
+Since random variable closely correspond with events, we can
+condition a random variable on another.
+%
+More precisely, let $X$ and $Y$ be two random variables defined on the
+same probabilistic model.
+%
+We define the \defn{conditional probability mass function} of $X$ with
+respect to $Y$ as 
+\[
+\begin{array}{l}
+\pmf{X \given Y}(x \given y) = \prob{X = x \given Y = y}.
+\end{array}
+\] 
+
+We can rewrite this as 
+\[
+\begin{array}{lll}
+\pmf{X \given{} Y}(x \given{} y) 
+& = & \prob{X = x \given{} Y = y}
+\\[2mm]
+& = & \frac{\prob{X = x, Y = y}}{\prob{Y = y}}
+\\[2mm]
+& = & \frac{\pmf{X,Y}(x,y)}{\prob{Y = y}}.
+\end{array}
+\] 
+
+Consider the function $\pmf{X \given Y}(x \given y)$ for a fixed value
+of $y$.  This is a non-negative function of $x$, the event
+corresponding to different values of $x$ are disjoint, and they
+partition the sample space, the conditional mass functions are
+normalizing
+\[
+\pmf{X \given Y}(x \given y) = 1. 
+\]
+Conditional probability mass functions thus share the same properties
+as probability mass functions.
+
+By direct implication of its definition, we can use conditional
+probability mass functions to calculate joint probability mass
+functions as follows
+\[
+\begin{array}{lll}
+\pmf{X,Y}(x,y) = \pmf{X}(x) \pmf{Y \given X}(y \given x)
+\\
+\pmf{X,Y}(x,y) = \pmf{Y}(y) \pmf{X \given Y}(x \given y)
+\end{array}
+\]
+%
+
+As we can compute total probabilities from conditional ones as we saw
+earlier in this section, we can calculate marginal probability
+mass functions from conditional ones:
+\[
+\pmf{X}(x) = \sum_{y}{\pmf{X,Y}(x,y)} = \pmf{Y}(y)\pmf{X \given Y}(x \given y).
+\]
+
+\begin{todo}
+Insert Some Examples.
+\end{todo}
+
+\paragraph{Independence.}
+
+As with the notion of independence between events, we can also define
+independence between random variables and events.
+%
+We say that a random variable $X$ is \defn{independent of an event}
+$A$, if 
+\[
+\mbox{for all}~x: \prob{X = x \land A} = \prob{X = x} \prob{A} = \pmf{X}(x) \prob{A}.
+\] 
+%
+When $\prob{A}$ is positive, this is equivalent to 
+\[
+\pmf{X \given A} (x) = \pmf{X}(x).
+\]
+
+Generalizing this to random variables, we can define a random variable
+$X$ an \defn{independent} of another random variable $Y$ if 
+\[
+\mbox{for all}~x, y: \pmf{X,Y}(x,y) = \pmf{X}(x) \pmf{Y}(y).
+\]
+%
+By the definition of probability mass function, this condition is the
+same as the condition that $\event{X}{x}$ and $\event{Y}{y}$ are
+independent.
+
+In our two dice
+example, a random variable $X$ representing the value of the first
+dice and a random variable $Y$ representing the value of the second
+dice are independent. 
+%
+However $X$ is not independent of a random variable $Z$ representing
+the sum of the values of the two dice.
+
+
+
+\section{Expectation}
+The \defn{expectation} of a random variable $X$ in a probabilistic
+model $(\SSpace,\prob{})$ is the sum of the random variable over the
+primitive events weighted by their probability, specifically:
+\[
+\expct[{\SSpace,\prob{}}]{X} = \sum_{y \in \SSpace} X(y) \cdot
+\prob{\{y\}}.
+\] 
+%
+For convenience, we  usually drop the $(\SSpace,\prob{})$
+subscript on \expct{} since it is clear from the context.
+
+
+\begin{example}
+Assuming unbiased dice ($\prob{(d_1,d_2)} = 1/36$), the expectation of
+  the random variable $X$ representing the sum of the two dice is:
+\[ 
+\expct{X} = \sum_{(d_1,d_2) \in \Omega} X(d_1,d_2)
+\times \frac{1}{36} = \sum_{(d_1,d_2) \in \Omega} \frac{d_1+d_2}{36} =
+7.
+\]
+If we bias the coins so that for each dice the probability that it
+shows up with a particular value is proportional to the value, we
+have $\prob{}[(d_1,d_2)] = (d_1/21) \times (d_2/21)$ and:
+\[ 
+\expct{X} = \sum_{(d_1,d_2) \in \Omega} \left((d_1+d_2) \times \frac{d_1}{21}\times\frac{d_2}{21}\right) = 8\; \frac{2}{3}.\]
+\label{ex:rand:expt}
+\end{example}
+
+It is usually more natural to define expectations in terms of the
+probability mass function of the random variable
+\[
+\expct{X} = \sum_{x} x \cdot \pmf{X}(x).
+\] 
+
+\begin{example}
+The expectation of an indicator random variable $X$ is
+the probability that the associated predicate is true (i.e. that
+$X= 1$):
+\begin{eqnarray*}
+\expct{X} 
+& = & 0 \cdot \pmf{X}(0) + 1 \cdot \pmf{X}(1).
+\\
+& = & \pmf{X}(1).
+\end{eqnarray*}
+\end{example}
+
+\begin{example}
+Recall that the probability mass function for a Bernoulli random
+variable is  
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{ll}
+p & \mbox{if}~x = 1
+\\
+1-p & \mbox{if}~x = 0.
+\end{array}
+\right.
+\]
+
+Its expectation is thus
+\[
+E[X] = p \cdot 1 + (1-p) \cdot 0 = p.
+\]
+
+\end{example}
+
+
+\begin{example}
+Recall that the probability mass function for geometric random
+variable $X$ with parameter $p$ is 
+%
+\[
+\pmf{X}(x) = (1-p)^{x-1} p.
+\]
+
+The expectation of $X$ is thus
+\[
+\begin{array}{lll}
+\pmf{X}(x) & = & \sum_{x = 1}^{\infty}{x \cdot (1-p)^{x-1} p}
+\\
+& = &  p\cdot \sum_{x = 1}^{\infty}{x \cdot (1-p)^{x-1}}
+\end{array}
+\]
+
+Bounding this sum requires some basic manipulation of sums.
+%
+Let $q = (1-p)$ and rewrite the sum as $p \cdot \sum_{x = 0}^{\infty}{xq^{x-1}}$.
+%
+Note now the term $xq^{x-1}$ is the derivative of $q^{x}$ with respect
+to $q$.
+%
+Since the sum $\sum_{x=0}^{\infty}{q^x} = 1/(1-q)$, its derivative is
+$1/(1-q)^2 = 1/p^2$.
+%
+We thus have conclude that $E[X] = p$.
+\end{example}
+
+\begin{example}
+Consider performing two Bernoulli trials with probability of success $1/4$.
+Let $X$ be the random variable denoting the number of heads.
+
+The probability mass function for $X$ is
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{ll}
+9/16 & \mbox{if}~x = 0
+\\
+3/8 & \mbox{if}~x = 1
+\\
+1/16 & \mbox{if}~x = 2.
+\end{array}
+\right.
+\]
+
+Thus $\expct{X} = 0 + 1 \cdot 3/8 + 2 * 1/16 = 7/8$.
+\end{example}
+
+\paragraph{Markov's Inequality.}
+
+Consider a non-negative random variable $X$.  We can ask how much
+larger can $X$'s maximum value be than its expected value.  With small
+probability it can be arbitrarily much larger.  However, since the
+expectation is taken by averaging $X$ over all outcomes, and it cannot
+take on negative values, $X$ cannot take on a much larger value with
+significant probability.  If it did it would contribute too much to
+the sum.
+
+\begin{question} 
+Can more than half the class do better than twice the average score on 
+the midterm?
+\end{question} 
+
+\noindent
+More generally $X$ cannot be a multiple of $\beta$ larger than its
+expectation with probability greater than $1/\beta$.  This is because
+this part on its own would contribute more than $\beta \expct{X}
+\times \frac{1}{\beta} = \expct{X}$ to the expectation, which is a
+contradiction.  This gives us for a non-negative random variable $X$
+the inequality:
+\[ \prob{X \geq \beta\expct{X}} \leq \frac{1}{\beta} \]
+or equivalently (by substituting $\beta = \alpha/\expct{X}$),
+\[ \prob{X \geq \alpha} \leq \frac{\expct{X}}{\alpha} \]
+which is known as Markov's inequality.
+
+\paragraph{Composing Expectations.}
+Recall that functions or random variables are themselves random
+variables (defined on the same probabilistic model), whose probability
+mass functions can be computed by considering the random variables
+involved.
+%
+We can thus also compute the expectation of a random variable defined
+in terms of others.
+%
+For example, we can define a random variable $Y$ as a function of
+another variable $X$ as $Y = f(X)$.
+%
+The expectation of such a random variable can be calculated by
+computing the probability mass function for $Y$ and then applying the
+formula for expectations.
+%
+Alternatively, we can compute the expectation of a function of a
+random variable $X$ directly from the probability mass function of $X$
+as
+\[
+E[Y] = E[f(X)] = \sum_{x}{f(x) \pmf{X}(x)}.
+\] 
+
+
+%% \begin{notesonly}
+%% Proof:
+%% \[
+%% \begin{array}
+%% ...
+%% \end{array}
+%% \]
+%% \end{notesonly}
+
+Similarly, we can calculate the expectation for a random variable $Z$
+defined in terms of other random variables $X$ and $Y$ defined on the
+same probabilistic model, e.g., $Z = g(X,Y)$, as computing the
+probability mass function for $Z$ or directly as
+\[
+E[Z] = E[g(X,Y)] = \sum_{x,y}{g(x,y) \pmf{X,Y}(x,y)}.
+\] 
+These formulas generalize to function of any number of random
+variables.
+
+\begin{example}
+An important special case of functions of random variables is the
+linear functions.  For example, let $Y = f(X) = aX + b$, where $a, b
+\in \tyreal$.
+%
+\[
+\begin{array}{lll}
+\expct{Y} = \expct{f(X)} 
+& = & \expct{aX + b} 
+\\
+& = & \sum_{x}{f(x) \pmf{X}(x)}
+\\
+& = & \sum_{x}{(ax + b) \pmf{X}(x)}
+\\
+& = & a\sum_{x}{x\pmf{X}(x)} + b\sum_{x}{\pmf{X}(x)}
+\\
+& = & a\expct{X} + b.
+\end{array}
+\]
+
+\end{example}
+
+\begin{example}[Linearity of Expectations]
+Similar to the example, above we can establish that the linear
+combination of any number of random variables can be written in terms
+of the expectations of the random variables.  For example, let $Z = aX
++ bY + c$, where $X$ and $Y$ are two random variables. We have
+\[
+\expct{Z} = \expct{aX + bY + c} = a\expct{X} + b \expct{Y} + c.
+\]
+
+The proof of this statement is relatively simple.
+\[
+\begin{array}{lll}
+\expct{Z} & = & \expct{aX + bY + c} 
+\\
+& = & \sum_{x,y}{(ax + by + c) \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x,y}{x \pmf{X,Y}(x,y)} + b\sum_{x,y}{y \pmf{X,Y}(x,y)} + \sum_{x,y}{c \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x}\sum_{y}{x \pmf{X,Y}(x,y)} + b\sum_{y}\sum_x{y  \pmf{X,Y}(x,y)} + \sum_{x,y}{c \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x}x\sum_{y}{\pmf{X,Y}(x,y)} + b\sum_{y} y \sum_x{\pmf{X,Y}(x,y)} + \sum_{x,y}{c \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x}x{\pmf{X}(x) + b\sum_{y} y \pmf{Y}(y)} + c
+\\
+& = & a \expct{X} + b \expct{Y} + c.
+\end{array}
+\]
+
+
+An interesting consequence of this proof is that the random variables
+$X$ and $Y$ does not have be defined on the same probabilistic model
+and sample space.  They can be defined for different experiments and
+their expectation can still be summed.  
+%
+To see why note that we can define the joint probability mass function
+$\pmf{X,Y}(x,y)$ by taking the Cartesian product of the sample spaces
+of $X$ and $Y$ and spreading probabilities for each arbitrarily as
+long as the marginal probabilities, $\pmf{X}(x)$ and $\pmf{Y}(y)$
+remain unchanged.
+%
+
+\end{example}
+
+The property illustrated by the example above is known as the
+\defn{linearity of expectations}.
+%
+The linearity of expectations is very powerful often greatly simplifying
+analysis.
+%
+The reasoning generalizes to the linear combination of any number of
+random variables.
+
+Linearity of expectation occupies a special place in probability
+theory, the idea of replacing random variables with their expectations
+in other mathematical expressions do not generalize.
+%
+Probably the most basic example of this is multiplication of random
+variables.
+%
+We might ask is $\expct{X} \times \expct{Y} = \expct{X \times
+  Y}$?  
+%
+It turns out it is true when $X$ and $Y$ are independent, but
+otherwise it is generally not true. 
+%
+To see that it is true for
+independent random variables we have (we assume $x$ and $y$ range over
+the values of $X$ and $Y$ respectively):
+
+\begin{eqnarray*}
+\expct{X} \times \expct{Y} & = & \left(\sum_{x} x \prob{\event{X}{x}}\right) \left(\sum_{y} y \prob{\event{Y}{y}}\right)\\
+% & = & \sum_x \sum_y (x \prob{\event{X}{x}} \times y \prob{\event{Y}{y}}) \\
+ & = & \sum_x \sum_y (x y \prob{\event{X}{x}} \prob{\event{Y}{y}}) \\
+ & = & \sum_x \sum_y (x y \prob{\event{X}{x} \cap \event{Y}{y}})\mbox{~~~~~~due to independence} \\
+ & = & \expct{X \times Y}
+\end{eqnarray*}
+For example, the expected value of the product of the values on two
+(independent) dice is therefore $3.5 \times 3.5 = 12.25$.
+
+
+
+\begin{example}
+In Example~\ref{ex:rand:expt} we analyzed the expectation on $X$, the
+sum of the two dice, by summing across all 36 primitive events.   This
+was particulary messy for the biased dice.   Using linearity of expectations,
+we need only calculate the expected value of each dice, and then add them.
+Since the dice are the same, we can in fact just multiply by two.
+For example for the biased case, assuming $X_1$ is the value of one dice:
+
+\[ \expct{X} = 2 \expct{X_1} =
+2 \times \sum_{d \in \{1,2,3,4,5,6\}} d \times \frac{d}{21} = 2 \times \frac{1 + 4 + 9 + 16 + 25 + 36}{21} = 8 \; \frac{2}{3}~.\]
+\end{example}
+
+\begin{figure}
+\begin{example}
+  Suppose we toss $n$ coins, where each coin has a probability $p$ of coming up
+  heads. What is the expected value of the random variable $X$ denoting the
+  total number of heads?
+
+  \begin{quote}
+    \normalfont\textbf{Solution I:} We will apply the definition of
+    expectation directly.  This will rely on some messy algebra and
+    useful equalities you might or might not know, but don't fret since
+    this not the way we suggest you do it.
+    \begin{align*}
+      \expct{X} &= \sum_{k=0}^n k\cdot \prob{\event{X}{k}} \\
+      &= \sum_{k=1}^n k\cdot p^k(1-p)^{n-k}\binom{n}{k} \\
+      &= \sum_{k=1}^n k \cdot \frac{n}{k}\binom{n-1}{k-1} p^k(1-p)^{n-k}
+      &\text{\textsf{[ because $\binom{n}{k} = \frac{n}{k}\binom{n-1}{k-1}$ ]}}
+      \\
+      &= n \sum_{k=1}^n \binom{n-1}{k-1} p^k(1-p)^{n-k} \\
+      &= n \sum_{j=0}^{n-1} \binom{n-1}{j} p^{j+1}(1-p)^{n - (j+1)}
+      &\text{\textsf{[ because $k = j + 1$ ]}}\\
+      &= np \sum_{j=0}^{n-1} \binom{n-1}{j} p^{j}(1-p)^{(n-1)-j)} \\
+      &= np (p + (1-p))^n       &\text{\textsf{[ Binomial Theorem ]}}\\
+      &= np
+    \end{align*}
+    That was pretty tedious :(
+  \end{quote}
+
+  \begin{quote}
+    \normalfont\textbf{Solution II:} We'll use linearity of expectations.  Let
+    $X_i = \mathbb{I}\{i\text{-th coin turns up heads}\}$. That is, $1$ if
+    the $i$-th coin turns up heads and $0$ otherwise.  Clearly, $X =
+    \sum_{i=1}^n X_i$.  So then, by linearity of expectations,
+    \begin{align*}
+      \expct{X} &= \expct{\sum_{i=1}^n X_i} = \sum_{i=1}^n \expct{X_i}.
+    \end{align*}
+    What is the probability that the $i$-th coin comes up heads? This is exactly
+    $p$, so $\expct{X} = 0\cdot (1 - p) + 1\cdot p = p$, which means
+    \[
+      \expct{X} = \sum_{i=1}^n \expct{X_i} = \sum_{i=1}^n p = np.
+      \]
+  \end{quote}
+\end{example}
+\end{figure}
+
+
+\begin{figure}
+\begin{example}
+  A coin has a probability $p$ of coming up heads. What is the expected value of
+  $Y$ representing the number of flips until we see a head? (The flip that comes
+  up heads counts too.)
+  \begin{quote}
+    \normalfont\textbf{Solution I:} We'll directly apply the definition of
+    expectation:
+    \begin{align*}
+      \expct{Y} &= \sum_{k \geq1} k(1-p)^{k-1}p \\
+      &= p \sum_{k=0}^\infty (k+1) (1-p)^k\\
+      &= p \cdot \frac1{p^2} &\text{\textsf{[ by Wolfram Alpha, though you should be able to do it.]}} \\
+      &= 1/p
+    \end{align*}
+  \end{quote}
+
+  \begin{quote}
+    \normalfont\textbf{Solution II:} Alternatively, we'll write a recurrence for
+    it. As it turns out, we know that with probability $p$, we'll get a head and
+    we'll be done---and with probability $1 - p$, we'll get a tail and we'll go
+    back to square one:
+    \begin{align*}
+      \expct{Y} = p \cdot 1 + (1-p)\Big( 1 + \expct{Y}\Big) = 1 + (1 -
+      p)\expct{Y} \implies \expct{Y} = 1/p.
+    \end{align*}
+    by solving for $\expct{Y}$ in the above equation.
+  \end{quote}
+\end{example}
+\end{figure}
+
+
+
+
+\paragraph{Conditional Expectation.}
+
+As we saw in the previous section, conditional probability mass
+functions are the same as ordinary probability mass functions but are
+obtained by normalizing the a probability mass function over a
+particular event or random variable.
+%
+We can thus define expectations over conditional probability mass
+functions.
+%
+For example, the conditional expectations of a random variable $X$
+given a positive-probability event $A$ is defined as 
+\[
+\expct{X \given A} = \sum_{x}{x \pmf{X \given A} (x)}.
+\]
+%
+Similarly,  the conditional expectations of a random variable $X$
+given that another random variable $Y$ has value $y$
+\[
+\expct{X \given Y = y} = \sum_{x}{x \pmf{X \given Y = y} (x)}.
+\]
+%
+Note that this definition is directly implied by the definition on the
+events because the random variable $Y$ taking on the value $y$
+corresponds to an event. 
+
+A very useful tool in calculating the expectation of a random variable
+is conditioning the random variable on another random variable and
+then summing up the conditioned expectations.  This is known as the
+\defn{total expectation theorem} and is stated as follows:
+
+The expectation of a random variable $X$ 
+\[
+\expct{X} = \sum_{y} { \pmf{Y}(y) \expct{X \given Y = y}}.
+\]
+
+\begin{notesonly}
+Proof:
+Recall that 
+\[
+\pmf{X}(x) = \sum_{y} {\pmf{Y}(y) \pmf{X \given Y}(x \given y)}.
+\]
+
+\[
+\begin{array}{lll}
+\expct{X} & = & \sum_{x}{x \pmf{X}(x)}
+\\
+& = & \sum_{x}{x \sum_{y} {\pmf{Y}(y) \pmf{X \given Y}(x \given y)}}
+\\
+& = & \sum_{y}{\pmf{Y}(y) \sum_{x} { x \pmf{X \given Y}(x \given y)}}
+\\
+& = & \sum_{y}{\pmf{Y}(y) \expct{X \given Y = y}}.
+\end{array}
+\]
+
+\end{notesonly}
+
+
+
+
+\newpage
+\input{probability/problems}
+}
+
+\flushchapter

@@ -1,0 +1,447 @@
+\usepackage{environ}   % A better command for defining environments, used
+                       % to drop contents when needed.
+
+
+% detect inside cluster
+\newif\ifinsideproblemcluster
+
+% problem is reset at chapter
+\newcounter{problem}[chapter]
+
+% problempart is reset at cluster beginning.
+\newcounter{problempart}[problem]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\depend}[1]
+{}
+\newcommand{\solution}
+{\noindent\paragraph{Solution.}}
+
+\newcommand{\help}
+{\noindent\paragraph{Hint.}}
+
+\newcommand{\explain}
+{\noindent\paragraph{Explanation.}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Diderot Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% wrap inside \[ and \] if targethtml is on
+% this seems to work in pandoc even if \targethtml is not defined
+% very odd behaviour but it might be because pandoc does not
+% handle \ifdefined properly.
+\newcommand{\htmlmath}[1]
+{
+\ifdefined\targethtml
+\[
+{#1}
+\]
+\else
+{#1}
+\fi
+}
+
+\NewDocumentEnvironment{diderotfig}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Figure.}}
+{\paragraph*{Figure [#1].}}
+}
+{ 
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: AMSMath Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{algorithm}[definition]{Algorithm}
+\newtheorem{code}[definition]{Pseudo Code}
+\newtheorem{costspec}[definition]{Cost Specification}
+\newtheorem{datatype}[definition]{Data Type}
+\newtheorem{datastr}[definition]{Data Structure}
+\newtheorem{example}{Example}[section]
+\newtheorem{syntax}[definition]{Syntax}
+
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[section]
+%\newtheorem{problem}[exercise]{Problem}
+
+
+\theoremstyle{remark}
+\newtheorem*{assumption}{Assumption}
+\newtheorem*{hint}{Hint}
+\newtheorem*{important}{Important}
+\newtheorem*{note}{Note}
+\newtheorem*{remark}{Remark}
+\newtheorem*{reminder}{Reminder}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: AMSMath Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \NewDocumentEnvironment{algorithm}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Algorithm.}}
+%% {\paragraph*{Algorithm [#1].}}
+%% }
+%% { 
+
+%% }
+
+
+%% \NewDocumentEnvironment{costspec}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Cost Specification.}}  
+%% {\paragraph*{Cost Specification [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{datastr}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Data Structure}} 
+%% {\paragraph*{Data Structure [#1].}} 
+%% }
+%% { 
+%% }
+
+
+%% \NewDocumentEnvironment{datatype}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Datatype.}} 
+%% {\paragraph*{Datatype [#1].}} 
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{definition}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Definition.}}
+%% {\paragraph*{Definition [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{example}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Example.}}
+%% {\paragraph*{Example [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{exercise}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Exercise.}}
+%% {\paragraph*{Exercise [#1].}}
+%% }
+%% { 
+%% }
+
+%% BEGIN: Cluster
+%% This environment accepts two optional arguments
+%% one is a number one is a title
+%% number is taken to be points.
+%%
+%% If there are no arguments, then it produces nothing
+%% If there are arguments, then it produces a heading
+%% and it separates points and title.
+\NewDocumentEnvironment{cluster}{o}
+{ 
+  \IfNoValueTF{#1}
+  {}
+  {\paragraph*{#1}}
+}
+{
+}
+%% END: cluster
+
+%% BEGIN: mproblem
+%% This environment accepts two optional arguments
+%% one is a number one is a title
+%% number is taken to be points.
+%% This is how problem environment should be written as 
+%%
+%% If there are no arguments, then it produces nothing
+%% If there are arguments, then it produces a heading
+%% and it separates points and title.
+\NewDocumentEnvironment{mproblem}{oo}
+{ 
+  \insideproblemclustertrue
+
+  \stepcounter{problem}
+
+  \IfNoValueTF{#2}
+  {
+    \IfNoValueTF{#1}
+    {}
+    {\IfInteger{#1}
+               {\noindent\textbf{Problem \theproblem} (#1 Points)}            
+               {\noindent\textbf{Problem \theproblem: #1}}
+    }
+  }
+  {
+   \IfInteger{#1}
+             {\noindent\textbf{Problem \theproblem: #2} (#1 Points)}
+             {\noindent\textbf{Problem \theproblem: #1} (#2 Points)}
+  }
+
+}
+{
+  %% remember that we are inside a cluster 
+  \insideproblemclusterfalse
+
+
+}
+%% END: mproblem
+
+%% BEGIN: xchoice list
+
+\newlist{xchoice}{enumerate}{1}
+\setlist[xchoice]{label*=\alph*)~,ref=\alph*,leftmargin=2em}
+
+%\makeatletter %% We are in .sty, not needed 
+\newcommand\rawchoice{%
+    \item\relax
+}
+\newcommand\rawchoicestar{%
+    \item\relax
+}
+%\makeatother %% We are in .sty, not needed 
+
+
+\NewDocumentCommand\choice{s}{%
+  \IfBooleanTF#1%
+    {\rawchoice}% If a star is seen
+    {\rawchoicestar}%     If no star is seen
+}
+%% END: xchoice list
+
+%% TODO Finish
+\NewDocumentEnvironment{pickany}{}
+{
+}
+{ 
+}
+
+
+\NewDocumentEnvironment{gram}{o}
+{
+\IfNoValueTF{#1}
+{}
+{\paragraph*{#1.}}
+}
+{ 
+}
+
+
+\NewDocumentEnvironment{flex}{o}
+{
+\IfNoValueTF{#1}
+{\smallskip}
+{
+\hfill\break
+\medskip 
+\noindent
+{\large \textbf{#1.}}}
+}
+
+{ 
+\IfNoValueTF{#1}
+{\smallskip}
+{\medskip}
+}
+
+%% 
+%% This environment accepts two optional arguments
+%% one is a number one is a title
+%% number is taken to be points.
+%% This is how problem environment should be written as 
+\NewDocumentEnvironment{problem}{oo}
+{
+  %% Step the counter
+  %% problem if not within cluster
+  %% problempart otherwise
+
+  \ifinsideproblemcluster
+    \stepcounter{problempart}   
+    \IfNoValueTF{#2}
+    {
+      \IfNoValueTF{#1}
+      {}
+      {\IfInteger{#1}
+                 {\paragraph{Problem \theproblem.\theproblempart: (#1 Points)}}            
+                 {\paragraph{Problem \theproblem.\theproblempart: #1}}
+      }
+    }
+    {
+     \IfInteger{#1}
+               {\paragraph{Problem \theproblem.\theproblempart: #2 (#1 Points)}}
+               {\paragraph{Problem \theproblem.\theproblempart: #1 (#2 Points)}}
+    }
+  \else
+    \stepcounter{problem}  
+    \IfNoValueTF{#2}
+    {
+      \IfNoValueTF{#1}
+      {}
+      {\IfInteger{#1}
+                 {\paragraph{Problem \theproblem: (#1 Points)}}            
+                 {\paragraph{Problem \theproblem: #1}}
+      }
+    }
+    {
+     \IfInteger{#1}
+               {\paragraph{Problem \theproblem: #2 (#1 Points)}}
+               {\paragraph{Problem \theproblem: #1 (#2 Points)}}
+    }
+  \fi
+}
+{     
+}
+%% \NewDocumentEnvironment{important}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Important.}}
+%% {\paragraph*{Important [#1].}}
+%% }
+%% { 
+
+%% }
+
+%% \NewDocumentEnvironment{lemma}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Lemma.}}
+%% {\paragraph*{Lemma [#1].}}
+%% }
+%% { 
+
+%% }
+
+
+%% \NewDocumentEnvironment{note}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Note.}}  
+%% {\paragraph*{Note [#1].}}  
+%% }
+%% { 
+%% }
+
+\NewDocumentEnvironment{preamble}{o}
+{
+\IfNoValueTF{#1}
+%{\paragraph*{Preamble.}}  
+{}
+{\paragraph*{#1.}}  
+}
+{ 
+}
+
+\NewDocumentEnvironment{proposition}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Proposition.}}
+{\paragraph*{Proposition [#1].}}
+
+}
+{ 
+
+}
+
+
+%% \NewDocumentEnvironment{remark}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Remark.}}
+%% {\paragraph*{Remark [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{solution}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Solution.}}
+%% {\paragraph*{Solution [#1].}}
+%% }
+%% { 
+
+%% }
+
+%% \NewDocumentEnvironment{syntax}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Syntax.}} 
+%% {\paragraph*{Syntax [#1].}} 
+%% }
+%% { 
+
+%% }
+
+%% \NewDocumentEnvironment{theorem}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Theorem.}}
+%% {\paragraph*{Theorem [#1].}}
+%% }
+%% { 
+
+%% }
+
+\ifdefined\teachingnotes
+\NewDocumentEnvironment{teachnote}{o}
+{
+%Drop \BODY
+}
+{
+}
+\else
+\NewEnviron{teachnote}{}  % This drops body.
+\fi
+\ifdefined\teachingnotes
+\NewDocumentEnvironment{teachask}{o}
+{
+%Drop \BODY
+}
+{
+}
+\else
+\NewEnviron{teachask}{}  % This drops body.
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

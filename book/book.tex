@@ -1,0 +1,28 @@
+\documentclass{book}
+\usepackage{xparse}  % Needed to deal with optional atom arguments
+
+
+\input{templates/preamble}
+\usepackage{templates/diderot}
+
+% Leave out chapter numbers from section numbers
+\renewcommand*\thesection{\arabic{section}}
+% number up to and including subsubsection
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+\include{header}
+
+\include{probability/part}
+\include{probability/theory}
+\include{probability/randomvars}
+\include{probability/expectation}
+
+\include{graph-contraction/part}
+\include{graph-contraction/introduction}
+\include{graph-contraction/edge}
+\include{graph-contraction/star}
+\include{graph-contraction/connectivity}
+
+
+\end{document}

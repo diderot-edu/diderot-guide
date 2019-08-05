@@ -1,0 +1,106 @@
+\section{Problems}
+
+\begin{probl}{Probability Law Properties}
+Consider two events $A$ and $B$  in a probabilistic model and prove
+that 
+\begin{itemize}
+\item if $A \subseteq B$, then  $\prob{A} \le \prob{B}$,
+\item $\prob{A \cup B} = \prob{A}  + \prob{B} -  \prob{A \cap B}$.
+\item $\prob{A \cup B} \le \prob{A}  + \prob{B}$.
+\end{itemize}
+\end{probl}
+
+
+\begin{probl}{Union Bound}
+Prove the union bound.
+\end{probl}
+
+\begin{probl}{Conditional Probability}
+Prove that conditional probability satisfies the three axioms of
+probability laws.
+\end{probl}
+
+\begin{probl}{Disjointness and independence}
+Are disjoint events independent?  Prove or disprove.
+\end{probl}
+
+
+\begin{probl}{Unexpected independence}
+For two dice, let $A$ be the event that first roll is $1$ and $B$ be
+the event that the sum of the rolls is $5$.
+Show that these events are independent.
+\end{probl}
+
+\begin{probl}{Conditional Maximum}
+Suppose that we roll a dice twice and that the first roll turns up
+$3$.  What is the probability that minimum of the two rolls is $4$?
+\end{probl}
+
+\begin{probl}{Conditional Minimum}
+Suppose that we roll a dice twice and that the first roll turns up
+$3$.  What is the probability that minimum of the two rolls is $5$?
+\end{probl}
+
+\begin{probl}{Marginal probability}
+Recall that we can calculate the marginal probability mass function
+for a random variable $X$ from the probability mass function for a
+pair of random variables $X$ and $Y$ defined on the same probabilistic
+model as
+\[
+\pmf{X}(x) = \sum{y}{\pmf{X,Y}(x,y)}.
+\]
+Prove that this equation is correct.
+\end{probl}
+\begin{answer}
+Proof:  
+\\
+Recall that $\pmf{X}(x) = \prob{\event{X}{x}}$.
+\\
+The latter can be written $\sum_{y}{\event{X}{x} \land \event{Y}{y}}$,
+because the events in the sum are disjoint. But this equation is
+identical to  $\sum{y}{\pmf{X,Y}(x,y)}$.
+\end{answer}
+
+\begin{probl}{Number of trials to success}
+Consider performing at most $n$ independent Bernoulli trials with a
+probability of success $p = 1/2$.  What is the conditional probability
+mass function for the Bernoulli random variable, i.e., number of
+trials, given that the experiments ends in success.  
+\end{probl}
+\begin{answer}
+Let $A$ be the event that there is success. 
+\[
+\prob{A} = \sum_{i = 1}^{n}{(1-p)^{i-1}\,p}.
+\]
+
+We thus have for all $0 \le x \le n$
+\[
+\pmf{X \given A}(x) = \frac {(1-p)^x p}{\prob{A}}.
+\]
+For $x$ outside this range $\pmf{X \given A}(x) = 0$.
+\end{answer}
+
+
+\begin{probl}{Expected maximum}
+What is the expected maximum value of throwing two dice?
+\end{probl}
+
+\begin{probl}{Independent dice}
+For throwing two dice, are the two random variables $X$ and $Y$ in
+\exref{rand::randvar} independent.
+\end{probl}
+
+
+\begin{probl}{Expectation of univariate function}
+Let $Y$ be a random variable defined as $Y = f(X)$ in terms of a
+real-value function of the random variable $X$. Prove that
+\[
+E[Y] = E[f(X)] = \sum_{x}{f(x) \pmf{X}(x)}.
+\]
+\end{probl}
+\begin{answer}
+Some straightforward manipulation of sums.
+\end{answer}
+
+
+

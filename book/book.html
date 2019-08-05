@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Umut A. Acar and Guy E. Blelloch" />
+  <title>Algorithms: Parallel and Sequential</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Algorithms: Parallel and Sequential</h1>
+<p class="author">Umut A. Acar and Guy E. Blelloch</p>
+<p class="date">February 2019</p>
+</header>
+<p>2019 Umut A. Acar and Guy E. Blelloch<br />
+All rights reserved. This book or any portion thereof may not be reproduced or used in any manner whatsoever without the express written permission of the copyright holders (authors) except for the use of brief quotations in a book review.</p>
+<p>Umut A. Acar<br />
+Carnegie Mellon University<br />
+Department of Computer Science GHC 9231<br />
+Pittsburgh PA 15213 USA</p>
+<p>Guy E. Blelloch<br />
+Carnegie Mellon University<br />
+Department of Computer Science GHC 9211<br />
+Pittsburgh PA 15213 USA</p>
+<h1 id="probability">Probability</h1>
+<h2 id="ch:probability::theory">Probability Theory</h2>
+<p>This chapter introduces the basics of discrete probability theory.</p>
+<h3 id="sec:probability::theory::spaces">Probability Spaces</h3>
+<p>Probability theory is a mathematical study of uncertain situations such as a dice game. In probability theory, we model a situation with an uncertain <span style="color: black"><span><strong><em>a</em></strong></span></span>s an  <span style="color: black"><span><strong><em>a</em></strong></span></span>nd reason carefully about the likelihood of various outcomes in precise mathematical terms.</p>
+<p>Suppose we have two <em>fair</em> dice, meaning that each is equally likely to land on any of its six sides. If we toss the dice, what is the chance that their numbers sum to <span class="math inline">\(4\)</span>? To determine the probability we first notice that there are a total of <span class="math inline">\(6 \times 6 = 36\)</span> distinct outcomes. Of these, only three outcomes sum to 4 (1 and 3, 2 and 2, and 3 and 1). The probability of the event that the number sum up to <span class="math inline">\(4\)</span> is therefore <span class="math display">\[\frac
+{\text{\# of outcomes that sum to}~4}
+{\text{\# of total possible outcomes}} 
+= 
+\frac{3}{36} = \frac{1}{12}\]</span></p>
+<p>A <span class="math inline">\(\Omega{}\)</span> is an arbitrary and possibly infinite (but countable) set of possible outcomes of a probabilistic experiment. Any experiment will return exactly one outcome from the set. For the dice game, the sample space is the 36 possible outcomes of the dice, and an experiment (roll of the dice) will return one of them. An <span style="color: black"><span><strong><em>i</em></strong></span></span>s any subset of <span class="math inline">\(\Omega\)</span>, and most often representing some property common to multiple outcomes. For example, an event could correspond to outcomes in which the dice add to <span class="math inline">\(4\)</span>—this subset would be of size <span class="math inline">\(3\)</span>. We typically denote events by capital letters from the start of the alphabet, e.g. <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>. We often refer to the individual elements of <span class="math inline">\(\Omega{}\)</span> as <span style="color: black"><span><strong><em>.</em></strong></span></span> We assign a probability to each event. Our model for probability is defined as follows.</p>
+<p><span id="def:probability::theory::probability-space" label="def:probability::theory::probability-space">[def:probability::theory::probability-space]</span></p>
+<p>A probability space consists of a <span class="math inline">\(\Omega{}\)</span> representing the set of possible outcomes, and a <span style="color: black"><span><strong><em>,</em></strong></span></span> which is a function <span class="math inline">\(\mathbf{P}\)</span> from all subsets of <span class="math inline">\(\Omega{}\)</span> (the <span style="color: black"><span><strong><em>)</em></strong></span></span> to a probability (real number). These must satisfy the following axioms.</p>
+<ul>
+<li><p><strong>Nonnegativity:</strong> <span class="math inline">\(\mathbf{P}\left[{A}\right] \in [0,1]\)</span>.</p></li>
+<li><p><strong>Additivity:</strong> for any two disjoint events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> (i.e., <span class="math inline">\(A \cap B = \emptyset\)</span>), <span class="math display">\[\mathbf{P}\left[{A \cup B}\right] =
+  \mathbf{P}\left[{A}\right] + \mathbf{P}\left[{B}\right]~.\]</span></p></li>
+<li><p><strong>Normalization:</strong> <span class="math inline">\(\mathbf{P}\left[{\Omega}\right] = 1\)</span>.</p></li>
+</ul>
+<p>Probability spaces can have countably infinite outcomes. The additivity rule generalizes to infinite sums, e.g., the probability of the event consisting of the union of infinitely many number of disjoint events is the infinite sum of the probability of each event.</p>
+<p>When defining the probability space, we have not specified carefully the exact nature of events, because they may differ based on the experiment and what we are interested in. We do, however, need to take care when setting up the probabilistic model so that we can reason about the experiment correctly. For example, each outcome of the sample space must correspond to one unique actual outcome of the experiment. In other words, they must be mutually exclusive. Similarly, any actual outcome of the experiment must have a corresponding representation in the sample space.</p>
+<p><span id="ex:probability::theory::dice" label="ex:probability::theory::dice">[ex:probability::theory::dice]</span></p>
+<p>For our example of throwing two dice, the sample space consists of all of the <span class="math inline">\(36\)</span> possible pairs of values of the dice: <span class="math display">\[\Omega= \{(1,1),(1,2),\ldots,(2,1),\ldots,(6,6)\}.\]</span> Each pair in the sample space corresponds to an outcome of the experiment. The outcomes are mutually exclusive and cover all possible outcomes of the experiment.</p>
+<p>For example, having the first dice show up <span class="math inline">\(1\)</span> and the second <span class="math inline">\(4\)</span> is an outcome and corresponds to the element <span class="math inline">\((1,4)\)</span> of the sample space <span class="math inline">\(\Omega\)</span>.</p>
+<p>The event that the “the first dice is 3” corresponds to the set <span class="math display">\[\begin{array}{lcl}
+  A &amp; = &amp; \left\{ (d_1,d_2) \in \Omega \;|\; d_1 = 3 \right\} \\
+  &amp; = &amp;  \{(3,1),(3,2),(3,3),(3,4),(3,5),(3,6)\}~.
+\end{array}\]</span> The event that “the dice sum to 4” corresponds to the set <span class="math display">\[\begin{array}{lcl}
+  B &amp; = &amp; \left\{ (d_1,d_2) \in \Omega \;|\; d_1 + d_2 = 4 \right\}\\
+  &amp; = &amp; \{(1,3),(2,2),(3,1)\}~.
+\end{array}\]</span></p>
+<p>Assuming the dice are unbiased, the probability measure is defined by all elementary events having equal probability, i.e., <span class="math display">\[\forall x \in \Omega,~~~\mathbf{P}\left[\{x\}\right] = \frac{1}{36}.\]</span></p>
+<p>The probability of the event <span class="math inline">\(A\)</span> (that the first dice is 3) is thus <span class="math display">\[\mathbf{P}\left[{A}\right] = \sum_{x \in A} \mathbf{P}\left[\{x\}\right] = \frac{6}{36} = \frac{1}{6}.\]</span></p>
+<p>If the dice were biased so the probability of a given value is proportional to that value, then the probability measure would be <span class="math inline">\(\mathbf{P}\left[\{(x,y)\}\right] = \frac{x}{21} \times \frac{y}{21}\)</span>, and the probability of the event <span class="math inline">\(B\)</span> (that the dice add to 4) would be <span class="math display">\[\mathbf{P}\left[{B}\right] = \sum_{x \in B} \mathbf{P}\left[\{x\}\right] = \frac{1 \times 3 + 2 \times 2
+  + 3 \times 1}{21 \times 21} = \frac{10}{441}.\]</span></p>
+<h3 id="sec:probability::theory::spaces-properties">Properties of Probability Spaces</h3>
+<p>Given a probability space, we can prove several properties of probability measures by using the three axioms that they must satisfy. For example, if for two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. We have</p>
+<ul>
+<li><p>if <span class="math inline">\(A \subseteq B\)</span>, then <span class="math inline">\(\mathbf{P}\left[{A}\right] \le \mathbf{P}\left[{B}\right]\)</span>,</p></li>
+<li><p><span class="math inline">\(\mathbf{P}\left[{A \cup B}\right] = \mathbf{P}\left[{A}\right]  + \mathbf{P}\left[{B}\right] -  \mathbf{P}\left[{A \cap B}\right]\)</span>.</p></li>
+</ul>
+<h4 id="sec:probability::theory::union-bound">The Union Bound</h4>
+<p>The union bound, also known as Boole’s inequality, is a simple way to obtain an upper bound on the probability of any of a collection of events happening. Specifically for a collection of events <span class="math inline">\(A_0, A_2, \ldots, A_{n-1}\)</span> the bound is: <span class="math display">\[\mathbf{P}\left[{\bigcup_{0 \leq i &lt; n} A_i}\right] \leq \sum_{i=0}^{n-1} \mathbf{P}\left[{A_i}\right]\]</span> This bound is true unconditionally. To see why the bound holds we note that the elementary events in the union on the left are all included in the sum on the right (since the union comes from the same set of events). In fact they might be included multiple times in the sum on the right, hence the inequality. In fact the sum on the right could add to more than one, in which case the bound is not useful. The union bound can be useful in generating high-probability bounds for algorithms. For example, when the probability of each of <span class="math inline">\(n\)</span> events is very low, e.g. <span class="math inline">\(1/n^5\)</span> and the sum remains very low, e.g. <span class="math inline">\(1/n^4\)</span>.</p>
+<h4 id="sec:probability::theory::conditional-pr">Conditional Probability</h4>
+<p>Conditional probability allows us to reason about dependencies between observations. For example, suppose that your friend rolled a pair of dice and told you that they sum up to <span class="math inline">\(6\)</span>, what is the probability that one of dice has come up <span class="math inline">\(1\)</span>? Conditional probability has many practical applications. For example, given that a medical test for a disease comes up positive, we might want to know the probability that the patient has the disease. Or, given that your computer has been working fine for the past 2 years, you might want to know the probability that it will continue working for one more year.</p>
+<p>For a given probability space, we define the <span style="color: black"><span><strong><em>o</em></strong></span></span>f an event <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, as the probability of <span class="math inline">\(A\)</span> occurring given that <span class="math inline">\(B\)</span> occurs as <span class="math display">\[\mathbf{P}\left[{A {\:\mid\:}B}\right] = \frac{\mathbf{P}\left[{A \cap B}\right]}{\mathbf{P}\left[{B}\right]}.\]</span></p>
+<p>The conditional probability measures the probability that the event <span class="math inline">\(A\)</span> occurs given that <span class="math inline">\(B\)</span> does. It is defined only when <span class="math inline">\(\mathbf{P}\left[{B}\right] &gt; 0\)</span>.</p>
+<p>Conditional probability satisfies the three axioms of probability measures and thus itself a probability measure. We can thus treat conditional probabilities just as ordinary probabilities. Intuitively, conditional probability can be thought as a focusing and re-normalization of the probabilities on the assumed event <span class="math inline">\(B\)</span>.</p>
+<p>Consider throwing two fair dice and calculate the probability that the first dice comes us <span class="math inline">\(1\)</span> given that the sum of the two dice is <span class="math inline">\(4\)</span>. Let <span class="math inline">\(A\)</span> be the event that the first dice comes up <span class="math inline">\(1\)</span> and <span class="math inline">\(B\)</span> the event that the sum is <span class="math inline">\(4\)</span>. We can write <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> in terms of outcomes as <span class="math display">\[\begin{array}{lll}
+A &amp; = &amp; \{ (1,1), (1,2), (1,3), (1,4), (1,5), (1,6) \}~\mbox{and}
+\\
+B &amp; = &amp; \{ (1,3), (2,2), (3,1) \}.
+\end{array}\]</span> We thus have <span class="math inline">\(A \cap B = \{ (1,3) \}\)</span>. Since each outcome is equally likely, <span class="math display">\[\mathbf{P}\left[{A {\:\mid\:}B}\right] = \frac{\mathbf{P}\left[{A \cap B}\right]}{\mathbf{P}\left[{B}\right]} 
+%
+= 
+%
+\frac{|A \cap B|}{|B|} = \frac{1}{3}.\]</span></p>
+<h4 id="sec:probability::theory::LTP">Law of Total Probability</h4>
+<p>Conditional probabilities can be useful in estimating the probability of an event that may depend on a selection of choices. The total probability theorem can be handy in such circumstances.</p>
+<p>Consider a probabilistic space with sample space <span class="math inline">\(\Omega\)</span> and let <span class="math inline">\(A_0, \ldots, A_{n-1}\)</span> be a partition of <span class="math inline">\(\Omega\)</span> such that <span class="math inline">\(\mathbf{P}\left[{A_i}\right] &gt;
+0\)</span> for all <span class="math inline">\(0 \le i &lt; n\)</span>. For any event <span class="math inline">\(B\)</span> the following holds: <span class="math display">\[\begin{array}{lll}
+\mathbf{P}\left[{B}\right] 
+&amp; = &amp; \displaystyle\sum_{i=0}^{n-1} \mathbf{P}\left[{B \cap A_i}\right]
+\\
+&amp; = &amp; 
+\displaystyle\sum_{i=0}^{n-1} \mathbf{P}\left[{A_i}\right]\mathbf{P}\left[{B  {\:\mid\:}A_i}\right]
+\end{array}\]</span></p>
+<p>Your favorite social network partitions your connections into two kinds, near and far. The social network has calculated that the probability that you react to a post by one of your far connections is <span class="math inline">\(0.1\)</span> but the same probability is <span class="math inline">\(0.8\)</span> for a post by one of your near connections. Suppose that the social network shows you a post by a near and far connection with probability <span class="math inline">\(0.6\)</span> and <span class="math inline">\(0.4\)</span> respectively.</p>
+<p>Let’s calculate the probability that you react to a post that you see on the network. Let <span class="math inline">\(A_0\)</span> and <span class="math inline">\(A_1\)</span> be the event that the post is near and far respectively. We have <span class="math inline">\(\mathbf{P}\left[{A_0}\right] = 0.6\)</span> and <span class="math inline">\(\mathbf{P}\left[{A_1}\right] = 0.4\)</span>. Let <span class="math inline">\(B\)</span> the event that you react, we know that <span class="math inline">\(\mathbf{P}\left[{B {\:\mid\:}A_0}\right] =
+0.8\)</span> and <span class="math inline">\(\mathbf{P}\left[{B {\:\mid\:}A_1}\right] = 0.1\)</span>.</p>
+<p>We want to calculate <span class="math inline">\(\mathbf{P}\left[{B}\right]\)</span>, which by total probability theorem we know to be <span class="math display">\[\begin{array}{lll}
+\mathbf{P}\left[{B}\right] 
+&amp; = &amp;   \mathbf{P}\left[{B \cap A_0}\right] + \mathbf{P}\left[{B \cap  A_1}\right] 
+\\
+&amp; = &amp;  \mathbf{P}\left[{A_0}\right]\mathbf{P}\left[{B {\:\mid\:}A_0}\right] + \mathbf{P}\left[{A_1}\right]\mathbf{P}\left[{B {\:\mid\:}A_1}\right]. 
+\\
+&amp; = &amp;  0.6 \cdot 0.8 +  0.4 \cdot 0.1
+\\
+&amp; = &amp;  0.52.
+\end{array}\]</span></p>
+<h4 id="sec:probability::theory::independence">Independence</h4>
+<p>It is sometimes important to reason about the dependency relationship between events. Intuitively we say that two events are independent if the occurrence of one does not affect the probability of the other. More precisely, we define independence as follows.</p>
+<p>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span style="color: black"><span><strong><em>i</em></strong></span></span>f <span class="math display">\[\mathbf{P}\left[{A \cap B}\right] = \mathbf{P}\left[{A}\right] \cdot \mathbf{P}\left[{B}\right].\]</span> We say that multiple events <span class="math inline">\(A_0, \dots, A_{n-1}\)</span> are <span style="color: black"><span><strong><em>i</em></strong></span></span>f and only if, for any non-empty subset <span class="math inline">\(I \subseteq \{0, \dots, n-1\}\)</span>, <span class="math display">\[\mathbf{P}\left[{\bigcap_{i \in I} A_i}\right] = \prod_{i\in I} \mathbf{P}\left[{A_i}\right].\]</span></p>
+<p>Recall that <span class="math inline">\(\mathbf{P}\left[{A {\:\mid\:}B}\right] = \frac{\mathbf{P}\left[{A \cap
+    B}\right]}{\mathbf{P}\left[{B}\right]}\)</span> when <span class="math inline">\(\mathbf{P}\left[{B}\right] &gt; 0\)</span>. Thus if <span class="math inline">\(\mathbf{P}\left[{A {\:\mid\:}B}\right] = \mathbf{P}\left[{A}\right]\)</span> then <span class="math inline">\(\mathbf{P}\left[{A \cap B}\right] = \mathbf{P}\left[{A}\right] \cdot \mathbf{P}\left[{B}\right]\)</span>. We can thus define independence in terms of conditional probability but this works only when <span class="math inline">\(\mathbf{P}\left[{B}\right] &gt; 0\)</span>.</p>
+<p>For two dice, the events <span class="math inline">\(A = \left\{ (d_1,d_2) \in
+  \Omega \;|\; d_1=1 \right\}\)</span> (the first dice is 1) and <span class="math inline">\(B = \left\{ (d_1,d_2) \in
+  \Omega \;|\; d_2=1 \right\}\)</span> (the second dice is 1) are independent since <span class="math display">\[\begin{array}{llccl}\
+&amp; \mathbf{P}\left[{A}\right] \times \mathbf{P}\left[{B}\right] &amp; = &amp; \frac{1}{6} \times \frac{1}{6} &amp; = \frac{1}{36} \\[4mm]
+= &amp; \mathbf{P}\left[{A \cap B}\right] &amp; = &amp; \mathbf{P}\left[{\left\{ (1,1) \right\}}\right] &amp; = \frac{1}{36}~.
+\end{array}\]</span> However, the event <span class="math inline">\(C \equiv \{X =4\}\)</span> (the dice add to 4) is not independent of <span class="math inline">\(A\)</span> since <span class="math display">\[\begin{array}{llccl}
+&amp; \mathbf{P}\left[{A}\right] \times \mathbf{P}\left[{C}\right] &amp; = &amp;\frac{1}{6} \times \frac{3}{36} &amp; = \frac{1}{72} \\[4mm]
+\neq &amp; \mathbf{P}\left[{A \cap C}\right] &amp; = &amp; \mathbf{P}\left[{\left\{ (1,3) \right\}}\right] &amp; = \frac{1}{36}~.
+\end{array}\]</span> <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> are not independent since the fact that the first dice is 1 increases the probability they sum to <span class="math inline">\(4\)</span> (from <span class="math inline">\(\frac{1}{12}\)</span> to <span class="math inline">\(\frac{1}{6}\)</span>).</p>
+<p>For two dice, let <span class="math inline">\(A\)</span> be the event that first roll is <span class="math inline">\(1\)</span> and <span class="math inline">\(B\)</span> be the event that the sum of the rolls is <span class="math inline">\(5\)</span>. Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent? Prove or disprove.</p>
+<p>Consider now the same question but this time define <span class="math inline">\(B\)</span> to be the event that the sum of the rolls is <span class="math inline">\(7\)</span>.</p>
+<h2 id="ch:probability::randvar">Random Variables</h2>
+<p>This chapter introduces the random variables and their use in probability theory.</p>
+<p><span id="def:probability::rv" label="def:probability::rv">[def:probability::rv]</span> A <span class="math inline">\(X\)</span> is a real-valued function on the outcomes of an experiment, i.e., <span class="math inline">\(X : \Omega\to \mathbb{R}\)</span>, i.e., it assigns a real number to each outcome. For a given probability space there can be many random variables, each keeping track of different quantities. We typically denote random variables by capital letters from the end of the alphabet, e.g. <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>. We say that a random variable is <span style="color: black"><span><strong><em>i</em></strong></span></span>f its range is finite or countable infinite. Throughout this book, we only consider discrete random variables.</p>
+<p>For throwing two dice, we can define random variable as the sum of the two dice <span class="math display">\[X(d_1,d_2) = d_1+d_2~,\]</span> the product of two dice <span class="math display">\[Y(d_1,d_2) = d_1 \times d_2~,\]</span> or the value of the first dice the two dice: <span class="math display">\[Z(d_1,d_2) = d_1~.\]</span></p>
+<p>A random variable is called an <span style="color: black"><span><strong><em>i</em></strong></span></span>f it takes on the value <span class="math inline">\(1\)</span> when some condition is true and <span class="math inline">\(0\)</span> otherwise.</p>
+<p>For throwing two dice, we can define indicator random variable as getting doubles <span class="math display">\[Y(d_1,d_2) =
+\left\{
+\begin{array}{ll}
+1 &amp; \mbox{if}~d_1 = d_2
+\\
+0 &amp; \mbox{if}~d_1 \not= d_2 ~.
+\end{array}
+\right.\]</span> Using our shorthand, the event <span class="math inline">\(\{X =4\}\)</span> corresponds to the event “the dice sum to 4”.</p>
+<p>For a random variable <span class="math inline">\(X\)</span> and a value <span class="math inline">\(x \in \mathbb{R}\)</span>, we use the following shorthand for the event corresponding to <span class="math inline">\(X\)</span> equaling <span class="math inline">\(x\)</span>: <span class="math display">\[\{X =x\} \equiv \left\{ y \in \Omega \;|\; X(y)  = x \right\}~,\]</span> and when applying the probability measure we use the further shorthand <span class="math display">\[\mathbf{P}\left[{X = x}\right] \equiv \mathbf{P}\left[{\{X =x\}}\right]~.\]</span></p>
+<p>For throwing two dice, and <span class="math inline">\(X\)</span> being a random variable representing the sum of the two dice, <span class="math inline">\(\{X =4\}\)</span> corresponds to the event “the dice sum to 4”, i.e. the set <span class="math display">\[\{y \in \Omega~|~X(y) = 4\} = \{(1,3),(2,2),(3,1)\}~.\]</span></p>
+<p>Assuming unbiased coins, we have that <span class="math display">\[\mathbf{P}\left[{X = 4}\right] = 1/12~.\]</span></p>
+<p>The term random variable might seem counter-intuitive since it is actually a function not a variable, and it is not really random since it is a well defined deterministic function on the sample space. However if you think of it in conjunction with the random experiment that selects a elementary event, then it is a variable that takes on its value based on a random process.</p>
+<h3 id="sec:probability::randvar::pmf">Probability Mass Function</h3>
+<p>For a discrete random variable <span class="math inline">\(X\)</span>, we define its <span style="color: black"><span><strong><em>o</em></strong></span></span>r <span style="color: black"><span><strong><em>,</em></strong></span></span> written <span class="math inline">\(\mathbf{P}_{X}(\cdot)\)</span>, for short as a function mapping each element <span class="math inline">\(x\)</span> in the range of the random variable to the probability of the event <span class="math inline">\(\{X =x\}\)</span>, i.e., <span class="math display">\[\mathbf{P}_{X}(x) = \mathbf{P}\left[{X = x}\right].\]</span></p>
+<p>The probability mass function for the indicator random variable <span class="math inline">\(X\)</span> indicating whether the outcome of a roll of dice is comes up even is <span class="math display">\[\begin{array}{lll}
+\mathbf{P}_{X}(0) = \mathbf{P}\left[{\{X =0\}}\right] = \mathbf{P}\left[{\{1, 3, 5\}}\right] =
+1/2,~\mbox{and}
+\\
+\mathbf{P}_{X}(1) = \mathbf{P}\left[{\{X =1\}}\right] = \mathbf{P}\left[{\{2, 4, 6\}}\right] =
+1/2.
+\end{array}\]</span></p>
+<p>The probability mass function for the random variable <span class="math inline">\(X\)</span> that maps each outcome in a roll of dice to the smallest Mersenne prime number no less than the outcome is <span class="math display">\[\begin{array}{lll}
+\mathbf{P}_{X}(3) = \mathbf{P}\left[{\{X =3\}}\right] = \mathbf{P}\left[{\{1, 2, 3\}}\right] =
+1/2,~\mbox{and}
+\\
+\mathbf{P}_{X}(7) = \mathbf{P}\left[{\{X =7\}}\right] = \mathbf{P}\left[{\{4, 5, 6\}}\right] =
+1/2.
+\end{array}\]</span></p>
+<p>Note that much like a probability measure, a probability mass function is a non-negative function. It is also additive in a similar sense: for any distinct <span class="math inline">\(x\)</span> and <span class="math inline">\(x&#39;\)</span>, the events <span class="math inline">\(\{X =x\}\)</span> and <span class="math inline">\(\{X =x&#39;\}\)</span> are disjoint. Thus for any set <span class="math inline">\(\bar{x}\)</span> of values of <span class="math inline">\(X\)</span>, we have <span class="math display">\[\mathbf{P}\left[{X \in \bar{x}}\right] = \sum_{x \in \bar{x}}{\mathbf{P}_{X}(x)}.\]</span> Furthermore, since <span class="math inline">\(X\)</span> is a function on the sample space, the events corresponding to the different values of <span class="math inline">\(X\)</span> partition the sample space, and we have <span class="math display">\[\sum_{x}{\mathbf{P}_{X}(x)} = 1.\]</span> These are the important properties of probability mass functions: they are non-negative, normalizing, and are additive in a certain sense.</p>
+<p>We can also compute the probability mass function for multiple random variables defined for the same probability space. For example, the <span style="color: black"><span><strong><em>f</em></strong></span></span>or two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, written <span class="math inline">\(\mathbf{P}_{X,Y}(x,y)\)</span> denotes the probability of the event <span class="math inline">\(\{X =x\} \cap \{Y =y\}\)</span>, i.e., <span class="math display">\[\mathbf{P}_{X,Y}(x,y) = \mathbf{P}\left[{\{X =x\} \cap \{Y =y\}}\right] = \mathbf{P}\left[{X = x, Y = y}\right].\]</span> Here <span class="math inline">\(\mathbf{P}\left[{X = x, Y = y}\right]\)</span> is shorthand for <span class="math inline">\(\mathbf{P}\left[{\{X =x\} \cap \{Y =y\}}\right]\)</span>.</p>
+<p>In our analysis or randomized algorithms, we shall repeatedly encounter a number of well-known random variables and create new ones from existing ones by composition.</p>
+<h3 id="sec:probability::randvar::standards">Bernoulli, Binomial, and Geometric RVs</h3>
+<p>Suppose that we toss a coin that comes up a head with probability <span class="math inline">\(p\)</span> and a tail with probability <span class="math inline">\(1-p\)</span>. The <span style="color: black"><span><strong><em>t</em></strong></span></span>akes the value <span class="math inline">\(1\)</span> if the coin comes up heads and <span class="math inline">\(0\)</span> if it comes up tails. In other words, it is an indicator random variable indicating heads. Its probability mass function is <span class="math display">\[\mathbf{P}_{X}(x) = 
+\left\{
+\begin{array}{ll}
+p &amp; \mbox{if}~x = 1
+\\
+1-p &amp; \mbox{if}~x = 0.
+\end{array}
+\right.\]</span></p>
+<p>Consider <span class="math inline">\(n\)</span> Bernoulli trials with probability <span class="math inline">\(p\)</span>. We call the random variable <span class="math inline">\(X\)</span> denoting the number of heads in the <span class="math inline">\(n\)</span> trials as the <span style="color: black"><span><strong><em>.</em></strong></span></span> Its probability mass function for any <span class="math inline">\(0 \le x \le n\)</span> is <span class="math display">\[\mathbf{P}_{X}(x) = {n \choose x}\,p^x\,(1-p)^{n-x}.\]</span></p>
+<p>Consider performing Bernoulli trials with probability <span class="math inline">\(p\)</span> until the coin comes up heads and <span class="math inline">\(X\)</span> denote the number of trials needed to observe the first head. The random variable <span class="math inline">\(X\)</span> is called the <span style="color: black"><span><strong><em>.</em></strong></span></span> Its probability mass function for any <span class="math inline">\(0 \le x\)</span> is <span class="math display">\[\mathbf{P}_{X}(x) = (1-p)^{x-1} p.\]</span></p>
+<h3 id="sec:probability::randvar::functionsof">Functions of Random Variables</h3>
+<p>It is often useful to “apply” a function to one or more random variables to generate a new random variable. Specifically if we a function <span class="math inline">\(f : \mathbb{R} \rightarrow \mathbb{R}\)</span> and a random variable <span class="math inline">\(X\)</span> we can compose the two giving a new random variable: <span class="math display">\[Y(x) = f(X(x))\]</span> We often write this shorthand as <span class="math inline">\(Y = f(X)\)</span>. Similarly for two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> we write <span class="math inline">\(Z = X + Y\)</span> as shorthand for <span class="math display">\[Z(x) = X(x) + Y(x)\]</span> or equivalently <span class="math display">\[Z = \lambda x . (X(x) + Y(x))\]</span></p>
+<p>The probability mass function for the new variable can be computed by “massing” the probabilities for each value. For example, for a function of a random variable <span class="math inline">\(Y = f(X)\)</span>, we can write the probability mass function as <span class="math display">\[\mathbf{P}_{Y}(y) = \mathbf{P}\left[{Y = y}\right] = \sum_{x ~\mid~f(x) = y}{\mathbf{P}_{X}(x)}~.\]</span></p>
+<p>Let <span class="math inline">\(X\)</span> be a Bernoulli random variable with parameter <span class="math inline">\(p\)</span>. We can define a new random variable <span class="math inline">\(Y\)</span> as a transformation of <span class="math inline">\(X\)</span> by a function <span class="math inline">\(f(\cdot)\)</span>. For example, <span class="math inline">\(Y = f(X) = 9X + 3\)</span> is random variable that transforms <span class="math inline">\(X\)</span>, e.g., <span class="math inline">\(X = 1\)</span> would be transformed to <span class="math inline">\(Y
+= 12\)</span>. The probability mass function for <span class="math inline">\(Y\)</span> reflects that of <span class="math inline">\(X\)</span>, Its probability mass function is <span class="math display">\[\mathbf{P}_{Y}(y) = 
+\left\{
+\begin{array}{ll}
+p &amp; \mbox{if}~y = 12
+\\
+1-p &amp; \mbox{if}~y = 3.
+\end{array}
+\right.\]</span></p>
+<p>Consider the random variable <span class="math inline">\(X\)</span> with the probability mass function <span class="math display">\[\mathbf{P}_{X}(x) = 
+\left\{
+\begin{array}{lll}
+0.25  &amp; \mbox{if} &amp; x = -2
+\\
+0.25  &amp; \mbox{if} &amp; x = -1
+\\
+0.25  &amp; \mbox{if} &amp; x = 0
+\\
+0.25  &amp; \mbox{if} &amp; x = 1
+\end{array}
+\right.\]</span></p>
+<p>We can calculate the probability mass function for the random variable <span class="math inline">\(Y = X^2\)</span> as follows <span class="math inline">\(\mathbf{P}_{Y}(y) = \sum_{x ~\mid~x^2 =
+  y}\mathbf{P}_{X}(x)\)</span>. This yields <span class="math display">\[\mathbf{P}_{Y}(y) = 
+\left\{
+\begin{array}{lll}
+0.25  &amp; \mbox{if} &amp; y = 0
+\\
+0.5  &amp; \mbox{if} &amp; y = 1
+\\
+0.25  &amp; \mbox{if} &amp; y = 4.
+\end{array}
+\right.\]</span></p>
+<h3 id="sec:probability::randvar::conditioning">Conditioning</h3>
+<p>In the same way that we can condition an event on another, we can also condition a random variable on an event or on another random variable. Consider a random variable <span class="math inline">\(X\)</span> and an event <span class="math inline">\(A\)</span> in the same probability space, we define the <span style="color: black"><span><strong><em>o</em></strong></span></span>f <span class="math inline">\(X\)</span> conditioned on <span class="math inline">\(A\)</span> as <span class="math display">\[\mathbf{P}_{X {\:\mid\:}A} = \mathbf{P}\left[{X = x {\:\mid\:}A}\right] = \frac{\mathbf{P}\left[{\{X =x\} \cap A}\right]}{\mathbf{P}\left[{A}\right]}.\]</span> Since for different values of <span class="math inline">\(x\)</span>, <span class="math inline">\(\{X =x\} \cap A\)</span>’s are disjoint and since <span class="math inline">\(X\)</span> is a function over the sample space, conditional probability mass functions are normalizing just like ordinary probability mass functions, i.e., <span class="math inline">\(\mathbf{P}_{X {\:\mid\:}A}(x) = 1\)</span>. Thus just as we can treat conditional probabilities as ordinary probabilities, we can treat conditional probability mass functions also as ordinary probability mass functions.</p>
+<p>Roll a pair of dice and let <span class="math inline">\(X\)</span> be the sum of the face values. Let <span class="math inline">\(A\)</span> be the event that the second roll came up <span class="math inline">\(6\)</span>. We can find the conditional probability mass function <span class="math display">\[\begin{array}{lll}
+\mathbf{P}_{X {\:\mid\:}A}(x) &amp; = &amp; \frac{\mathbf{P}\left[{\{X =x\} \cap A}\right]}{\mathbf{P}\left[{A}\right]}
+\\
+&amp; = &amp; 
+\left\{
+\begin{array}{ll}
+\frac{1/36}{1/6} = 1/6 &amp; \mbox{if}~x = 7,  \ldots, 12.
+\\
+0 &amp; \mbox{otherwise}
+\end{array}
+\right.
+\end{array}\]</span></p>
+<p>Since random variables closely correspond with events, we can condition a random variable on another. More precisely, let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables defined on the same probability space. We define the <span style="color: black"><span><strong><em>o</em></strong></span></span>f <span class="math inline">\(X\)</span> with respect to <span class="math inline">\(Y\)</span> as <span class="math display">\[\begin{array}{l}
+\mathbf{P}_{X {\:\mid\:}Y}(x {\:\mid\:}y) = \mathbf{P}\left[{X = x {\:\mid\:}Y = y}\right].
+\end{array}\]</span></p>
+<p>We can rewrite this as <span class="math display">\[\begin{array}{lll}
+\mathbf{P}_{X {\:\mid\:}{} Y}(x {\:\mid\:}{} y) 
+&amp; = &amp; \mathbf{P}\left[{X = x {\:\mid\:}{} Y = y}\right]
+\\[2mm]
+&amp; = &amp; \frac{\mathbf{P}\left[{X = x, Y = y}\right]}{\mathbf{P}\left[{Y = y}\right]}
+\\[2mm]
+&amp; = &amp; \frac{\mathbf{P}_{X,Y}(x,y)}{\mathbf{P}_{Y}{y}}.
+\end{array}\]</span></p>
+<p>Consider the function <span class="math inline">\(\mathbf{P}_{X {\:\mid\:}Y}(x {\:\mid\:}y)\)</span> for a fixed value of <span class="math inline">\(y\)</span>. This is a non-negative function of <span class="math inline">\(x\)</span>, the event corresponding to different values of <span class="math inline">\(x\)</span> are disjoint, and they partition the sample space, the conditional mass functions are normalizing <span class="math display">\[\sum_{x}{\mathbf{P}_{X {\:\mid\:}Y}(x {\:\mid\:}y)} = 1.\]</span> Conditional probability mass functions thus share the same properties as probability mass functions.</p>
+<p>By direct implication of its definition, we can use conditional probability mass functions to calculate joint probability mass functions as follows <span class="math display">\[\begin{array}{lll}
+\mathbf{P}_{X,Y}(x,y) = \mathbf{P}_{X}(x) \mathbf{P}_{Y {\:\mid\:}X}(y {\:\mid\:}x)
+\\
+\mathbf{P}_{X,Y}(x,y) = \mathbf{P}_{Y}(y) \mathbf{P}_{X {\:\mid\:}Y}(x {\:\mid\:}y).
+\end{array}\]</span></p>
+<p>As we can compute total probabilities from conditional ones as we saw earlier in this section, we can calculate marginal probability mass functions from conditional ones: <span class="math display">\[\mathbf{P}_{X}(x) = \sum_{y}{\mathbf{P}_{X,Y}(x,y)} = \sum_{y}{\mathbf{P}_{Y}(y)\mathbf{P}_{X {\:\mid\:}Y}(x {\:\mid\:}y)}.\]</span></p>
+<h3 id="sec:probability::randvar::independence">Independence</h3>
+<p>As with the notion of independence between events, we can also define independence between random variables and events. We say that a random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(A\)</span>, if <span class="math display">\[\mbox{for all}~x: \mathbf{P}\left[{\{X =x\} \cap A}\right] = \mathbf{P}\left[{X = x}\right] \cdot \mathbf{P}\left[{A}\right]~.
+%= \pmf{X}(x) \prob{A}.\]</span> When <span class="math inline">\(\mathbf{P}\left[{A}\right]\)</span> is positive, this is equivalent to <span class="math display">\[\mathbf{P}_{X {\:\mid\:}A} (x) = \mathbf{P}_{X}(x).\]</span></p>
+<p>Generalizing this to a pair of random variables, we say a random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(Y\)</span> if <span class="math display">\[\mbox{for all}~x, y: \mathbf{P}\left[{X = x, Y = y}\right] = \mathbf{P}\left[{X = x}\right] \cdot \mathbf{P}\left[{Y = y}\right]\]</span> or equivalently <span class="math display">\[\mbox{for all}~x, y: \mathbf{P}_{X,Y}(x,y) = \mathbf{P}_{X}(x) \cdot \mathbf{P}_{Y}(y).\]</span></p>
+<p>In our two dice example, a random variable <span class="math inline">\(X\)</span> representing the value of the first dice and a random variable <span class="math inline">\(Y\)</span> representing the value of the second dice are independent. However <span class="math inline">\(X\)</span> is not independent of a random variable <span class="math inline">\(Z\)</span> representing the sum of the values of the two dice.</p>
+<h2 id="ch:probability::expectation">Expectation</h2>
+<p>This chapter introduces expectation and its use in probability theory.</p>
+<h3 id="definitions">Definitions</h3>
+<p>The <span style="color: black"><span><strong><em>o</em></strong></span></span>f a random variable <span class="math inline">\(X\)</span> in a probability space <span class="math inline">\((\Omega,\mathbf{P}{})\)</span> is the sum of the random variable over the elementary events weighted by their probability, specifically: <span class="math display">\[\mathbf{E}_{\Omega,\mathbf{P}}[X] = \sum_{y \in \Omega} X(y) \cdot
+\mathbf{P}\left[\{y\}\right].\]</span> For convenience, we usually drop the <span class="math inline">\((\Omega,\mathbf{P}\left[{}\right])\)</span> subscript on <span class="math inline">\(\mathbf{E}\)</span> since it is clear from the context.</p>
+<p><span id="ex:probability::expectation::dice" label="ex:probability::expectation::dice">[ex:probability::expectation::dice]</span> Assuming unbiased dice (<span class="math inline">\(\mathbf{P}\left[{(d_1,d_2)}\right] = 1/36\)</span>), the expectation of the random variable <span class="math inline">\(X\)</span> representing the sum of the two dice is: <span class="math display">\[\mathbf{E}\left[{X}\right] = \sum_{(d_1,d_2) \in \Omega} X(d_1,d_2)
+\times \frac{1}{36} = \sum_{(d_1,d_2) \in \Omega} \frac{d_1+d_2}{36} =
+7.\]</span> If we bias the coins so that for each dice the probability that it shows up with a particular value is proportional to the value, we have <span class="math inline">\(\mathbf{P}\left[{(d_1,d_2)}\right] = (d_1/21) \times (d_2/21)\)</span> and: <span class="math display">\[\mathbf{E}\left[{X}\right] = \sum_{(d_1,d_2) \in \Omega} \left((d_1+d_2) \times \frac{d_1}{21}\times\frac{d_2}{21}\right) = 8\; \frac{2}{3}.\]</span></p>
+<p>It is usually more natural to define expectations in terms of the probability mass function of the random variable <span class="math display">\[\mathbf{E}\left[{X}\right] = \sum_{x} x \cdot \mathbf{P}_{X}(x).\]</span></p>
+<p>The expectation of an indicator random variable <span class="math inline">\(X\)</span> is the probability that the associated predicate is true (i.e. that <span class="math inline">\(X= 1\)</span>): <span class="math display">\[\begin{aligned}
+\mathbf{E}\left[{X}\right] 
+&amp; = &amp; 0 \cdot \mathbf{P}_{X}(0) + 1 \cdot \mathbf{P}_{X}(1).
+\\
+&amp; = &amp; \mathbf{P}_{X}(1).\end{aligned}\]</span></p>
+<p>Recall that the probability mass function for a Bernoulli random variable is <span class="math display">\[\mathbf{P}_{X}(x) = 
+\left\{
+\begin{array}{ll}
+p &amp; \mbox{if}~x = 1
+\\
+1-p &amp; \mbox{if}~x = 0.
+\end{array}
+\right.\]</span></p>
+<p>Its expectation is thus <span class="math display">\[E[X] = p \cdot 1 + (1-p) \cdot 0 = p.\]</span></p>
+<p>Recall that the probability mass function for geometric random variable <span class="math inline">\(X\)</span> with parameter <span class="math inline">\(p\)</span> is <span class="math display">\[\mathbf{P}_{X}(x) = (1-p)^{x-1} p.\]</span></p>
+<p>The expectation of <span class="math inline">\(X\)</span> is thus <span class="math display">\[\begin{array}{lll}
+E[X] &amp; = &amp; \displaystyle\sum_{x = 1}^{\infty}{x \cdot (1-p)^{x-1} p}
+\\
+&amp; = &amp;  p\cdot \displaystyle\sum_{x = 1}^{\infty}{x \cdot (1-p)^{x-1}}
+\end{array}\]</span></p>
+<p>Bounding this sum requires some basic manipulation of sums. Let <span class="math inline">\(q = (1-p)\)</span> and rewrite the sum as <span class="math inline">\(p \cdot \sum_{x = 0}^{\infty}{xq^{x-1}}\)</span>. Note now the term <span class="math inline">\(xq^{x-1}\)</span> is the derivative of <span class="math inline">\(q^{x}\)</span> with respect to <span class="math inline">\(q\)</span>. Since the sum <span class="math inline">\(\sum_{x=0}^{\infty}{q^x} = 1/(1-q)\)</span>, its derivative is <span class="math inline">\(1/(1-q)^2 = 1/p^2\)</span>. We thus have conclude that <span class="math inline">\(E[X] = 1/p\)</span>.</p>
+<p>Consider performing two Bernoulli trials with probability of success <span class="math inline">\(1/4\)</span>. Let <span class="math inline">\(X\)</span> be the random variable denoting the number of heads.</p>
+<p>The probability mass function for <span class="math inline">\(X\)</span> is <span class="math display">\[\mathbf{P}_{X}(x) = 
+\left\{
+\begin{array}{ll}
+9/16 &amp; \mbox{if}~x = 0
+\\
+3/8 &amp; \mbox{if}~x = 1
+\\
+1/16 &amp; \mbox{if}~x = 2.
+\end{array}
+\right.\]</span></p>
+<p>Thus <span class="math inline">\(\mathbf{E}\left[{X}\right] = 0 + 1 \cdot 3/8 + 2 * 1/16 = 7/8\)</span>.</p>
+<h3 id="sec:probability::expectation::markov">Markov’s Inequality</h3>
+<p>Consider a non-negative random variable <span class="math inline">\(X\)</span>. We can ask how much larger can <span class="math inline">\(X\)</span>’s maximum value be than its expected value. With small probability it can be arbitrarily much larger. However, since the expectation is taken by averaging <span class="math inline">\(X\)</span> over all outcomes, and it cannot take on negative values, <span class="math inline">\(X\)</span> cannot take on a much larger value with significant probability. If it did it would contribute too much to the sum.</p>
+<p>More generally <span class="math inline">\(X\)</span> cannot be a multiple of <span class="math inline">\(\beta\)</span> larger than its expectation with probability greater than <span class="math inline">\(1/\beta\)</span>. This is because this part on its own would contribute more than <span class="math inline">\(\beta \mathbf{E}\left[{X}\right]
+\times \frac{1}{\beta} = \mathbf{E}\left[{X}\right]\)</span> to the expectation, which is a contradiction. This gives us for a non-negative random variable <span class="math inline">\(X\)</span> the inequality: <span class="math display">\[\mathbf{P}\left[{X \geq \beta\mathbf{E}\left[{X}\right]}\right] \leq \frac{1}{\beta}\]</span> or equivalently (by substituting <span class="math inline">\(\beta = \alpha/\mathbf{E}\left[{X}\right]\)</span>), <span class="math display">\[\mathbf{P}\left[{X \geq \alpha}\right] \leq \frac{\mathbf{E}\left[{X}\right]}{\alpha}\]</span> which is known as Markov’s inequality.</p>
+<h3 id="sec:probability::expectation::compose">Composing Expectations</h3>
+<p>Recall that functions or random variables are themselves random variables (defined on the same probability space), whose probability mass functions can be computed by considering the random variables involved. We can thus also compute the expectation of a random variable defined in terms of others. For example, we can define a random variable <span class="math inline">\(Y\)</span> as a function of another variable <span class="math inline">\(X\)</span> as <span class="math inline">\(Y = f(X)\)</span>. The expectation of such a random variable can be calculated by computing the probability mass function for <span class="math inline">\(Y\)</span> and then applying the formula for expectations. Alternatively, we can compute the expectation of a function of a random variable <span class="math inline">\(X\)</span> directly from the probability mass function of <span class="math inline">\(X\)</span> as <span class="math display">\[E[Y] = E[f(X)] = \sum_{x}{f(x) \mathbf{P}_{X}(x)}.\]</span></p>
+<p>Similarly, we can calculate the expectation for a random variable <span class="math inline">\(Z\)</span> defined in terms of other random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> defined on the same probability space, e.g., <span class="math inline">\(Z = g(X,Y)\)</span>, as computing the probability mass function for <span class="math inline">\(Z\)</span> or directly as <span class="math display">\[E[Z] = E[g(X,Y)] = \sum_{x,y}{g(x,y) \mathbf{P}_{X,Y}(x,y)}.\]</span> These formulas generalize to function of any number of random variables.</p>
+<h3 id="sec:probability::expectation::linearity">Linearity of Expectations</h3>
+<p>An important special case of functions of random variables is the linear functions. For example, let <span class="math inline">\(Y = f(X) = aX + b\)</span>, where <span class="math inline">\(a, b
+\in \mathbb{R}\)</span>. <span class="math display">\[\begin{array}{lll}
+\mathbf{E}\left[{Y}\right] = \mathbf{E}\left[{f(X)}\right] 
+&amp; = &amp; \mathbf{E}\left[{aX + b}\right] 
+\\
+&amp; = &amp; \sum_{x}{f(x) \mathbf{P}_{X}(x)}
+\\
+&amp; = &amp; \sum_{x}{(ax + b) \mathbf{P}_{X}(x)}
+\\
+&amp; = &amp; a\sum_{x}{x\mathbf{P}_{X}(x)} + b\sum_{x}{\mathbf{P}_{X}(x)}
+\\
+&amp; = &amp; a\mathbf{E}\left[{X}\right] + b.
+\end{array}\]</span></p>
+<p>Similar to the example, above we can establish that the linear combination of any number of random variables can be written in terms of the expectations of the random variables. For example, let <span class="math inline">\(Z = aX
++ bY + c\)</span>, where <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two random variables. We have <span class="math display">\[\mathbf{E}\left[{Z}\right] = \mathbf{E}\left[{aX + bY + c}\right] = a\mathbf{E}\left[{X}\right] + b \mathbf{E}\left[{Y}\right] + c.\]</span></p>
+<p>The proof of this statement is relatively simple. <span class="math display">\[\begin{array}{lll}
+\mathbf{E}\left[{Z}\right] &amp; = &amp; \mathbf{E}\left[{aX + bY + c}\right] 
+\\
+&amp; = &amp; \sum_{x,y}{(ax + by + c) \mathbf{P}_{X,Y}(x,y)}
+\\
+&amp; = &amp; a\sum_{x,y}{x \mathbf{P}_{X,Y}(x,y)} + b\sum_{x,y}{y \mathbf{P}_{X,Y}(x,y)} + \sum_{x,y}{c \mathbf{P}_{X,Y}(x,y)}
+\\
+&amp; = &amp; a\sum_{x}\sum_{y}{x \mathbf{P}_{X,Y}(x,y)} + b\sum_{y}\sum_x{y  \mathbf{P}_{X,Y}(x,y)} + \sum_{x,y}{c \mathbf{P}_{X,Y}(x,y)}
+\\
+&amp; = &amp; a\sum_{x}x\sum_{y}{\mathbf{P}_{X,Y}(x,y)} + b\sum_{y} y \sum_x{\mathbf{P}_{X,Y}(x,y)} + \sum_{x,y}{c \mathbf{P}_{X,Y}(x,y)}
+\\
+&amp; = &amp; a\sum_{x}x{\mathbf{P}_{X}(x) + b\sum_{y} y \mathbf{P}_{Y}(y)} + c
+\\
+&amp; = &amp; a \mathbf{E}\left[{X}\right] + b \mathbf{E}\left[{Y}\right] + c.
+\end{array}\]</span></p>
+<p>An interesting consequence of this proof is that the random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> do not have to be defined on the same probability space. They can be defined for different experiments and their expectation can still be summed. To see why note that we can define the joint probability mass function <span class="math inline">\(\mathbf{P}_{X,Y}(x,y)\)</span> by taking the Cartesian product of the sample spaces of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and spreading probabilities for each arbitrarily as long as the marginal probabilities, <span class="math inline">\(\mathbf{P}_{X}(x)\)</span> and <span class="math inline">\(\mathbf{P}_{Y}(y)\)</span> remain unchanged.</p>
+<p>The property illustrated by the example above is known as the <span style="color: black"><span><strong><em>.</em></strong></span></span> The linearity of expectations is very powerful often greatly simplifying analysis. The reasoning generalizes to the linear combination of any number of random variables.</p>
+<p>Linearity of expectation occupies a special place in probability theory, the idea of replacing random variables with their expectations in other mathematical expressions do not generalize. Probably the most basic example of this is multiplication of random variables. We might ask is <span class="math inline">\(\mathbf{E}\left[{X}\right] \times \mathbf{E}\left[{Y}\right] = \mathbf{E}\left[{X \times
+  Y}\right]\)</span>? It turns out it is true when <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, but otherwise it is generally not true. To see that it is true for independent random variables we have (we assume <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> range over the values of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> respectively):</p>
+<p><span class="math display">\[\begin{array}{lcl}
+\mathbf{E}\left[{X}\right] \times \mathbf{E}\left[{Y}\right] &amp; = &amp; \left(\sum_{x} x \mathbf{P}\left[{\{X =x\}}\right]\right) \left(\sum_{y} y \mathbf{P}\left[{\{Y =y\}}\right]\right)\\
+% &amp; = &amp; \sum_x \sum_y (x \prob{\event{X}{x}} \times y \prob{\event{Y}{y}}) \\
+ &amp; = &amp; \sum_x \sum_y (x y \mathbf{P}\left[{\{X =x\}}\right] \mathbf{P}\left[{\{Y =y\}}\right]) \\
+ &amp; = &amp; \sum_x \sum_y (x y \mathbf{P}\left[{\{X =x\} \cap \{Y =y\}}\right])~~~\mbox{due to independence} \\
+ &amp; = &amp; \mathbf{E}\left[{X \times Y}\right]
+\end{array}\]</span> For example, the expected value of the product of the values on two (independent) dice is therefore <span class="math inline">\(3.5 \times 3.5 = 12.25\)</span>.</p>
+<p>In , we analyzed the expectation on <span class="math inline">\(X\)</span>, the sum of the two dice, by summing across all 36 elementary events. This was particularly messy for the biased dice. Using linearity of expectations, we need only calculate the expected value of each dice, and then add them. Since the dice are the same, we can in fact just multiply by two. For example for the biased case, assuming <span class="math inline">\(X_1\)</span> is the value of one dice:</p>
+<p><span class="math display">\[\begin{array}{lcl}
+\mathbf{E}\left[{X}\right]  &amp; =  &amp; 2 \mathbf{E}\left[{X_1}\right] 
+\\
+ &amp; = &amp; 2 \times \sum_{d \in \{1,2,3,4,5,6\}} d \times \frac{d}{21}
+\\
+ &amp; = &amp; 2 \times \frac{1 + 4 + 9 + 16 + 25 + 36}{21}
+\\
+ &amp; = &amp; 8 \; \frac{2}{3}~.
+\end{array}\]</span></p>
+<h3 id="conditional-expectation">Conditional Expectation</h3>
+<p>We define the conditional expectation of a random variable <span class="math inline">\(X\)</span> for a given value <span class="math inline">\(y\)</span> of <span class="math inline">\(Y\)</span> as <span class="math display">\[\mathbf{E}\left[{X {\:\mid\:}Y = y}\right] = \sum_{x}{x \mathbf{P}_{X | Y}(x {\:\mid\:}y)}.\]</span></p>
+<p><span id="thm:probability::expectation::tet" label="thm:probability::expectation::tet">[thm:probability::expectation::tet]</span> The expectation of a random variable can be calculated by “averaging” over its conditional expectation given another random variable: <span class="math display">\[\mathbf{E}\left[{X}\right] = \sum_{y}{\mathbf{P}_{Y}(y) \mathbf{E}\left[{X {\:\mid\:}Y = y}\right]}.\]</span></p>
+<h1 id="graph-contraction-and-applications">Graph Contraction and Applications</h1>
+<h2 id="ch:graphcon::intro">Introduction</h2>
+<p><span id="graphcon::intro::motivate" label="graphcon::intro::motivate">[graphcon::intro::motivate]</span> In earlier chapters, we have mostly covered techniques for solving problems on graphs that were developed in the context of sequential algorithms. Some of the algorithms we considered were parallel while others were not. For example, we saw that</p>
+<p>has some parallelism since each level can be explored in parallel but there was no parallelism in</p>
+<p>. There was no parallelism in</p>
+<p>, but there was plenty of parallelism in the</p>
+<p>and</p>
+<p>.</p>
+<p>In this part of the book, we cover the “graph contraction” technique. This technique was specifically designed to be used in parallel algorithms and allows obtaining poly-logarithmic span for certain graph problems. This chapter presents an overview of graph contraction. The following chapters present two specializations</p>
+<p>and</p>
+<p>of graph contraction, and apply the technique to</p>
+<p>.</p>
+<h3 id="sec:graphcon::intro::prelim">Preliminaries</h3>
+<p><span id="graphcon::intro::prelim::terminology" label="graphcon::intro::prelim::terminology">[graphcon::intro::prelim::terminology]</span> The material here and the followup chapters on graph contraction relies on the graph terminology introduced in the background</p>
+<p>.</p>
+<p><span id="def:graphcon::intro::prelim::graph-partition" label="def:graphcon::intro::prelim::graph-partition">[def:graphcon::intro::prelim::graph-partition]</span> Given a graph <span class="math inline">\(G\)</span>, a  <span style="color: black"><span><strong><em>o</em></strong></span></span>f <span class="math inline">\(G\)</span> is a collection of graphs <span class="math display">\[H_0 = (V_0, E_0), \ldots, H_{k-1} = (V_{k-1}, E_{k-1}),\]</span> such that <span class="math inline">\(\{V_0, \ldots, V_{k-1}\}\)</span> is a set partition of <span class="math inline">\(V\)</span> and <span class="math inline">\(H_0, \ldots, H_{k-1}\)</span> are</p>
+<p>of <span class="math inline">\(G\)</span> with respect to <span class="math inline">\(V_0, \ldots, V_{k-1}\)</span>.</p>
+<p>We refer to each subgraph <span class="math inline">\(H_i\)</span> as a  <span style="color: black"><span><strong><em>o</em></strong></span></span>r  <span style="color: black"><span><strong><em>o</em></strong></span></span>f <span class="math inline">\(G\)</span>.</p>
+<p><span id="def:graphcon::intro::prelim::edges" label="def:graphcon::intro::prelim::edges">[def:graphcon::intro::prelim::edges]</span> Given a partition <span class="math inline">\(H_0 = (V_0, E_0), \ldots, H_{k-1} = (V_{k_1}, E_{k-1})\)</span> of a graph <span class="math inline">\(G = (V, E)\)</span>, we define two kinds of edges: internal edges and cut edges.</p>
+<ul>
+<li><p>We call an edge <span class="math inline">\(\{v_1,v_2\}\)</span> an  <span style="color: black"><span><strong><em>,</em></strong></span></span> if <span class="math inline">\(v_1\in V_i\)</span> and <span class="math inline">\(v_2 \in V_i\)</span>. Note that <span class="math inline">\(\{v_1, v_2\} \in E_i\)</span>.</p></li>
+<li><p>We call an edge <span class="math inline">\(\{v_1, v_2\}\)</span> a  <span style="color: black"><span><strong><em>,</em></strong></span></span> if <span class="math inline">\(v_1\in V_i\)</span> and <span class="math inline">\(v_2 \in V_j\)</span> and <span class="math inline">\(i \not= j\)</span>.</p></li>
+</ul>
+<p>One way to partition a graph is to make each connected component a block. What are the internal and cut edges in such a partition?</p>
+<p>There are no cut edges between the partitions. All edges of the graph are internal edges.</p>
+<p><span id="def:graphcon::intro::prelim::partition-map" label="def:graphcon::intro::prelim::partition-map">[def:graphcon::intro::prelim::partition-map]</span> We sometimes describe a graph partition with a tuple consisting of</p>
+<ol>
+<li><p>a set of labels for the blocks, and</p></li>
+<li><p>a  <span style="color: black"><span><strong><em>t</em></strong></span></span>hat maps each vertex to the label of its block.</p></li>
+</ol>
+<p>The labels can be chosen arbitrarily but it is usually conceptually and computationally easier to use a vertex inside a block as a representative for that block.</p>
+<p><span id="ex:graphcon::intro::prelim::partition-map" label="ex:graphcon::intro::prelim::partition-map">[ex:graphcon::intro::prelim::partition-map]</span> The partition <span class="math inline">\(\left\{ \left\{ \texttt{a},\texttt{b},\texttt{c} \right\},\left\{ \texttt{d} \right\},\left\{ \texttt{e},\texttt{f} \right\} \right\}\)</span> of the vertices <span class="math inline">\(\left\{ \texttt{a},\texttt{b},\texttt{c},\texttt{d},\texttt{e},\texttt{f} \right\}\)</span>, defines three blocks as the corresponding</p>
+<p>.</p>
+<p><img src="./graph-contraction/media-introduction/contract-example3.jpg" alt="image" style="width:2in" /></p>
+<p>The edges <span class="math inline">\(\left\{ \texttt{a},\texttt{b} \right\}\)</span>, <span class="math inline">\(\left\{ \texttt{a},\texttt{c} \right\}\)</span>, and <span class="math inline">\(\left\{ \texttt{e},\texttt{f} \right\}\)</span> are internal edges, and the edges <span class="math inline">\(\left\{ \texttt{c},\texttt{d} \right\}\)</span>, <span class="math inline">\(\left\{ \texttt{b},\texttt{d} \right\}\)</span>, <span class="math inline">\(\left\{ \texttt{b},\texttt{e} \right\}\)</span> and <span class="math inline">\(\left\{ \texttt{d},\texttt{f} \right\}\)</span> are cut edges.</p>
+<p>By labeling the blocks <span class="math inline">\(\text{&#39;}\,{\texttt{abc}}\,\text{&#39;},\text{&#39;}\,{\texttt{d}}\,\text{&#39;}\)</span> and <span class="math inline">\(\text{&#39;}\,{\texttt{ef}}\,\text{&#39;}\)</span>, we can specify the graph partition with following partition map:</p>
+<p><span class="math display">\[{
+\begin{alignat}{1}
+( &amp; \left\{ \texttt{abc}, \texttt{d}, \texttt{ef} \right\},
+\\
+ &amp; \left\{ \texttt{a} \mapsto
+    \texttt{abc}, \texttt{b} \mapsto \texttt{abc}, \texttt{c} \mapsto
+    \texttt{abc}, \texttt{d} \mapsto \texttt{d}, \texttt{e} \mapsto
+    \texttt{ef}, \texttt{f} \mapsto \texttt{ef} \right\}
+).
+\end{alignat}
+}\]</span> <span> <span class="math display">\[\begin{aligned}
+{1}
+( &amp; \left\{ \texttt{abc}, \texttt{d}, \texttt{ef} \right\},
+\\
+ &amp; \left\{ \texttt{a} \mapsto
+    \texttt{abc}, \texttt{b} \mapsto \texttt{abc}, \texttt{c} \mapsto
+    \texttt{abc}, \texttt{d} \mapsto \texttt{d}, \texttt{e} \mapsto
+    \texttt{ef}, \texttt{f} \mapsto \texttt{ef} \right\}
+).\end{aligned}\]</span> </span></p>
+<p>Instead of assigning a fresh label to each block, we can choose a representative vertex. For example, by picking <span class="math inline">\(\texttt{a}, \texttt{d}\)</span>, and <span class="math inline">\(\texttt{e}\)</span> as representatives, we can represent the partition above using the following partition map</p>
+<p><span class="math display">\[{
+\begin{alignat}{1}
+( &amp; \left\{ \texttt{a},\texttt{d},\texttt{e} \right\}, 
+\\
+       &amp; \left\{ \texttt{a} \mapsto \texttt{a}, \texttt{b} \mapsto \texttt{a}, 
+               \texttt{c} \mapsto \texttt{a}, \texttt{d} \mapsto \texttt{d}, 
+               \texttt{e} \mapsto \texttt{e}, \texttt{f} \mapsto
+               \texttt{e} \right\}
+).
+\end{alignat}
+}\]</span> <span> <span class="math display">\[\begin{aligned}
+{1}
+( &amp; \left\{ \texttt{a},\texttt{d},\texttt{e} \right\}, 
+\\
+       &amp; \left\{ \texttt{a} \mapsto \texttt{a}, \texttt{b} \mapsto \texttt{a}, 
+               \texttt{c} \mapsto \texttt{a}, \texttt{d} \mapsto \texttt{d}, 
+               \texttt{e} \mapsto \texttt{e}, \texttt{f} \mapsto
+               \texttt{e} \right\}
+).\end{aligned}\]</span> </span></p>
+<h3 id="ex:graphcon::intro::graphcon">Graph Contraction</h3>
+<p>Graph contraction is a</p>
+<p>for computing properties of graphs in parallel. As a contraction technique, it is used to solve a problem instance by reducing it to a smaller instance of the same problem.</p>
+<p>Graph contraction plays important role in parallel algorithm design, because divide-and-conquer can be difficult to apply to graph problems efficiently. Divide-and-conquer techniques usually require partitioning graphs into smaller graphs in a balanced fashion such that the number of cut edges is minimized. Because graphs can be highly irregular, they can be difficult to partition. In fact, graph partitioning problems are typically NP-hard.</p>
+<p><span id="graphcon::intro::graphcon::quotient" label="graphcon::intro::graphcon::quotient">[graphcon::intro::graphcon::quotient]</span> The key idea behind graph contraction is to contract the input graph to a smaller  <span style="color: black"><span><strong><em>,</em></strong></span></span> solve the problem on the quotient graph, and then use that solution to construct the solution for the input graph. We can specify this technique as an inductive algorithm-design technique as follows.</p>
+<p><span id="def:graphcon::intro::graphcon::technique" label="def:graphcon::intro::graphcon::technique">[def:graphcon::intro::graphcon::technique]</span></p>
+<p>Graph contraction technique has a base case and an inductive case. Each application of the inductive step is called a  <span style="color: black"><span><strong><em>o</em></strong></span></span>f graph contraction. In a graph contraction, rounds are repeated until the graph is small, e.g., the graph has no remaining edges.</p>
+<p><strong>Base case:</strong> If the graph is small (e.g., it has no edges), then compute the desired result.</p>
+<p><strong>Inductive case:</strong><br />
+</p>
+<ul>
+<li><p><strong>Contraction step:</strong> contract the graph into a smaller quotient graph.</p>
+<ul>
+<li><p>Partition the graph into blocks.</p></li>
+<li><p>Contract each block to a single super-vertex.</p></li>
+<li><p>Drop internal edges.</p></li>
+<li><p>Reroute cut edges to corresponding super-vertices.</p></li>
+</ul></li>
+<li><p><strong>Recursive step:</strong> Recursively solve the problem for the quotient graph.</p></li>
+<li><p><strong>Expansion step:</strong> By using the result for the quotient graph, compute the result for the input graph.</p></li>
+</ul>
+<p><span id="ex:graphcon::intro::graphcon::contract-example" label="ex:graphcon::intro::graphcon::contract-example">[ex:graphcon::intro::graphcon::contract-example]</span></p>
+<p>One round of graph contraction:</p>
+<p><img src="./graph-contraction/media-introduction/contract-example5.jpg" alt="image" style="width:5in" /></p>
+<p>Contracting a graph down to a single vertex in three rounds:</p>
+<p><img src="./graph-contraction/media-introduction/graph-contraction-example-1.jpg" alt="image" style="width:4in" /></p>
+<p><span id="graphcon::intro::graphcon::contruct-quotient" label="graphcon::intro::graphcon::contruct-quotient">[graphcon::intro::graphcon::contruct-quotient]</span> To construct a quotient graph, we represent each block in the partition with a vertex, which we call a  <span style="color: black"><span><strong><em>.</em></strong></span></span> We then “map” the edges of the graph to the quotient graph. Consider each edge <span class="math inline">\((u,v)\)</span> in the graph.</p>
+<ul>
+<li><p>If the edge is an internal edge, then we skip the edge.</p></li>
+<li><p>If the edge is a cut edge, then we create a new edge between the super-vertices representing the blocks containing <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>.</p></li>
+</ul>
+<p>Because there can be many cut edges between two blocks, this approach may create multiple edges between two super-vertices. We may remove duplicate edges or leave them in the graph, in which case we would be working with multigraphs. Either approach has its benefits and may, depending on the application, be preferable over the other.</p>
+<p><span id="graphcon::intro::graphcon::disjointness" label="graphcon::intro::graphcon::disjointness">[graphcon::intro::graphcon::disjointness]</span> Graph contraction is guided by a graph partition, which leads to blocks whose vertices are disjoint. During the construction of the quotient graph, each vertex in the graph is therefore mapped to a unique vertex in the quotient graph.</p>
+<p><span id="graphcon::intro::graphcon::apply" label="graphcon::intro::graphcon::apply">[graphcon::intro::graphcon::apply]</span> The ultimate goal of graph contraction technique is to reduce the size of the graph by a constant fraction (possibly in expectation) at each round of contraction. Depending on the graphs of interest many different graph-partition techniques can be used to achieve this goal. As described, the graph-contraction technique is generic in the kind of graph partition used. In the following chapters on</p>
+<p>and</p>
+<p>we consider two techniques, edge partitioning and star partitioning, and the resulting graph-contraction algorithms.</p>
+<h2 id="ch:graphcon::edge">Edge Contraction</h2>
+<p>This section describes the edge partition and edge contraction. Edge contraction is an instance of a graph-contraction where blocks being contracted correspond to edges.</p>
+<h3 id="sec:graphcon::edge::partition">Edge Partition</h3>
+<p><span id="def:graphcon::edge::edge-partition" label="def:graphcon::edge::edge-partition">[def:graphcon::edge::edge-partition]</span> An  <span style="color: black"><span><strong><em>i</em></strong></span></span>s a</p>
+<p>where each block is either a single vertex or two vertices connected by an edge.</p>
+<p><span id="ex:graphcon::edge-partition" label="ex:graphcon::edge-partition">[ex:graphcon::edge-partition]</span> An example edge partition in which every block consists of two vertices and an edge between them.</p>
+<p><img src="./graph-contraction/media-edge/edge-partition-example-1.jpg" alt="image" style="width:2in" /></p>
+<p>Give an example graph whose edge partitions always contain a block that consists of a single vertex.</p>
+<p>Any graph which has an isolated vertex, i.e., a vertex with no incident edges would work.</p>
+<p>Finding an edge partition of a graph is closely related to the problem of finding an independent edge set or a vertex matching. A vertex matching in a graph is a subset of the edges that do not share an endpoint, i.e., no two edges are incident on the same vertex. We can construct an edge partition from a vertex matching by constructing a block for each edge in the matching and placing all the remaining vertices into their own singleton blocks.</p>
+<p><span id="def:graphcon::edge::vertex-matching" label="def:graphcon::edge::vertex-matching">[def:graphcon::edge::vertex-matching]</span> A  <span style="color: black"><span><strong><em>f</em></strong></span></span>or an undirected graph <span class="math inline">\(G = (V,E)\)</span> is a subset of edges <span class="math inline">\(M \subseteq E\)</span> such that no two edges in <span class="math inline">\(M\)</span> are incident on the same vertex. In other words, each vertex in <span class="math inline">\(M\)</span> have degree at most <span class="math inline">\(1\)</span>.</p>
+<p>The problem of finding the largest vertex matching for a graph is called the  <span style="color: black"><span><strong><em>p</em></strong></span></span>roblem.</p>
+<p>Maximum Vertex Matching is a well-studied problem and many algorithms have been proposed, including one that can solve the problem in <span class="math inline">\(O(\sqrt{|V|}|E|)\)</span> work.</p>
+<p><span id="ex:graphcon::edge::vertex-matching" label="ex:graphcon::edge::vertex-matching">[ex:graphcon::edge::vertex-matching]</span> A vertex matching for a graph (highlighted edges) and the corresponding blocks.</p>
+<p><img src="./graph-contraction/media-edge/matching-example.jpg" alt="image" style="width:2in" /> <img src="./graph-contraction/media-edge/matching-example-partitioned.jpg" alt="image" style="width:2in" /></p>
+<p>The vertex matching defines four blocks (circled), two of them defined by the edges in the matching, <span class="math inline">\(\left\{ \texttt{a},\texttt{b} \right\}\)</span> and <span class="math inline">\(\left\{ \texttt{d},\texttt{f} \right\}\)</span>, and two of them are the unmatched vertices <span class="math inline">\(\texttt{c}\)</span> and <span class="math inline">\(\texttt{e}.\)</span></p>
+<p>For edge contraction, we do not need a maximum matching but one that it is sufficiently large.</p>
+<p><span id="alg:graphcon::edge::greedy-matching" label="alg:graphcon::edge::greedy-matching">[alg:graphcon::edge::greedy-matching]</span> We can use a greedy algorithm to construct a vertex matching by iterating over the edges while maintaining an initially empty matching <span class="math inline">\(M\)</span>. The greedy algorithm considers each edge and proceeds as follows:</p>
+<ul>
+<li><p>if no edge in <span class="math inline">\(M\)</span> is already incident on its endpoints, then the algorithm adds the edge to <span class="math inline">\(M\)</span>,</p></li>
+<li><p>otherwise, the algorithm tosses away the edge.</p></li>
+</ul>
+<p>Does the greedy vertex matching algorithm always returns a maximum vertex matching?</p>
+<p>No.</p>
+<p>Prove that the greedy algorithm finds a solution within a factor two of optimal.</p>
+<p>Is the greedy algorithm parallel?</p>
+<p>The greedy algorithm is sequential, because each decision depends on previous decisions.</p>
+<p>To find a</p>
+<p>in parallel, we want to make local and parallel decisions at each vertex independent of other vertices. One possibility is for each vertex to select one of its neighbors arbitrarily but in some deterministic fashion. Such a selection can be made in parallel but there is one problem: multiple vertices might select the same vertex to match with.</p>
+<p>We therefore need a way to <em>break the symmetry</em> that arises when two vertices try to match with the same vertex. To this end, we can use randomization. There are several different ways to use randomization but they are all essentially the same and yield the same bounds with a constant factor.</p>
+<p><span id="alg:graphcon::edge::parallel-matching" label="alg:graphcon::edge::parallel-matching">[alg:graphcon::edge::parallel-matching]</span> To compute a vertex matching the</p>
+<p><span style="color: black"><span><strong><em>f</em></strong></span></span>lips a coin for each edge in parallel. The algorithm then selects an edge <span class="math inline">\((u, v)\)</span> and matches <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>, if the coin for the edge comes up heads and all the edges incident on <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> flip tails.</p>
+<p>An example run of he parallel vertex matching algorithm.</p>
+<p><img src="./graph-contraction/media-edge/vertex-matching-randomized.jpg" alt="image" style="width:2in" /></p>
+<p>Prove that the algorithm produces a vertex matching, i.e., it guarantees that a vertex is matched with at most one other vertex.</p>
+<h4 id="sec:edge::partition::analysis">Analysis of Parallel Edge Partition</h4>
+<p>We analyze the effectiveness of the parallel</p>
+<p>in selecting a matching that consists of as many edge blocks (equivalently as few singleton blocks) as possible. We first consider cycle graphs and then general graphs.</p>
+<h5 id="sec:edge::partition::analysis::cycle">Cycle Graphs</h5>
+<p><span id="graphcon::edge::analysis::cycle::pr" label="graphcon::edge::analysis::cycle::pr">[graphcon::edge::analysis::cycle::pr]</span> We want to determine the probability that an edge is selected in a cycle, where each vertex has exactly two neighbors. Because the coins are flipped independently at random, and each vertex has degree two, the probability that an edge picks heads and its two adjacent edges pick tails is <span class="math inline">\(\frac{1}{2} \cdot \frac{1}{2} \cdot
+\frac{1}{2} = \frac{1}{8}\)</span>.</p>
+<p><span id="ex:graphcon::edge::analysis::cycle::1" label="ex:graphcon::edge::analysis::cycle::1">[ex:graphcon::edge::analysis::cycle::1]</span> A graph consisting of a single cycle.</p>
+<p><img src="./graph-contraction/media-edge/cycle-graph.jpg" alt="image" style="width:1.5in" /></p>
+<p>Each edge flips a coin that comes up either heads (<span class="math inline">\(H\)</span>) or tails (<span class="math inline">\(T\)</span>). We select an edge if it turns up heads and all other edges incident on its endpoints are tails. In the example the edges <span class="math inline">\(\left\{ \texttt{c},\texttt{d} \right\}\)</span> and <span class="math inline">\(\left\{ \texttt{b},\texttt{f} \right\}\)</span> are selected.</p>
+<p><span id="graphcon::edge::analysis::cycle::exp" label="graphcon::edge::analysis::cycle::exp">[graphcon::edge::analysis::cycle::exp]</span> To analyze the number of edges (blocks) selected in expectation, let <span class="math inline">\(R_e\)</span> be an indicator random variable denoting whether <span class="math inline">\(e\)</span> is selected or not, that is <span class="math inline">\(R_e = 1\)</span> if <span class="math inline">\(e\)</span> is selected and <span class="math inline">\(0\)</span> otherwise. Recall that the expectation of indicator random variables is the same as the probability it has value <span class="math inline">\(1\)</span> (true). Therefore we have <span class="math inline">\(E[R_e]
+= 1/8\)</span>. Thus summing over all edges, we conclude that expected number of edges selected is <span class="math inline">\(\frac{m}{8}\)</span> (note, <span class="math inline">\(m=n\)</span> in a cycle graph). Thus we conclude that in expectation, a constant fraction <span class="math inline">\(\left(\frac{1}{8}\right)\)</span> of the edges are selected to be their own blocks.</p>
+<p>Modify the algorithm to improve the expected number of edges selected.</p>
+<p><span id="graphcon::edge::analysis::cycle::improve" label="graphcon::edge::analysis::cycle::improve">[graphcon::edge::analysis::cycle::improve]</span> There are several ways to improve the number of select edges. One way is for each vertex to pick one of its neighbors and to select an edge <span class="math inline">\((u,v)\)</span> if it was picked by both <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span>. In the case of a circle, this increases the expected number of selected edges to <span class="math inline">\(\frac{m}{4}\)</span>.</p>
+<p>Another way is let each edge pick a random number in some range and then select and edge if it is the local maximum, i.e., it picked the highest number among all the edges incident on its end points. This increases the expected number of selected edges to <span class="math inline">\(\frac{m}{3}\)</span>.</p>
+<h5 id="sec:graphcon::edge::analysis::star">Star Graphs</h5>
+<p><span id="graphcon::edge::analysis::star::limitation" label="graphcon::edge::analysis::star::limitation">[graphcon::edge::analysis::star::limitation]</span> Although our edge partition algorithm works quite well on cycle graphs, it does not work well for arbitrary graphs. The problem is in an edge partition, only one edge incident on a vertex can be its own block. Therefore if there is a vertex with high degree, then only one of its edges can be selected. Star graphs are a canonical example of such graphs, although there are many others.</p>
+<p><span id="def:graphcon::edge::analysis::star::star-graph" label="def:graphcon::edge::analysis::star::star-graph">[def:graphcon::edge::analysis::star::star-graph]</span></p>
+<p>A  <span class="math inline">\(G = (V,E)\)</span> is an undirected graph with</p>
+<ul>
+<li><p>a   <span style="color: black"><span><strong><em>v</em></strong></span></span>ertex <span class="math inline">\(v \in V\)</span>, and</p></li>
+<li><p>a set of edges <span class="math inline">\(E\)</span> that attach <span class="math inline">\(v\)</span> directly to the rest of the vertices, called   <span style="color: black"><span><strong><em>,</em></strong></span></span> i.e., <span class="math inline">\(E = \left\{ \left\{ v,u \right\} : u
+    \in V \setminus \left\{ v \right\} \right\}\)</span>.</p></li>
+</ul>
+<p>The following are star graphs:</p>
+<ul>
+<li><p>a single vertex, and</p></li>
+<li><p>a single edge.</p></li>
+</ul>
+<h3 id="sec:graphcon::edge::contraction">Edge Contraction</h3>
+<p><span id="alg:graphcon::edge::contraction" label="alg:graphcon::edge::contraction">[alg:graphcon::edge::contraction]</span> Parallel edge contraction algorithm is a specialization of the</p>
+<p>that uses the parallel</p>
+<p>to partition the graph for contraction.</p>
+<p><span id="ex:graphcon::edge::contraction::ex1" label="ex:graphcon::edge::contraction::ex1">[ex:graphcon::edge::contraction::ex1]</span></p>
+<p>An example parallel edge contraction illustrated.</p>
+<p><img src="./graph-contraction/media-edge/edge-contraction-example.jpg" alt="image" style="width:5in" /></p>
+<p>The</p>
+<p>established that using edge partition, we are able to select in expectation <span class="math inline">\(\frac{1}{8}\)</span> of the edges as their own blocks if the graph is a cycle. Therefore, after one round of contraction, the number of vertices and edges in a cycle decrease by an expected constant fraction.</p>
+<p>In</p>
+<p>, we showed that if each round of an algorithm reduces the size by a constant fraction in expectation, and if the random choices in the rounds are independent, then the algorithm will finish in <span class="math inline">\(O(\lg n)\)</span> rounds with high probability. Recall that all we needed to do is multiply the expected fraction that remain across rounds and then use Markov’s inequality to show that after some <span class="math inline">\(k \lg n\)</span> rounds the probability that the problem size is a least <span class="math inline">\(1\)</span> is very small. For a cycle graph, this technique leads to an algorithm for graph contraction with linear work and <span class="math inline">\(O(\lg^2{n})\)</span> span.</p>
+<p>Edge contraction works quite poorly on other graphs such as star graphs, and can result in a partition with many singleton blocks. This is because in an edge partition, only one of the edges incident on a vertex can be its own block (Section <a href="#sec:graphcon::edge::analysis::star" data-reference-type="ref" data-reference="sec:graphcon::edge::analysis::star">2.1.1.2</a>), leading to a poor contraction ratio. Edge contraction therefore is not effective for general graphs.</p>
+<h2 id="ch:graphcon::star">Star Contraction</h2>
+<p>This chapter covers star partition and star contraction, an efficient and parallel</p>
+<p>for general graphs.</p>
+<h3 id="sec:graphcon::star::partition">Star Partition</h3>
+<p>In an</p>
+<p>, if an edge incident on a vertex <span class="math inline">\(v\)</span> is selected as a block, then none of the other edges incident on <span class="math inline">\(v\)</span> can be their own block. This limits the effectiveness of the edge partition technique, because it is unable to contract graphs with high-degree vertices significantly. In this section, we describe an alternative technique, star partition, that does not have this limitation.</p>
+<p><span id="def::graphcon::star-partition" label="def::graphcon::star-partition">[def::graphcon::star-partition]</span> A  <span style="color: black"><span><strong><em>o</em></strong></span></span>f a graph <span class="math inline">\(G\)</span> is a partition of <span class="math inline">\(G\)</span> where each block is vertex-induced subgraph with respect to a</p>
+<p>.</p>
+<p><span id="ex:graphcon::star::partition::1" label="ex:graphcon::star::partition::1">[ex:graphcon::star::partition::1]</span> Consider star graph with center <span class="math inline">\(v\)</span> and eight satellites.</p>
+<p><img src="./graph-contraction/media-star/star-graph1.jpg" alt="image" style="width:1.5in" /></p>
+<ul>
+<li><p>A partition consisting of the whole graph is a star partition, where the only block is the graph itself, induced by the star graph.</p></li>
+<li><p>A partition where each block is an isolated vertex is a star partition, because each block is a vertex-induced subgraph of a single vertex, which is a star.</p></li>
+</ul>
+<p><span id="ex:graphcon::star::partition::2" label="ex:graphcon::star::partition::2">[ex:graphcon::star::partition::2]</span></p>
+<p>Consider the graph shown below on the left. To partition this graph, we first find two disjoint stars, which are highlighted. Each star induces a block consisting of its vertices and the corresponding edges of the graph. These two blocks form a star partition the graph. Note that in a star partition, a block might not be a star.</p>
+<p><img src="./graph-contraction/media-star/star-decomposition-1.jpg" alt="image" style="width:90.0%" /></p>
+<p><span id="graphcon::star::partition::seq" label="graphcon::star::partition::seq">[graphcon::star::partition::seq]</span></p>
+<p>We can construct a star partition sequentially by iteratively adding stars until the vertices are exhausted as follows.</p>
+<ul>
+<li><p>Select an arbitrary vertex <span class="math inline">\(v\)</span> from the graph and make <span class="math inline">\(v\)</span> the center of a star.</p></li>
+<li><p>Attach as satellites all the neighbors of <span class="math inline">\(v\)</span> in the graph.</p></li>
+<li><p>Remove <span class="math inline">\(v\)</span> and its satellites from the graph.</p></li>
+</ul>
+<p><span id="graphcon::star::partition::par" label="graphcon::star::partition::par">[graphcon::star::partition::par]</span></p>
+<p>We can construct a star partition in parallel by making local independent decisions for each vertex, and using randomization to break symmetry. One approach proceeds as follows.</p>
+<ul>
+<li><p>Flip a coin for each vertex.</p></li>
+<li><p>If a vertex flips heads, then it becomes the center of a star.</p></li>
+<li><p>If a vertex flips tails, then there are two cases.</p>
+<ul>
+<li><p>The vertex has a neighbor that flips heads and the vertex selects the neighbor (breaking ties arbitrarily). In this case, the vertex becomes a satellite.</p></li>
+<li><p>The vertex doesn’t have a neighbor that flips heads and it becomes a center.</p></li>
+</ul></li>
+</ul>
+<p>Note that if a vertex doesn’t have a neighbor (it is “isolated”), then it will always become a center.</p>
+<p><span id="graphcon::star::partition::random::isolated" label="graphcon::star::partition::random::isolated">[graphcon::star::partition::random::isolated]</span> We say that a vertex is <span style="color: black"><span><strong><em>i</em></strong></span></span>n a graph if it doesn’t have a neighbor.</p>
+<p>The</p>
+<p>to star partition is not optimal, because it might not always create the smallest number of stars. This is acceptable for us, because we only need to reduce the size of the graph by some constant factor.</p>
+<p><span id="ex:graphcon::star::partition::random" label="ex:graphcon::star::partition::random">[ex:graphcon::star::partition::random]</span></p>
+<p>The example below illustrates how we may partition a graph using the parallel star partition algorithm described above. Vertices <span class="math inline">\(\texttt{a}\)</span> and <span class="math inline">\(\texttt{b}\)</span>, which flip heads, become centers. Vertices <span class="math inline">\(\texttt{c}\)</span> and <span class="math inline">\(\texttt{e}\)</span>, which flipped tails, attempt to become satellites by finding a center among their neighbors, breaking ties arbitrarily. If a vertex does not have a neighbor that is a center (flipped heads), then it becomes a singleton star (e.g., vertex <span class="math inline">\(d\)</span>).</p>
+<p>The resulting star partition has three stars: the star with center <span class="math inline">\(\texttt{a}\)</span> (with no satellites), the star with center <span class="math inline">\(\texttt{b}\)</span> (with two satellites), and the singleton star <span class="math inline">\(\texttt{d}\)</span>. The star partition thus yields three blocks, which are defined by the subgraphs induced by each star.</p>
+<p><img src="./graph-contraction/media-star/star-find0.jpg" alt="image" style="width:6in" /></p>
+<p><span id="alg:graphcon::star-partition" label="alg:graphcon::star-partition">[alg:graphcon::star-partition]</span></p>
+<p>To specify the star-partition algorithm, we need a source of randomness. We assume that each vertex is given a (potentially infinite) sequence of random and independent coin flips. The <span class="math inline">\(i^{th}\)</span> element of the sequence can be accessed via the function <span class="math display">\[\texttt{heads}~(v,i) : V \times \mathbb{Z} \to \mathbb{B},\]</span> which returns <span class="math inline">\(\texttt{true}\)</span> if the <span class="math inline">\(i^{th}\)</span> flip on vertex <span class="math inline">\(v\)</span> is heads and false otherwise.</p>
+<p>The function <span class="math inline">\(\mathit{starPartition}\)</span>, whose pseudo-code is given below, takes as argument a graph and a round number, and returns a graph partition specified by a set of centers and a partition map from all vertices to centers.</p>
+<p>The algorithm starts by flipping a coin for each vertex and selecting the edges that point from tails to heads—this gives the set of edges <span class="math inline">\(\mathit{TH}\)</span>. In this set of edges, there can be multiple edges from the same non-center. Since we want to choose one center for each satellite, we remove duplicates in Line 6, by creating a set of singleton tables and merging them, which selects one center per satellite. This completes the selection of satellites and their centers.</p>
+<p>Next, the algorithm determines the set of centers as all the non-satellite vertices. To complete the process, the algorithm maps each center to itself (Line 10). These operations effectively promote unmatched non-centers to centers, forming singleton stars, and matches all centers with themselves. Finally, the algorithm constructs the</p>
+<p>by uniting the mapping for the satellites and the centers.</p>
+<p><span class="math display">\[\begin{array}{ll}
+1 &amp; \mathit{starPartition}~(G=(V,E),i) =
+\\
+2 &amp; ~~~~\texttt{let}
+\\
+3 &amp; ~~~~~~~~\texttt{(* Find the arcs from satellites to centers. *)}
+\\
+4 &amp; ~~~~~~~~\mathit{TH} = \left\{ (u,v) \in E \;|\; \neg \texttt{heads}(u,i) \land \texttt{heads}(v,i) \right\} %@\label{line:flip}\vspace{.1in}@
+\\
+5 &amp; ~~~~~~~~\texttt{(* Partition map: satellites map to centers *)}
+\\
+6 &amp; ~~~~~~~~P_s = \bigcup_{(u,v) \in \mathit{TH}} \left\{ u \mapsto v \right\}
+% \label{line:starmerge}
+\\
+7 &amp; ~~~~~~~~\texttt{(* Centers are non-satellite vertices *)}
+\\
+8 &amp; ~~~~~~~~V_c = V \setminus \mathit{domain}(P_s)
+\\
+9 &amp; ~~~~~~~~\texttt{(* Map centers to themselves *)}
+\\
+10 &amp; ~~~~~~~~~P_c = \left\{ u \mapsto u : u \in V_c \right\} % \label{line:self}
+\\
+11 &amp; ~~~~\texttt{in}
+\\
+12 &amp; ~~~~~~~~(V_c, P_s \cup P_c)
+\\
+13 &amp; ~~~~\texttt{end}
+\end{array}\]</span></p>
+<p><span id="graphcon::star::partition::implementing-heads" label="graphcon::star::partition::implementing-heads">[graphcon::star::partition::implementing-heads]</span></p>
+<p>Since most machines don’t have true sources of randomness, in practice the function <span class="math inline">\(\mathit{heads}\)</span> is usually implemented with a pseudorandom number generator or with a good hash function.</p>
+<p>In the algorithm, Line 6 creates a set of singleton tables and merges them. This can be implemented using sets and tables as follows. <span class="math display">\[\begin{array}{ll}
+  \mathit{Set.reduce}
+  &amp; (\mathit{Table.union}~(\texttt{lambda}~{(x,y)}\,.\,x))
+\\
+&amp; \emptyset
+\\
+&amp; \left\{ \left\{ u \mapsto v \right\} : (u,v) \in \mathit{TH} \right\}
+\end{array}\]</span> Note that we supply to the <span class="math inline">\(\mathit{union}\)</span> operation a function that selects the first of the two possibilities; this is an arbitrary choice and we could have favored the second.</p>
+<p><span id="ex:graphcon::star::partition::alg" label="ex:graphcon::star::partition::alg">[ex:graphcon::star::partition::alg]</span></p>
+<p>Consider the star partition illustrated below.</p>
+<p><img src="./graph-contraction/media-star/star-find0.jpg" alt="image" style="width:6in" /></p>
+<p>The star-partition algorithm proceeds on this example as follows. First, it computes <span class="math display">\[\mathit{TH} =
+\left\{ (\texttt{c},\texttt{a}),(\texttt{c},\texttt{b}),(\texttt{e},\texttt{b}) \right\},\]</span> as the edges from satellites to centers. Now, it converts each edge into a singleton table, and merges all the tables into one table, which is going to become a part of the partition map: <span class="math display">\[P_s = \left\{ \texttt{c} \mapsto \texttt{b},\texttt{e} \mapsto \texttt{b} \right\}.\]</span> Note that the edge <span class="math inline">\((\texttt{c},\texttt{a})\)</span> has been removed since when uniting the tables, we select only one element for each key in the domain. Now for all remaining vertices <span class="math inline">\(V&#39; = V \setminus \mathit{domain}(P) = \left\{ \texttt{a},\texttt{b},\texttt{d} \right\}\)</span> we map them to themselves, giving: <span class="math display">\[P_c = \left\{ \texttt{a} \mapsto \texttt{a}, \texttt{b} \mapsto \texttt{b},
+  \texttt{d} \mapsto \texttt{d} \right\}.\]</span> The vertices in <span class="math inline">\(P&#39;\)</span> are the centers. Finally we merge <span class="math inline">\(P\)</span> and <span class="math inline">\(P&#39;\)</span> to obtain the partition map <span class="math display">\[P_s \cup P_c = \left\{ \texttt{a} \mapsto \texttt{a}, \texttt{b} \mapsto \texttt{b}, \texttt{c} \mapsto \texttt{b}, \texttt{d} \mapsto
+    \texttt{d}, \texttt{e} \mapsto \texttt{b} \right\}.\]</span></p>
+<p>Suppose that we are given an enumerable graph with <span class="math inline">\(n\)</span> vertices and <span class="math inline">\(m\)</span> edges. We can represent the graph using</p>
+<p>and represent the sets with sequences. This means that we have a sequence of vertices and a sequence of edges.</p>
+<p>This representation enables a relatively clean implementation of the</p>
+<p>, as shown by the pseudo-code below. The implementation follows the pseudo-code for the algorithm but is able to compute the satellites and centers compactly by using a sequence <span class="math inline">\(\mathit{inject}\)</span> operation. The implementation first constructs a vertex sequence <span class="math inline">\(V&#39;\)</span> where each vertex maps to itself. It then constructs a sequence <span class="math inline">\(\mathit{TH}\)</span> of “updates” from vertices that flip heads into tails, and inject <span class="math inline">\(\mathit{TH}\)</span> into the sequence of vertices <span class="math inline">\(V&#39;\)</span>. The resulting sequence <span class="math inline">\(P\)</span> maps each vertex that flipped tails to a center, if the vertex has a neighbor that flipped heads. The sequence <span class="math inline">\(P\)</span> ensures that a vertex that has flipped heads remains unaffected by the injection, e.g., if vertex <span class="math inline">\(i\)</span> has flipped heads, then <span class="math inline">\(P[i] = i\)</span>. We can thus compute set of centers by filtering over <span class="math inline">\(P\)</span> and use the sequence <span class="math inline">\(P\)</span> to represent the partition map for satellites and centers jointly. <span class="math display">\[\begin{array}{l}
+\mathit{starPartition}~(G = (V, E), i) =
+\\
+~~~~\texttt{let}
+\\
+~~~~~~~~~V&#39; = \left\langle\, i : 0 \le i &lt; |V| \,\right\rangle
+\\
+~~~~~~~~~\mathit{TH} = \left\langle\,  (u,v) \in E ~\mid~\neg \texttt{heads}~(u, i), \texttt{heads}~(v, i)  \,\right\rangle
+\\
+~~~~~~~~~P = \mathit{Seq.inject}~V&#39;~TH
+\\
+~~~~~~~~~V_C = \mathit{Seq.filter}~(\texttt{lambda}~i.~P[i] = i)~P
+in (V_C, P) end
+\end{array}\]</span></p>
+<h4 id="sec:graphcon::star::partition::analysis">Analysis of Star Partition</h4>
+<p><span id="thm:graphcon::star::partition::analysis" label="thm:graphcon::star::partition::analysis">[thm:graphcon::star::partition::analysis]</span> Based on the array-based cost specification for sequences, the cost of <span class="math inline">\(\mathit{starPartition}\)</span> is <span class="math display">\[O(n + m)\]</span> work and <span class="math display">\[O(\lg n)\]</span> span for a graph with <span class="math inline">\(n\)</span> vertices and <span class="math inline">\(m\)</span> edges.</p>
+<p>Prove the theorem.</p>
+<p>In expectation, how big is <span class="math inline">\(P\)</span>?</p>
+<p><span id="graphcon::star::partition::analysis::nsat" label="graphcon::star::partition::analysis::nsat">[graphcon::star::partition::analysis::nsat]</span></p>
+<p>Let us also bound the number of satellites found by <span class="math inline">\(\mathit{starPartition}.\)</span> Note first that there is a one-to-one mapping between the satellites and the set <span class="math inline">\(P_s\)</span> computed by the algorithm. The following lemma establishes that on a graph with <span class="math inline">\(n_\bullet\)</span> non-isolated vertices, the number of satellites is at least <span class="math inline">\(n_\bullet/4\)</span> in expectation. As we will see this means that we can use star partition to perform graph contraction with logarithmic span.</p>
+<p><span id="lem:graphcon::star::partition::analysis::satellites" label="lem:graphcon::star::partition::analysis::satellites">[lem:graphcon::star::partition::analysis::satellites]</span> For a graph <span class="math inline">\(G\)</span> with <span class="math inline">\(n_\bullet\)</span> non-isolated vertices, the expected number of satellites in a call to <span class="math inline">\(\mathit{starPartition}~(G,i)\)</span> with any <span class="math inline">\(i\)</span> is at least <span class="math inline">\(n_\bullet/4\)</span>.</p>
+<p>For any vertex <span class="math inline">\(v\)</span>, let <span class="math inline">\(H_v\)</span> be the event that a vertex <span class="math inline">\(v\)</span> comes up heads, <span class="math inline">\(T_v\)</span> that it comes up tails, and <span class="math inline">\(R_v\)</span> that <span class="math inline">\(v \in
+  \mathit{domain}(P)\)</span> (i.e, it is a satellite). Consider any non-isolated vertex <span class="math inline">\(v \in V(G)\)</span>. By definition, we know that a non-isolated vertex <span class="math inline">\(v\)</span> has at least one neighbor <span class="math inline">\(u\)</span>. So, we know that <span class="math inline">\(T_v \land H_u\)</span> implies <span class="math inline">\(R_v\)</span>, since if <span class="math inline">\(v\)</span> is a tail and <span class="math inline">\(u\)</span> is a head <span class="math inline">\(v\)</span> must either join <span class="math inline">\(u\)</span>’s star or some other star. Therefore, <span class="math inline">\(\mathbf{P}\left[{R_v}\right] \geq \mathbf{P}\left[{T_v}\right] \mathbf{P}\left[{H_u}\right] = 1/4\)</span>. By the linearity of expectation, the expected number of satellites is <span class="math display">\[\begin{aligned}
+    \mathbf{E}\left[{\sum_{v: v \text{ non-isolated}} \mathbb{I}\left\{R_v\right\}}\right] &amp; = \sum_{v: v
+      \text{ non-isolated}} \mathbf{E}\left[{\mathbb{I}\left\{R_v\right\}}\right] 
+\\[2mm]
+  &amp; \geq n_\bullet/4.
+  \end{aligned}\]</span> The final inequality follows because we have <span class="math inline">\(n_\bullet\)</span> non-isolated vertices and because the expectation of an indicator random variable is equal to the probability that it takes the value <span class="math inline">\(1\)</span>.</p>
+<p>Consider the random variable that a vertex becomes a satellite. This happens if the vertex flips tails and it has a neighbor that flips heads. A non-isolated vertex has at least one neighbor, therefore this probability is at least 1/4. The bound follows.</p>
+<h3 id="sec:graphcon::star::contract">Star Contraction</h3>
+<p><span id="def:graphcon::star-contraction" label="def:graphcon::star-contraction">[def:graphcon::star-contraction]</span></p>
+<p><span style="color: black"><span><strong><em>i</em></strong></span></span>s an instance of graph contraction that uses star partitions to contract the graph.</p>
+<p><span id="alg:graphcon::star-contraction" label="alg:graphcon::star-contraction">[alg:graphcon::star-contraction]</span></p>
+<p>The pseudo-code below gives a higher-order star-contraction algorithm. The algorithm takes as arguments the graph <span class="math inline">\(G\)</span> and two functions:</p>
+<ul>
+<li><p><span class="math inline">\(\mathit{base}\)</span> function specifies the computation in the base case, and</p></li>
+<li><p><span class="math inline">\(\mathit{expand}\)</span> function computes the result for the larger graph from the quotient graph.</p></li>
+</ul>
+<p>In the base case, the graph contains no edges and the function <span class="math inline">\(\mathit{base}\)</span> is called on vertex set.</p>
+<p>In the recursive case, the graph is partitioned by a call to</p>
+<p>(Line 6), which returns the set of (centers) super-vertices <span class="math inline">\(V&#39;\)</span> and <span class="math inline">\(P\)</span> the</p>
+<p>mapping every <span class="math inline">\(v \in V\)</span> to a <span class="math inline">\(v&#39; \in V&#39;\)</span>. The set <span class="math inline">\(V&#39;\)</span> defines the super-vertices of the quotient graph. Line 7 computes the edges of the quotient graph by routing the end-points of each edge in <span class="math inline">\(E\)</span> to the corresponding super-vertices in <span class="math inline">\(V&#39;\)</span> as specified by partition-map <span class="math inline">\(P\)</span>. Note that the filter <span class="math inline">\(P[u] \neq P[v]\)</span>. removes self edges. The algorithm then recurs on the quotient graph <span class="math inline">\((V&#39;, E&#39;)\)</span>. The algorithm then computes the result for the whole graph by calling the function <span class="math inline">\(\mathit{expand}\)</span> on the result of the recursive call <span class="math inline">\(R\)</span>.</p>
+<p><span class="math display">\[\begin{array}{ll}
+1 &amp; \mathit{starContract}~\mathit{base}~\mathit{expand}~(G = (V,E)) =
+\\ 
+2 &amp; ~~~~\texttt{if}~|E| = 0~\texttt{then}
+\\
+3 &amp; ~~~~~~~~\mathit{base}~(V)
+\\
+4 &amp; ~~~~\texttt{else}
+\\ 
+5 &amp; ~~~~~~~~\texttt{let}
+\\ 
+6 &amp; ~~~~~~~~~~~~(V&#39;,P) = \mathit{starPartition}~(V,E)~ % @\label{line:graphcon::cc::partition}@
+\\
+7 &amp; ~~~~~~~~~~~~E&#39; = \left\{ (P[u],P[v]) : (u,v) \in  E \;|\; P[u] \neq P[v] \right\} 
+% @\label{line:graphcon::cc::edges}@
+\\
+8 &amp; ~~~~~~~~~~~~R = \mathit{starContract}~\mathit{base}~\mathit{expand}~(V&#39;,E&#39;)
+\\
+9 &amp; ~~~~~~~~\texttt{in}
+\\
+10 &amp; ~~~~~~~~~~~~\mathit{expand}~(V, E, V&#39;, P, R)
+\\
+11 &amp; ~~~~~~~~\texttt{end}
+\end{array}\]</span></p>
+<p>TODO [this is somewhat resolved] This analysis is rather imprecise, because we have not written the pseudocode for graph contraction. How do we re-route edges and such. This should be done.</p>
+<p><span id="thm:graphcon::star-contraction-cost" label="thm:graphcon::star-contraction-cost">[thm:graphcon::star-contraction-cost]</span> For a graph <span class="math inline">\(G = (V,E)\)</span>, we can contract the graph into a number of isolated vertices in <span class="math inline">\(O\left((|V| + |E|) \lg |V|\right)\)</span> work and <span class="math inline">\(O(\lg^2 |V|)\)</span> span.</p>
+<p>For the proof, we will consider work and span separately and assume that</p>
+<ul>
+<li><p>function <span class="math inline">\(\mathit{base}\)</span> has constant span and linear work in the number of vertices passed as argument, and</p></li>
+<li><p>function <span class="math inline">\(\mathit{expand}\)</span> has linear work and logarithmic span in the number of vertices and edges at the corresponding step of the contraction.</p></li>
+</ul>
+<p><span id="graphcon::star::contraction::cost::proof::span" label="graphcon::star::contraction::cost::proof::span">[graphcon::star::contraction::cost::proof::span]</span> Let <span class="math inline">\(n_\bullet\)</span> be the number of non-isolated vertices. In star contraction, once a vertex becomes isolated, it remains isolated until the final round, since contraction only removes edges. Let <span class="math inline">\(n_\bullet&#39;\)</span> denote the number of non-isolated vertices after one round of star contraction. We can write the following recurrence for the span of star contraction. <span class="math display">\[\begin{array}{lll}
+S(n_\bullet)  &amp; = &amp;
+\left\{
+\begin{array}{lll}
+S(n_\bullet&#39;) + O(\lg n) &amp; \mbox{if} &amp; n_\bullet&gt; 0
+\\
+1 &amp; \mbox{otherwise.}
+\end{array}
+\right.
+\end{array}\]</span></p>
+<p>Observe that <span class="math inline">\(n_\bullet&#39; = n_\bullet- X\)</span>, where <span class="math inline">\(X\)</span> is the number of satellites (as defined earlier in the lemma about <span class="math inline">\(\mathit{starPartition}\)</span>), which are removed at a step of contraction. Since <span class="math inline">\(\mathbf{E}\left[{X}\right] = n_\bullet/4\)</span>, <span class="math inline">\(\mathbf{E}\left[{n_\bullet&#39;}\right] = 3n/4\)</span>. This is a familiar recurrence, which we know solves to <span class="math inline">\(O(\lg^2
+n_\bullet)\)</span>, and thus <span class="math inline">\(O(\lg^2 n)\)</span>, in expectation.</p>
+<p><span id="graphcon::star::contraction::cost::proof::work" label="graphcon::star::contraction::cost::proof::work">[graphcon::star::contraction::cost::proof::work]</span> For work, we would like to show that the overall work is linear, because we might hope that the graph size is reduced by a constant fraction on each round. Unfortunately, this is not the case. Although we have shown that star contraction can remove a constant fraction of the non-isolated vertices in one round, we have not bounded the number of edges removed.</p>
+<p>Because removing a satellite also removes the edge that attaches it to its star’s center, each round removes at least as many edges as vertices. But this does not help us bound the number of edges removed by a linear function of <span class="math inline">\(m\)</span>, because there can be as many an <span class="math inline">\(n^2\)</span> edges in the graph.</p>
+<p>To bound the work, we will consider non-isolated and isolated vertices separately. Let <span class="math inline">\(n_\bullet&#39;\)</span> denote the number of non-isolated vertices after one round of star contraction. For the non-isolated vertices, we have the following work recurrence: <span class="math display">\[\begin{array}{lll}
+W(n_\bullet, m) 
+\leq 
+\left\{
+\begin{array}{lll}
+W(n_\bullet&#39;, m) + O(n_\bullet+m) &amp; \mbox{if} &amp; n_\bullet&gt; 1
+\\
+1 &amp; \mbox{otherwise.}
+\end{array}
+\right.
+\end{array}\]</span> This recursion solves to <span class="math display">\[\mathbf{E}\left[{W(n_\bullet,m)}\right] = O(n_\bullet+ m\lg n_\bullet) = O(n + m \lg{n}).\]</span></p>
+<p>To bound the work on isolated vertices, we note that there at most <span class="math inline">\(n\)</span> of them at each round and thus, the additional work is <span class="math inline">\(O(n \lg{n}).\)</span></p>
+<p>We thus conclude that the total work is <span class="math display">\[O((n + m)\lg{n}).\]</span></p>
+<p>Consider as an example a star contraction where <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> have the following values in each round. <span class="math display">\[\begin{array}{lll}
+\hline
+ \mbox{round} &amp; \mbox{vertices} &amp; \mbox{edges}
+\\
+\hline
+ 1 &amp; n &amp; m 
+\\
+ 2 &amp; n/2 &amp; m - n/2 
+\\
+ 3 &amp; n/4 &amp; m - 3n/4 
+\\
+ 4 &amp; n/8 &amp; m - 7n/8 
+\\
+\hline
+ \end{array}\]</span> It is clear that the number of edges does not drop below <span class="math inline">\(m-n,\)</span> so if there are <span class="math inline">\(m &gt; 2n\)</span> edges to start with, the overall work will be <span class="math inline">\(O(m
+\lg n)\)</span>.</p>
+<p>Note that if the graph is complete, we do actually reduce the number of edges by a constant fraction be eliminating redundancy, because we can only have so many edges in the quotient graph. This brings up an interesting point about when this algorithm actually performs poorly. It might be interesting to study some real world instance.</p>
+<p>Idea: Consider a contraction along with the randomness function. Consider each round and the blocks contracted in that round. Add just as many edges as possible (without leading to duplicates) between those blocks. Make sure that you don’t generate duplicates in following rounds. Since each block is nested inside a logarithmic number of other blocks. It is possible to construct such a graph that also has a large number of edges.</p>
+<h2 id="ch:graphcon::connect">Graph Connectivity</h2>
+<p>This chapter presents a parallel graph connectivity algorithm that uses graph contraction (more specifically star contraction).</p>
+<p>UPDATE THIS CHAPTER SO THAT THE EXAMPLES ARE MORE INTERESTING. THEY SHOULD HAVE TWO CONNECTED COMPONENTS.</p>
+<h3 id="sec:graphcon::connect::prelim">Preliminaries</h3>
+<p><span id="def:graphcon::connect::problem" label="def:graphcon::connect::problem">[def:graphcon::connect::problem]</span> Given an undirected graph <span class="math inline">\(G = (V,E)\)</span>, the <span style="color: black"><span><strong><em>r</em></strong></span></span>equires finding all of the connected components of <span class="math inline">\(G\)</span> by specifying the set of vertices in each component.</p>
+<p><span id="graphcon::connect::graph-represent" label="graphcon::connect::graph-represent">[graphcon::connect::graph-represent]</span> Throughout this chapter, we use an edge-set representation for graphs, where every edge is represented as a pair of vertices, in both orders. This is effectively equivalent to a directed graph representation of undirected graphs with two arcs per edge. As usual we use <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> to denote the number of vertices and edges respectively.</p>
+<p><span id="ex:graphcon::connect::graph-represent" label="ex:graphcon::connect::graph-represent">[ex:graphcon::connect::graph-represent]</span></p>
+<p>The edge-set representation of an undirected graph is shown below.</p>
+<p><img src="./graph-contraction/media-connectivity/contract-example1.jpg" alt="image" style="width:2in" /></p>
+<p><span class="math display">\[\begin{array}{lcl}
+V &amp; = &amp; \left\{ \texttt{a},\texttt{b},\texttt{c},\texttt{d},\texttt{e},\texttt{f} \right\}\\
+E &amp; = &amp;
+\{(\texttt{a},\texttt{b}),(\texttt{b},\texttt{a}),(\texttt{b},\texttt{d}),(\texttt{b},\texttt{e}),(\texttt{e},\texttt{b}),(\texttt{d},\texttt{b}),(\texttt{d},\texttt{f}),(\texttt{a},\texttt{c}),
+\\
+&amp; &amp; ~~(\texttt{c},\texttt{a}),(\texttt{c},\texttt{d}),(\texttt{d},\texttt{c}),(\texttt{d},\texttt{f}),(\texttt{f},\texttt{d}),(\texttt{e},\texttt{f}),(\texttt{f},\texttt{e})\}
+\end{array}\]</span></p>
+<h3 id="sec:graphcon::connect::alg">Algorithms for Connectivity</h3>
+<p><span id="gr:graphcon::connect::sequential" label="gr:graphcon::connect::sequential">[gr:graphcon::connect::sequential]</span> The graph connectivity problem can be solved by using graph search as follows.</p>
+<ul>
+<li><p>Start at any vertex and find, using DFS or BFS, all vertices reachable from that vertex and mark them visited. This creates the first connected component.</p></li>
+<li><p>Select another vertex, and if it has not already been visited, then search from that vertex to create the second component. Repeat until all the vertices are considered.</p></li>
+</ul>
+<p>This approach leads to perfectly sensible sequential algorithms for graph connectivity, but the resulting algorithms have large span and are therefore poor parallel algorithms.</p>
+<p>DFS is a purely sequential algorithm and has span <span class="math inline">\(\Omega(m)\)</span>. BFS can yield some parallelism but still the span of BFS is lower bounded by the diameter of a component, which can be as large as <span class="math inline">\(n-1\)</span>, e.g., a “chain” of <span class="math inline">\(n\)</span> vertices has diameter <span class="math inline">\(n-1\)</span>. Even when the diameter of the graph is small, the span can be high, because we have to iterate over the components sequentially. The span can is lower bounded by the number of components, which can be large.</p>
+<p><span id="alg:graphcon::connect::cc" label="alg:graphcon::connect::cc">[alg:graphcon::connect::cc]</span></p>
+<p>The pseudo-code below shows a graph-contraction based algorithm for determining the number of connected components in a graph. The call to <span class="math inline">\(\mathit{starPartition}\)</span> (Algorithm <a href="#alg:graphcon::star-partition" data-reference-type="ref" data-reference="alg:graphcon::star-partition">[alg:graphcon::star-partition]</a>) on Line 6 returns the set of (centers) super-vertices <span class="math inline">\(V&#39;\)</span> and a table <span class="math inline">\(P\)</span> mapping every <span class="math inline">\(v \in V\)</span> to a <span class="math inline">\(v&#39;
+\in V&#39;\)</span>.</p>
+<p>The set <span class="math inline">\(V&#39;\)</span> defines the super-vertices of the quotient graph. Line 7 completes the computation of the quotient graph.</p>
+<ul>
+<li><p>It computes the edges of the quotient graph by routing the end points of each edge to the corresponding super-vertices in <span class="math inline">\(V&#39;\)</span>, which is specified by the table <span class="math inline">\(P\)</span>;</p></li>
+<li><p>It removes all self edges via the filter <span class="math inline">\(P[u]
+\neq P[v]\)</span>.</p></li>
+</ul>
+<p>The algorithm then recursively computes the number of connected components in the quotient graph. Recursion bottoms out when the graph contains no edges, where the number of components is equal to the number of vertices.</p>
+<p><span class="math display">\[\begin{array}{ll}
+1 &amp; \mathit{countComponents}~(G = (V,E)) =
+\\ 
+2 &amp; ~~~~\texttt{if}~|E| = 0~\texttt{then}
+\\
+3 &amp; ~~~~~~~~|V|
+\\
+4 &amp; ~~~~\texttt{else}
+\\ 
+5 &amp; ~~~~~~~~\texttt{let}
+\\ 
+6 &amp; ~~~~~~~~~~~~(V&#39;,P) = \mathit{starPartition}~(V,E)
+\\
+7 &amp; ~~~~~~~~~~~~E&#39; = \left\{ (P[u],P[v]) : (u,v) \in  E \;|\; P[u] \neq P[v] \right\} %
+\\
+8 &amp; ~~~~~~~~~~~~R = \mathit{countComponents}~(V&#39;,E&#39;)
+\\
+9 &amp; ~~~~~~~~\texttt{in}
+\\
+10 &amp; ~~~~~~~~~~~~R
+\\
+11 &amp; ~~~~~~~~\texttt{end}
+\end{array}\]</span></p>
+<p><span id="ex:graphcon::connect::cc" label="ex:graphcon::connect::cc">[ex:graphcon::connect::cc]</span></p>
+<p>Consider an execution of <span class="math inline">\(\mathit{countComponents}\)</span> that contracts the graph as follows.</p>
+<p><img src="./graph-contraction/media-connectivity/graph-contraction-example-1.jpg" alt="image" style="width:4in" /></p>
+<p>The values of <span class="math inline">\(V&#39;\)</span>, <span class="math inline">\(P\)</span>, and <span class="math inline">\(E&#39;\)</span> after each round of the contraction is shown below. <span class="math display">\[\begin{array}{crcl}
+  &amp; V&#39; &amp; = &amp; \left\{ \texttt{a},\texttt{d},\texttt{e} \right\}\\
+\mbox{Round } 1 &amp; P&#39; &amp; = &amp; 
+ \left\{ \texttt{a} \mapsto \texttt{a}, 
+       \texttt{b} \mapsto \texttt{a}, 
+       \texttt{c} \mapsto \texttt{a}, 
+       \texttt{d} \mapsto \texttt{d}, 
+       \texttt{e} \mapsto \texttt{e}, 
+       \texttt{f} \mapsto \texttt{e} \right\}\\
+  &amp; E&#39; &amp; = &amp; \left\{ (\texttt{a},\texttt{e}),
+               (\texttt{e},\texttt{a}),
+               (\texttt{a},\texttt{d}),
+               (\texttt{d},\texttt{a}),
+               (\texttt{d},\texttt{e}),
+               (\texttt{e},\texttt{d}) \right\}\\[.1in]
+  &amp; V&#39; &amp; = &amp; \left\{ \texttt{a},\texttt{e} \right\}\\
+\mbox{Round } 2 &amp; P&#39; &amp; = &amp; 
+ \left\{ \texttt{a} \mapsto \texttt{a}, 
+       \texttt{d} \mapsto \texttt{a}, 
+       \texttt{e} \mapsto \texttt{e} \right\}\\
+  &amp; E&#39; &amp; = &amp; \left\{ (\texttt{a},\texttt{e}),
+               (\texttt{e},\texttt{a}) \right\}\\[.1in]
+  &amp; V&#39; &amp; = &amp; \left\{ \texttt{a} \right\}\\
+\mbox{Round } 3 &amp; P&#39; &amp; = &amp; 
+ \left\{ \texttt{a} \mapsto \texttt{a}, 
+       \texttt{e} \mapsto \texttt{a} \right\}\\
+  &amp; E&#39; &amp; = &amp; \left\{  \right\}
+\end{array}\]</span></p>
+<p>Express <span class="math inline">\(\texttt{countComponents}\)</span> in terms of higher order function <span class="math inline">\(\texttt{starContract}\)</span> (Algorithm <a href="#alg:graphcon::star-contraction" data-reference-type="ref" data-reference="alg:graphcon::star-contraction">[alg:graphcon::star-contraction]</a>) by specifying the functions <span class="math inline">\(\texttt{base}\)</span> and <span class="math inline">\(\texttt{expand}\)</span>.</p>
+<p><span id="graphcon::connect::cc-compontents" label="graphcon::connect::cc-compontents">[graphcon::connect::cc-compontents]</span></p>
+<p>We can modify</p>
+<p>to compute the components themselves. The idea is to construct recursively a mapping from vertices to their components. The</p>
+<p>implements this idea.</p>
+<p><span id="alg:graphcon::connect::nc" label="alg:graphcon::connect::nc">[alg:graphcon::connect::nc]</span></p>
+<p>The algorithm below computes the connected components of the input graph <span class="math inline">\(G\)</span> and returns a tuple consisting of 1) a representative for each component, and 2) a mapping from the vertices in the graph to the representative of their component.</p>
+<p><span class="math display">\[\begin{array}{ll}
+1 &amp; \mathit{connectedComponents}~(G = (V,E)) = 
+\\
+2 &amp; ~~~~\texttt{if}~|E| = 0~\texttt{then}
+\\ 
+3 &amp; ~~~~~~~~(V, \left\{ v \mapsto v : v \in V \right\})
+\\
+4 &amp; ~~~~\texttt{else}
+\\ 
+5 &amp; ~~~~~~~~\texttt{let}
+\\
+6 &amp; ~~~~~~~~~~~~(V&#39;,P) = \mathit{starPartition}~(V,E)
+\\
+7 &amp; ~~~~~~~~~~~~E&#39; = \left\{ (P[u],P[v]) : (u,v) \in E \;|\; P[u] \neq P[v] \right\}
+\\
+8 &amp; ~~~~~~~~~~~~(V&#39;&#39;,C) = \mathit{connectedComponents}~(V&#39;,E&#39;)
+\\
+9 &amp; ~~~~~~~~\texttt{in}
+\\
+10 &amp; ~~~~~~~~~~~~(V&#39;&#39;, \left\{ u \mapsto C[v] : (u \mapsto v) \in P \right\}) % @\label{line:graphcon::nc::back}@
+\\
+11 &amp; ~~~~~~~~\texttt{end}
+\end{array}\]</span></p>
+<p><span id="ex:graphcon::connect::nc::1" label="ex:graphcon::connect::nc::1">[ex:graphcon::connect::nc::1]</span></p>
+<p>Applying <span class="math inline">\(\texttt{connectedComponents}\)</span> to the following graph</p>
+<p><img src="./graph-contraction/media-connectivity/contract-example1.jpg" alt="image" style="width:2in" /></p>
+<p>might return:</p>
+<p><span class="math display">\[\begin{aligned}
+(\left\{ \texttt{a} \right\}, ~\left\{ \texttt{a} \mapsto \texttt{a}, 
+                          \texttt{b} \mapsto \texttt{a}, 
+                          \texttt{c} \mapsto \texttt{a}, 
+                          \texttt{d} \mapsto \texttt{a}, 
+                          \texttt{e} \mapsto \texttt{a}, 
+                          \texttt{f} \mapsto \texttt{a} \right\})\end{aligned}\]</span></p>
+<p>This is because there is a single component and all vertices will map to that component label. In this case <span class="math inline">\(\texttt{a}\)</span> was picked as the representative, but any of the initial vertices is a valid representative, in which case all vertices would map to it.</p>
+<p><span id="ex:graphcon::connect::nc::2" label="ex:graphcon::connect::nc::2">[ex:graphcon::connect::nc::2]</span></p>
+<p>Consider the following graph.</p>
+<p><img src="./graph-contraction/media-connectivity/contract-example1.jpg" alt="image" style="width:2in" /></p>
+<p>Suppose that <span class="math inline">\(\texttt{starPartition}\)</span> returns: <span class="math display">\[\begin{array}{lcl}
+V&#39; &amp; = &amp; \left\{ \texttt{a},\texttt{d},\texttt{e} \right\}\\
+P &amp; = &amp; 
+ \left\{ \texttt{a} \mapsto \texttt{a}, \texttt{b} \mapsto \texttt{a}, 
+       \texttt{c} \mapsto \texttt{a}, \texttt{d} \mapsto \texttt{d}, 
+       \texttt{e} \mapsto \texttt{e}, \texttt{f} \mapsto \texttt{e} \right\}.
+\end{array}\]</span> This pairing corresponds to the case where <span class="math inline">\(a\)</span>, <span class="math inline">\(d\)</span> and <span class="math inline">\(e\)</span> are chosen an centers.</p>
+<p>Because the graph is connected, the recursive call to <span class="math inline">\(\texttt{connectedComponents}~(V&#39;,E&#39;)\)</span> will map all vertices in <span class="math inline">\(V&#39;\)</span> to the same vertex. Lets say this vertex is <span class="math inline">\(\texttt{a}\)</span> giving: <span class="math display">\[\begin{array}{lcl}
+V&#39;&#39; &amp; = &amp; \left\{ \texttt{a} \right\}\\
+P&#39; &amp; = &amp; \left\{ \texttt{a} \mapsto \texttt{a}, \texttt{d} \mapsto \texttt{a}, \texttt{e} \mapsto \texttt{a} \right\}~.
+\end{array}\]</span> Now <span class="math inline">\(\left\{ u \mapsto P&#39;[v] : (u \mapsto v) \in P \right\}\)</span> will for each vertex-super-vertex pair in <span class="math inline">\(P\)</span>, look up what that super-vertex got mapped to in the recursive call. For example, vertex <span class="math inline">\(\texttt{f}\)</span> maps to vertex <span class="math inline">\(\texttt{e}\)</span> in <span class="math inline">\(P\)</span> so we look up <span class="math inline">\(\texttt{e}\)</span> in <span class="math inline">\(P&#39;\)</span>, which gives us <span class="math inline">\(\texttt{a}\)</span> so we know that <span class="math inline">\(\texttt{f}\)</span> is in the component <span class="math inline">\(\texttt{a}.\)</span> Overall the result is: <span class="math display">\[\left\{ \texttt{a} \mapsto \texttt{a}, 
+                          \texttt{b} \mapsto \texttt{a}, 
+                          \texttt{c} \mapsto \texttt{a}, 
+                          \texttt{d} \mapsto \texttt{a}, 
+                          \texttt{e} \mapsto \texttt{a}, 
+                          \texttt{f} \mapsto \texttt{a} \right\}\;.\]</span></p>
+<p>The only differences between the</p>
+<p>and the</p>
+<p>is the base case, and “expansion step” (Definition <a href="#def:graphcon::intro::graphcon::technique" data-reference-type="ref" data-reference="def:graphcon::intro::graphcon::technique">[def:graphcon::intro::graphcon::technique]</a>) on Line 10 of Algorithm <a href="#alg:graphcon::connect::nc" data-reference-type="ref" data-reference="alg:graphcon::connect::nc">[alg:graphcon::connect::nc]</a>.</p>
+<p>In the base case instead of returning the size of <span class="math inline">\(V\)</span> returns all vertices in <span class="math inline">\(V\)</span> along with a mapping from each one to itself. This is a valid answer since if there are no edges each vertex is its own component. In the inductive case, before returning from the recursion, Line 10 updates the mapping <span class="math inline">\(P\)</span> from vertices to super-vertices by looking up the component that the super-vertex belongs to, which is given by <span class="math inline">\(C\)</span>. This involves looking up <span class="math inline">\(C[u]\)</span> for every <span class="math inline">\((u \mapsto v) \in P\)</span>. If we view a mapping as a function, then the expansion step is equivalent to function composition, i.e., <span class="math inline">\(C \circ P\)</span>.</p>
+<p>Express <span class="math inline">\(\texttt{countComponents}\)</span> in terms of higher order function <span class="math inline">\(\texttt{starContract}\)</span> (Algorithm <a href="#alg:graphcon::star-contraction" data-reference-type="ref" data-reference="alg:graphcon::star-contraction">[alg:graphcon::star-contraction]</a>) by specifying the functions <span class="math inline">\(\texttt{base}\)</span> and <span class="math inline">\(\texttt{expand}\)</span>.</p>
+<p>What is the work and span of the</p>
+<p>? Explain your choice of the representation for the graph. What happens if you choose a different representation?</p>
+<p>What is the work and span of the</p>
+<p>? Explain your choice of the representation for the graph. What happens if you choose a different representation?</p>
+</body>
+</html>

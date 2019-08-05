@@ -1,0 +1,496 @@
+\chapter{Random Variables}
+\label{ch:probability::randvar}
+
+\begin{preamble}
+This chapter introduces the random variables and their use in probability theory.
+\end{preamble}
+
+
+\begin{flex}
+\begin{definition}[Random Variable]
+\label{def:probability::rv}
+A \defn{random variable} $X$ is a real-valued function on the outcomes
+of an experiment, i.e., $X : \SSpace \to \R$, i.e., it assigns a real
+number to each outcome.
+%
+For a given probability space there can be many random variables, each keeping
+track of different quantities.
+%
+We typically denote random variables by capital letters from
+the end of the alphabet, e.g. $X$, $Y$, and $Z$.
+%
+We say that a random variable is \defn{discrete} if its range is
+finite or countable infinite.  Throughout this book, we only consider
+discrete random variables. 
+\end{definition}
+
+\begin{example}
+For throwing two dice, we can define random variable as the sum of
+the two dice
+\[
+X(d_1,d_2) = d_1+d_2~,
+\]
+the product of two dice
+\[
+Y(d_1,d_2) = d_1 \times d_2~,
+\]
+or the value of the first dice
+the two dice:
+\[
+Z(d_1,d_2) = d_1~.
+\]
+\end{example}
+\end{flex}
+
+\begin{flex}
+\begin{definition}[Indicator Random Variable]
+A random variable is called an \defn{indicator random variable} if it
+takes on the value~$1$ when some condition is true and~$0$
+otherwise.
+\end{definition}
+\begin{example}
+  For throwing two dice, we can define indicator random variable
+  as getting doubles
+\[
+Y(d_1,d_2) =
+\left\{
+\begin{array}{ll}
+1 & \mbox{if}~d_1 = d_2
+\\
+0 & \mbox{if}~d_1 \not= d_2 ~.
+\end{array}
+\right.
+\]
+Using our shorthand, the event $\event{X}{4}$ corresponds
+to the event ``the dice sum to 4''.
+\end{example}
+\end{flex}
+
+\begin{flex}
+
+\begin{gram}[Notation]
+For a random variable $X$ and a value $x \in \R$, we use the following
+shorthand for the event corresponding to $X$ equaling $x$:
+\[\event{X}{x} \equiv \csetf{y \in \SSpace}{X(y)  = x}~,\]
+and when applying the probability measure we use the further
+shorthand
+\[\prob{X = x} \equiv \prob{\event{X}{x}}~.\]
+\end{gram}
+
+\begin{example}
+  For throwing two dice, and $X$ being a random variable representing
+  the sum of the two dice, $\event{X}{4}$ corresponds to the
+  event ``the dice sum to 4'', i.e. the set
+  \[\{y \in \SSpace~|~X(y) = 4\} = \{(1,3),(2,2),(3,1)\}~.\]
+
+  Assuming unbiased coins, we have that
+  \[\prob{X = 4} = 1/12~.\]
+\end{example}
+\end{flex}
+
+\begin{remark}
+The term random variable might seem counter-intuitive
+since it is actually a function not a variable, and it is not really
+random since it is a well defined deterministic function on the
+sample space.  However if you think of it in conjunction with the
+random experiment that selects a elementary event, then it is a
+variable that takes on its value based on a random process.
+\end{remark}
+
+\section{Probability Mass Function}
+\label{sec:probability::randvar::pmf}
+
+\begin{flex}
+\begin{definition}[Probability Mass Function]
+For a discrete random variable $X$, we define its \defn{probability
+  mass function} or \defn{PMF}, written $\pmf{X}(\cdot)$, for short as
+a function mapping each element $x$ in the range of the random
+variable to the probability of the event $\event{X}{x}$, i.e.,
+\[
+\pmf{X}(x) = \prob{X = x}.
+\]
+\end{definition}
+
+\begin{example}
+The probability mass function for the indicator random variable $X$
+indicating whether the outcome of a roll of dice is comes up even is 
+\[
+\begin{array}{lll}
+\pmf{X}(0) = \prob{\event{X}{0}} = \prob{\{1, 3, 5\}} =
+1/2,~\mbox{and}
+\\
+\pmf{X}(1) = \prob{\event{X}{1}} = \prob{\{2, 4, 6\}} =
+1/2.
+\end{array}
+\]
+
+The probability mass function for the random variable $X$
+that maps each outcome in a roll of dice to the smallest Mersenne
+prime number no less than the outcome is
+\[
+\begin{array}{lll}
+\pmf{X}(3) = \prob{\event{X}{3}} = \prob{\{1, 2, 3\}} =
+1/2,~\mbox{and}
+\\
+\pmf{X}(7) = \prob{\event{X}{7}} = \prob{\{4, 5, 6\}} =
+1/2.
+\end{array}
+\]
+\end{example}
+\end{flex}
+
+
+Note that much like a probability measure, a probability mass function is
+a non-negative function.
+%
+It is also additive in a similar sense: for any distinct $x$ and $x'$, the
+events $\event{X}{x}$ and $\event{X}{x'}$ are disjoint.
+%
+Thus for any set $\bar{x}$ of values of $X$, we have 
+\[
+\prob{X \in \bar{x}} = \sum_{x \in \bar{x}}{\pmf{X}(x)}.
+\]
+%
+Furthermore, since $X$ is a function on the sample space, the events
+corresponding to the different values of $X$ partition the sample
+space, and we have
+\[
+\sum_{x}{\pmf{X}(x)} = 1.
+\]
+%
+These are the important properties of probability mass functions: they
+are non-negative, normalizing, and are additive in a certain sense. 
+
+
+
+We can also compute the probability mass function for multiple random
+variables defined for the same probability space.
+%
+For example, the \defn{joint probability mass function} for two random
+variables $X$ and $Y$, written $\pmf{X,Y}(x,y)$ denotes the
+probability of the event $\event{X}{x} \cap \event{Y}{y}$, i.e.,
+\[
+\pmf{X,Y}(x,y) = \prob{\event{X}{x} \cap \event{Y}{y}} = \prob{X = x, Y = y}.
+\]
+%
+Here
+ $\prob{X = x, Y = y}$ is shorthand for   $\prob{\event{X}{x} \cap \event{Y}{y}}$.
+
+%% Given the joint probability mass function for a pair of random variables
+%% $X$ and $Y$, we can calculate the probability mass function for any of
+%% them, which is also called the \defn{marginal probability mass
+%%   function} as follows
+%% \[
+%% \pmf{X}(x) = \sum_{y}{\pmf{X,Y}(x,y)},~\mbox{and}
+%% \\
+%% \pmf{Y}(y) = \sum_{x}{\pmf{X,Y}(x,y)}.
+%% \]
+
+In our analysis or randomized algorithms, we shall repeatedly
+encounter a number of well-known random variables and create new ones
+from existing ones by composition.
+
+
+\section{Bernoulli, Binomial, and Geometric RVs}
+\label{sec:probability::randvar::standards}
+
+\begin{gram}[Bernoulli Random Variable]
+Suppose that we toss a  coin that comes up a head with probability $p$
+and a tail with probability $1-p$.
+%
+The \defn{Bernoulli random variable} takes the value $1$ if the coin
+comes up heads and $0$ if it comes up tails.
+%
+In other words, it is an indicator random variable indicating heads.
+%
+Its probability mass function is 
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{ll}
+p & \mbox{if}~x = 1
+\\
+1-p & \mbox{if}~x = 0.
+\end{array}
+\right.
+\]
+\end{gram}
+
+\begin{gram}[Binomial Random Variable]
+Consider $n$ Bernoulli trials with probability $p$.  We call the
+random variable $X$ denoting the number of heads in the $n$ trials as
+the \defn{Binomial random variable}.
+%
+Its probability mass function for any $0 \le x \le n$ is 
+%
+\[
+\pmf{X}(x) = {n \choose x}\,p^x\,(1-p)^{n-x}.
+\]
+\end{gram}
+
+\begin{gram}[Geometric Random Variable]
+Consider performing Bernoulli trials with probability $p$ until the
+coin comes up heads and  $X$ denote the number of trials needed to
+observe the first head. 
+%
+The random variable $X$ is called the \defn{geometric random variable}.
+%
+Its probability mass function for any $0 \le x$ is 
+%
+\[
+\pmf{X}(x) = (1-p)^{x-1} p.
+\]
+\end{gram}
+
+\section{Functions of Random Variables}
+\label{sec:probability::randvar::functionsof}
+
+\begin{flex}
+
+    It is often useful to ``apply'' a function to one or more random
+    variables to generate a new random variable.   Specifically if we a
+    function $f : \mathbb{R} \rightarrow \mathbb{R}$ and
+    a random variable $X$ we can compose the two giving a new
+    random variable:
+    \[Y(x) = f(X(x)) \]
+    We often write this shorthand as $Y = f(X)$.
+    Similarly for two random variables $X$ and $Y$
+    we write $Z = X + Y$ as shorthand for 
+        \[Z(x) = X(x) + Y(x) \]
+    or equivalently
+        \[Z = \lambda x . (X(x) + Y(x)) \]
+
+%
+The probability mass function for the new variable can be computed by
+``massing'' the probabilities for each value.
+%
+For example, for a function of a random variable $Y = f(X)$, we can
+write the probability mass function as 
+\[
+\pmf{Y}(y) = \prob{Y = y} = \sum_{x \sucht f(x) = y}{\pmf{X}(x)}~.
+\]
+%
+%% Similarly, for a function of two random variables $Z = g(X,Y)$ defined
+%% on the same probability space, we can write the probability mass
+%% function as
+%% \[
+%% \pmf{Z}(z) = \sum_{(x,y) \sucht g(x,y) = z}{\pmf{X,Y}(x,y)}.
+%% \]
+
+
+\begin{example}
+Let $X$ be a Bernoulli random variable with parameter $p$.  We can
+define a new random variable $Y$ as a transformation of $X$ by a
+function $f(\cdot)$.  For example, $Y = f(X) = 9X + 3$ is random
+variable that transforms $X$, e.g., $X = 1$ would be transformed to $Y
+= 12$.
+%
+The probability mass function for $Y$ reflects that of $X$,
+%
+Its probability mass function is 
+\[
+\pmf{Y}(y) = 
+\left\{
+\begin{array}{ll}
+p & \mbox{if}~y = 12
+\\
+1-p & \mbox{if}~y = 3.
+\end{array}
+\right.
+\]
+
+\end{example}
+
+\begin{example}
+Consider the random variable $X$ with the probability mass function 
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{lll}
+0.25  & \mbox{if} & x = -2
+\\
+0.25  & \mbox{if} & x = -1
+\\
+0.25  & \mbox{if} & x = 0
+\\
+0.25  & \mbox{if} & x = 1
+\end{array}
+\right.
+\]
+
+We can calculate the probability mass function for the random variable
+$Y = X^2$ as follows $\pmf{Y}(y) = \sum_{x \sucht x^2 =
+  y}\pmf{X}(x)$.
+%
+This yields
+\[
+\pmf{Y}(y) = 
+\left\{
+\begin{array}{lll}
+0.25  & \mbox{if} & y = 0
+\\
+0.5  & \mbox{if} & y = 1
+\\
+0.25  & \mbox{if} & y = 4.
+\end{array}
+\right.
+\]
+
+\end{example}
+\end{flex}
+
+\section{Conditioning}
+\label{sec:probability::randvar::conditioning}
+
+\begin{flex}
+
+In the same way that we can condition an event on another, we can also
+condition a random variable on an event or on another random variable.
+%
+Consider a random variable $X$ and an event $A$ in the same probability
+space, we define the \defn{conditional probability mass function} of
+$X$ conditioned on  $A$ as 
+\[
+\pmf{X \given A} = \prob{X = x \given A} = \frac{\prob{\event{X}{x} \cap A}}{\prob{A}}.
+\]
+%
+Since for different values of $x$, $\event{X}{x} \cap A$'s are
+disjoint and since $X$ is a function over the sample space,
+conditional probability mass functions are normalizing just like
+ordinary probability mass functions, i.e., $\pmf{X \given A}(x) = 1$.
+%
+Thus just as we can treat conditional probabilities as ordinary
+probabilities, we can treat conditional probability  mass functions
+also as ordinary probability mass functions.
+
+
+%% \begin{notesonly}
+%% Note that the events $\event{X}{x} \cap A$ are disjoint for different
+%% values of $x$ and thus their union is $P(A)$.  We thus have $\pmf{X
+%%   \given A}(x) = 1$.
+%% \end{notesonly}
+
+\begin{example}
+Roll a pair of dice and let $X$ be the sum of the face values.  Let
+$A$ be the event that the second roll came up $6$.
+%
+We can find the conditional probability mass function 
+\[
+\begin{array}{lll}
+\pmf{X \given A}(x) & = & \frac{\prob{\event{X}{x} \cap A}}{\prob{A}}
+\\
+& = & 
+\left\{
+\begin{array}{ll}
+\frac{1/36}{1/6} = 1/6 & \mbox{if}~x = 7,  \ldots, 12.
+\\
+0 & \mbox{otherwise}
+\end{array}
+\right.
+\end{array}
+\]
+ 
+\end{example}
+\end{flex}
+
+\begin{gram}[Conditional Probability Mass Function]
+Since random variables closely correspond with events, we can
+condition a random variable on another.
+%
+More precisely, let $X$ and $Y$ be two random variables defined on the
+same probability space.
+%
+We define the \defn{conditional probability mass function} of $X$ with
+respect to $Y$ as 
+\[
+\begin{array}{l}
+\pmf{X \given Y}(x \given y) = \prob{X = x \given Y = y}.
+\end{array}
+\] 
+
+We can rewrite this as 
+\[
+\begin{array}{lll}
+\pmf{X \given{} Y}(x \given{} y) 
+& = & \prob{X = x \given{} Y = y}
+\\[2mm]
+& = & \frac{\prob{X = x, Y = y}}{\prob{Y = y}}
+\\[2mm]
+& = & \frac{\pmf{X,Y}(x,y)}{\pmf{Y}{y}}.
+\end{array}
+\] 
+\end{gram}
+
+\begin{gram}[Conditional PMFs are PMFs]
+Consider the function $\pmf{X \given Y}(x \given y)$ for a fixed value
+of $y$.  This is a non-negative function of $x$, the event
+corresponding to different values of $x$ are disjoint, and they
+partition the sample space, the conditional mass functions are
+normalizing
+\[
+\sum_{x}{\pmf{X \given Y}(x \given y)} = 1. 
+\]
+Conditional probability mass functions thus share the same properties
+as probability mass functions.
+
+By direct implication of its definition, we can use conditional
+probability mass functions to calculate joint probability mass
+functions as follows
+\[
+\begin{array}{lll}
+\pmf{X,Y}(x,y) = \pmf{X}(x) \pmf{Y \given X}(y \given x)
+\\
+\pmf{X,Y}(x,y) = \pmf{Y}(y) \pmf{X \given Y}(x \given y).
+\end{array}
+\]
+%
+
+As we can compute total probabilities from conditional ones as we saw
+earlier in this section, we can calculate marginal probability
+mass functions from conditional ones:
+\[
+\pmf{X}(x) = \sum_{y}{\pmf{X,Y}(x,y)} = \sum_{y}{\pmf{Y}(y)\pmf{X \given Y}(x \given y)}.
+\]
+\end{gram}
+
+
+
+\section{Independence}
+\label{sec:probability::randvar::independence}
+
+As with the notion of independence between events, we can also define
+independence between random variables and events.
+%
+We say that a random variable $X$ is \defn{independent of an event}
+$A$, if 
+\[
+\mbox{for all}~x: \prob{\event{X}{x} \cap A} = \prob{X = x} \cdot \prob{A}~.
+%= \pmf{X}(x) \prob{A}.
+\] 
+%
+When $\prob{A}$ is positive, this is equivalent to 
+\[
+\pmf{X \given A} (x) = \pmf{X}(x).
+\]
+
+Generalizing this to a pair of random variables, we say a random variable
+$X$ is \defn{independent of a random variable} $Y$ if 
+\[
+\mbox{for all}~x, y: \prob{X = x, Y = y} = \prob{X = x} \cdot \prob{Y = y}
+\]
+%
+or equivalently
+\[
+\mbox{for all}~x, y: \pmf{X,Y}(x,y) = \pmf{X}(x) \cdot \pmf{Y}(y).
+\]
+
+In our two dice
+example, a random variable $X$ representing the value of the first
+dice and a random variable $Y$ representing the value of the second
+dice are independent. 
+%
+However $X$ is not independent of a random variable $Z$ representing
+the sum of the values of the two dice.
+
+
+

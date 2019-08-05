@@ -1,0 +1,366 @@
+\usepackage{environ}   % A better command for defining environments, used
+                       % to drop contents when needed.
+
+\usepackage{ifthen}  % for dealing with environments
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: AMSMath Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\theoremstyle{definition}
+\newtheorem{amstheorem}{Theorem}[section]
+\newtheorem{amscorollary}[amstheorem]{Corollary}
+\newtheorem{amslemma}[amstheorem]{Lemma}
+
+\newtheorem{amsdefinition}{Definition}[section]
+\newtheorem{amscode}[amsdefinition]{Pseudo Code}
+\newtheorem{amscostspec}[amsdefinition]{Cost Specification}
+\newtheorem{amsdatatype}[amsdefinition]{Data Type}
+\newtheorem{amsdatastr}[amsdefinition]{Data Structure}
+
+\newtheorem{amsexample}{Example}[section]
+\newtheorem{amssyntax}[amsdefinition]{Syntax}
+
+
+\theoremstyle{definition}
+\newtheorem{amsexercise}{Exercise}[section]
+\newtheorem{amsproblem}[amsexercise]{Problem}
+\newtheorem*{amssolution}{Solution}
+
+
+\theoremstyle{remark}
+\newtheorem*{amsassumption}{Assumption}
+\newtheorem*{amshint}{Hint}
+\newtheorem*{amsimportant}{Important}
+\newtheorem*{amsnote}{Note}
+\newtheorem*{amsremark}{Remark}
+\newtheorem*{amsreminder}{Reminder}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: AMSMath Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% wrap inside \[ and \] if targethtml is on
+% this seems to work in pandoc even if \targethtml is not defined
+% very odd behaviour but it might be because pandoc does not
+% handle \ifdefined properly.
+\newcommand{\htmlmath}[1]
+{
+\ifdefined\targethtml
+\[
+{#1}
+\]
+\else
+{#1}
+\fi
+}
+
+
+\newcommand{\kwx}{X}
+\newcommand{\kwalgorithm}{Algorithm}
+\newcommand{\kwcostspec}{Cost Specification}
+\newcommand{\kwdatastr}{Data Structure}
+\newcommand{\kwdatatype}{Data Type}
+\newcommand{\kwdefinition}{Definition}
+\newcommand{\kwexample}{Example}
+\newcommand{\kwexercise}{Exercise}
+\newcommand{\kwgram}{}
+\newcommand{\kwimportant}{Important}
+\newcommand{\kwlemma}{Lemma}
+\newcommand{\kwnote}{Note}
+\newcommand{\kwproblem}{Problem}
+\newcommand{\kwproof}{Proof}
+\newcommand{\kwpreamble}{Preamble}
+\newcommand{\kwremark}{Remark}
+\newcommand{\kwsolution}{Solution}
+\newcommand{\kwsyntax}{Syntax}
+\newcommand{\kwtheorem}{Theorem}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newenvironment{algorithm}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwalgorithm{}}}
+           {\frametitle{\kwalgorithm{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+\newenvironment{costspec}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwcostspec{}}}
+           {\frametitle{\kwcostspec{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+\newenvironment{datastr}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwdatastr{}}}
+           {\frametitle{\kwdatastr{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+
+\newenvironment{datatype}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwdatatype{}}}
+           {\frametitle{\kwdatatype{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+\renewenvironment{definition}[1][]
+{
+\begin{frame}[fragile, environment=definition]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{Definition}}
+           {\frametitle{Definition: #1}}
+%\begin{amsdefinition}[#1]
+}
+{ 
+%\end{amsdefinition}
+\end{frame}
+}
+
+
+\renewenvironment{example}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwexample{}}}
+           {\frametitle{\kwexample{}:#1}}
+}
+{
+\end{frame}
+}
+
+\newenvironment{exercise}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwexercise{}}}
+           {\frametitle{\kwexercise{}: #1}}
+}
+{
+\end{frame}
+}
+
+
+\newenvironment{flex}[1][]
+{
+}
+{
+}
+
+\newenvironment{gram}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+
+\ifthenelse{\equal{#1}{}}
+           {}
+           {\frametitle{#1}}
+}
+{ 
+\end{frame}
+}
+
+\newenvironment{important}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwimportant{}}}
+           {\frametitle{\kwimportant{}: #1}}
+}
+{
+\end{frame}
+}
+
+\renewenvironment{lemma}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwlemma{}}}
+           {\frametitle{\kwlemma{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+
+\renewenvironment{note}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwnote{}}}
+           {\frametitle{\kwnote{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+\newenvironment{preamble}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwpreamble{}}}
+           {\frametitle{\kwpreamble{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+\renewenvironment{problem}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwproblem{}}}
+           {\frametitle{\kwproblem{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+\renewenvironment{proof}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwproof{}}}
+           {\frametitle{\kwproof{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+\newenvironment{proposition}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwproposition{}}}
+           {\frametitle{\kwproposition{}: #1}}
+}
+{ 
+\end{frame}
+}
+
+
+\newenvironment{remark}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwremark{}}}
+           {\frametitle{\kwremark{}: #1}}
+
+}
+{
+\end{frame}
+}
+
+\renewenvironment{solution}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwsolution{}}}
+           {\frametitle{\kwsolution{}: #1}}
+
+}
+{ 
+\end{frame}
+}
+
+\newenvironment{syntax}[1][]
+{
+%% NOTE CANNOT USE FRAGILE
+%% ALLOWFRAMEBREAKS WILL INSERT PAGE BREAKS AS NEEDED
+\begin{frame}[allowframebreaks]
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwsyntax{}}}
+           {\frametitle{\kwsyntax{}: #1}}
+
+}
+{ 
+\end{frame}
+}
+
+\renewenvironment{theorem}[1][]
+{
+\begin{frame}
+\ifthenelse{\equal{#1}{}}
+           {\frametitle{\kwtheorem{}}}
+           {\frametitle{\kwtheorem{}: #1}}
+
+}
+{ 
+\end{frame}
+}
+
+\ifdefined\teachingnotes
+\newenvironment{teachnote}[1][]
+{
+}
+{
+}
+\else
+\NewEnviron{teachnote}{}  % This drops body.
+\fi
+\ifdefined\teachingnotes
+\newenvironment{teachask}[1][]
+{
+}
+{
+}
+\else
+\NewEnviron{teachask}{}  % This drops body.
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

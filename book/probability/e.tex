@@ -1,0 +1,357 @@
+\chapter{Expectation}
+\label{ch:probability::expectation}
+
+\begin{preamble}
+This chapter introduces expectation and its use in probability theory.
+\end{preamble}
+
+\section{Definitions}
+
+\begin{flex}
+\begin{gram}  
+  The \defn{expectation} of a random variable $X$ in a probability space
+  $(\SSpace,\probf{})$ is the sum of the random variable over the
+elementary events weighted by their probability, specifically:
+\[
+\expctf_{\SSpace,\probf}[X] = \sum_{y \in \SSpace} X(y) \cdot
+\probprim{y}.
+\] 
+%
+For convenience, we  usually drop the $(\SSpace,\prob{})$
+subscript on $\expctf$ since it is clear from the context.
+\end{gram}
+
+\begin{example}
+\label{ex:probability::expectation::dice}
+Assuming unbiased dice ($\prob{(d_1,d_2)} = 1/36$), the expectation of
+  the random variable $X$ representing the sum of the two dice is:
+\[ 
+\expct{X} = \sum_{(d_1,d_2) \in \Omega} X(d_1,d_2)
+\times \frac{1}{36} = \sum_{(d_1,d_2) \in \Omega} \frac{d_1+d_2}{36} =
+7.
+\]
+If we bias the coins so that for each dice the probability that it
+shows up with a particular value is proportional to the value, we
+have $\prob{(d_1,d_2)} = (d_1/21) \times (d_2/21)$ and:
+\[ 
+\expct{X} = \sum_{(d_1,d_2) \in \Omega} \left((d_1+d_2) \times \frac{d_1}{21}\times\frac{d_2}{21}\right) = 8\; \frac{2}{3}.\]
+\end{example}
+\end{flex}
+\begin{flex}
+\begin{gram}
+It is usually more natural to define expectations in terms of the
+probability mass function of the random variable
+\[
+\expct{X} = \sum_{x} x \cdot \pmf{X}(x).
+\] 
+\end{gram}
+\begin{example}
+The expectation of an indicator random variable $X$ is
+the probability that the associated predicate is true (i.e. that
+$X= 1$):
+\begin{eqnarray*}
+\expct{X} 
+& = & 0 \cdot \pmf{X}(0) + 1 \cdot \pmf{X}(1).
+\\
+& = & \pmf{X}(1).
+\\
+\begin{eqnarray*}
+\expct{X} 
+& = & 0 \cdot \pmf{X}(0) + 1 \cdot \pmf{X}(1).
+\\
+& = & \pmf{X}(1).
+\end{eqnarray*}
+\end{eqnarray*}
+\end{example}
+
+\begin{example}
+Recall that the probability mass function for a Bernoulli random
+variable is  
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{ll}
+p & \mbox{if}~x = 1
+\\
+1-p & \mbox{if}~x = 0.
+\end{array}
+\right.
+\]
+
+Its expectation is thus
+\[
+E[X] = p \cdot 1 + (1-p) \cdot 0 = p.
+\]
+
+\end{example}
+
+\begin{example}
+Recall that the probability mass function for geometric random
+variable $X$ with parameter $p$ is 
+%
+\[
+\pmf{X}(x) = (1-p)^{x-1} p.
+\]
+
+The expectation of $X$ is thus
+\[
+\begin{array}{lll}
+E[X] & = & \displaystyle\sum_{x = 1}^{\infty}{x \cdot (1-p)^{x-1} p}
+\\
+& = &  p\cdot \displaystyle\sum_{x = 1}^{\infty}{x \cdot (1-p)^{x-1}}
+\end{array}
+\]
+
+Bounding this sum requires some basic manipulation of sums.
+%
+Let $q = (1-p)$ and rewrite the sum as $p \cdot \sum_{x = 0}^{\infty}{xq^{x-1}}$.
+%
+Note now the term $xq^{x-1}$ is the derivative of $q^{x}$ with respect
+to $q$.
+%
+Since the sum $\sum_{x=0}^{\infty}{q^x} = 1/(1-q)$, its derivative is
+$1/(1-q)^2 = 1/p^2$.
+%
+We thus have conclude that $E[X] = 1/p$.
+\end{example}
+
+\begin{example}
+Consider performing two Bernoulli trials with probability of success $1/4$.
+Let $X$ be the random variable denoting the number of heads.
+
+The probability mass function for $X$ is
+\[
+\pmf{X}(x) = 
+\left\{
+\begin{array}{ll}
+9/16 & \mbox{if}~x = 0
+\\
+3/8 & \mbox{if}~x = 1
+\\
+1/16 & \mbox{if}~x = 2.
+\end{array}
+\right.
+\]
+
+Thus $\expct{X} = 0 + 1 \cdot 3/8 + 2 * 1/16 = 7/8$.
+\end{example}
+
+\end{flex}
+
+
+\section{Markov's Inequality}
+\label{sec:probability::expectation::markov}
+
+\begin{gram}
+Consider a non-negative random variable $X$.  We can ask how much
+larger can $X$'s maximum value be than its expected value.  With small
+probability it can be arbitrarily much larger.  However, since the
+expectation is taken by averaging $X$ over all outcomes, and it cannot
+take on negative values, $X$ cannot take on a much larger value with
+significant probability.  If it did it would contribute too much to
+the sum.
+\end{gram}
+
+\begin{exercise} 
+% Can more than half the class do better than twice the average score on 
+% the midterm?
+\end{exercise} 
+
+\begin{gram}
+More generally $X$ cannot be a multiple of $\beta$ larger than its
+expectation with probability greater than $1/\beta$.  This is because
+this part on its own would contribute more than $\beta \expct{X}
+\times \frac{1}{\beta} = \expct{X}$ to the expectation, which is a
+contradiction.  This gives us for a non-negative random variable $X$
+the inequality:
+\[ \prob{X \geq \beta\expct{X}} \leq \frac{1}{\beta} \]
+or equivalently (by substituting $\beta = \alpha/\expct{X}$),
+\[ \prob{X \geq \alpha} \leq \frac{\expct{X}}{\alpha} \]
+which is known as Markov's inequality.
+\end{gram}
+
+
+\section{Composing Expectations}
+\label{sec:probability::expectation::compose}
+\begin{gram}
+Recall that functions or random variables are themselves random
+variables (defined on the same probability space), whose probability
+mass functions can be computed by considering the random variables
+involved.
+%
+We can thus also compute the expectation of a random variable defined
+in terms of others.
+%
+For example, we can define a random variable $Y$ as a function of
+another variable $X$ as $Y = f(X)$.
+%
+The expectation of such a random variable can be calculated by
+computing the probability mass function for $Y$ and then applying the
+formula for expectations.
+%
+Alternatively, we can compute the expectation of a function of a
+random variable $X$ directly from the probability mass function of $X$
+as
+\[
+E[Y] = E[f(X)] = \sum_{x}{f(x) \pmf{X}(x)}.
+\] 
+\end{gram}
+
+\begin{gram}
+Similarly, we can calculate the expectation for a random variable $Z$
+defined in terms of other random variables $X$ and $Y$ defined on the
+same probability space, e.g., $Z = g(X,Y)$, as computing the
+probability mass function for $Z$ or directly as
+\[
+E[Z] = E[g(X,Y)] = \sum_{x,y}{g(x,y) \pmf{X,Y}(x,y)}.
+\] 
+These formulas generalize to function of any number of random
+variables.
+\end{gram}
+
+\section{Linearity of Expectations}
+\label{sec:probability::expectation::linearity}
+
+\begin{gram}
+An important special case of functions of random variables is the
+linear functions.  For example, let $Y = f(X) = aX + b$, where $a, b
+\in \tyreal$.
+%
+\[
+\begin{array}{lll}
+\expct{Y} = \expct{f(X)} 
+& = & \expct{aX + b} 
+\\
+& = & \sum_{x}{f(x) \pmf{X}(x)}
+\\
+& = & \sum_{x}{(ax + b) \pmf{X}(x)}
+\\
+& = & a\sum_{x}{x\pmf{X}(x)} + b\sum_{x}{\pmf{X}(x)}
+\\
+& = & a\expct{X} + b.
+\end{array}
+\]
+\end{gram}
+
+\begin{gram}
+Similar to the example, above we can establish that the linear
+combination of any number of random variables can be written in terms
+of the expectations of the random variables.  For example, let $Z = aX
++ bY + c$, where $X$ and $Y$ are two random variables. We have
+\[
+\expct{Z} = \expct{aX + bY + c} = a\expct{X} + b \expct{Y} + c.
+\]
+
+The proof of this statement is relatively simple.
+\[
+\begin{array}{lll}
+\expct{Z} & = & \expct{aX + bY + c} 
+\\
+& = & \sum_{x,y}{(ax + by + c) \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x,y}{x \pmf{X,Y}(x,y)} + b\sum_{x,y}{y \pmf{X,Y}(x,y)} + \sum_{x,y}{c \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x}\sum_{y}{x \pmf{X,Y}(x,y)} + b\sum_{y}\sum_x{y  \pmf{X,Y}(x,y)} + \sum_{x,y}{c \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x}x\sum_{y}{\pmf{X,Y}(x,y)} + b\sum_{y} y \sum_x{\pmf{X,Y}(x,y)} + \sum_{x,y}{c \pmf{X,Y}(x,y)}
+\\
+& = & a\sum_{x}x{\pmf{X}(x) + b\sum_{y} y \pmf{Y}(y)} + c
+\\
+& = & a \expct{X} + b \expct{Y} + c.
+\end{array}
+\]
+
+An interesting consequence of this proof is that the random variables
+$X$ and $Y$ do not have to be defined on the same probability space.
+They can be defined for different experiments and their expectation
+can still be summed.
+%
+To see why note that we can define the joint probability mass function
+$\pmf{X,Y}(x,y)$ by taking the Cartesian product of the sample spaces
+of $X$ and $Y$ and spreading probabilities for each arbitrarily as
+long as the marginal probabilities, $\pmf{X}(x)$ and $\pmf{Y}(y)$
+remain unchanged.
+%
+
+\end{gram}
+
+\begin{flex}
+\begin{gram}
+The property illustrated by the example above is known as the \defn{linearity of expectations}.
+%
+The linearity of expectations is very powerful often greatly simplifying
+analysis.
+%
+The reasoning generalizes to the linear combination of any number of
+random variables.
+
+Linearity of expectation occupies a special place in probability
+theory, the idea of replacing random variables with their expectations
+in other mathematical expressions do not generalize.
+%
+Probably the most basic example of this is multiplication of random
+variables.
+%
+We might ask is $\expct{X} \times \expct{Y} = \expct{X \times
+  Y}$?  
+%
+It turns out it is true when $X$ and $Y$ are independent, but
+otherwise it is generally not true. 
+%
+To see that it is true for
+independent random variables we have (we assume $x$ and $y$ range over
+the values of $X$ and $Y$ respectively):
+
+\[
+\begin{array}{lcl}
+\expct{X} \times \expct{Y} & = & \left(\sum_{x} x \prob{\event{X}{x}}\right) \left(\sum_{y} y \prob{\event{Y}{y}}\right)\\
+% & = & \sum_x \sum_y (x \prob{\event{X}{x}} \times y \prob{\event{Y}{y}}) \\
+ & = & \sum_x \sum_y (x y \prob{\event{X}{x}} \prob{\event{Y}{y}}) \\
+ & = & \sum_x \sum_y (x y \prob{\event{X}{x} \cap \event{Y}{y}})~~~\mbox{due to independence} \\
+ & = & \expct{X \times Y}
+\end{array}
+\]
+For example, the expected value of the product of the values on two
+(independent) dice is therefore $3.5 \times 3.5 = 12.25$.
+\end{gram}
+
+\begin{example}
+In \href{ex:probability::expectation::dice}{a previous example}, we analyzed the expectation on $X$, the sum of the two dice, by summing across all 36 elementary events.  This was particularly messy for the biased dice.  Using
+linearity of expectations, we need only calculate the expected value
+of each dice, and then add them.  Since the dice are the same, we can
+in fact just multiply by two.  For example for the biased case,
+assuming $X_1$ is the value of one dice:
+
+\[ 
+\begin{array}{lcl}
+\expct{X}  & =  & 2 \expct{X_1} 
+\\
+ & = & 2 \times \sum_{d \in \{1,2,3,4,5,6\}} d \times \frac{d}{21}
+\\
+ & = & 2 \times \frac{1 + 4 + 9 + 16 + 25 + 36}{21}
+\\
+ & = & 8 \; \frac{2}{3}~.
+\end{array}
+\]
+\end{example}
+\end{flex}
+
+\section{Conditional Expectation}
+\begin{definition}[Conditional Expectation]
+We define the conditional expectation of a random variable $X$ for a
+given value $y$ of $Y$ as 
+\[
+\expct{X \given Y = y} = \sum_{x}{x \pmf{X | Y}(x \given y)}.
+\]
+\end{definition}
+
+\begin{theorem}[Total Expectations Theorem]
+\label{thm:probability::expectation::tet}
+The expectation of a random variable can be calculated by
+``averaging'' over its conditional expectation given another random
+variable:
+\[
+\expct{X} = \sum_{y}{\pmf{Y}(y) \expct{X \given Y = y}}.
+\]
+\end{theorem}
+

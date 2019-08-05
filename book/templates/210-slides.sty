@@ -1,0 +1,859 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% DIDEROT ADDITION
+\usepackage[utf8]{inputenc}
+
+%\usepackage{kpfonts}     % font
+\usepackage{palatino}     % font
+%\usepackage{times}     % font
+\usepackage{graphicx}  % includegraphics, used heavily
+\usepackage{multirow}  % Multiple rows in a table, used
+\usepackage{booktabs}  % Additional table commands, used
+\usepackage{colortbl}  % Add color to table entries, not used
+
+%% Beamer loads xcolor by default.
+%\usepackage[usenames,dvipsnames]{xcolor} % colors, used heavily
+%\usepackage{titlesec}  % changes how chapter, section, ...titles work
+\usepackage{verbatim}  % allows inclusion of verbatim from file, also comment, used
+%\usepackage{subfig}    % allows for \ContinuedFloat
+%\usepackage[mathcal]{euscript}  % symbols for reduce etc.
+\usepackage{environ}   % A better command for defining environments, used
+%\usepackage{soul}      % Striking out, used
+\usepackage{ifthen}    % used
+\usepackage{amssymb}   % used
+\usepackage{amsfonts}  % not used
+%% Loaded by beamer
+%\usepackage[fleqn]{amsmath}   % used, the option left justifies equations.
+\usepackage{amsthm}    % used
+\usepackage{mathtools} % not used (needed for xmapsto)
+
+\usepackage{bm}        % bold math (\bm), not used
+\usepackage{pifont}    % xmark, etc
+\usepackage{stmaryrd}  % for \llbracket and \rrbracket
+\usepackage{xspace}    % eat or add space after a command, used
+%%%% Latex/Beamer no like, incompatible weth beamer
+%%\usepackage{enumitem}  % control enumerate/itemized lists, used
+%\usepackage{fancyhdr}   % allows changing of headers/footers, used
+\usepackage{relsize}    % change font sizes, e.g. \larger, not used
+
+\usepackage{csquotes}    % for quotes
+\usepackage{letltxmacro} % used for patching lstinline to work in math mode
+
+
+%% Loaded by beamer
+%%\usepackage[margin=1.5in]{geometry}  % used for page layout.
+
+% xparse needed to deal with optional atom arguments
+\usepackage{xparse} 
+
+%%% Loaded by beamer
+%% Must come last of packages so that it can redefine various refs.
+%% \usepackage[pdftex,
+%%   colorlinks=true,
+%%   linkcolor=MidnightBlue,
+%%   urlcolor=Red
+%% ]{hyperref}
+
+
+% microtype is supposed to improve typesetting, but significantly slows
+% down pdflatex (by a factor of 3), so left out for now, can add back later
+%\usepackage{microtype} 
+
+%% For pdf/latex we only use hyperref[label][reference text]
+%% format.  
+\renewcommand{\href}[2]{
+\hyperref[#1]{#2}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Labels and References
+%% Redefine references to allow for citation text.
+%% TODO: Can do some creative things here.
+%% For example
+%% \let\origref\ref
+%% %\renewcommand{\ref}[2][XXX]{
+%% %{#1}\origref{#2}}
+
+%% \NewDocumentCommand{\dref}{o m}
+%% {
+%% \IfNoValueTF{#1}
+%% {\origref{#2}}
+%% {{#1}\ref{#2}}
+%% }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PAGE LAYOUT
+\addtolength{\parskip}{7pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SHORTHANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\a}{{\alpha}\xspace}
+\newcommand{\la}{\leftarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\dra}{\Rightarrow}
+\newcommand{\sucht}{~\mid~}
+\newcommand{\floor}[1]{\left\lfloor {#1} \right\rfloor}
+%\DeclareMathOperator{\sucht}{\mid}
+\newcommand{\ninfty}{{-\infty}}
+\newcommand{\inq}{\stackrel{?}{\in}}
+\newcommand{\xmark}{\ding{55}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% pandoc no like ensuremath
+\renewcommand{\ensuremath}[1]{#1}
+
+\newcommand{\lang}{\textsf{PARS}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Random stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%% Umut: Preferring colors, below.
+%% % definition...puts in index in bold face
+%% \newcommand{\defn}[2][]{
+%% \underline{\textbf{#2}}\ifthenelse{\equal{#1}{}}{\index{\bf #2}}{\index{\bf #1}}}
+
+\newcommand{\defn}[2][]{
+\textcolor{black}{{\textbf{\emph{#2}}}\ifthenelse{\equal{#1}{}}{\index{\textbf{#2}}}{\index{\textbf{#1}}}}}
+
+%\newcommand{\defn}[1]{
+%\textcolor{black}{{\textbf{\emph{#1}}}}
+%}
+
+
+
+
+% puts in index in regular face
+\newcommand{\indx}[2][]{\underline{\textbf{#2}}\ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1}}}
+
+% underline
+\newcommand{\un}[1]{\underline{#1}}
+
+% currently only in setstables, either use everywhere or drop
+\newcommand{\adt}[1]{{\normalfont\textsf{#1}}}
+
+\newcommand{\probName}[1]{\textsc{#1}}
+
+% Name of ficticious company, e.g. bingle
+%% \newcommand{\company}[1]{
+%% \textsf{\textbf{#1}$^{\mbox{{\tiny \textregistered}}}$}
+%% }
+
+\newcommand{\company}[1]{\textsf{\textbf{#1}}}
+
+%% remarks
+\newcounter{remark}[section]
+\newcommand{\myremark}[3]{
+\refstepcounter{remark}
+~\\
+{\bf $[$ \scriptsize{#1}.{\theremark}:}{\textbf{\scriptsize{#3}}$]$}
+\\
+}
+\newcommand{\uremark}[1]{\myremark{Umut}{U}{#1}}
+%\newcommand{\ur}[1]{\uremark{#1}}
+\newcommand{\ur}[1]{}
+
+\newcommand{\cwork}[1]{\ensuremath{W\left({#1}\right)}}
+\newcommand{\cspan}[1]{\ensuremath{S\left({#1}\right)}}
+\newcommand{\cworkof}[2]{\ensuremath{W_{#1}\left({#2}\right)}}
+\newcommand{\cspanof}[2]{\ensuremath{S_{#1}\left({#2}\right)}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Probability/expectation operators.  The ones ending in x should be
+% used if you want subscripts that go directly *below* the operator
+% (in math mode); no x means the subscripts go below and to the right.
+% NB: \P is remapped below for the complexity class P.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\Pr}{\mathbf{Pr}}
+\newcommand{\Prx}{\mathop{\mathbf{Pr}}\/}
+\newcommand{\E}{\mathbf{E}}
+\newcommand{\Ex}{\mathop{\bf E\/}}
+\newcommand{\Var}{\mathbf{Var}}
+\newcommand{\Varx}{\mathop{\mathbf{Var}\/}}
+\newcommand{\Cov}{\textbf{Cov}}
+\newcommand{\Covx}{\mathop{\textbf{Cov}\/}}
+
+%% to complicated for mathjax 
+%\newcommand{\prob}[2][\mbox{}]{\ensuremath{\mathop{\text{\normalfont {\textbf{Pr}}}}_{#1}\ifthenelse{\equal{#2}{}}{}{\left[#2\right]}}}
+
+%\newcommand{\prob}[2][\text{}]{\mathbb{P}_{#1}\ifthenelse{\equal{#2}{}}{}{\left[#2\right]}}}
+\newcommand{\prob}[1]{\mathbf{P}\left[{#1}\right]}
+\newcommand{\probf}{\mathbf{P}}
+\newcommand{\probprim}[1]{\mathbf{P}\left[\{#1\}\right]}
+\newcommand{\probover}[2]{\mathbf{P}_{#1}\left[{#2}\right]}
+
+%% to complicated for mathjax
+%\newcommand{\expct}[2][\mbox{}]{\ensuremath{\mathop{\text{\normalfont
+%        \textbf{E}}}_{#1}}\ifthenelse{\equal{#2}{}}{}{\left[#2\right]}}
+\newcommand{\expctf}{\mathbf{E}}
+\newcommand{\expct}[1]{\mathbf{E}\left[{#1}\right]}
+
+\newcommand{\given}{{\ensuremath{\:\mid\:}}}
+\newcommand{\onef}[1]{\mathbb{I}\left\{#1\right\}}
+
+\newcommand{\event}[2]{\{#1 =#2\}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Asymptotics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bigoh}[1]{O\left({#1}\right)}
+\newcommand{\bigo}[1]{#1}
+\newcommand{\bigtheta}[1]{\Theta\left({#1}\right)}
+\newcommand{\bigomega}[1]{\Omega\left({#1}\right)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematical Relations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\equivs}[2]{
+\ensuremath{#1 \equiv #2}
+}
+
+
+\newcommand{\bigrho}{\scalebox{2.0}{\mbox{$\rho$}}}
+\newcommand{\bigiota}{\scalebox{2.0}{\mbox{$\iota$}}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LISTING ENVIRONMENT (lstlisting)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+
+%% \newdimen\zzsize
+%% \zzsize=11pt
+%% \newdimen\kwsize
+%% \kwsize=11pt
+
+
+%% \newcommand{\basicstyle}{\ttfamily}
+%% %\newcommand{\basicstyle}{\fontsize{\zzsize}{1.1\zzsize}\ttfamily}
+%% \newcommand{\keywordstyle}{\ttfamily\bf}
+%% %\newcommand{\keywordstyle}{\fontsize{\kwsize}{1.1\kwsize}\ttfamily\bf}
+
+%% \newlength{\zzlstwidth}
+%% \settowidth{\zzlstwidth}{{\basicstyle~}}
+%% \newcommand{\lcm}{}
+
+%% \lstset{
+%% %  aboveskip=-0.5 \baselineskip,
+%% %  belowskip=-0.8 \baselineskip,
+%%   xleftmargin=5.0ex,
+%%   basewidth=\zzlstwidth,
+%%   basicstyle=\basicstyle,
+%%   columns=fullflexible,
+%%   captionpos=b,
+%%   numbers=left, numberstyle=\small, numbersep=8pt,
+%%   language=Python,
+%%   keywordstyle=\keywordstyle,
+%%   keywords={signature,sig,structure,struct,fun,fn,case,type,datatype,let,fn,in,end,functor,alloc,if,then,else,while,with,and,start,do},
+%%   commentstyle=\rmfamily\slshape,
+%%   morecomment=[l]{\%},
+%%   lineskip={1.5pt},
+%%   columns=fullflexible,
+%%   numbers=none,
+%%   keepspaces=true,
+%%   mathescape=true,
+%%   escapeinside={@}{@},
+%% % NOTE: need TWO sets of braces around each definition below!
+%%   literate={requires}{{$\lcm\text{\keywordstyle \% requires}$}}6
+%%            {returns}{{$\lcm\text{\keywordstyle \% returns}$}}6
+%%            {=}{{$\lcm=$}}2 
+%%            {(}{{$($}}2
+%%            {)}{{$)$}}2 
+%%            {**}{{$\lcm\times$}}2 
+%% %           {||}{{$\lcm\Vert$}}2 
+%%            {|}{{$|$}}2 
+%%            {fn}{{$\lcm\boldsymbol\lambda\hspace{-1ex}$}}1 
+%%            {==>}{{$\lcm\boldsymbol.\hspace{-1ex}$}}1 
+%% %           {=>}{{$\lcm\boldsymbol.\hspace{-1ex}$}}1 
+%% %           {=>}{{$\lcm\boldsymbol.\hspace{-1ex}$}}1 
+%%            {->}{{$\lcm\rightarrow$}}2 
+%%            {'a}{{$\alpha$}}1 
+%%            {'b}{{$\beta$}}1 
+%% }
+
+%%%% pandoc no like
+%% %% lstinline patch, to inser mbox in math mode.
+%% \newcommand*{\SavedLstInline}{}
+%% \LetLtxMacro\SavedLstInline\lstinline
+%% \DeclareRobustCommand*{\lstinline}{%
+%%   \ifmmode
+%%     \let\SavedBGroup\bgroup
+%%     \def\bgroup{%
+%%       \let\bgroup\SavedBGroup
+%%       \mbox\bgroup
+%%     }%
+%%   \fi
+%%   \SavedLstInline
+%% }
+%% %% End of lstinline patch
+
+%%% \cd does not always work when called from within lstlisting, because you
+%%% cannot use lst commands once espaping intolatex from lst
+%%% environment.  Use \cdm for that purpose
+
+%% pandoc no like lstinline
+%\newcommand{\cd}[1]{\lstinline!#1!}
+\newcommand{\cd}[1]{\texttt{#1}}
+\newcommand{\cdfun}[1]{\mathit{#1}}
+\newcommand{\cdm}[1]{\ensuremath{\mbox{\normalfont \texttt{#1}}}}
+
+%% 
+\newcommand{\cignore}{\_}
+\newcommand{\ccomment}[1]{\text{(*}~\text{#1}~\text{*)}}
+
+%% Syntax for sequences/sets/tables
+
+\newcommand{\sseq}[1]{\mathbb{S}_{#1}}
+
+% sequence
+\newcommand{\cseq}[1]{\left\langle\, #1 \,\right\rangle}
+\newcommand{\cseqb}{\left\langle\right.} %\hspace*{-1ex}}
+\newcommand{\cseqe}{\left.\right\rangle}%{\hspace*{-1ex}\left.\right\rangle}
+\newcommand{\cseqbb}{\left\langle\right.}
+\newcommand{\cseqee}{\left.\right\rangle}
+\newcommand{\clseq}{\left\langle}
+\newcommand{\crseq}{\right\rangle}
+\newcommand{\cseqf}[2]{\left\langle\, #1 \;|\; #2 \,\right\rangle}
+
+% index range
+\newcommand{\cirange}[2]{[#1 \cdots #2]}
+
+% length
+\newcommand{\cseqlen}[1]{\lvert #1 \rvert}  %% length should be
+
+
+\newcommand{\cset}[1]{\left\{ #1 \right\}}
+\newcommand{\csetf}[2]{\left\{ #1 \;|\; #2 \right\}}
+
+\newcommand{\csetb}{\left\{\right.\hspace*{-1ex}}
+\newcommand{\csete}{\hspace*{-1ex}\left.\right\}}
+\newcommand{\csetsize}[1]{|{#1}|}
+
+% Change the name of the following, used as table find
+\newcommand{\cget}[2]{#1[#2]}
+
+%\newcommand{\symiterate}{\prod}
+%% \newcommand{\symreduce}{\sum}
+%% \newcommand{\symscan}{\int}
+%% \newcommand{\symscani}{\oint}
+
+%% \newcommand{\symiterate}{\fbox{\mbox{\cd{iter}}}~}
+%% \newcommand{\symreduce}{\fbox{\mbox{\cd{red}}}~}
+%% \newcommand{\symscan}{\fbox{\mbox{\cd{scan}}}~}
+%% \newcommand{\symscani}{\fbox{\mbox{\cd{scani}}}~}
+
+%\newcommand{\symiterate}{\overline{\prod}}
+%\newcommand{\symreduce}{\overline{\sum}}
+%\newcommand{\symscan}{\overline{\int}}
+%\newcommand{\symscani}{\overline{\oint}}
+
+\newcommand{\mksym}[1]{\mathcal{#1}}
+%\newcommand{\mkseqsym}[1]{\overline{\mksym{#1}}}
+%% overline not needed, common case
+\newcommand{\mkseqsym}[1]{\mksym{#1}}
+% can drop tilde by overloading
+\newcommand{\mkseqset}[1]{\widetilde{\mksym{#1}}}
+
+\newcommand{\symappend}{{\mathop{++}}}
+\newcommand{\symiterate}{\mkseqsym{I}}
+\newcommand{\symiterateprefixes}{\mkseqsym{IP}}
+\newcommand{\symreduce}{\mkseqsym{R}}
+\newcommand{\symscan}{\mkseqsym{S}}
+\newcommand{\symscani}{\mkseqsym{SI}}
+
+
+%\newcommand{\kwiterate}[4]{\symiterate_{#1}^{{#2}~{#3}}~{#4}}
+%% \newcommand{\kwiterate}[4]{
+%%   \stackrel{\tiny {#2}~{#3}}
+%%            {\stackrel{\symiterate}{{\tiny {#1}}}}
+%%   ~{#4}
+%% }
+
+\newcommand{\kwappend}[2]{{#1}~\symappend~{#2}}
+
+% mapping versions
+\newcommand{\kwiterate}[4]{\cdm{iterate}~{#2}~{#3}~(\cdm{map}~{#1}~{#4})}
+\newcommand{\kwiteratep}[4]{\cdm{iteratePrefixes}~{#2}~{#3}~(\cdm{map}~{#1}~{#4})}
+
+\newcommand{\kwreduce}[4]{\cdm{reduce}~{#2}~{#3}~(\cdm{map}~{#1}~{#4})}
+\newcommand{\kwscan}[4]{\cdm{scan}~{#2}~{#3}(\cdm{map}~{#1}~{#4})}
+\newcommand{\kwscani}[4]{\cdm{scanI}~{#2}~{#3}(\cdm{map}~{#1}~{#4})}
+
+%  direct versions
+\newcommand{\kwiterated}[3]{\cdm{iterate}~{#1}~{#2}~{#3}}
+\newcommand{\kwiteratepd}[3]{\cdm{iteratePrefixes}~{#1}~{#2}~{#3}}
+\newcommand{\kwreduced}[3]{\cdm{reduce}~{#1}~{#2}~~{#3}}
+\newcommand{\kwscand}[3]{\cdm{scan}~{#1}~{#2}~{#3}}
+\newcommand{\kwscanid}[3]{\cdm{scanI}~{#1}~{#2}~{#3}}
+
+%% \newcommand{\kwreducesuma}[4]{\sum_{#1}~{#2}~{#3}\left({#4}\right)}
+%% \newcommand{\kwreducerhoa}[4]{\bigrho_{#1}~{#2}~{#3}\left({#4}\right)}
+
+%% \newcommand{\kwreducesumb}[4]{\sum_{#1}{#4}~.w\left({#2}~{#3}\right)}
+%% \newcommand{\kwreducerhob}[4]{\bigrho_{#1}{#4}~.w\left(\;{#2}~{#3}\right)}
+
+%% \newcommand{\kwreducesumc}[4]{\sum_{{#1}.\left({#2}~{#3}\right)}{#4})}
+%% \newcommand{\kwreducerhoc}[4]{\bigrho_{{#1}.\left({#2}~{#3}\right)}{#4})}
+
+
+%% \newcommand{\kwreducesumd}[4]{\sum_{{#2}~{#3}}~{#1}.{#4}}
+%% \newcommand{\kwreducerhod}[4]{\bigrho_{{#2}~{#3}}~{#1}.{#4}}
+
+%% \newcommand{\kwreducesume}[4]{\sum_{{#2}~{#3}}~{#4}:{#1}}
+%% \newcommand{\kwreducerhoe}[4]{\bigrho_{{#2}~{#3}}~{#4}:{#1}}
+
+%% \newcommand{\kwreducesumf}[4]{\sum_{{{#2}~{#3}}_{#1}}~{#4}}
+%% \newcommand{\kwreducerhof}[4]{\bigrho_{{{#2}~{#3}}_{#1}}~{#4}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros for referencing components
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\indentedwidth}{0.99\textwidth}
+
+\newcommand{\partref}[1]{Part~\ref{part:#1}}
+\newcommand{\chref}[1]{Chapter~\ref{ch:#1}}
+\newcommand{\chreftwo}[2]{Chapters \ref{ch:#1} and~\ref{ch:#2}}
+\newcommand{\chrefthree}[3]{Chapters \ref{ch:#1}, and~\ref{ch:#2}, and~\ref{ch:#3}}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\subsecref}[1]{Subsection~\ref{subsec:#1}}
+\newcommand{\secreftwo}[2]{Sections \ref{sec:#1} and~\ref{sec:#2}}
+\newcommand{\secrefthree}[3]{Sections \ref{sec:#1},~\ref{sec:#2},~and~\ref{sec:#3}}
+\newcommand{\appref}[1]{Appendix~\ref{app:#1}}
+\newcommand{\lstref}[1]{Listing~\ref{lst:#1}}
+\newcommand{\lstreftwo}[2]{Listings~\ref{lst:#1} and~\ref{lst:#2}}
+
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\figreftwo}[2]{Figures~\ref{fig:#1} and~\ref{fig:#2}}
+\newcommand{\figrefthree}[3]{Figures~\ref{fig:#1}, \ref{fig:#2} and~\ref{fig:#3}}
+\newcommand{\figreffour}[4]{Figures~\ref{fig:#1},~\ref{fig:#2},~\ref{fig:#3}~and~\ref{fig:#4}}
+\newcommand{\figpageref}[1]{page~\pageref{fig:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+\newcommand{\tabreftwo}[2]{Tables~\ref{tab:#1} and~\ref{tab:#1}}
+
+\newcommand{\stref}[1]{step~\ref{step:#1}}
+\newcommand{\caseref}[1]{case~\ref{case:#1}}
+\newcommand{\lineref}[1]{Line~\ref{line:#1}}
+\newcommand{\linereftwo}[2]{Lines~\ref{line:#1} and~\ref{line:#2}}
+\newcommand{\linerefthree}[3]{Lines~\ref{line:#1},~\ref{line:#2},~and~\ref{line:#3}}
+\newcommand{\linerefrange}[2]{lines \ref{line:#1} through~\ref{line:#2}}
+\newcommand{\thmref}[1]{Theorem~\ref{thm:#1}}
+\newcommand{\thmreftwo}[2]{Theorems~\ref{thm:#1} and~\ref{thm:#2}}
+\newcommand{\thmpageref}[1]{page~\pageref{thm:#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{lem:#1}}
+\newcommand{\lemreftwo}[2]{Lemmas~\ref{lem:#1} and~\ref{lem:#2}}
+\newcommand{\lemrefthree}[3]{Lemmas~\ref{lem:#1},~\ref{lem:#2},~and~\ref{lem:#3}}
+\newcommand{\lempageref}[1]{page~\pageref{lem:#1}}
+\newcommand{\adtref}[1]{ADT~\ref{adt:#1}}
+\newcommand{\corref}[1]{Corollary~\ref{cor:#1}}
+\newcommand{\costref}[1]{Cost Specification~\ref{cost:#1}}
+\newcommand{\defref}[1]{Definition~\ref{def:#1}}
+\newcommand{\defreftwo}[2]{Definitions~\ref{def:#1} and~\ref{def:#2}}
+\newcommand{\defpageref}[1]{page~\pageref{def:#1}}
+\renewcommand{\eqref}[1]{Equation~(\ref{eq:#1})}
+\newcommand{\eqreftwo}[2]{Equations (\ref{eq:#1}) and~(\ref{eq:#2})}
+\newcommand{\eqpageref}[1]{page~\pageref{eq:#1}}
+\newcommand{\grref}[1]{\ref{gr:#1}}
+\newcommand{\ineqref}[1]{Inequality~(\ref{ineq:#1})}
+\newcommand{\ineqreftwo}[2]{Inequalities (\ref{ineq:#1}) and~(\ref{ineq:#2})}
+\newcommand{\ineqpageref}[1]{page~\pageref{ineq:#1}}
+\newcommand{\itemref}[1]{Item~\ref{item:#1}}
+\newcommand{\itemreftwo}[2]{Item~\ref{item:#1} and~\ref{item:#2}}
+\newcommand{\propref}[1]{Proposition~[\ref{prop:#1}]}
+\newcommand{\synref}[1]{Syntax~\ref{syn:#1}}
+
+\newcommand{\exref}[1]{Example~\ref{ex:#1}}
+\newcommand{\exrref}[1]{Exercise~\ref{exr:#1}}
+\newcommand{\probref}[1]{Problem~\ref{prob:#1}}
+\newcommand{\algref}[1]{Algorithm~\ref{alg:#1}}
+\newcommand{\algreftwo}[2]{Algorithms~\ref{alg:#1} and~\ref{alg:#2}}
+\newcommand{\dsref}[1]{Data Structure~\ref{ds:#1}}
+\newcommand{\dtref}[1]{Design Technique~\ref{dt:#1}}
+\newcommand{\solref}[1]{Solution~\ref{sol:#1}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Binary search trees
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bst}{\cd{BST}}
+\newcommand{\key}{\cd{key}}
+\newcommand{\data}{\cd{value}}
+\newcommand{\cnode}{\cd{Node}}
+\newcommand{\cleaf}{\cd{Leaf}}
+\newcommand{\cexpose}{\cd{expose}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The name of a vertex
+\newcommand{\vname}[1]{\cd{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Models and costs...not sure these are necessary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% complexity classes
+\newcommand{\PCLASS}{\mathbf{P}}
+\newcommand{\NPCLASS}{\mathbf{NP}}
+
+%% variants of PRAM
+\newcommand{\pEREW}{\normalfont\textsf{EREW}\xspace}
+\newcommand{\pPRAM}{\normalfont\textsf{PRAM}\xspace}
+\newcommand{\pCRCW}{\normalfont\textsf{CRCW}\xspace}
+
+%%%
+%% Probability
+%%%
+
+\newcommand{\pmf}[1]{\mathbf{P}_{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Most of the rest are macros used for pseudocode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Comments, right justified
+\newcommand{\cdc}[1]{\cd{(* {#1} *)}} 
+\newcommand{\cdch}[1]{\mbox{(* {#1} *)}} 
+
+% Language names
+\newcommand{\pml}{SPARC\xspace}
+\newcommand{\Pml}{\pml}
+\newcommand{\PML}{\pml}
+\newcommand{\lc}{lambda calculus}
+
+% Some fonts
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\sml}[1]{\cd{#1}}
+\newcommand{\smlp}[1]{\cd{#1}}
+\newcommand{\ctext}[1]{\mbox{\rm\em #1}}
+%\newcommand{\com}[1]{\mbox{\textbf{#1}}}
+\newcommand{\com}[1]{\cd{#1}}
+%Code
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Types
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bools}{\mathbb{B}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\nats}{\mathbb{N}}
+\newcommand{\reals}{\mathbb{R}}
+
+\newcommand{\uuu}{{\ensuremath{\mathbb{U}}}} 
+\newcommand{\vvv}{{\ensuremath{\mathbb{V}}}}
+\newcommand{\ccc}{{\ensuremath{\mathbb{C}}}}
+\newcommand{\kkk}{{\ensuremath{\mathbb{K}}}}
+\newcommand{\sss}{{\ensuremath{\mathbb{S}}}}
+\newcommand{\tttt}{{\ensuremath{\mathbb{T}}}}
+\newcommand{\bbb}{{\ensuremath{\mathbb{B}}}}
+% The following are redundant, should clean up
+
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+
+\newcommand{\tybool}{\bools}
+\newcommand{\tyint}{\ints}
+\newcommand{\tyreal}{\reals}
+\newcommand{\tynat}{\nats}
+\newcommand{\tyopt}[1]{\ensuremath{{#1}~\cd{option}}}
+\newcommand{\tyseq}{Seq\xspace}
+
+%% 
+\newcommand{\cdvar}[1]{\mathit{#1}}
+\newcommand{\cunit}{\cd{(\,)}}
+\newcommand{\carray}{\cd{array}}
+\newcommand{\ctunit}{\cd{unit}}
+\newcommand{\ctrue}{\cd{true}}
+\newcommand{\cfalse}{\cd{false}}
+\newcommand{\cand}{\cd{and}}
+\newcommand{\cor}{\cd{or}}
+\newcommand{\candnot}{\cd{andnot}}
+
+\newcommand{\cminus}{\cd{-}}
+\newcommand{\cplus}{\cd{+}}
+
+% Pseudocode
+\newcommand{\cappend}{\com{++}}
+\newcommand{\ccase}{\com{case}}
+\newcommand{\cof}{\com{of}}
+\newcommand{\cdra}{\com{=>}}
+\newcommand{\clet}{\com{let}}
+\newcommand{\cin}{\com{in}}
+\newcommand{\cend}{\com{end}}
+\newcommand{\cif}{\com{if}}
+\newcommand{\cthen}{\com{then}}
+\newcommand{\celse}{\com{else}}
+\newcommand{\cpfor}{\com{parfor}}
+\newcommand{\cval}{\com{val}}
+\newcommand{\cfn}[2]{\cd{lambda}~{#1}\,.\,#2}
+\newcommand{\cderef}[1]{\com{!}{#1}}
+\newcommand{\cmodule}{\com{module}}
+
+%\newcommand{\cfun}[3]{\com{fun}\; #1~#2 \Rightarrow #2}
+% following three perhaps clean up
+\newcommand{\cpar}{\mid\mid}
+\newcommand{\ctype}{\com{type}\xspace}
+\newcommand{\corder}{\com{order}}
+\newcommand{\cless}{\com{less}}
+\newcommand{\cequal}{\com{equal}}
+\newcommand{\cgreater}{\com{greater}}
+
+% Some shorthands for mathematical expressions
+\newcommand{\pparen}[1]{\left(#1\right)}
+\newcommand{\norm}[1]{\ensuremath{\left\Vert #1 \right\Vert}}
+\newcommand{\vareps}{\varepsilon}
+\newcommand{\fsqrt}[1]{\left\lfloor\sqrt{#1}\,\right\rfloor}
+\newcommand{\csqrt}[1]{\left\lceil\sqrt{#1}\,\right\rceil}
+\newcommand{\isqrt}[1]{\left\lceil\sqrt{#1}\,\right\rceil}
+
+% Constants
+\newcommand{\csome}[1]{\cd{Some}~{#1}}
+\newcommand{\cnone}{\cd{None}}
+
+% The next two are redundant
+\newcommand{\mksome}[1]{~\mathit{Some(#1)}}
+\newcommand{\mknone}{~\mathit{None}}
+
+
+% Functions on sequences/sets/tables
+\newcommand{\cscan}{\cd{scan}}
+\newcommand{\cscani}{\cd{scanI}}
+\newcommand{\creduce}{\cd{reduce}}
+\newcommand{\ccollect}{\cd{collect}}
+\newcommand{\cmap}{\cd{map}}
+\newcommand{\citer}{\cd{iter}
+}
+%%% These don't work with pandoc
+%\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+% The following two are used for ordered sets
+% Should change the name since confused with tuple access
+\newcommand{\cpair}[2]{\left( {#1},~{#2} \right)}
+\newcommand{\cfirst}{\cd{first}\xspace}
+\newcommand{\clast}{\cd{last}\xspace}
+\newcommand{\cinter}{\cd{intersection}}
+\newcommand{\cdiff}{\cd{difference}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Characters Strings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\str}[1]{\texttt{`#1'}}
+\newcommand{\str}[1]{\text{'}\,{#1}\,\text{'}}
+% Code string
+\newcommand{\cstr}[1]{\str{\cd{#1}}}
+% Math string, 
+\newcommand{\mstr}[1]{\str{{#1}}}
+\newcommand{\chr}[1]{\str{#1}}
+\newcommand{\cchr}[1]{\cstr{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sequences / Sets / Tables
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Denotational semantics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\setunion}{\cup}
+\newcommand{\setint}{\cap}
+\newcommand{\dom}[1]{\textsf{dom}(#1)}
+
+\newcommand{\means}[1]{\left[\lvert {#1} \rvert\right]}
+%\newcommand{\means}[1]{\left\llbracket {#1} \right\rrbracket}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some stray definitions 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Rset}{\mathcal{T}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter specific definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\eval}[1]{\mbox{Eval}(#1)}
+
+%% BEGIN: Genome
+\newcommand{\covlp}{\cdm{overlap}}  
+\newcommand{\cjoin}{\cdm{join}} 
+%% END: Genome
+
+%% These are defined by amsmath
+%\newcommand{\max}{\textsf{max}}
+%\newcommand{\min}{\textsf{min}}
+\newcommand{\paral}{\overline{P}}
+
+%% BEGIN: Design chapter
+\newcommand{\MCS}{\textsf{MCS}}
+\newcommand{\MCSS}{\textsf{MCSS}}
+\newcommand{\MCSSE}{\textsf{MCSSE}}
+\newcommand{\MCSSS}{\textsf{MCSSS}}
+\newcommand{\MCSSPS}{\textsf{MCSSPS}}
+\newcommand{\mcsss}[2]{\mbox{\texttt{AlgoMCSSS}}(#1,#2)}
+
+%% \newcommand{\MCS}{\textsf{MCS}\xspace}
+%% \newcommand{\MCSS}{\textsf{MCS2}\xspace}
+%% \newcommand{\MCSSE}{\textsf{MCS2E}\xspace}
+%% \newcommand{\MCSSS}{\textsf{MCS3}\xspace}
+%% \newcommand{\MCSSPS}{\textsf{MCS2PS}\xspace}
+%% \newcommand{\mcsss}[2]{\mbox{\texttt{AlgoMCS3}}(#1,#2)}
+
+%% BEGIN: randomized chapter
+\newcommand{\qsort}{quick sort}
+\newcommand{\Qsort}{Quick sort}
+
+\newcommand{\SSpace}{\ensuremath{\Omega}}
+\newcommand{\EventE}{\mathcal{E}}
+
+\newcommand{\randomizedmaxtwostart}{10}
+\newcommand{\randomizedmaxtwocmpone}{4}
+\newcommand{\randomizedmaxtwocmptwo}{6}
+\newcommand{\randomizedosfilterone}{4}
+\newcommand{\randomizedosfiltertwo}{5}
+\newcommand{\randomizedqsortpivot}{5}
+
+\newcommand{\ksmall}{\cd{select}}
+
+%% END: randomized chapter
+
+%% BEGIN: bst chapter
+
+\newcommand{\bstt}{\tttt}
+% create a left paren of given height
+\newcommand{\leftparen}[1]{\left(\\[#1]\right.}
+% create a right paren of given height
+\newcommand{\rightparen}[1]{\left.\\[#1]\right)}
+%% END: bst chapter
+
+%% BEGIN: Graphs
+\newcommand{\vertu}{\mathcal{V}}
+
+\newcommand{\alice}{\mbox{Alice}}
+\newcommand{\arthur}{\mbox{Arthur}}
+\newcommand{\bob}{\mbox{Bob}}
+\newcommand{\josefa}{\mbox{Josefa}}
+%% END: Graphs
+
+
+%% BEGIN: Graph search
+\newcommand{\bfs}{\ttt{BFS}}
+\newcommand{\linegschoose}{6}
+\newcommand{\linebfstreeflatten}{11}
+\newcommand{\linebfstreeinject}{12}
+\newcommand{\linebfstreenewfrontier}{13}
+\newcommand{\finish}{finish}
+\newcommand{\revisit}{revisit}
+\newcommand{\visit}{visit}
+\newcommand{\visittime}{\mathcal{T}_{\mathcal{V}}}   %% as in visit time
+\newcommand{\finishtime}{\mathcal{T}_{\mathcal{F}}}   %% as in visit time
+\newcommand{\ancestors}{\mathit{ancestors}}  
+\newcommand{\flag}{\mathit{flag}}  
+%% END: Graph search
+
+
+%% BEGIN: Shortest Paths
+
+\newcommand{\visited}{X}
+\newcommand{\unvisited}{T}
+\newcommand{\ev}{\sml{eVal}}
+\newcommand{\dist}{\delta}
+\newcommand{\sssp}{\probName{SSSP}}
+\newcommand{\ssspp}{\probName{SSSP$^+$}}
+\newcommand{\ssspd}{\probName{SSSP$_{\dist}$}}
+\newcommand{\sssppd}{\probName{SSSP$^+_{\dist}$}}
+
+\newcommand{\linedijkstramin}{7}
+\newcommand{\linedijkstrafind}{10}
+\newcommand{\linedijkstralet}{13}
+\newcommand{\linedijkstrainsert}{14}
+\newcommand{\linedijkstrapqinsert}{15}
+\newcommand{\linedijkstraiter}{16}
+
+\newcommand{\linebfdistances}{6}
+\newcommand{\linebfnegcycle}{9}
+\newcommand{\linebfif}{10}
+
+%% END: Shortest Paths
+
+%% BEGIN: Graph Contraction
+\newcommand{\cheads}{\cd{heads}}
+\newcommand{\nn}{\ensuremath{n_\bullet}}
+\newcommand{\linegcstarmerge}{6}
+\newcommand{\linegcstarself}{10}
+
+\newcommand{\linegcscpartition}{6}
+\newcommand{\linegcscedges}{7}
+\newcommand{\linegcncback}{10}
+
+\newcommand{\linegcconnectccpartition}{6}
+\newcommand{\linegcconnectccedges}{7}
+
+
+%% END: Graph Contraction
+
+%% BEGIN: Graph Contraction
+%% Does not work with pandoc.
+%\newcommand{\boruvka}{Bor\r{u}vka\xspace}
+\newcommand{\boruvka}{Boruvka\xspace}
+\newcommand{\linemstminedges}{11}
+\newcommand{\linemsthooks}{12}
+\newcommand{\linemstnewvertices}{13}
+%% END: Graph Contraction
+
+
+%% BEGIN: Hashing
+\newcommand{\kuni}{\mathcal{U}}
+\newcommand{\kallhash}{\mathcal{H}}
+\newcommand{\natspre}[1]{\nats_{<~{#1}}}
+\newcommand{\kloadfac}{\alpha}
+\newcommand{\nconf}{C}
+\newcommand{\xconf}[1]{C_{{#1}}}
+\newcommand{\xconfp}[2]{C_{{#1}, {#2}}}
+
+
+
+%% END: Graph Contraction
+
+%\begin{document}
+
