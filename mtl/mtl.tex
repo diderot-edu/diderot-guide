@@ -12,26 +12,27 @@ To run through the examples here, please clone
 \href{https://github.com/diderot-edu/guide}{this repository}
 %
 and follow the instructions in \lstinline`INSTALL.md`. 
-
 \end{important}
 
 \section{Typesetting with LaTex for Diderot}
 
 MTL tries to remain compatible with LaTeX.   If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use MTL to generate XML from your LaTeX sources.  Translation of LaTeX sources to XML is not perfect at this time but works reasonably well. MTL also provides a few additional syntactic elements that helps improve the interactivity of the content.  
 
+\begin{definition}[Books and Booklets]
 After a LaTeX document is translated to XML via MTL, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
 %
 A Diderot \defn{book} is a collection of parts, where each \defn{part} is a collection of chapters.
 %
 A Diderot \defn{booklet} is a collection of chapters. 
-%
+\end{definition}
 
+\begin{example}
 The \lstinline`example` directory contains some example LaTeX sources along with additional tools for translation to Diderot XML.
 %
 The directories \lstinline`example/book` and \lstinline`example/booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
 %
 Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from the sources. 
-%
+\end{example}
 
 \begin{example}[PDF Generation]
 You can generate the PDF for the whole book by running the following.
@@ -46,9 +47,9 @@ $ make book.pdf
 \end{example}
 
 \begin{example}[XML Generation]
-XML generation occurs on a chapter by chapter basis for ease of publication on Diderot.
+For ease of publication on Diderot, XML generation occurs on a chapter by chapter basis.
 %
-You can the XML for  each chapter by specifying the chapter path, e.g.,
+You can generate the XML for  each chapter by specifying the chapter path.
 \begin{lstlisting}
 $ cd examples/book
 $ make probability/expectation.xml
@@ -58,12 +59,13 @@ $ make skyline/main.xml
 \end{lstlisting}
 \end{example}
 
-\subsection{Basic structure of LaTeX} 
 
-As with Latex, MTL requires a book to be organized into chapters, each of which then contains sections (section, subsection, subsubsection, and paragraph).  Each chapter and section can in turn contain ``elements'' each of which consist it is an ``atom'' or a  ``group''.
+\subsection{Basic Structure of LaTeX} 
+
+As with Latex, MTL requires a book to be organized into chapters, each of which then contains sections (section, subsection, subsubsection, and paragraph).  Each chapter and section can in turn contain ``elements'' each of which is an ``atom'' or a  ``group''.
 
 
-\begin{example}[Segments]
+\begin{example}[Sections]
 
 A chapter is typically structured into a number of sections.
 
@@ -92,9 +94,11 @@ A chapter is typically structured into a number of sections.
 <elements>
 
 \end{lstlisting}
+
+The term \lstinline`element` in the example refers to an "atom" or a "group".
 \end{example}
 
-The term \lstinline`element` above is either an "atom" or a "group".
+
 
 \subsection{Atoms}
 \label{sec:mtl::atoms}
@@ -111,9 +115,7 @@ An \defn{atom} is either
 <atom body>
 \end{<atom>}
 \end{lstlisting}
-\end{enumerate}
-
-
+%
 The term \lstinline`<atom>` above can be replaced with any of the following:
 \begin{itemize}
 \item \lstinline`algorithm`, \lstinline`assumption`,
@@ -130,10 +132,12 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 \item \lstinline`solution` (a solution to an exercise/problem), \lstinline`syntax` (a piece of syntax)
 \item \lstinline`task` (a task in an assignment), \lstinline`theorem`.
 \end{itemize}
+\end{enumerate}
+
 \end{definition}
 
 \begin{note}
-Authors can currently use only these atoms though we are working on a way to allow the authors to define their own.  In the mean time, you can request new atoms  (please send feedback here).
+Authors can currently use only these atoms defined above. We are working on a way to allow the authors to define their own atoms and expect it to be available soon.  In the mean time, you can request new atoms  (please send feedback here).
 \end{note}
 
 \begin{important}
@@ -160,14 +164,14 @@ The following is a definition atom, because it is single standing.
 \end{important}
 
 \begin{note}
-Atoms can contain multiple paragraphs
+Atoms can contain multiple paragraphs.  The following text consists of a text-paragraph atom and a definition atom.
 
 
 \begin{lstlisting}
 Paragraph 0. Sentence 1.
 Sentence 2.
 
-\begin{definition}
+\begin{definition}[Definition Title]
 Paragraph 1
 
 Paragraph 2
@@ -177,7 +181,7 @@ Paragraph 2
 
 \subsubsection{Controlling granularity}
 
-MTL will create an atom for each text paragraph.  When a text with lots of small (one or two line) paragraphs are uploaded on Diderot, it can too distracting to the user.  For example, the following text consists of three small paragraphs.
+MTL will create an atom for each text paragraph.  If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user.  For example, the following text consists of three small paragraphs.
 %
 \begin{lstlisting}
 If this then that.
@@ -189,7 +193,7 @@ This if and only of if that.
 
 We usually don't write like this but sometimes it happens.
 %
-In such a case, you may want to wrap this text it in a single paragraph atom.
+In such a case, you may want to wrap this text into a single paragraph atom.
 %
 \begin{lstlisting}
 \begin{gram}[If and only If]
@@ -200,7 +204,7 @@ If that then this.
 This if and only of if that.
 \end{gram}
 \end{lstlisting}
-
+%
 Alternatively you can wrap the text by curly braces as follows.
 %
 \begin{lstlisting}
@@ -221,7 +225,7 @@ Both will have no impact on the PDF but on Diderot, you will have only one atom 
 \label{sec:mtl::groups}
 
 \begin{gram}[Group]
-A \defn{group} consist of a sequence of atoms.  MTL currently support only one kind of group: \lstinline`flex`.  On Diderot, a \lstinline`flex` will display its first atom and allow the user to reveal the rest of the atoms by using a simple switch.  We find \lstinline`flex` groups useful for hiding simple examples for a definition, the solution to an exercise, and sometimes tangential remarks.  Flex's are one of the favorite features for authors and students alike. 
+A \defn{group} consist of a sequence of atoms.  MTL currently support only one kind of group: \lstinline`flex`.  On Diderot, a \lstinline`flex` will display its first atom and allow the user to reveal the rest of the atoms by using a simple switch.  We find \lstinline`flex` groups useful for hiding simple examples for a definition, the solution to an exercise, and sometimes tangential remarks.  This has turned out be a favorite feature of Diderot for authors and students alike. 
 
 \begin{lstlisting}
 \begin{flex}
@@ -245,7 +249,9 @@ Simple example 2
 \end{lstlisting}
 \end{gram}
 
-You can see how this flex example works here.
+You can see how this flex example works below, where a definition atom
+has been paired flexibly with two examples.  Click the drawer icon
+at the bottom right to open the flex.
 
 
 \begin{flex}
@@ -324,7 +330,7 @@ MTL replaces the former with `\hyperref[][]` command so that we can get proper l
 \end{gram}
 
 
-When auto-generating labels, MTL uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.
+When auto-generating labels, MTL uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.   Atoms and their labels are shown below.
 %
 \begin{lstlisting}
 algorithm : "alg"
@@ -357,7 +363,11 @@ theorem : "thm"
 
 \subsection{Code}
 \label{sec:mtl::code}
-For code, you can use \lstinline`\lstinline` and the \lstinline`lstlisting` environment.  The language has to be specified first (see below for an example).  The Kate language highligting spec should be included in the "meta" directory and the name of the file should match that of the language.  For example if `language = C`, then the Kate file should be `meta/C.xml`.  If the language is a dialect, then, e.g., `language = {[Cdialect]C}`, then the file should be called `CdialectC`.  Kate highlighting definitions for most languages are available online.
+For code, you can use \lstinline`\lstinline` and the \lstinline`lstlisting` environment.  The language has to be specified first (see below for an example).  The Kate language highligting spec should be included in the "meta" directory and the name of the file should match that of the language.  For example if \lstinline`language = C`, then the Kate file should be \lstinline`meta/C.xml`.  If the language is a dialect, then, e.g., \lstinline`language = \{[Cdialect]C}`, then the file should be called \lstinline`CdialectC`.  
+%
+Kate highlighting definitions for most languages are available online.
+%
+If you need a custom language, you can probably write one with a bit of effort by starting with the Kate specification for a  suitably close language.
 
 \begin{flex}
 \begin{example}[Python Code]
@@ -375,7 +385,7 @@ def is_even (i):
 \end{verbatim}
 \end{example}
 
-The code above looks like this:
+The code above will render like this:
 %
 \begin{lstlisting}[language = python, numbers = left]
 def is_even (i):
@@ -385,6 +395,7 @@ def is_even (i):
     return false
 \end{lstlisting}
 \end{flex}
+
 
 \begin{example}[Code in C Dialect]
 Specify the dialect preferred, and don't include line-numbers.
@@ -399,7 +410,6 @@ main () {
 \end{lstlisting}
 \end{verbatim}
 \end{example}
-
 \subsection{Images}
 
 You can include JPEG or PNG images by using the usual \lstinline`includegraphics` command.  
@@ -424,7 +434,7 @@ MTL will translate this to 50\% width in html and 50\% of textwidth in PDF and t
 \begin{note}
 For PDF output, the author could also use \lstinline`\textheight`.
 %
-But tis is not meaningful for HTML output, and will not work as expected.
+But this is not meaningful for HTML output, and will not work as expected.
 \end{note}
 
 \begin{important}[Scale is not Supported]
@@ -457,21 +467,18 @@ LaTeX has become rich but many author tend to use a small subset.  MTL appears t
 
 \item Fancy packages will not work.  Stick to basic latex and AMS Math packages.
 
-\item Support for tabular environment is limited: borders don't work, neither does columnt alignment, columns are centered.  You can use the array (math/mathjax) as a substitute.  This could require using \mbox{} for text fields.  
+\item Support for tabular environment is limited: borders don't work, neither does columnt alignmen, columns are centered.  You can use the array (math/mathjax) as a substitute.  This could require using \lstinline`\mbox` for text fields.  
  
 \item Center environment doesn't work.
 
-\item For figures specify the width/height in terms of concrete units, e.g.,
-  width = 4in, height = 8cm.
+\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
 
-\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing label format with enumitem package and similar packages do not work.  You can imitate these by using heading for your items.  
+\item Labeling and references are limited to atoms.  You can label atoms and refer to them, but you cannot label codelines, items in lists, etc.
 
-\item In general labeling and referencing is relatively limited to atoms.  You can label atoms and refer to them, but you cannot label codelines, items in lists, etc.
-
-\item We use mathjax to math environments.  This works in many cases, especially for AMS Math consistent usages.  There are a few important caveats. 
+\item We use mathjax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
 
 \begin{itemize}
-\item Once you switch to math, try to stay in math.  You can switch to text mode using \mbox{} but if you use macros inside mbox, they might not work (because mathjax don't know about your macros).  For example, this won't work 
+\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
 \begin{lstlisting}
 $\lstinline'xyz'$
 \end{lstlisting}
@@ -485,7 +492,7 @@ $\lstinline'xyz'$
 \end{alignat}
 \end{lstlisting}
 %
-should be wrapped with `\htmlmath`, e.g.,
+should be wrapped with \lstinline`\htmlmath`, e.g.,
 %
 \begin{lstlisting}
 \htmlmath{
