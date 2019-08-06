@@ -120,12 +120,23 @@ They will be assigned the questions asked on that content.
 I don't know who I will assign the chapters to at the time of creation and therefore leave this blank.  I or the TAs later edit the chapter to assign the discussion chairs. 
 \end{gram}
 
-\begin{gram}[Uploading Content]
-\label{guide:chapter::upload}
+\begin{gram}[Upload Window]
+\label{guide:chapter::upload::window}
 To upload contents into a chapter, move the mouse over the chapter and
 select upload content.  Here you can upload either an XML
-file or a PDF.  Let's start with PDF.  Select the PDF from
-slides and select the PDF file to upload, and upload.  
+file or a PDF.  
+\end{gram}
+
+\begin{gram}[PDF Uploads]
+\label{guide:chapter::upload-pdf}
+To upload a PDF document bring up the upload window and  select 
+
+\begin{itemize}
+\item ``Upload PDF Slides'', or 
+\item ``Upload Regular PDF.''
+\end{itemize}
+
+Then select the PDF file to upload, and press ``Upload Content''.
 
 Now you will see a spinning wheel.  This will take some time maybe a
 minute or two.  What is going on is that the PDF is split into pages
@@ -137,8 +148,26 @@ As an example, upload your second slide deck from your Fall 2018 site to the cha
 \includegraphics[width=0.9\textwidth]{author/media/upload-slides.jpg}
 \end{gram}
 
+
+\begin{gram}[XML Uploads]
+\label{guide:chapter::upload-xml}
+To upload a Diderot XML, first use the MTL compiler to generate one.  You can generate Diderot XML from LaTeX or from Markdown.  Next, press the ``Upload XML'' and select the XML file that you want to upload. 
+%
+
+If your chapter includes images, you can upload the images along with your XML by pressing ``Upload Images'' and then selecting all of the images (multiple images can be selected) that you want to upload.
+
+Now press ``Upload Content''. You will see a spinning wheel.  This will take some time maybe a minute or two.  What is going on is that your XML document is parsed into a tree of a chapter, sections, and atoms and everything is linked so that the images and document links now point to their right places.
+
+When the spin stops, click on the chapter and you should be able to
+view it.
+
+\includegraphics[width=0.9\textwidth]{author/media/upload-xml.jpg}
+\end{gram}
+
+
+
 \begin{important}[Unreleased chapters are not searchable]
-When a PDF document is uploaded, its text is extracted from and stored into an index, allowing the document to be searchable via the search bar when the chapter is released.
+When a PDF/XML document is uploaded, its contents is stored into an index, allowing it to be searched via the search bar when the chapter is released.
 %
 Unreleased chapters will not be searchable (so students won't see
 unreleased content).
@@ -174,8 +203,7 @@ Unreleasing and re-uploading could be thought as the same as deleting the chapte
 Because it deletes all related content, we discourage using this
 feature (after a course starts).  If you don't currently have students and are developing content, you may release chapters, and re-upload them as you wish.
 
-There are more advanced ways to upload released content. We will see
-these later.
+There is only one reliable way to update released content without deletion or without unreleasing it: assign to the chapter, all sections, and all groups, and atoms a label.  This allows Diderot to match the content being uploaded to existing content without ambiguities.  Otherwise, there can be possible ambiguities, because, for example, Diderot doesn't know which updated section corresponds to which existing section. 
 \end{gram}
 
 \section{Books}
@@ -209,7 +237,8 @@ To edit the book, create and upload chapters, go to "Manage Books" and select yo
 %
 \href{guide:chapter::create}{create chapters}
 %
-\href{guide:chapter::upload}{upload content}
+\href{guide:chapter::upload-pdf}{upload PDF content}, and
+\href{guide:chapter::upload-xml}{upload XML content}.
 \end{gram}
 
 
