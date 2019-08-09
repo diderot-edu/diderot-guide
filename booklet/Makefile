@@ -1,5 +1,6 @@
 PDFLATEX = pdflatex
 LATEX = latex
+FLAG_VERBOSE = -v 
 
 PREAMBLE = ./templates/preamble-diderot.tex
 # resource paths don't seem to work
@@ -19,8 +20,8 @@ else
 endif
 
 
-TEX2XML = $(MTL_HOME)/texml
-TEX2XMLDBG = $(MTL_HOME)/texml.dbg
+DC = $(MTL_HOME)/texml
+DCDBG = $(MTL_HOME)/texml.dbg
 
 
 default: book.pdf
@@ -41,10 +42,19 @@ reset:
 ######################################################################
 
 %.xml : %.tex FORCE
-	$(TEX2XML) -meta ./meta -preamble $(PREAMBLE) $< -o $@
-
-%.xmldbg : %.tex
-	$(TEX2XMLDBG) -meta ./meta -preamble $(PREAMBLE) $< -o $@
+ifdef debug
+ifdef verbose
+	$(DC_DBG) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(DC_DBG) $< -preamble $(PREAMBLE) -o $@
+endif
+else
+ifdef verbose
+	$(DC) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(DC) $< -preamble $(PREAMBLE) -o $@
+endif
+endif
 
 
 ######################################################################

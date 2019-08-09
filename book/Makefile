@@ -16,8 +16,8 @@ else
 	endif
 endif
 
-TEX2XML = $(MTL_HOME)/texml
-TEX2XML_DBG = $(MTL_HOME)/texml.dbg
+DC = $(MTL_HOME)/texml
+DC_DBG = $(MTL_HOME)/texml.dbg
 
 default: book
 
@@ -27,11 +27,19 @@ FORCE:
 
 
 %.xml : %.tex FORCE
-	$(TEX2XML) -meta ./meta -preamble $(PREAMBLE) $< -o $@
-
-%.xmldbg : %.tex
-	$(TEX2XML_DBG) -meta ./meta -preamble $(PREAMBLE) $< -o $@
-
+ifdef debug
+ifdef verbose
+	$(DC_DBG) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(DC_DBG) $< -preamble $(PREAMBLE) -o $@
+endif
+else
+ifdef verbose
+	$(DC) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(DC) $< -preamble $(PREAMBLE) -o $@
+endif
+endif
 
 clean: 
 	rm *.aux *.idx *.log *.out *.toc */*.aux */*.idx */*.log */*.out 
