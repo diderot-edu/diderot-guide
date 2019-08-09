@@ -1,6 +1,8 @@
 PDFLATEX = pdflatex
 LATEX = latex
 
+FLAG_VERBOSE = -v 
+
 PREAMBLE = templates/preamble-diderot.tex
 PANDOC = pandoc --verbose --mathjax -f latex
 
@@ -18,8 +20,8 @@ else
 endif
 
 
-TEX2XML = $(MTL_HOME)/texml
-TEX2XMLDBG = $(MTL_HOME)/texml.dbg
+TEX2XML = $(MTL_HOME)/dc -meta ./meta
+TEX2XML_DBG = $(MTL_HOME)/dc.dbg ./meta
 
 
 default: guide
@@ -40,10 +42,19 @@ reset:
 ######################################################################
 
 %.xml : %.tex FORCE
-	$(TEX2XML) -meta ./meta -preamble $(PREAMBLE) $< -o $@
-
-%.xmldbg : %.tex
-	$(TEX2XMLDBG) -meta ./meta -preamble $(PREAMBLE) $< -o $@
+ifdef debug
+ifdef verbose
+	$(TEX2XML_DBG) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(TEX2XML_DBG) $< -preamble $(PREAMBLE) -o $@
+endif
+else
+ifdef verbose
+	$(TEX2XML) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(TEX2XML) $< -preamble $(PREAMBLE) -o $@
+endif
+endif
 
 
 ######################################################################

@@ -29,7 +29,7 @@ To run through the examples here, please clone
 and follow the instructions in \lstinline`INSTALL.md`. 
 \end{important}
 
-\section{Typesetting with LaTex for Diderot}
+\section{Typesetting with LaTex}
 
 DC tries to remain compatible with LaTeX.   If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use DC to generate XML from your LaTeX sources.  Translation of LaTeX sources to XML is not perfect at this time but works reasonably well. DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
 
@@ -562,9 +562,12 @@ The above limitations all pertain to the XML generation.  Because DC works on a 
 
 \section{How to Compile Using DC}
 
-The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like.  Several  examples are provided in \lstinline`examples`.
+The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like. 
 
-The \lstinline`book` and \lstinline`booklet` directories contain several files.
+
+Several  examples are provided in \lstinline`examples`.
+%
+The folders \lstinline`book` and \lstinline`booklet` contain several files.
 %
 \begin{itemize}
 \item \lstinline`templates/diderot.sty`
@@ -587,7 +590,7 @@ The \lstinline`book` and \lstinline`booklet` directories contain several files.
 \subsection{Structuring your books sources}
 
 
-I recommend structuring your book sources in a way that streamlines your workflow for PDF generation and Diderot uploads.  I have found that the structure outlined below separately for booklets and books work well.  The example book and booklet provided follow this structure (see directories `book` and `booklet`).
+We recommend structuring your book sources to streamline your workflow for PDF generation and for Diderot uploads.  We have found that the structure outlined below.  The example book and booklet provided follow this structure (see folders `book` and `booklet`).
 
 \subsubsection{Booklets}
  
@@ -635,33 +638,42 @@ $ make ch2
 
 \subsection{Making XML of a specific chapter}
 
+To generate xml, simply use the Makefile provided as follows.
+%
 \begin{lstlisting}
 $ make ch2/main.xml
 \end{lstlisting}
-
-Error messages from the XML translator are not useful.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will give you an idea of where it blew up.   
-
+%
+If you would like to know more about how thing are being handled, you can turn on the verbose option
+%
 \begin{lstlisting}
-$ make ch2/main.xmldbg
+$ make verbose=true ch2/main.xml
+\end{lstlisting}
+
+
+Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will give you an idea of where it blew up.   
+%
+\begin{lstlisting}
+$ make debug=true ch2/main.xml
 \end{lstlisting}
 
 Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the DC tools directly. 
-
-\begin{gram}[texml]  
+%
+\begin{gram}[dc]  
 This tools translates the given input LaTeX file to xml.
 
 \begin{lstlisting}
-$ texml  -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+$ dc  -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
 \end{lstlisting}
 
 The meta direcotry contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
 \end{gram}
 
-\begin{gram}[texml.dbg] 
-This tools is the "debug" version of the texml binary above. As you might notite, `texml` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong.  As you will likely experience, `texml` should work if your latex sources are otherwise correct (you can run them through pdflatex), so hopefully, you will not have to use this binary much.  
+\begin{gram}[dc.dbg] 
+This tools is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
 
 \begin{lstlisting}
-texml -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+dc -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
 \end{lstlisting}
 \end{gram}
 
@@ -704,5 +716,6 @@ texml -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_fil
 
 
 
-%% # Typesetting with Markdown and DC (MeTaL)
+\section{Typesetting with Markdown}
 
+Coming soon...
