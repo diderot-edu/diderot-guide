@@ -1,0 +1,653 @@
+\chapter{MTL: A LaTeX to Diderot-XML Translator}
+\label{mtl}
+ 
+
+\section{Overview}
+Diderot is an online book system that integrates discussions with content.  Diderot consists of two largely separate systems that are designed to work together.  The first is the Diderot website, which provides the users (instructors and students) with an online interface for reading books and discussions.  The second is the \defn{MTL} (read "metal") compiler that translates LaTeX and Markdown sources to Diderot-stple XML, which can then be uploaded onto the Diderot site.  In addition to XML, Diderot site accepts conventional PDF documents and slide decks for upload.  This document describes MTL and its use.  
+
+
+\begin{important}
+To run through the examples here, please clone 
+%
+\href{https://github.com/diderot-edu/guide}{this repository}
+%
+and follow the instructions in \lstinline`INSTALL.md`. 
+\end{important}
+
+\section{Typesetting with LaTex for Diderot}
+
+MTL tries to remain compatible with LaTeX.   If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use MTL to generate XML from your LaTeX sources.  Translation of LaTeX sources to XML is not perfect at this time but works reasonably well. MTL also provides a few additional syntactic elements that helps improve the interactivity of the content.  
+
+\begin{definition}[Books and Booklets]
+After a LaTeX document is translated to XML via MTL, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
+%
+A Diderot \defn{book} is a collection of parts, where each \defn{part} is a collection of chapters.
+%
+A Diderot \defn{booklet} is a collection of chapters. 
+\end{definition}
+
+\begin{example}
+The \lstinline`example` directory contains some example LaTeX sources along with additional tools for translation to Diderot XML.
+%
+The directories \lstinline`example/book` and \lstinline`example/booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
+%
+Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from the sources. 
+\end{example}
+
+\begin{example}[PDF Generation]
+You can generate the PDF for the whole book by running the following.
+%
+\begin{lstlisting}
+$ cd examples/book
+$ make book.pdf
+
+$ cd examples/booklet
+$ make book.pdf
+\end{lstlisting}
+\end{example}
+
+\begin{example}[XML Generation]
+For ease of publication on Diderot, XML generation occurs on a chapter by chapter basis.
+%
+You can generate the XML for  each chapter by specifying the chapter path.
+\begin{lstlisting}
+$ cd examples/book
+$ make probability/expectation.xml
+
+$ cd examples/booklet
+$ make skyline/main.xml
+\end{lstlisting}
+\end{example}
+
+
+\subsection{Basic Structure of LaTeX} 
+
+As with Latex, MTL requires a book to be organized into chapters, each of which then contains sections (section, subsection, subsubsection, and paragraph).  Each chapter and section can in turn contain ``elements'' each of which is an ``atom'' or a  ``group''.
+
+
+\begin{example}[Sections]
+
+A chapter is typically structured into a number of sections.
+
+\begin{lstlisting}
+\chapter{Introduction}
+\label{ch:example}  % Chapters must have a label.
+   
+<elements>
+
+\section{A Section}
+\label{sec:example} % Optional but recommended section label.   
+
+<elements>
+
+\subsection{A Subsection}
+\label{sec:example::sub} % Optional but recommended section label.   
+
+<elements>
+
+\subsubsection {A Subsubsection}
+\label{sec:example::subsub}
+<elements>
+
+\paragraph {A paragraph}
+\label{sec:example::paragraph}
+<elements>
+
+\end{lstlisting}
+
+The term \lstinline`element` in the example refers to an "atom" or a "group".
+\end{example}
+
+
+
+\subsection{Atoms}
+\label{sec:mtl::atoms}
+
+\begin{definition}[Atom]
+An \defn{atom} is either
+\begin{enumerate}
+\item a plain paragraph, or
+\item a single-standing environment of the form
+
+\begin{lstlisting}
+\begin{<atom>}[Optional title]
+\label{atom-label} % optional but recommended label
+<atom body>
+\end{<atom>}
+\end{lstlisting}
+%
+The term \lstinline`<atom>` above can be replaced with any of the following:
+\begin{itemize}
+\item \lstinline`algorithm`, \lstinline`assumption`,
+\item \lstinline`code`, \lstinline`corollary, \lstinline`costspec`,
+\item \lstinline`datastr` (data structure), \lstinline`datatype`, \lstinline`definition`
+\item \lstinline`example`, \lstinline`exercise`,
+\item \lstinline`gram`  (non descript atom, i.e., a paragraph),
+\item \lstinline`hint`, 
+\item \lstinline`important`, 
+\item \lstinline`lemma`,
+\item \lstinline`note`,
+\item \lstinline`preamble` (as a  first atom of chapter), \lstinline`problem` (a problem for students to solve), \lstinline`proof`, \lstinline`proposition`,
+\item \lstinline`remark` (an important note), \lstinline`reminder`,
+\item \lstinline`solution` (a solution to an exercise/problem), \lstinline`syntax` (a piece of syntax)
+\item \lstinline`task` (a task in an assignment), \lstinline`theorem`.
+\end{itemize}
+\end{enumerate}
+
+\end{definition}
+
+\begin{note}
+Authors can currently use only these atoms defined above. We are working on a way to allow the authors to define their own atoms and expect it to be available soon.  In the mean time, you can request new atoms  (please send feedback here).
+\end{note}
+
+\begin{important}
+Atoms are \defn{single standing}, that is to say surrounded by "vertical
+white spaces" or empty lines on both ends.
+%
+Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code will not be a definiton atom, but will be a plain paragraph atom, because definition is not single standing.
+
+\begin{lstlisting}
+We can now define Kleene closure as follows.
+\begin{definition}
+...
+\end{definition}
+\end{lstlisting}
+
+The following is a definition atom, because it is single standing.
+\begin{lstlisting}
+
+\begin{definition}
+...
+\end{definition}
+
+\end{lstlisting}
+\end{important}
+
+\begin{note}
+Atoms can contain multiple paragraphs.  The following text consists of a text-paragraph atom and a definition atom.
+
+
+\begin{lstlisting}
+Paragraph 0. Sentence 1.
+Sentence 2.
+
+\begin{definition}[Definition Title]
+Paragraph 1
+
+Paragraph 2
+\end{definition}
+\end{lstlisting}
+\end{note}
+
+\subsubsection{Controlling granularity}
+
+MTL will create an atom for each text paragraph.  If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user.  For example, the following text consists of three small paragraphs.
+%
+\begin{lstlisting}
+If this then that.
+
+If that then this.
+
+This if and only of if that.
+\end{lstlisting}
+
+We usually don't write like this but sometimes it happens.
+%
+In such a case, you may want to wrap this text into a single paragraph atom.
+%
+\begin{lstlisting}
+\begin{gram}[If and only If]
+If this then that.
+
+If that then this.
+
+This if and only of if that.
+\end{gram}
+\end{lstlisting}
+%
+Alternatively you can wrap the text by curly braces as follows.
+%
+\begin{lstlisting}
+{
+If this then that.
+
+If that then this.
+
+This if and only of if that.
+}
+\end{lstlisting}
+%
+%
+Both will have no impact on the PDF but on Diderot, you will have only one atom for the three sentences.
+
+
+\subsection{Groups}
+\label{sec:mtl::groups}
+
+\begin{gram}[Group]
+A \defn{group} consist of a sequence of atoms.  MTL currently support only one kind of group: \lstinline`flex`.  On Diderot, a \lstinline`flex` will display its first atom and allow the user to reveal the rest of the atoms by using a simple switch.  We find \lstinline`flex` groups useful for hiding simple examples for a definition, the solution to an exercise, and sometimes tangential remarks.  This has turned out be a favorite feature of Diderot for authors and students alike. 
+
+\begin{lstlisting}
+\begin{flex}
+\begin{definition}[A Definition]
+\label{def:a}
+
+A definition
+\end{definition}
+
+\begin{example}[Simple Example I]
+\label{ex:a-simple}
+Simple example 1
+\end{example}
+
+\begin{example}[Simple Example II]
+\label{ex:a-simple-2}
+Simple example 2
+\end{example}
+
+\end{flex}
+\end{lstlisting}
+\end{gram}
+
+You can see how this flex example works below, where a definition atom
+has been paired flexibly with two examples.  Click the drawer icon
+at the bottom right to open the flex.
+
+
+\begin{flex}
+\begin{definition}[A Definition]
+\label{def:a}
+A definition.
+\end{definition}
+
+\begin{example}[Simple Example]
+\label{ex:simple-1}
+Simple example 1
+\end{example}
+
+\begin{example}[Simple Example]
+\label{ex:simple-2}
+Simple example 2
+\end{example}
+
+\end{flex}
+  
+
+\section{Labels and References}
+
+Diderot uses labels to identify atoms uniquely.  It is a good practice
+to try to give a label to each atom, group, and segment.  All labels
+in a book must be unique.  MTL generates labels for all segments,
+groups, and atoms even if you don't give them one.  To help in
+authoring, I recommended giving each chapter a unique label, and
+prepending each label with that of the chapter.
+
+
+\begin{example}
+
+I recommend labeling chapters as follows.
+
+\begin{lstlisting}
+\chapter{Introduction}
+\label{ch:intro}
+
+\begin{preamble}
+\label{prml:intro}
+...
+\end{preamble}
+
+\section{Overview}
+\label{sec:intro::overview}
+
+
+Here is a paragraph atom without a label. 
+
+
+\begin{gram}
+\label{grm:intro::present}
+In this  section, we present...
+\end{gram}
+
+Here is another paragraph atom, consisting of two environments:
+\begin{itemize}
+...
+\end{itemize}
+\begin{enumerate}
+...
+\end{enumerate}
+
+\end{lstlisting}
+\end{example}
+
+\begin{gram}[References]
+To reference a label you can either use
+\begin{itemize}
+\item \lstinline`\href{label}{ref text}`
+\item \lstinline`\ref{label}`.
+\end{itemize}
+%
+MTL replaces the former with `\hyperref[][]` command so that we can get proper linked refs is latex/ pdf.
+\end{gram}
+
+
+When auto-generating labels, MTL uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.   Atoms and their labels are shown below.
+%
+\begin{lstlisting}
+algorithm : "alg"
+assumption : "asm"
+code : "cd"
+corollary : "crl"
+costspec : "cst"
+datastr : "dtstr"
+datatype : "adt"
+definition : "def"
+example : "xmpl"
+exercise : "xrcs"
+hint : "hint"
+important : "imp"
+lemma : "lem"
+note : "nt"
+gram : "grm"
+preamble : "prmbl"
+problem : "prb"
+proof : "prf"
+proposition : "prop"
+remark : "rmrk"
+reminder : "rmdr"
+slide : "slide"
+solution : "sol"
+syntax : "syn"
+task : "tsk"
+theorem : "thm"
+\end{lstlisting}
+
+\subsection{Code}
+\label{sec:mtl::code}
+For code, you can use \lstinline`\lstinline` and the \lstinline`lstlisting` environment.  The language has to be specified first (see below for an example).  The Kate language highligting spec should be included in the "meta" directory and the name of the file should match that of the language.  For example if \lstinline`language = C`, then the Kate file should be \lstinline`meta/C.xml`.  If the language is a dialect, then, e.g., \lstinline`language = \{[Cdialect]C}`, then the file should be called \lstinline`CdialectC`.  
+%
+Kate highlighting definitions for most languages are available online.
+%
+If you need a custom language, you can probably write one with a bit of effort by starting with the Kate specification for a  suitably close language.
+
+\begin{flex}
+\begin{example}[Python Code]
+Specify language as python, and include  line-numbers on the left of each line.
+Don't forget to include the Kate highlighting file for python in the meta directory.
+
+\begin{verbatim}
+\begin{lstlisting}[language = python, numbers = left]
+def is_even (i):
+  if i %2 = 0:
+    return true
+  else 
+    return false
+\end{lstlisting}
+\end{verbatim}
+\end{example}
+
+The code above will render like this:
+%
+\begin{lstlisting}[language = python, numbers = left]
+def is_even (i):
+  if i %2 = 0:
+    return true
+  else 
+    return false
+\end{lstlisting}
+\end{flex}
+
+
+\begin{example}[Code in C Dialect]
+Specify the dialect preferred, and don't include line-numbers.
+%
+Don't forget to include the Kate highlighting file for the dialect in the meta directory.
+
+\begin{verbatim}
+\begin{lstlisting}[language = {[C0]C}]
+main () {
+  return void
+}
+\end{lstlisting}
+\end{verbatim}
+\end{example}
+\subsection{Images}
+
+You can include JPEG or PNG images by using the usual \lstinline`includegraphics` command.  
+%
+We currently don't support PDF images (will be available shortly).
+
+There is one point to be careful about: sizing.  
+%
+In principle, you could use fixed sizes, e.g.,
+\begin{lstlisting}
+\includegraphics[width=5in]{myimage.jpg}
+\end{lstlisting}
+%
+The problem with this approach is that the PDF output and the Diderot output will likely have different formats and the image that looks just fine on paper might look too big on Diderot or possibly vice versa.
+%
+I therefore recommend using relative widths using the following approach
+\begin{lstlisting}
+\includegraphics[width=0.5\textwidth]{myimage.jpg}
+\end{lstlisting}
+MTL will translate this to 50\% width in html and 50\% of textwidth in PDF and the image will look consistent with its environment in both cases.  
+
+\begin{note}
+For PDF output, the author could also use \lstinline`\textheight`.
+%
+But this is not meaningful for HTML output, and will not work as expected.
+\end{note}
+
+\begin{important}[Scale is not Supported]
+For PDF output it is also possible to use \lstinline'scale'.  For example,
+\begin{lstlisting}
+\includegraphics[scale=0.5]{myimage.jpg}
+\end{lstlisting}
+
+This means that the image should be shown at 50\% of its actual dimensions.  This has  the same issues as the absolute measures approach. Furthermore, MTL doesn't detect attempt to detect the actual dimensions of the image and this approach is not supported.
+\end{important}
+
+\subsection{Colors}
+
+You can use colors as follows
+\begin{lstlisting}
+\textcolor{red}{my text}
+\end{lstlisting}
+
+\subsection{Limitations}
+\label{sec:mtl::limitations}
+
+LaTeX has become rich but many author tend to use a small subset.  MTL appears to work well for most uses. Here is a list of known limitations.
+\begin{itemize}
+
+\item For XML translation work, the chapter should be compileable to PDF.
+
+\item Do not use \lstinline`\input` directives in your chapters.
+
+\item Each chapter must have a unique label.
+
+\item Fancy packages will not work.  Stick to basic latex and AMS Math packages.
+
+\item Support for tabular environment is limited: borders don't work, neither does columnt alignmen, columns are centered.  You can use the array (math/mathjax) as a substitute.  This could require using \lstinline`\mbox` for text fields.  
+ 
+\item Center environment doesn't work.
+
+\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
+
+\item Labeling and references are limited to atoms.  You can label atoms and refer to them, but you cannot label codelines, items in lists, etc.
+
+\item We use mathjax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
+
+\begin{itemize}
+\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
+\begin{lstlisting}
+$\lstinline'xyz'$
+\end{lstlisting}
+
+\item The "tabular" environment does not work in MathJax.  Use "array" instead.
+
+\item  The environment 
+\begin{lstlisting}
+\begin{alignat} 
+... 
+\end{alignat}
+\end{lstlisting}
+%
+should be wrapped with \lstinline`\htmlmath`, e.g.,
+%
+\begin{lstlisting}
+\htmlmath{
+\begin{alignat} 
+... 
+\end{alignat}
+}
+\end{lstlisting} 
+\end{itemize}
+\end{itemize}
+  
+
+\section{How to Compile Using MTL}
+
+The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like.  Several  examples are provided in \lstinline`examples`.
+
+The \lstinline`book` and \lstinline`booklet` directories contain several files.
+%
+\begin{itemize}
+\item \lstinline`templates/diderot.sty`
+
+   Supplies diderot definitions needed for compiling latex to pdf's.
+   You don't need to modify this file.
+
+\item \lstinline`templates/preamble.tex` 
+
+   Supplies your macros that will be used by generating a pdf via pdflatex.  Nearly all packages and macros should be included here.  Each chapter will be compiled in the context of this file.  Ideally this file should
+   - include as few packages as possible
+   - define no environment definitions
+   - macros should be simple
+
+\item \lstinline`templates/preamble-diderot.tex` 
+
+   Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one preamble.  The example in directory `booklet` does so.
+\end{itemize}    
+
+\subsection{Structuring your books sources}
+
+
+I recommend structuring your book sources in a way that streamlines your workflow for PDF generation and Diderot uploads.  I have found that the structure outlined below separately for booklets and books work well.  The example book and booklet provided follow this structure (see directories `book` and `booklet`).
+
+\subsubsection{Booklets}
+ 
+ Booklets are books that don't have parts. For these  I recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want.  Place all media (images, videos etc) under a media/ subdirectory. 
+\begin{itemize}  
+\item \lstinline`ch1/main.tex`
+\item \lstinline`ch1/media/`: all my media files, *.png *.jgp, *.graffle, etc.
+\item \lstinline`ch2/main.tex`
+\item \lstinline`ch2/media/`: all my media files for chapter 2, *.png *.jgp, *.graffle, etc.
+\item \lstinline`ch3/main.tex`
+\end{itemize}
+
+\subsubsection{Books}
+
+Books have parts and chapters. I recommend structuring these as follows, where `ch1, ch2` etc can be replaced with names of your choice.
+%
+\begin{itemize}
+\item \lstinline`part1/ch1.tex`
+\item \lstinline`part1/ch2.tex`
+\item \lstinline`part1/media-ch1/`
+\item \lstinline`part1/media-ch2/`
+\item \lstinline`part2/ch3.tex`
+\item \lstinline`part2/ch4.tex`
+\item \lstinline`part2/ch5.tex`
+\item \lstinline`part2/media-ch3/`
+\item \lstinline`part2/media-ch4/`
+\item \lstinline`part2/media-ch5/`
+\end{itemize}
+   
+\subsection{Making PDFs}
+You can use \lstinline`pdflatex` to generate PDFs.  See the \lstinline`Makefile` in book or booklet as examples.
+%
+For example, you can  invone the \lstinline`Makefile` as follows to make a PDF:
+\begin{lstlisting}
+$ make book.pdf
+\end{lstlisting}
+
+\subsection{Making PDF a Specific Chapter}
+To make specific chapters, I usually extend separate rules for them in the Makefile.  See the \lstinline`Makefile` in book or booklet as examples.
+%
+For example, to compile the chapter \lstinline`probability` in the \lstinline`book` directory usen
+\begin{lstlisting}
+$ make ch2
+\end{lstlisting}
+
+\subsection{Making XML of a specific chapter}
+
+\begin{lstlisting}
+$ make ch2/main.xml
+\end{lstlisting}
+
+Error messages from the XML translator are not useful.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will give you an idea of where it blew up.   
+
+\begin{lstlisting}
+$ make ch2/main.xmldbg
+\end{lstlisting}
+
+Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the MTL tools directly. 
+
+\begin{gram}[texml]  
+This tools translates the given input LaTeX file to xml.
+
+\begin{lstlisting}
+$ texml  -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+\end{lstlisting}
+
+The meta direcotry contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
+\end{gram}
+
+\begin{gram}[texml.dbg] 
+This tools is the "debug" version of the texml binary above. As you might notite, `texml` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong.  As you will likely experience, `texml` should work if your latex sources are otherwise correct (you can run them through pdflatex), so hopefully, you will not have to use this binary much.  
+
+\begin{lstlisting}
+texml -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+\end{lstlisting}
+\end{gram}
+
+%% ## Tool: tex2tex
+%% This tools reads in your LaTeX sources, parses them, and writes it back.  It drops comments and normalized the whitespace but should otherwise return back a LaTeX file that is essentially the same as the input file.   You should not need to use this binary, which is primarily used for testing during development.
+
+%% Examples: 
+%% {lstlisting}
+%% $ bin/tex2tex ./graph-contraction/star.tex -o ./s.tex
+%% $ diff ./graph-contraction/star.tex ./s.tex
+%% {lstlisting}
+%% ### Tool: texel
+%% This tool "normalizes" your latex sources.  This means that it
+
+%% * atomizes your code, wrapping each paragraph into a non-descript "gram" atom if it is not already wrapped.
+
+%% * wraps each atom by a "group", if not already wrapped by one.
+
+%% * gives each segment (section, subsection, subsubsection, paragraph, atom) of the input file a label and it wraps each atom into a "group" if it is not already in a group.  A group is one of "cluster" "flex" "mproblem" (multipart problem).  
+
+%% Generated labels have the form 
+%% {lstlisting}
+%% kind_prefix:chapter_label:segment_label
+%% {lstlisting}
+%% Here kind_prefix could for exmaple be
+%% * `sec`, for section, subsection, subsubsection, paragraph
+%% * `xmpl`, `thm`, for an example or a theorem.
+
+%% The chapter_label is extracted from the chapter label given.  For exmaple, if the label has any one of the form 
+%% {lstlisting}
+%% ch:star | chapter:star | ch_star | ch__star | ch:_star | chap:_star
+%% {lstlisting}
+%% chapter_label will be `star`.
+
+%% The tool takes the label, split it at the delimiters [:_]+ and if the prefix starts with "ch" it take the rest of the label as the chapter label.
+ 
+%% Some example full labels:
+%% * xmpl:star:simpleexample
+%% * thm:star:costbound
+
+
+
+%% # Typesetting with Markdown and MTL (MeTaL)
+
