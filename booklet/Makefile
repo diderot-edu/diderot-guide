@@ -8,20 +8,20 @@ PANDOC = pandoc --verbose --mathjax -f latex
 
 
 ifeq ($(OS),Windows_NT)
-	MTL_HOME = ../bin/windows
+	DC_HOME = ../bin/windows
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		MTL_HOME = ../bin/ubuntu
+		DC_HOME = ../bin/ubuntu
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		MTL_HOME = ../bin/macos
+		DC_HOME = ../bin/macos
 	endif
 endif
 
 
-DC = $(MTL_HOME)/texml -meta ./meta
-DCDBG = $(MTL_HOME)/texml.dbg -meta ./meta 
+DC = $(DC_HOME)/texml -meta ./meta
+DCDBG = $(DC_HOME)/texml.dbg -meta ./meta 
 
 
 default: book.pdf

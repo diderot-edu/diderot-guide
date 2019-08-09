@@ -4,21 +4,20 @@ LATEX = latex
 FLAG_VERBOSE = -v 
 
 ifeq ($(OS),Windows_NT)
-	MTL_HOME = ./bin/windows
+	DC_HOME = ./bin/windows
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		MTL_HOME = ./bin/ubuntu
+		DC_HOME = ./bin/ubuntu
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		MTL_HOME = ./bin/macos
+		DC_HOME = ./bin/macos
 	endif
 endif
 
-
-DC = $(MTL_HOME)/dc
-
-
+# DC_HOME = ~/DC
+DC = $(DC_HOME)/dc
+DC_DBG = $(DC_HOME)/dc.dbg
 default: guide
 
 FORCE: 
@@ -39,9 +38,9 @@ reset:
 %.xml : %.tex FORCE
 ifdef debug
 ifdef verbose
-	$(DC) $(FLAG_VERBOSE)  -meta ./meta $<) -o $@
+	$(DC_DBG) $(FLAG_VERBOSE)  -meta ./meta $<) -o $@
  else
-	$(DC)  -meta ./meta $< -o $@
+	$(DC_DBG)  -meta ./meta $< -o $@
 endif
 else
 ifdef verbose
@@ -54,9 +53,9 @@ endif
 %.xml : %.md FORCE
 ifdef debug
 ifdef verbose
-	$(DC) $(FLAG_VERBOSE) $< -o $@
+	$(DC_DBG) $(FLAG_VERBOSE) $< -o $@
  else
-	$(DC) $< -o $@
+	$(DC_DBG) $< -o $@
 endif
 else
 ifdef verbose

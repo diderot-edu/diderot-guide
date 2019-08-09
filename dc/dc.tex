@@ -576,12 +576,12 @@ Here is a list of known limitations.
 \end{itemize}
 
 \begin{remark}
-The above limitations all pertain to the XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as PDF. 
+The above limitations all pertain to the XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
 \end{remark}  
 
 \subsection{Compiling Latex to XML}
 
-You can translate LaTeX to XML by using the \lstinline{dc} binary.
+You can translate LaTeX to XML by using the \lstinline`dc` binary.
 %
 The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like. 
 
@@ -841,7 +841,7 @@ You can include JPEG, PNG, and SVG images by using following syntax.
 \end{gram}
 
 \begin{example}
-The following code displays the image \lstinline{papers.svg}.
+The following code displays the image \lstinline`papers.svg`.
 \begin{lstlisting}
 ![A categorization of CS papers.](papers.svg){width=90%}
 \end{lstlisting}
@@ -875,10 +875,39 @@ $ dc markdown/example.md
 
 \end{gram}
 
-\begin{gram}[dc.dbg] 
-This tools is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
+\begin{gram}[The ``Debugger''] 
+The tool \lstinline`dc.dbg` is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
 
 \begin{lstlisting}
-dc.dbg -preamble preamble.tex input.tex -o output.xml
+dc.dbg input.md -o output.xml
 \end{lstlisting}
 \end{gram}
+
+\section{Internals}
+
+If you encounter a problem in using DC, then some high-lever understanding of the DC's internal could help.
+%
+DC works by splitting the LaTeX or Markdown document into atoms, which it treats as units.
+%
+It uses a Latex to XML or Latex to Markdown compiler to translate each atom and stitches the XML's back to construct the XML for the document.
+%
+The current implementation works with \href{www.pandoc.org}{pandoc}, though other compilers such as \href{https://dlmf.nist.gov/LaTeXML/}{LaTeXML} were also used at some point in the past.  
+
+When you receive an error, it will likely look like this:
+\begin{lstlisting}
+*latex_file_to_html: Executing command: pandoc --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html
+Error in html translation.
+Command exited with code: 65
+Now exiting.make: *** [dc/dc.xml] Error 65
+\end{lstlisting} 
+% 
+The error occurred when compiling atom \# 67, which is stored in the file \lstinline`/tmp/67.tex`.
+%
+To understand the error you can open this file and look at it.  This is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
+\begin{lstlisting}
+pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html
+\end{lstlisting}
+%
+Basically the same workflow applies to Markdown inputs.
+
+This is really all you need. Happy hacking!
