@@ -463,7 +463,7 @@ This means that the image should be shown at 50\% of its actual dimensions.  Thi
 
 \subsection{Indexing}
 
-\begin{group}
+\begin{flex}
 In the near term, we plan to index books automatically by doing some natural-language processing.  
 %
 To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: \lstinline`defb, \defe, \defn`.  You can define this as follows or any other way you prefer.
@@ -492,7 +492,7 @@ Given these definitions, the following sentence will be processed so that the te
 %
 Dijkstra's algorithm solves the SSSP problem.
 \end{example}
-\end{group}
+\end{flex}
 
 \subsection{Colors}
 
@@ -715,7 +715,87 @@ dc -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.x
 %% * thm:star:costbound
 
 
-
 \section{Typesetting with Markdown}
 
-Coming soon...
+DC has basic support for Markdown to XML translation. 
+
+
+\begin{important}[Avoiding Pitfalls]
+\begin{itemize}
+\item All special symbols such as \#'s that are not headers must be espaced.
+\item In math mode \% is a special symbol and should be escaped.
+\item All code blocks could be given a language annotation for syntax highlighting. For example
+\begin{lstlisting}
+```html ...
+```python ...
+```xml ..
+\end{lstlisting}   
+\end{itemize}
+\end{important}
+
+
+\subsection{Chapters and Sections}
+
+We support the header style using leading \# signs, e.g.,
+\begin{lstlisting}
+# This is a chapter
+
+## This is a section
+
+### This is a subsection
+
+#### This is a subsubsection
+
+##### This is a paragraph
+\end{lstlisting}
+
+
+
+\subsection{Code}
+\label{sec:dc::md::code}
+
+Usual Markdown convensions apply.  You can include inline code by using the backtick symbol. For code blocks use three or more backticks and specify the lanugage. It is important to finish a code block with the same or greater number of backtics.
+
+\begin{example}
+\begin{lstlisting}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+...
+
+```
+
+```ocaml
+let x = 2 in
+2+2
+```
+
+```python
+def fun x:
+  if x then x
+  else x
+```
+\end{lstlisting}
+\end{example} 
+
+
+\subsection{Images}
+
+\begin{flex}
+\begin{gram}
+You can include JPEG, PNG, and SVG images by using following syntax.
+\begin{lstlisting}
+![caption](image_file.ext){width=xy%}
+\end{lstlisting}
+\end{gram}
+
+\begin{example}
+\begin{lstlisting}
+![A categorization of papers in computer science.](papers.svg){width=90%}
+\end{lstlisting}
+\end{example}
+\end{flex}
