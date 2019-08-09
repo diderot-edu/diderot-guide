@@ -461,6 +461,37 @@ For PDF output it is also possible to use \lstinline'scale'.  For example,
 This means that the image should be shown at 50\% of its actual dimensions.  This has  the same issues as the absolute measures approach. Furthermore, DC doesn't detect attempt to detect the actual dimensions of the image and this approach is not supported.
 \end{important}
 
+\subsection{Typesetting Mathematics}
+
+Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
+%
+\begin{itemize}
+\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
+\begin{lstlisting}
+$\lstinline'xyz'$
+\end{lstlisting}
+
+\item The "tabular" environment does not work in MathJax.  Use "array" instead.
+
+\item  The environment 
+\begin{lstlisting}
+\begin{alignat} 
+... 
+\end{alignat}
+\end{lstlisting}
+%
+should be wrapped with \lstinline`\htmlmath`, e.g.,
+%
+\begin{lstlisting}
+\htmlmath{
+\begin{alignat} 
+... 
+\end{alignat}
+}
+\end{lstlisting} 
+\end{itemize}
+
+
 \subsection{Indexing}
 
 \begin{flex}
@@ -527,33 +558,6 @@ Here is a list of known limitations.
 
 \item Labeling and references are limited to atoms.  You can label atoms and refer to them, but you cannot label codelines, items in lists, etc.
 
-\item We use mathjax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
-
-\begin{itemize}
-\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
-\begin{lstlisting}
-$\lstinline'xyz'$
-\end{lstlisting}
-
-\item The "tabular" environment does not work in MathJax.  Use "array" instead.
-
-\item  The environment 
-\begin{lstlisting}
-\begin{alignat} 
-... 
-\end{alignat}
-\end{lstlisting}
-%
-should be wrapped with \lstinline`\htmlmath`, e.g.,
-%
-\begin{lstlisting}
-\htmlmath{
-\begin{alignat} 
-... 
-\end{alignat}
-}
-\end{lstlisting} 
-\end{itemize}
 \end{itemize}
 
 \begin{remark}
@@ -663,7 +667,7 @@ Assuming that you structure your book as suggested above, then you will mostly b
 This tools translates the given input LaTeX file to xml.
 
 \begin{lstlisting}
-$ dc  -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+$ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml
 \end{lstlisting}
 
 The meta direcotry contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
@@ -673,7 +677,7 @@ The meta direcotry contains some files that may be used in the xml translation. 
 This tools is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
 
 \begin{lstlisting}
-dc -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+dc -meta ./meta -preamble preamble.tex input.tex -o output.xml
 \end{lstlisting}
 \end{gram}
 
@@ -717,19 +721,33 @@ dc -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.x
 
 \section{Typesetting with Markdown}
 
-DC has basic support for Markdown to XML translation. 
+DC supports Markdown to XML translation.  
 
+\begin{gram}[Header]
+For translation to work Markdown documents should have either of the following two headers
+\begin{itemize}
+\item Without front matter
+\begin{lstlisting}
+# Chapter Title
+...
+\end{lstlisting}  
 
-\begin{important}[Avoiding Pitfalls]
+\item  With YAML frontmatter.
+\begin{lstlisting}
+--- 
+Frontmatter
+---
+# Chapter Title
+...
+\end{lstlisting}  
+\end{itemize}
+\end{gram}
+
+\begin{important}[Special Symbols]
+Special symbols should be escaped.
 \begin{itemize}
 \item All special symbols such as \#'s that are not headers must be espaced.
-\item In math mode \% is a special symbol and should be escaped.
-\item All code blocks could be given a language annotation for syntax highlighting. For example
-\begin{lstlisting}
-```html ...
-```python ...
-```xml ..
-\end{lstlisting}   
+\item In math mode \% is a LaTeX-Math special symbol and should be escaped.
 \end{itemize}
 \end{important}
 
@@ -782,6 +800,11 @@ def fun x:
 \end{lstlisting}
 \end{example} 
 
+\subsection{Typesetting Mathematics}
+
+You can use the usual LaTeX delimiters to include mathematics, i.e., for inline style, use single dollar sign.
+%
+For math blocks use double-dollars or \lstinline`\[`.
 
 \subsection{Images}
 
