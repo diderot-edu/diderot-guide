@@ -468,7 +468,7 @@ But this is not meaningful for HTML output, and will not work as expected.
 \end{note}
 
 \begin{important}[Scale is not Supported]
-For PDF output it is also possible to use \lstinline'scale'.  For example,
+For PDF output it is also possible to use \lstinline`scale`.  For example,
 \begin{lstlisting}
 \includegraphics[scale=0.5]{myimage.jpg}
 \end{lstlisting}
@@ -483,7 +483,7 @@ Diderot uses MathJax to render math environments.  This works in many cases, esp
 \begin{itemize}
 \item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
 \begin{lstlisting}
-$\lstinline'xyz'$
+$\lstinline`xyz`$
 \end{lstlisting}
 
 \item The "tabular" environment does not work in MathJax.  Use "array" instead.
@@ -850,6 +850,8 @@ The following code displays the image \lstinline`papers.svg`.
 
 \subsection{Compiling Markdown To XML}
 
+The guide includes a very simple markdown document\lstinline`markdown/example.md`.
+
 \begin{gram}[Making XML]
 To generate xml, simply use the Makefile provided as follows.
 %
@@ -903,11 +905,16 @@ Now exiting.make: *** [dc/dc.xml] Error 65
 % 
 The error occurred when compiling atom \# 67, which is stored in the file \lstinline`/tmp/67.tex`.
 %
-To understand the error you can open this file and look at it.  This is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
+To understand the error you can open this file.  The file is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
+%
+You can ask \lstinline`pandoc` to generate a standalone html, by passing the \lstinline`-s` flag, so that you can open the result and examine how it looks in your browser.
+%
 \begin{lstlisting}
-pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html
+pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -s -o /tmp/67.html
 \end{lstlisting}
+%
+Once you figure out what the problem is what remains is to update your main document and proceed.
 %
 Basically the same workflow applies to Markdown inputs.
 
-This is really all you need. Happy hacking!
+This is basically all you need. Happy hacking!
