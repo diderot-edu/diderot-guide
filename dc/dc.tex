@@ -3,35 +3,52 @@
  
 
 \section{Overview}
+
 Diderot is an online book system that integrates discussions with
 content.  Diderot consists of two largely separate systems that are
-designed to work together.  The first is the Diderot website, which
+designed to work together:
+%
+\begin{itemize}
+\item the Diderot website, which
 provides the users (instructors and students) with an online interface
-for reading books and discussions.  The second is the Diderot
+for reading books and discussions, 
+\item the Diderot
 compiler, \defn{DC} for short, that translates LaTeX and Markdown
 sources to Diderot-style XML.
+\end{itemize}
 %
 Diderot-style XML files be uploaded onto the Diderot site. 
 %
 In addition to XML, Diderot site accepts conventional PDF documents
-and slide decks for upload.  This document describes DC and its use.
-
-\begin{note}
-Throughout we use the term ``XML'' to refer to Diderot-style XML.
-\end{note}
+and slide decks for upload. 
+%
 
 
-\begin{important}
-To run through the examples here, please clone 
+\begin{important}[Sources and Contributions]
+You can go through the examples in this chapter, please clone 
 %
 \href{https://github.com/diderot-edu/guide}{this github repository}
 %
 and follow the instructions in \lstinline`INSTALL.md`. 
+
+This guide is public.  Feel free to contribute to the sources and send feedback on Diderot.  You can click any ``mail'' button and send feedback or ask questions. 
 \end{important}
+
+
 
 \section{Typesetting with LaTex}
 
-DC tries to remain compatible with LaTeX.   If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use DC to generate XML from your LaTeX sources.  Translation of LaTeX sources to XML is not perfect at this time but works reasonably well. DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
+DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will be compatible wit LaTeX and you can use your notes to generate a PDF document.
+%
+The reverse direction from LaTeX to Diderot is not as certain but works reasonably well.
+%
+If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use DC to generate XML from your LaTeX sources.  
+%
+Latex-to-XML translation is not perfect at this time but works reasonably well. 
+%
+DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
+%
+The rest of this section walks you through some basics of the Diderot's LaTeX.
 
 \begin{definition}[Books and Booklets]
 After a LaTeX document is translated to XML via DC, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
@@ -42,9 +59,7 @@ A Diderot \defn{booklet} is a collection of chapters.
 \end{definition}
 
 \begin{example}
-The \lstinline`example` directory contains some example LaTeX sources along with additional tools for translation to Diderot XML.
-%
-The directories \lstinline`example/book` and \lstinline`example/booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
+The folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
 %
 Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from the sources. 
 \end{example}
@@ -564,14 +579,15 @@ Here is a list of known limitations.
 The above limitations all pertain to the XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as PDF. 
 \end{remark}  
 
-\section{How to Compile Using DC}
+\subsection{Compiling Latex to XML}
 
+You can translate LaTeX to XML by using the \lstinline{dc} binary.
+%
 The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like. 
 
 
-Several  examples are provided in \lstinline`examples`.
-%
-The folders \lstinline`book` and \lstinline`booklet` contain several files.
+As examples, 
+the folders \lstinline`book` and \lstinline`booklet` contain several files.
 %
 \begin{itemize}
 \item \lstinline`templates/diderot.sty`
@@ -591,12 +607,13 @@ The folders \lstinline`book` and \lstinline`booklet` contain several files.
    Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one preamble.  The example in directory `booklet` does so.
 \end{itemize}    
 
-\subsection{Structuring your books sources}
+For ease of compilation and publishing on Didetor, we recommend
+structuring your book sources to streamline your workflow for PDF
+generation and for Diderot uploads.  We have found that the structure
+outlined below.  The example book and booklet provided follow this
+structure (see folders `book` and `booklet`).
 
-
-We recommend structuring your book sources to streamline your workflow for PDF generation and for Diderot uploads.  We have found that the structure outlined below.  The example book and booklet provided follow this structure (see folders `book` and `booklet`).
-
-\subsubsection{Booklets}
+\begin{gram}[Booklets]
  
  Booklets are books that don't have parts. For these  I recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want.  Place all media (images, videos etc) under a media/ subdirectory. 
 \begin{itemize}  
@@ -606,10 +623,11 @@ We recommend structuring your book sources to streamline your workflow for PDF g
 \item \lstinline`ch2/media/`: all my media files for chapter 2, *.png *.jgp, *.graffle, etc.
 \item \lstinline`ch3/main.tex`
 \end{itemize}
+\end{gram}
 
-\subsubsection{Books}
+\begin{gram}[Books]
 
-Books have parts and chapters. I recommend structuring these as follows, where `ch1, ch2` etc can be replaced with names of your choice.
+Books have parts and chapters. We recommend structuring these as follows, where `ch1, ch2` etc can be replaced with names of your choice.
 %
 \begin{itemize}
 \item \lstinline`part1/ch1.tex`
@@ -624,7 +642,10 @@ Books have parts and chapters. I recommend structuring these as follows, where `
 \item \lstinline`part2/media-ch5/`
 \end{itemize}
    
-\subsection{Making PDFs}
+\end{gram}
+
+
+\begin{gram}[Making PDFs]
 You can use \lstinline`pdflatex` to generate PDFs.  See the \lstinline`Makefile` in book or booklet as examples.
 %
 For example, you can  invone the \lstinline`Makefile` as follows to make a PDF:
@@ -639,8 +660,9 @@ For example, to compile the chapter \lstinline`probability` in the \lstinline`bo
 \begin{lstlisting}
 $ make ch2
 \end{lstlisting}
+\end{gram}
 
-\subsection{Making XML of a specific chapter}
+\begin{gram}[Making XML]
 
 To generate xml, simply use the Makefile provided as follows.
 %
@@ -653,24 +675,26 @@ If you would like to know more about how thing are being handled, you can turn o
 \begin{lstlisting}
 $ make verbose=true ch2/main.xml
 \end{lstlisting}
+\end{gram}
 
-
+\begin{gram}
 Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will give you an idea of where it blew up.   
 %
 \begin{lstlisting}
 $ make debug=true ch2/main.xml
 \end{lstlisting}
+\end{gram}
 
+\begin{gram}[Using DC directly]
 Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the DC tools directly. 
 %
-\begin{gram}[dc]  
 This tools translates the given input LaTeX file to xml.
 
 \begin{lstlisting}
 $ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml
 \end{lstlisting}
 
-The meta direcotry contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
+The meta folder contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
 \end{gram}
 
 \begin{gram}[dc.dbg] 
@@ -823,3 +847,38 @@ The following code displays the image \lstinline{papers.svg}.
 \end{lstlisting}
 \end{example}
 \end{flex}
+
+\subsection{Compiling Markdown To XML}
+
+\begin{gram}[Making XML]
+To generate xml, simply use the Makefile provided as follows.
+%
+\begin{lstlisting}
+$ make markdown/example.xml
+\end{lstlisting}
+%
+If you would like to know more about how thing are being handled, you can turn on the verbose option
+%
+\begin{lstlisting}
+$ make verbose=true markdown/example.xml 
+\end{lstlisting}
+\end{gram}
+
+\begin{gram}[Using DC directly]
+You could also use the DC tools directly as follows.
+%
+The command will generate  \lstinline`markdown/example.xml`.
+
+\begin{lstlisting}
+$ dc markdown/example.md
+\end{lstlisting}
+
+\end{gram}
+
+\begin{gram}[dc.dbg] 
+This tools is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
+
+\begin{lstlisting}
+dc.dbg -preamble preamble.tex input.tex -o output.xml
+\end{lstlisting}
+\end{gram}

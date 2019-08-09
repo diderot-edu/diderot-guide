@@ -3,10 +3,6 @@ LATEX = latex
 
 FLAG_VERBOSE = -v 
 
-PREAMBLE = templates/preamble-diderot.tex
-PANDOC = pandoc --verbose --mathjax -f latex
-
-
 ifeq ($(OS),Windows_NT)
 	MTL_HOME = ./bin/windows
 else
@@ -20,8 +16,7 @@ else
 endif
 
 
-TEX2XML = $(MTL_HOME)/dc -meta ./meta
-TEX2XML_DBG = $(MTL_HOME)/dc.dbg ./meta
+DC = $(MTL_HOME)/dc
 
 
 default: guide
@@ -44,17 +39,33 @@ reset:
 %.xml : %.tex FORCE
 ifdef debug
 ifdef verbose
-	$(TEX2XML_DBG) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_VERBOSE)  -meta ./meta $<) -o $@
  else
-	$(TEX2XML_DBG) $< -preamble $(PREAMBLE) -o $@
+	$(DC)  -meta ./meta $< -o $@
 endif
 else
 ifdef verbose
-	$(TEX2XML) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_VERBOSE)  -meta ./meta $< -o $@
  else
-	$(TEX2XML) $< -preamble $(PREAMBLE) -o $@
+	$(DC)  -meta ./meta $< -o $@
 endif
 endif
+
+%.xml : %.md FORCE
+ifdef debug
+ifdef verbose
+	$(DC) $(FLAG_VERBOSE) $< -o $@
+ else
+	$(DC) $< -o $@
+endif
+else
+ifdef verbose
+	$(DC) $(FLAG_VERBOSE) $< -o $@
+ else
+	$(DC) $< -o $@
+endif
+endif
+
 
 
 ######################################################################
