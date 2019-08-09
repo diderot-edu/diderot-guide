@@ -3,35 +3,52 @@
  
 
 \section{Overview}
+
 Diderot is an online book system that integrates discussions with
 content.  Diderot consists of two largely separate systems that are
-designed to work together.  The first is the Diderot website, which
+designed to work together:
+%
+\begin{itemize}
+\item the Diderot website, which
 provides the users (instructors and students) with an online interface
-for reading books and discussions.  The second is the Diderot
+for reading books and discussions, 
+\item the Diderot
 compiler, \defn{DC} for short, that translates LaTeX and Markdown
 sources to Diderot-style XML.
+\end{itemize}
 %
 Diderot-style XML files be uploaded onto the Diderot site. 
 %
 In addition to XML, Diderot site accepts conventional PDF documents
-and slide decks for upload.  This document describes DC and its use.
-
-\begin{note}
-Throughout we use the term ``XML'' to refer to Diderot-style XML.
-\end{note}
+and slide decks for upload. 
+%
 
 
-\begin{important}
-To run through the examples here, please clone 
+\begin{important}[Sources and Contributions]
+You can go through the examples in this chapter, please clone 
 %
 \href{https://github.com/diderot-edu/guide}{this github repository}
 %
 and follow the instructions in \lstinline`INSTALL.md`. 
+
+This guide is public.  Feel free to contribute to the sources and send feedback on Diderot.  You can click any ``mail'' button and send feedback or ask questions. 
 \end{important}
 
-\section{Typesetting with LaTex for Diderot}
 
-DC tries to remain compatible with LaTeX.   If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use DC to generate XML from your LaTeX sources.  Translation of LaTeX sources to XML is not perfect at this time but works reasonably well. DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
+
+\section{Typesetting with LaTex}
+
+DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will be compatible wit LaTeX and you can use your notes to generate a PDF document.
+%
+The reverse direction from LaTeX to Diderot is not as certain but works reasonably well.
+%
+If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use DC to generate XML from your LaTeX sources.  
+%
+Latex-to-XML translation is not perfect at this time but works reasonably well. 
+%
+DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
+%
+The rest of this section walks you through some basics of the Diderot's LaTeX.
 
 \begin{definition}[Books and Booklets]
 After a LaTeX document is translated to XML via DC, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
@@ -42,9 +59,7 @@ A Diderot \defn{booklet} is a collection of chapters.
 \end{definition}
 
 \begin{example}
-The \lstinline`example` directory contains some example LaTeX sources along with additional tools for translation to Diderot XML.
-%
-The directories \lstinline`example/book` and \lstinline`example/booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
+The folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
 %
 Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from the sources. 
 \end{example}
@@ -453,7 +468,7 @@ But this is not meaningful for HTML output, and will not work as expected.
 \end{note}
 
 \begin{important}[Scale is not Supported]
-For PDF output it is also possible to use \lstinline'scale'.  For example,
+For PDF output it is also possible to use \lstinline`scale`.  For example,
 \begin{lstlisting}
 \includegraphics[scale=0.5]{myimage.jpg}
 \end{lstlisting}
@@ -461,9 +476,40 @@ For PDF output it is also possible to use \lstinline'scale'.  For example,
 This means that the image should be shown at 50\% of its actual dimensions.  This has  the same issues as the absolute measures approach. Furthermore, DC doesn't detect attempt to detect the actual dimensions of the image and this approach is not supported.
 \end{important}
 
+\subsection{Typesetting Mathematics}
+
+Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
+%
+\begin{itemize}
+\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
+\begin{lstlisting}
+$\lstinline`xyz`$
+\end{lstlisting}
+
+\item The "tabular" environment does not work in MathJax.  Use "array" instead.
+
+\item  The environment 
+\begin{lstlisting}
+\begin{alignat} 
+... 
+\end{alignat}
+\end{lstlisting}
+%
+should be wrapped with \lstinline`\htmlmath`, e.g.,
+%
+\begin{lstlisting}
+\htmlmath{
+\begin{alignat} 
+... 
+\end{alignat}
+}
+\end{lstlisting} 
+\end{itemize}
+
+
 \subsection{Indexing}
 
-\begin{group}
+\begin{flex}
 In the near term, we plan to index books automatically by doing some natural-language processing.  
 %
 To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: \lstinline`defb, \defe, \defn`.  You can define this as follows or any other way you prefer.
@@ -492,7 +538,7 @@ Given these definitions, the following sentence will be processed so that the te
 %
 Dijkstra's algorithm solves the SSSP problem.
 \end{example}
-\end{group}
+\end{flex}
 
 \subsection{Colors}
 
@@ -527,44 +573,21 @@ Here is a list of known limitations.
 
 \item Labeling and references are limited to atoms.  You can label atoms and refer to them, but you cannot label codelines, items in lists, etc.
 
-\item We use mathjax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
-
-\begin{itemize}
-\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
-\begin{lstlisting}
-$\lstinline'xyz'$
-\end{lstlisting}
-
-\item The "tabular" environment does not work in MathJax.  Use "array" instead.
-
-\item  The environment 
-\begin{lstlisting}
-\begin{alignat} 
-... 
-\end{alignat}
-\end{lstlisting}
-%
-should be wrapped with \lstinline`\htmlmath`, e.g.,
-%
-\begin{lstlisting}
-\htmlmath{
-\begin{alignat} 
-... 
-\end{alignat}
-}
-\end{lstlisting} 
-\end{itemize}
 \end{itemize}
 
 \begin{remark}
-The above limitations all pertain to the XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as PDF. 
+The above limitations all pertain to the XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
 \end{remark}  
 
-\section{How to Compile Using DC}
+\subsection{Compiling Latex to XML}
 
-The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like.  Several  examples are provided in \lstinline`examples`.
+You can translate LaTeX to XML by using the \lstinline`dc` binary.
+%
+The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like. 
 
-The \lstinline`book` and \lstinline`booklet` directories contain several files.
+
+As examples, 
+the folders \lstinline`book` and \lstinline`booklet` contain several files.
 %
 \begin{itemize}
 \item \lstinline`templates/diderot.sty`
@@ -584,12 +607,13 @@ The \lstinline`book` and \lstinline`booklet` directories contain several files.
    Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one preamble.  The example in directory `booklet` does so.
 \end{itemize}    
 
-\subsection{Structuring your books sources}
+For ease of compilation and publishing on Didetor, we recommend
+structuring your book sources to streamline your workflow for PDF
+generation and for Diderot uploads.  We have found that the structure
+outlined below.  The example book and booklet provided follow this
+structure (see folders `book` and `booklet`).
 
-
-I recommend structuring your book sources in a way that streamlines your workflow for PDF generation and Diderot uploads.  I have found that the structure outlined below separately for booklets and books work well.  The example book and booklet provided follow this structure (see directories `book` and `booklet`).
-
-\subsubsection{Booklets}
+\begin{gram}[Booklets]
  
  Booklets are books that don't have parts. For these  I recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want.  Place all media (images, videos etc) under a media/ subdirectory. 
 \begin{itemize}  
@@ -599,10 +623,11 @@ I recommend structuring your book sources in a way that streamlines your workflo
 \item \lstinline`ch2/media/`: all my media files for chapter 2, *.png *.jgp, *.graffle, etc.
 \item \lstinline`ch3/main.tex`
 \end{itemize}
+\end{gram}
 
-\subsubsection{Books}
+\begin{gram}[Books]
 
-Books have parts and chapters. I recommend structuring these as follows, where `ch1, ch2` etc can be replaced with names of your choice.
+Books have parts and chapters. We recommend structuring these as follows, where `ch1, ch2` etc can be replaced with names of your choice.
 %
 \begin{itemize}
 \item \lstinline`part1/ch1.tex`
@@ -617,7 +642,10 @@ Books have parts and chapters. I recommend structuring these as follows, where `
 \item \lstinline`part2/media-ch5/`
 \end{itemize}
    
-\subsection{Making PDFs}
+\end{gram}
+
+
+\begin{gram}[Making PDFs]
 You can use \lstinline`pdflatex` to generate PDFs.  See the \lstinline`Makefile` in book or booklet as examples.
 %
 For example, you can  invone the \lstinline`Makefile` as follows to make a PDF:
@@ -632,36 +660,48 @@ For example, to compile the chapter \lstinline`probability` in the \lstinline`bo
 \begin{lstlisting}
 $ make ch2
 \end{lstlisting}
+\end{gram}
 
-\subsection{Making XML of a specific chapter}
+\begin{gram}[Making XML]
 
+To generate xml, simply use the Makefile provided as follows.
+%
 \begin{lstlisting}
 $ make ch2/main.xml
 \end{lstlisting}
-
-Error messages from the XML translator are not useful.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will give you an idea of where it blew up.   
-
+%
+If you would like to know more about how thing are being handled, you can turn on the verbose option
+%
 \begin{lstlisting}
-$ make ch2/main.xmldbg
+$ make verbose=true ch2/main.xml
 \end{lstlisting}
+\end{gram}
 
+\begin{gram}
+Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will give you an idea of where it blew up.   
+%
+\begin{lstlisting}
+$ make debug=true ch2/main.xml
+\end{lstlisting}
+\end{gram}
+
+\begin{gram}[Using DC directly]
 Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the DC tools directly. 
-
-\begin{gram}[texml]  
+%
 This tools translates the given input LaTeX file to xml.
 
 \begin{lstlisting}
-$ texml  -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+$ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml
 \end{lstlisting}
 
-The meta direcotry contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
+The meta folder contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
 \end{gram}
 
-\begin{gram}[texml.dbg] 
-This tools is the "debug" version of the texml binary above. As you might notite, `texml` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong.  As you will likely experience, `texml` should work if your latex sources are otherwise correct (you can run them through pdflatex), so hopefully, you will not have to use this binary much.  
+\begin{gram}[dc.dbg] 
+This tools is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
 
 \begin{lstlisting}
-texml -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_file.xml
+dc -meta ./meta -preamble preamble.tex input.tex -o output.xml
 \end{lstlisting}
 \end{gram}
 
@@ -703,6 +743,178 @@ texml -meta ./meta -preamble templates/preamble.tex input_file.tex -o output_fil
 %% * thm:star:costbound
 
 
+\section{Typesetting with Markdown}
 
-%% # Typesetting with Markdown and DC (MeTaL)
+DC supports Markdown to XML translation.  
 
+\begin{gram}[Header]
+For translation to work Markdown documents should have either of the following two headers
+\begin{itemize}
+\item Without front matter
+\begin{lstlisting}
+# Chapter Title
+...
+\end{lstlisting}  
+
+\item  With YAML frontmatter.
+\begin{lstlisting}
+--- 
+Frontmatter
+---
+# Chapter Title
+...
+\end{lstlisting}  
+\end{itemize}
+\end{gram}
+
+\begin{important}[Special Symbols]
+Special symbols should be escaped.
+\begin{itemize}
+\item All special symbols such as \#'s that are not headers must be espaced.
+\item In math mode \% is a LaTeX-Math special symbol and should be escaped.
+\end{itemize}
+\end{important}
+
+
+\subsection{Chapters and Sections}
+
+We support the header style using leading \# signs, e.g.,
+\begin{lstlisting}
+# This is a chapter
+
+## This is a section
+
+### This is a subsection
+
+#### This is a subsubsection
+
+##### This is a paragraph
+\end{lstlisting}
+
+
+
+\subsection{Code}
+\label{sec:dc::md::code}
+
+Usual Markdown convensions apply.  You can include inline code by using the backtick symbol. For code blocks use three or more backticks and specify the lanugage. It is important to finish a code block with the same or greater number of backtics.
+
+\begin{example}
+\begin{lstlisting}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+...
+
+```
+
+```ocaml
+let x = 2 in
+2+2
+```
+
+```python
+def fun x:
+  if x then x
+  else x
+```
+\end{lstlisting}
+\end{example} 
+
+\subsection{Typesetting Mathematics}
+
+You can use the usual LaTeX delimiters to include mathematics, i.e., for inline style, use single dollar sign.
+%
+For math blocks use double-dollars or \lstinline`\[`.
+
+\subsection{Images}
+
+\begin{flex}
+\begin{gram}
+You can include JPEG, PNG, and SVG images by using following syntax.
+\begin{lstlisting}
+![caption](image_file.ext){width=xy%}
+\end{lstlisting}
+\end{gram}
+
+\begin{example}
+The following code displays the image \lstinline`papers.svg`.
+\begin{lstlisting}
+![A categorization of CS papers.](papers.svg){width=90%}
+\end{lstlisting}
+\end{example}
+\end{flex}
+
+\subsection{Compiling Markdown To XML}
+
+The guide includes a very simple markdown document\lstinline`markdown/example.md`.
+
+\begin{gram}[Making XML]
+To generate xml, simply use the Makefile provided as follows.
+%
+\begin{lstlisting}
+$ make markdown/example.xml
+\end{lstlisting}
+%
+If you would like to know more about how thing are being handled, you can turn on the verbose option
+%
+\begin{lstlisting}
+$ make verbose=true markdown/example.xml 
+\end{lstlisting}
+\end{gram}
+
+\begin{gram}[Using DC directly]
+You could also use the DC tools directly as follows.
+%
+The command will generate  \lstinline`markdown/example.xml`.
+
+\begin{lstlisting}
+$ dc markdown/example.md
+\end{lstlisting}
+
+\end{gram}
+
+\begin{gram}[The ``Debugger''] 
+The tool \lstinline`dc.dbg` is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
+
+\begin{lstlisting}
+dc.dbg input.md -o output.xml
+\end{lstlisting}
+\end{gram}
+
+\section{Internals}
+
+If you encounter a problem in using DC, then some high-lever understanding of the DC's internal could help.
+%
+DC works by splitting the LaTeX or Markdown document into atoms, which it treats as units.
+%
+It uses a Latex to XML or Latex to Markdown compiler to translate each atom and stitches the XML's back to construct the XML for the document.
+%
+The current implementation works with \href{www.pandoc.org}{pandoc}, though other compilers such as \href{https://dlmf.nist.gov/LaTeXML/}{LaTeXML} were also used at some point in the past.  
+
+When you receive an error, it will likely look like this:
+\begin{lstlisting}
+*latex_file_to_html: Executing command: pandoc --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html
+Error in html translation.
+Command exited with code: 65
+Now exiting.make: *** [dc/dc.xml] Error 65
+\end{lstlisting} 
+% 
+The error occurred when compiling atom \# 67, which is stored in the file \lstinline`/tmp/67.tex`.
+%
+To understand the error you can open this file.  The file is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
+%
+You can ask \lstinline`pandoc` to generate a standalone html, by passing the \lstinline`-s` flag, so that you can open the result and examine how it looks in your browser.
+%
+\begin{lstlisting}
+pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -s -o /tmp/67.html
+\end{lstlisting}
+%
+Once you figure out what the problem is what remains is to update your main document and proceed.
+%
+Basically the same workflow applies to Markdown inputs.
+
+This is basically all you need. Happy hacking!

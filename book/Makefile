@@ -1,23 +1,24 @@
 PDFLATEX = pdflatex
 LATEX = latex
 
-PREAMBLE = ./templates/preamble-mtl.tex
+FLAG_VERBOSE = -v 
+PREAMBLE = ./templates/preamble-diderot.tex
 PANDOC = pandoc --verbose --mathjax -f latex
 
 ifeq ($(OS),Windows_NT)
-	MTL_HOME = ../../bin/windows
+	DC_HOME = ../bin/windows
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		MTL_HOME = ../../bin/ubuntu
+		DC_HOME = ../bin/ubuntu
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		MTL_HOME = ../../bin/macos
+		DC_HOME = ../bin/macos
 	endif
 endif
 
-TEX2XML = $(MTL_HOME)/texml
-TEX2XML_DBG = $(MTL_HOME)/texml.dbg
+DC = $(DC_HOME)/texml -meta ./meta
+DC_DBG = $(DC_HOME)/texml.dbg -meta ./meta
 
 default: book
 
@@ -27,11 +28,19 @@ FORCE:
 
 
 %.xml : %.tex FORCE
-	$(TEX2XML) -meta ./meta -preamble $(PREAMBLE) $< -o $@
-
-%.xmldbg : %.tex
-	$(TEX2XML_DBG) -meta ./meta -preamble $(PREAMBLE) $< -o $@
-
+ifdef debug
+ifdef verbose
+	$(DC_DBG) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(DC_DBG) $< -preamble $(PREAMBLE) -o $@
+endif
+else
+ifdef verbose
+	$(DC) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+ else
+	$(DC) $< -preamble $(PREAMBLE) -o $@
+endif
+endif
 
 clean: 
 	rm *.aux *.idx *.log *.out *.toc */*.aux */*.idx */*.log */*.out 
