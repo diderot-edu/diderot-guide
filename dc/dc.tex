@@ -5,19 +5,19 @@
 \section{Overview}
 
 Diderot is an online book system that integrates discussions with
-content.  Diderot consists of two largely separate systems that are
+content.  Diderot consists of two separate systems that are
 designed to work together:
 %
 \begin{itemize}
 \item the Diderot website, which
 provides the users (instructors and students) with an online interface
-for reading books and discussions, 
+for reading books and holding discussions, 
 \item the Diderot
 compiler, \defn{DC} for short, that translates LaTeX and Markdown
 sources to Diderot-style XML.
 \end{itemize}
 %
-Diderot-style XML files be uploaded onto the Diderot site. 
+Diderot-style XML files may be uploaded onto the Diderot site. 
 %
 In addition to XML, Diderot site accepts conventional PDF documents
 and slide decks for upload. 
@@ -25,30 +25,31 @@ and slide decks for upload.
 
 
 \begin{important}[Sources and Contributions]
-You can go through the examples in this chapter, please clone 
+To go through the examples in this chapter, please clone 
 %
 \href{https://github.com/diderot-edu/guide}{this github repository}
 %
 and follow the instructions in \lstinline`INSTALL.md`. 
 
-This guide is public.  Feel free to contribute to the sources and send feedback on Diderot.  You can click any ``mail'' button and send feedback or ask questions. 
+This guide is public.  Feel free to contribute to the sources and send feedback on Diderot.  
 \end{important}
 
-
+\begin{note}[Questions and Feedback]
+You can click any ``mail''  button in this guide and send feedback or ask questions. 
+\end{note}
 
 \section{Typesetting with LaTex}
 
-DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will be compatible wit LaTeX and you can use your notes to generate a PDF document.
+DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will be compatible with LaTeX. 
 %
-The reverse direction from LaTeX to Diderot is not as certain but works reasonably well.
+This means for example that you can generate a PDF document from your notes.
+%
+The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well.
 %
 If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use DC to generate XML from your LaTeX sources.  
 %
-Latex-to-XML translation is not perfect at this time but works reasonably well. 
-%
 DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
 %
-The rest of this section walks you through some basics of the Diderot's LaTeX.
 
 \begin{definition}[Books and Booklets]
 After a LaTeX document is translated to XML via DC, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
@@ -149,7 +150,7 @@ An \defn{atom} is either
 The term \lstinline`<atom>` above can be replaced with any of the following:
 \begin{itemize}
 \item \lstinline`algorithm`, \lstinline`assumption`,
-\item \lstinline`code`, \lstinline`corollary, \lstinline`costspec`,
+\item \lstinline`code`, \lstinline`corollary`, \lstinline`costspec`,
 \item \lstinline`datastr` (data structure), \lstinline`datatype`, \lstinline`definition`
 \item \lstinline`example`, \lstinline`exercise`,
 \item \lstinline`gram`  (non descript atom, i.e., a paragraph),
@@ -256,7 +257,7 @@ Both will have no impact on the PDF but on Diderot, you will have only one atom 
 \label{sec:mtl::groups}
 
 \begin{definition}[Group]
-A \defn{group} consist of a sequence of atoms.  DC currently support only one kind of group: \lstinline`flex`.  On Diderot, a \lstinline`flex` will display its first atom and allow the user to reveal the rest of the atoms by using a simple switch.  We find \lstinline`flex` groups useful for hiding simple examples for a definition, the solution to an exercise, and sometimes tangential remarks.  This has turned out be a favorite feature of Diderot for authors and students alike. 
+A \defn{group} consist of a sequence of atoms.  DC currently support only one kind of group: \lstinline`flex`.  On Diderot, a \lstinline`flex` will display its first atom and allow the user to reveal the rest of the atoms by using a simple switch.  This, for example, can be useful for hiding simple examples for a definition, the solution to an exercise, and a tangential remark, etc. 
 
 \begin{lstlisting}
 \begin{flex}
@@ -280,10 +281,13 @@ Simple example 2
 \end{lstlisting}
 \end{definition}
 
+\begin{note}
+This has turned out be a favorite feature of Diderot for authors and students alike. 
+%
 You can see how this `flex` example works below, where a definition atom
 has been paired flexibly with two examples.  Click the drawer icon
-at the bottom left to open the `flex`.
-
+at the bottom left to open the `flex` and click again to close it.
+\end{note}
 
 \begin{flex}
 \begin{definition}[A Definition]
@@ -306,8 +310,7 @@ Simple example 2
 
 \subsection{Labels and References}
 
-Diderot uses labels to identify atoms uniquely.  It is a good practice
-to try to give a label to each atom, group, and segment.  All labels
+Diderot uses labels to identify atoms uniquely. All labels
 in a book must be unique.  To help in authoring, we recommended giving
 each chapter a unique label, and prepending each label with that of
 the chapter.
@@ -315,7 +318,7 @@ the chapter.
 
 \begin{example}
 
-I recommend labeling content as follows.
+We recommend labeling content as follows.
 
 \begin{lstlisting}
 \chapter{Introduction}
@@ -356,11 +359,12 @@ To reference a label you can either use
 \item \lstinline`\ref{label}`.
 \end{itemize}
 %
-DC replaces the former with `\hyperref[][]` command so that we can get proper linked refs is latex/ pdf.
+DC replaces the former with \lstinline`\hyperref[][]` command so that we can get proper linked refs is latex/ pdf.
 \end{gram}
 
-
-When auto-generating labels, DC uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.   Atoms and their labels are shown below.
+DC generates a unique label for each atom, group, and section, in a document.
+%
+When doing so, DC uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.   Atoms and their labels are shown below.
 %
 \begin{lstlisting}
 algorithm : "alg"
@@ -512,7 +516,7 @@ should be wrapped with \lstinline`\htmlmath`, e.g.,
 \begin{flex}
 In the near term, we plan to index books automatically by doing some natural-language processing.  
 %
-To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: \lstinline`defb, \defe, \defn`.  You can define this as follows or any other way you prefer.
+To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: \lstinline`defb, \defe, \defn`.  You can define these commands as follows or any other way you prefer.
 %
 \begin{lstlisting}
 \newcommand{\defb}[1]{\textbf{#1}}
@@ -565,9 +569,9 @@ Here is a list of known limitations.
 
 \item Fancy packages will not work.  Stick to basic latex and AMS Math packages.
 
-\item Support for tabular environment is limited: borders don't work, neither does columnt alignmen, columns are centered.  You can use the array (math/mathjax) as a substitute.  This could require using \lstinline`\mbox` for text fields.  
+\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute.  This could require using \lstinline`\mbox` for text fields.  
  
-\item Center environment doesn't work.
+\item Center environment definitions will be ignored.
 
 \item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
 
@@ -576,7 +580,8 @@ Here is a list of known limitations.
 \end{itemize}
 
 \begin{remark}
-The above limitations all pertain to the XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
+The above limitations all pertain to XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
+PDF.
 \end{remark}  
 
 \subsection{Compiling Latex to XML}
@@ -607,7 +612,7 @@ the folders \lstinline`book` and \lstinline`booklet` contain several files.
    Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one preamble.  The example in directory `booklet` does so.
 \end{itemize}    
 
-For ease of compilation and publishing on Didetor, we recommend
+For ease of compilation and publishing on Diderot, we recommend
 structuring your book sources to streamline your workflow for PDF
 generation and for Diderot uploads.  We have found that the structure
 outlined below.  The example book and booklet provided follow this
@@ -646,17 +651,17 @@ Books have parts and chapters. We recommend structuring these as follows, where 
 
 
 \begin{gram}[Making PDFs]
-You can use \lstinline`pdflatex` to generate PDFs.  See the \lstinline`Makefile` in book or booklet as examples.
+You can use \lstinline`pdflatex` to generate a PDF output.  See the \lstinline`Makefile` in book or booklet as examples.
 %
-For example, you can  invone the \lstinline`Makefile` as follows to make a PDF:
+For example, you can  invoke the \lstinline`Makefile` as follows to make a PDF:
 \begin{lstlisting}
 $ make book.pdf
 \end{lstlisting}
 
-\subsection{Making PDF a Specific Chapter}
-To make specific chapters, I usually extend separate rules for them in the Makefile.  See the \lstinline`Makefile` in book or booklet as examples.
+\subsection{Making PDF for a Specific Chapter}
+To make specific chapters,  extend the Makefile to compile each chapter separately.  See the \lstinline`Makefile` in book or booklet as examples.
 %
-For example, to compile the chapter \lstinline`probability` in the \lstinline`book` directory usen
+For example, you can compile the chapter \lstinline`probability` in the \lstinline`book` directory as follows.
 \begin{lstlisting}
 $ make ch2
 \end{lstlisting}
@@ -670,7 +675,8 @@ To generate xml, simply use the Makefile provided as follows.
 $ make ch2/main.xml
 \end{lstlisting}
 %
-If you would like to know more about how thing are being handled, you can turn on the verbose option
+
+To obtain more information from a run, you can turn on the verbose option.
 %
 \begin{lstlisting}
 $ make verbose=true ch2/main.xml
@@ -678,11 +684,13 @@ $ make verbose=true ch2/main.xml
 \end{gram}
 
 \begin{gram}
-Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will give you an idea of where it blew up.   
+Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.
 %
 \begin{lstlisting}
 $ make debug=true ch2/main.xml
 \end{lstlisting}
+
+If that fails, there is another relatively simply way to debug, see \href{sec:dc::internals}{Section Internals} for additional information.
 \end{gram}
 
 \begin{gram}[Using DC directly]
@@ -879,15 +887,16 @@ $ dc markdown/example.md
 
 \begin{gram}[The ``Debugger''] 
 The tool \lstinline`dc.dbg` is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
-
+See also \href{sec:dc::internals}{Section Internals} for additional debugging help.
 \begin{lstlisting}
 dc.dbg input.md -o output.xml
 \end{lstlisting}
 \end{gram}
 
 \section{Internals}
+\label{sec:dc::internals}
 
-If you encounter a problem in using DC, then some high-lever understanding of the DC's internal could help.
+When using DC, a high-level understanding of the DC's internal could help.
 %
 DC works by splitting the LaTeX or Markdown document into atoms, which it treats as units.
 %
@@ -917,4 +926,4 @@ Once you figure out what the problem is what remains is to update your main docu
 %
 Basically the same workflow applies to Markdown inputs.
 
-This is basically all you need. Happy hacking!
+This is all you need. Happy Diderowing!

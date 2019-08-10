@@ -1,6 +1,6 @@
 PDFLATEX = pdflatex
 LATEX = latex
-
+PREAMBLE = templates/preamble-diderot.tex
 FLAG_VERBOSE = -v 
 
 ifeq ($(OS),Windows_NT)
@@ -38,15 +38,15 @@ reset:
 %.xml : %.tex FORCE
 ifdef debug
 ifdef verbose
-	$(DC_DBG) $(FLAG_VERBOSE)  -meta ./meta $<) -o $@
+	$(DC_DBG) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC_DBG)  -meta ./meta $< -o $@
+	$(DC_DBG)  -meta ./meta -preamble $(PREAMBLE)  $< -o $@
 endif
 else
 ifdef verbose
-	$(DC) $(FLAG_VERBOSE)  -meta ./meta $< -o $@
+	$(DC) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC)  -meta ./meta $< -o $@
+	$(DC)  -meta ./meta -preamble $(PREAMBLE)  $< -o $@
 endif
 endif
 
