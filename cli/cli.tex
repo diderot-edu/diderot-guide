@@ -1,21 +1,73 @@
 \chapter{Diderot Command Line Interface}
 
-TODO: FLESH THIS OUT.
+Diderot has a command line interface available to make interacting
+with the platform a little easier if you prefer using the command
+line instead of web UI's.
 
 \begin{important}[Sources and Contributions]
+
+The CLI is available on AFS, at the following path: TODO (rohany): add the path in later.
+
 To download the CLI, please clone 
 %
 \href{https://github.com/diderot-edu/diderot-cli}{this github repository}
 %
 and follow the instructions in \lstinline`README.md`. 
 
-Diderot CLI is public.  Feel free to contribute to the sources and send feedback on Diderot.  
+The Diderot CLI is public. Feel free to contribute or open an issue if there
+are any commands or utilities that you think would be useful to have. Please
+send feedback about the CLI on Diderot.
 \end{important}
 
 \begin{note}[Questions and Feedback]
 You can click any ``mail''  button in this guide and send feedback or ask questions. 
 \end{note}
 
-\section{User Interface}
+\section{Basic Usage}
+
+Run either \verb|diderot| or \verb|diderot_admin| and login with your Diderot credentials
+to open an interactive shell with the commands below.
+To exit, press \verb|Ctrl+D| or type \verb|exit| or \verb|quit|.
+For a list of all available commands, type \verb|help|. To get more information
+about a particular command, type either \verb|help <command>| or \verb|<command> -h|.
+
+\section{Student Interface}
+
+\begin{itemize}
+  \item \verb|list_courses|: List all available course labels.
+    Operations which require a course input must use the one of the labels returned from this command.
+  \item \verb|set_course|: Set the current target course for the CLI. All commands will now target the
+    specified course rather than requiring a course as input.
+  \item \verb|unset_course|: Removes the current set course. All course-specific commands
+    will now require a course label as input.
+  \item \verb|list_assignments|: Lists all assignments for a course.
+  \item \verb|download_assignment|: Downloads all handout/writeup files (if present) from a
+    target course and assignment into the current directory.
+  \item \verb|submit_assignment|: Submit a handin.tar file to a given course and homework.
+\end{itemize}
+
+% submit_assignment
 
 \section{Admin Interface}
+
+The admin CLI contains all the above commands, and expands the set to include
+some commands relating to manipulation of books and assignments.
+
+\begin{itemize}
+  \item \verb|list_books|: List all books, can optionally filter by course.
+  \item \verb|list_parts|: List all parts of a book.
+  \item \verb|list_chapters|: List all chapters of a book.
+  \item \verb|create_chapter|: Create a chapter in an input part of a book. Optionally specify
+    the new chapter's label and or title. If not, these values are filled in with a default.
+  \item \verb|update_book|: Update the content of an existing chapter. Upload either
+    a standalone pdf, pdf of a slideshow, or an xml/mlx document and image attachments. 
+    The image upload accepts filenames, globs, and folder names (folders are recursively traversed).
+  \item \verb|update_assignment|: Update the files relating to an existing homework on Diderot.
+    Upload any of the autograder tar, autograder makefile, pdf writeup, and student handout.
+\end{itemize}
+
+% create_chapter
+
+% update_book
+
+% update_assignment
