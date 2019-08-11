@@ -175,7 +175,7 @@ In the mean time, you can request new atoms  (please send feedback here).
 
 \begin{important}
 Atoms are \defn{single standing}, that is to say surrounded by "vertical
-white spaces" or empty lines on both ends.
+white spaces" or blank lines on both ends.
 %
 Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code will not be a definiton atom, but will be a plain paragraph atom, because definition is not single standing.
 
@@ -753,7 +753,7 @@ dc -meta ./meta -preamble preamble.tex input.tex -o output.xml
 
 \section{Typesetting with Markdown}
 
-DC supports Markdown to XML translation.  
+DC has basic support for Markdown to XML translation.  
 
 \begin{gram}[Header]
 For translation to work Markdown documents should have either of the following two headers
@@ -778,15 +778,14 @@ Frontmatter
 \begin{important}[Special Symbols]
 Special symbols should be escaped.
 \begin{itemize}
-\item All special symbols such as \#'s that are not headers must be espaced.
+\item The hash sign \# is a special symbol in LaTeX and must be escaped when using LaTeX macros.
 \item In math mode \% is a LaTeX-Math special symbol and should be escaped.
 \end{itemize}
 \end{important}
 
-
 \subsection{Chapters and Sections}
 
-We support the header style using leading \# signs, e.g.,
+We support the atx-sytle headers, which start by 1-6 hash (\#) signs, e.g.,
 \begin{lstlisting}
 # This is a chapter
 
@@ -804,7 +803,7 @@ We support the header style using leading \# signs, e.g.,
 \subsection{Code}
 \label{sec:dc::md::code}
 
-Usual Markdown convensions apply.  You can include inline code by using the backtick symbol. For code blocks use three or more backticks and specify the lanugage. It is important to finish a code block with the same or greater number of backtics.
+Usual Markdown conventions apply.  You can include inline code by using the backtick symbol. For code blocks use three or more backticks and specify the lanugage. It is important to finish a code block with the same number of backtics.
 
 \begin{example}
 \begin{lstlisting}
@@ -855,6 +854,40 @@ The following code displays the image \lstinline`papers.svg`.
 \end{lstlisting}
 \end{example}
 \end{flex}
+
+\subsection{Limitations}
+
+Markdown to XML translation is relatively basic at this time.  If you need a particular feature not supported here, please let us know.
+%
+Here are few known limitations.
+\begin{itemize}
+\item Markdown usually allows blocks to be ended with equal or greater number of delimiter symbols than the start. For example a codeblock that starts with \lstinline!```! can be ended with \lstinline!```````!.  DC insists on blocks to start and end with the same length delimeters.
+
+\item Blank lines in DC will always start an atom.  For example if you pepper blank lines into your list, each list item will turn into a separate atom.  This is probably not what you have intended.  
+\begin{lstlisting}
+
+* Item 1 is its own atom, because it starts with an blank line.
+
+* Item 2 is its own atom, because it starts with an blank line.
+
+\end{lstlisting}
+
+\item As a consequence of blank lines startiing atoms, DC does not allow nested paragraphs as some Markdown extensions do.  
+
+\begin{lstlisting}
+
+* Item 1 is its own atom, because it starts with an blank line.
+
+    Here is a paragraph that you migh want to nest inside Item 1.  This will instead start a new atom in DC.  
+
+* Item 2 is its own atom, because it starts with an blank line.
+
+\end{lstlisting}
+
+
+
+\end{itemize}
+
 
 \subsection{Compiling Markdown To XML}
 
@@ -916,7 +949,7 @@ The error occurred when compiling atom \# 67, which is stored in the file \lstin
 %
 To understand the error you can open this file.  The file is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
 %
-You can ask \lstinline`pandoc` to generate a standalone html, by passing the \lstinline`-s` flag, so that you can open the result and examine how it looks in your browser.
+You can ask \lstinline`pandoc` to generate a standalone html, by passing the \lstinline`-s` flag, so that you can open the result and examine how it looks rrin your browser.
 %
 \begin{lstlisting}
 pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -s -o /tmp/67.html
