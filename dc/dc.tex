@@ -872,7 +872,7 @@ Here are few known limitations.
 
 \end{lstlisting}
 
-\item As a consequence of blank lines startiing atoms, DC does not allow nested paragraphs as some Markdown extensions do.  
+\item DC does not allow nested paragraphs as some Markdown extensions do.  
 
 \begin{lstlisting}
 
@@ -883,8 +883,6 @@ Here are few known limitations.
 * Item 2 is its own atom, because it starts with an blank line.
 
 \end{lstlisting}
-
-
 
 \end{itemize}
 
@@ -935,7 +933,7 @@ DC works by splitting the LaTeX or Markdown document into atoms, which it treats
 %
 It uses a Latex to HTML/XML or Latex to HTML/XML compiler to translate each atom and stitches the outputs back to construct the XML for the document.
 %
-The current implementation works with \href{www.pandoc.org}{pandoc}, though other compilers such as \href{https://dlmf.nist.gov/LaTeXML/}{LaTeXML} were also used at some point in the past.
+The current implementation works with \href{https://www.pandoc.org}{pandoc}, though other compilers such as \href{https://dlmf.nist.gov/LaTeXML/}{LaTeXML} were also used at some point in the past.
 
 When you receive an error, it will likely look like this:
 \begin{lstlisting}

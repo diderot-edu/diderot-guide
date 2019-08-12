@@ -15,7 +15,7 @@ else
 	endif
 endif
 
-# DC_HOME = ~/DC
+DC_HOME = ~/DC
 DC = $(DC_HOME)/dc
 DC_DBG = $(DC_HOME)/dc.dbg
 default: guide
