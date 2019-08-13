@@ -5,15 +5,6 @@
 This chapter describes common course management workflows for instructors and teaching assistants.
 \end{preamble}
 
-%
-% PREREQUISITE: 
-% Create ``Slides'' book for the author. 
-
-Let's start with creating and uploading chapters.  Let's use the
-"Slides" book that I created (you can create as many books as you
-want, see below).  Go to "Manage Books" from the "Links" on the center
-right, to the left of search bar on top.  Now you can create a
-chapter.  
 
 \section{Course Home Page}
 
@@ -57,6 +48,15 @@ To see the actions that you can perform on a chapter options, move the mouse ove
 \includegraphics[width=0.9\textwidth]{staff/media/book-management.jpg}
 \end{gram}
 
+\begin{exercise}
+Create a book called ``Slides'' for uploading some slide decks. 
+\begin{enumerate}
+\item Go to "Manage Books" from the "Links" on the center right, to
+the left of search bar on top.
+\item Create a chapter.
+\end{enumerate}
+\end{exercise}
+
 \section{Chapters}
 \label{guide:chapter}
 
@@ -85,8 +85,8 @@ If the chosen label does not meet this criteria, you will receive an error messa
 \end{gram}
 
 \begin{exercise}
-As an example, create now a chapter for your second slide deck from
-your Fall 2018 site and give it the label \ttt{ch:kleene}.
+Create a chapter for a slide deck and give it the label
+\ttt{ch:test-slides}.
 \end{exercise}
 
 
@@ -249,8 +249,37 @@ To edit the book, create and upload chapters, go to "Manage Books" and select yo
 \section{User Accounts} 
 
 \begin{gram}[Creation]
-To create user accounts, you can upload a roster in CSV format, which will email them all.  
+To create user accounts, you can upload a roster in CSV format, which will email them all.
 %
-I usually wait to do that until the first day of the class or right before it but you can create accounts for your TAs a bit ahead of time so that they can start playing with things (TAs and undergrads seem to pick things up super quickly).  When you create accounts, the users receive email notifications and instructions on how to log on.
+\begin{enumerate}
+\item
+Go to ``Manage Users'' under ``Links'' 
+\item
+Click ``Add Users from CSV''.
+\end{enumerate}
+
+The CSV files have to have the following columns
+\begin{itemize}
+\item Last Name
+\item Preferred/First Name
+\item Email
+\item Role, which is either 'Instructor', 'TA', or 'Student'. 
+\end{itemize} 
+
+%
+It is usually wise to wait create accounts for your TAs a bit ahead of time so that they can start playing with Diderot. 
+%
+When you create accounts, the users receive email notifications and instructions on how to log on.
 \end{gram}
 
+\begin{example}[User CSV]
+\begin{lstlisting}
+Last Name,Preferred/First Name,Email,Role
+Srinathan,Ramgopal,ramu@cs.diderot.edu,Instructor
+Tesla,Nikola,tesla@diderot.edu,TA
+Hendrix,Jimmy,jimmy@gmail.com,TA
+Santana,Carlos,jrjacobsoniii@gmail.com,TA
+Clemens,Gustav,gustav@diderot.edu,Student
+\end{lstlisting}
+
+\end{example}
