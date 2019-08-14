@@ -26,7 +26,7 @@ FORCE:
 .PHONY: book html book.pdf 
 
 html: FORCE
-	$(PANDOC) -s book.tex > book.html
+	$(PANDOC) -s book-html.tex > book.html
 
 
 %.xml : %.tex FORCE
@@ -59,7 +59,6 @@ reset:
 book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
-
 
 book.pdf: book
 
