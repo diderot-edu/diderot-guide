@@ -15,8 +15,14 @@
 \]
 }
 
-\newcommand{\download}[2]{\href{#2}{#1}}
-\newcommand{\attach}[2]{\href{#2}{#1}}
+%% Diderot commands, download and attach are identity for html.
+\newcommand{\download}[2]{\download{#1}{#2}}
+\newcommand{\attach}[2]{\attach{#1}{#2}}
+
+% We render \infer using MathJax fractions.
+\newcommand{\infer}[2]{
+\cfrac{#2}{#1}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% END: PDFLATEX COMPATIBILITY

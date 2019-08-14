@@ -1,24 +1,4 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BEGIN: DIDEROT COMPATIBILITY
-%% These make sure that we can use the same LaTeX sources to generate
-%% PDF and XML
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% For pdf/latex we only use hyperref[label][reference text]
-%% format.  
-\renewcommand{\href}[2]{
-\hyperref[#1]{#2}
-}
-
-% For PDF generation, this is identity function
-\newcommand{\htmlmath}[1]{{#1}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% END: DIDEROT COMPATIBILITY
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN: Your Macros Here
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -795,3 +775,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% END: Your Macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: DIDEROT COMPATIBILITY
+%% These make sure that we can use the same LaTeX sources to generate
+%% PDF and XML
+%%
+%% Do not modify this part. Make all your changes above.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% For pdf/latex we only use hyperref[label][reference text]
+%% format.  
+\renewcommand{\href}[2]{
+\hyperref[#1]{#2}
+}
+
+% For PDF generation, this is identity function
+\newcommand{\htmlmath}[1]{{#1}}
+
+% For PDF, we delegate download and attach to href.
+\newcommand{\download}[2]{\href{#2}{#1}}
+\newcommand{\attach}[2]{\href{#2}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: DIDEROT COMPATIBILITY
+%% These make sure that we can use the same LaTeX sources to generate
+%% PDF and XML. Do not modify this section (Upto BEGIN: PDFLATEX...)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

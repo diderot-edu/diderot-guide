@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 AUG 2019 13:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 AUG 2019 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,44 +584,16 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip66
 ))
-(./templates/preamble.tex
-\c@remark=\count174
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count175
-\lst@gtempboxa=\box45
-\lst@token=\toks35
-\lst@length=\count176
-\lst@currlwidth=\dimen183
-\lst@column=\count177
-\lst@pos=\count178
-\lst@lostspace=\dimen184
-\lst@width=\dimen185
-\lst@newlines=\count179
-\lst@lineno=\count180
-\lst@maxwidth=\dimen186
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count181
-\lst@skipnumbers=\count182
-\lst@framebox=\box46
-)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
-))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
-)
 (./templates/diderot.sty
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
 . Defining environment 'diderotfig' with sig. 'o' on line 18.
 .................................................
-\c@theorem=\count183
-\c@definition=\count184
-\c@example=\count185
-\c@exercise=\count186
+\c@theorem=\count174
+\c@definition=\count175
+\c@example=\count176
+\c@exercise=\count177
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
@@ -642,31 +614,59 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 . 
 . Defining environment 'proposition' with sig. 'o' on line 216.
 .................................................
+) (./templates/preamble.tex
+\c@remark=\count178
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count179
+\lst@gtempboxa=\box45
+\lst@token=\toks35
+\lst@length=\count180
+\lst@currlwidth=\dimen183
+\lst@column=\count181
+\lst@pos=\count182
+\lst@lostspace=\dimen184
+\lst@width=\dimen185
+\lst@newlines=\count183
+\lst@lineno=\count184
+\lst@maxwidth=\dimen186
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count185
+\lst@skipnumbers=\count186
+\lst@framebox=\box46
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./book.aux (./header.aux) (./probability/part.aux)
-(./probability/theory.aux) (./probability/randomvars.aux)
-(./probability/expectation.aux) (./graph-contraction/part.aux)
-(./graph-contraction/introduction.aux) (./graph-contraction/edge.aux)
-(./graph-contraction/star.aux) (./graph-contraction/connectivity.aux))
+
+(./book.aux (./header.aux) (./probability/part.aux) (./probability/theory.aux)
+(./probability/randomvars.aux) (./probability/expectation.aux)
+(./graph-contraction/part.aux) (./graph-contraction/introduction.aux)
+(./graph-contraction/edge.aux) (./graph-contraction/star.aux)
+(./graph-contraction/connectivity.aux))
 \openout1 = `book.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 18.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
@@ -736,7 +736,7 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring ON on input line 17.
+Package hyperref Info: Link coloring ON on input line 18.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -745,9 +745,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count193
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (./book.out) (./book.out)
 \@outlinefile=\write4
@@ -1178,15 +1178,15 @@ igher or-der func-tion $[]$
  []
 
 ) [49]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 32.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 33.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
  (./book.aux (./header.aux) (./probability/part.aux)
 (./probability/theory.aux) (./probability/randomvars.aux)
 (./probability/expectation.aux) (./graph-contraction/part.aux)
 (./graph-contraction/introduction.aux) (./graph-contraction/edge.aux)
 (./graph-contraction/star.aux) (./graph-contraction/connectivity.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
 Package rerunfilecheck Info: File `book.out' has not changed.
 (rerunfilecheck)             Checksum: C88B4B5624C52E956FCE7F23C2890D95;2305.
 
@@ -1195,13 +1195,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19145 strings out of 492995
- 325049 string characters out of 6132704
- 417738 words of memory out of 5000000
- 22144 multiletter control sequences out of 15000+600000
+ 19146 strings out of 492995
+ 325055 string characters out of 6132704
+ 417756 words of memory out of 5000000
+ 22146 multiletter control sequences out of 15000+600000
  33806 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,16n,37p,10386b,616s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,16n,37p,10390b,616s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl

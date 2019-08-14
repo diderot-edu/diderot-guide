@@ -44,9 +44,7 @@ DC is compatible with LaTeX. Whatever updates you make to upload your notes on D
 %
 This means for example that you can generate a PDF document from your notes.
 %
-The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well.
-%
-If you have  LaTeX sources that you are able to compile and generate PDF from, then in most cases, you can use DC to generate XML from your LaTeX sources.  
+The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well and using DC, you can compile your LaTeX sources to XML.
 %
 DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
 %
@@ -54,9 +52,14 @@ DC also provides a few additional syntactic elements that helps improve the inte
 \begin{definition}[Books and Booklets]
 After a LaTeX document is translated to XML via DC, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
 %
+
+\begin{itemize}
+\item
 A Diderot \defn{book} is a collection of parts, where each \defn{part} is a collection of chapters.
-%
+
+\item
 A Diderot \defn{booklet} is a collection of chapters. 
+\end{itemize}
 \end{definition}
 
 \begin{example}
@@ -134,7 +137,10 @@ The term \lstinline`element` in the example refers to an "atom" or a "group".
 \subsection{Atoms}
 \label{sec:mtl::atoms}
 
+
 \begin{definition}[Atom]
+To increase interactivity, Diderot relies on atoms.
+%
 An \defn{atom} is either
 \begin{enumerate}
 \item a plain paragraph, or
@@ -554,7 +560,7 @@ You can use colors as follows
 \subsection{Limitations}
 \label{sec:mtl::limitations}
 
-LaTeX has grown rich\footnote{Some would argue ``too rich'' and has become ``too big to break''.} but many authors tend to use a small subset.  
+LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset.  
 %
 DC appears to work well for most uses. 
 %
@@ -563,19 +569,17 @@ Here is a list of known limitations.
 
 \item For XML translation work, the chapter should be compileable to PDF.
 
-\item Do not use \lstinline`\input` directives in your chapters.
+\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
 
 \item Each chapter must have a unique label.
 
-\item Fancy packages will not work.  Stick to basic latex and AMS Math packages.
+\item Fancy packages are not supported.  Stick to basic latex and AMS Math packages.
 
-\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute.  This could require using \lstinline`\mbox` for text fields.  
+\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
  
-\item Center environment definitions will be ignored.
-
 \item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
 
-\item Labeling and references are limited to atoms.  You can label atoms and refer to them, but you cannot label codelines, items in lists, etc.
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
 
 \end{itemize}
 
@@ -584,32 +588,42 @@ The above limitations all pertain to XML generation.  Because DC works on a plai
 PDF.
 \end{remark}  
 
-\subsection{Compiling Latex to XML}
+\subsection{Compiling Latex to PDF, HTML, and XML}
 
-You can translate LaTeX to XML by using the \lstinline`dc` binary.
+You can translate LaTeX to PDF, HTML, and XML by using the \lstinline`dc` binary.
 %
-The following instructions are tested on Mac OS X and Ubuntu.  The binaries in `bin` might not work on systems that are not Mac or Linux/Unix-like. 
+The following instructions are tested on Mac OS X and Ubuntu.  The binaries in \lstinline`bin` might not work on systems that are not Mac or Linux/Unix-like. 
 
 
 As examples, 
 the folders \lstinline`book` and \lstinline`booklet` contain several files.
 %
 \begin{itemize}
+\item \lstinline`book.tex`
+
+This is the top level file for PDF generation.  It is a conventional LaTeX document is but is stylized slightly for ease of use.  
+
+\item \lstinline`book-html.tex`
+
+This is the top level file for html generation.  It is mostly a copy of \lstinline`book.tex` but it uses slightly different packages.
+
 \item \lstinline`templates/diderot.sty`
 
-   Supplies diderot definitions needed for compiling latex to pdf's.
-   You don't need to modify this file.
+Supplies diderot definitions needed for compiling latex to pdf's.
+You don't need to modify this file.
+
+\item \lstinline`templates/packages.sty`
+
+Supplies packages for PDF generation.  You can add whatever package you want.  Some of these packages may be ignored for XML generation.   Do not include any command definitions in this file.
 
 \item \lstinline`templates/preamble.tex` 
 
-   Supplies your macros that will be used by generating a pdf via pdflatex.  Nearly all packages and macros should be included here.  Each chapter will be compiled in the context of this file.  Ideally this file should
-   - include as few packages as possible
-   - define no environment definitions
-   - macros should be simple
+   Supplies your macros that will be used by generating a pdf via pdflatex.  All macros should be included here and no packages should be included (use \lstinline`packages.sty` for packages.  For XML generation, each chapter will be compiled in the context of this file. 
+
 
 \item \lstinline`templates/preamble-diderot.tex` 
 
-   Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one preamble.  The example in directory `booklet` does so.
+   Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one \lstinline`preamble.tex` and \lstinline`input` that file in your \lstinline`preamble-diderot.tex`.  The example in directory `booklet` does so.
 \end{itemize}    
 
 For ease of compilation and publishing on Diderot, we recommend
@@ -650,15 +664,18 @@ Books have parts and chapters. We recommend structuring these as follows, where 
 \end{gram}
 
 
-\begin{gram}[Making PDFs]
+\begin{gram}[Making PDF and HTML]
 You can use \lstinline`pdflatex` to generate a PDF output.  See the \lstinline`Makefile` in book or booklet as examples.
 %
 For example, you can  invoke the \lstinline`Makefile` as follows to make a PDF:
 \begin{lstlisting}
 $ make book.pdf
+$ make book.html
 \end{lstlisting}
+\end{gram}
 
-\subsection{Making PDF for a Specific Chapter}
+
+\begin{gram}[Making PDF for a Single Chapte]
 To make specific chapters,  extend the Makefile to compile each chapter separately.  See the \lstinline`Makefile` in book or booklet as examples.
 %
 For example, you can compile the chapter \lstinline`probability` in the \lstinline`book` directory as follows.
@@ -667,8 +684,10 @@ $ make ch2
 \end{lstlisting}
 \end{gram}
 
-\begin{gram}[Making XML]
 
+\begin{gram}[Making XML]
+XML generation proceeds on a chapter by chapter basis.
+%
 To generate xml, simply use the Makefile provided as follows.
 %
 \begin{lstlisting}
@@ -684,7 +703,9 @@ $ make verbose=true ch2/main.xml
 \end{gram}
 
 \begin{gram}
-Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF, then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.
+Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF and HTML (using \lstinline`pandoc`), then you should be able to generate an XML. 
+%
+If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.
 %
 \begin{lstlisting}
 $ make debug=true ch2/main.xml
