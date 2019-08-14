@@ -1,8 +1,12 @@
+% This is the main file for generating pdfs.
+
 \documentclass{book}
-\usepackage{xparse}  % Needed to deal with optional atom arguments
 
-
+% All packages 
+\input{templates/packages}
+% All macros/commands
 \input{templates/preamble}
+% Diderot environments
 \usepackage{templates/diderot}
 
 % Leave out chapter numbers from section numbers

@@ -1,9 +1,8 @@
 PDFLATEX = pdflatex
-LATEX = latex
+PANDOC = pandoc --mathjax -f latex 
 
 FLAG_VERBOSE = -v 
 PREAMBLE = ./templates/preamble-diderot.tex
-PANDOC = pandoc --verbose --mathjax -f latex
 
 ifeq ($(OS),Windows_NT)
 	DC_HOME = ../bin/windows
@@ -17,14 +16,17 @@ else
 	endif
 endif
 
-DC = $(DC_HOME)/texml -meta ./meta
-DC_DBG = $(DC_HOME)/texml.dbg -meta ./meta
+DC = $(DC_HOME)/dc -meta ./meta
+DC_DBG = $(DC_HOME)/dc.dbg -meta ./meta
 
 default: book
 
 FORCE: 
 
 .PHONY: book html book.pdf 
+
+html: FORCE
+	$(PANDOC) -s book.tex > book.html
 
 
 %.xml : %.tex FORCE

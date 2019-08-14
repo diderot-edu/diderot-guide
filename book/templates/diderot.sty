@@ -1,24 +1,19 @@
 \usepackage{environ}   % A better command for defining environments, used
                        % to drop contents when needed.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\download}[2]{\href{#2}{#1}}
+\newcommand{\attach}[2]{\href{#2}{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Diderot Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN: Diderot Environments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% wrap inside \[ and \] if targethtml is on
-% this seems to work in pandoc even if \targethtml is not defined
-% very odd behaviour but it might be because pandoc does not
-% handle \ifdefined properly.
-\newcommand{\htmlmath}[1]
-{
-\ifdefined\targethtml
-\[
-{#1}
-\]
-\else
-{#1}
-\fi
-}
 
 \NewDocumentEnvironment{diderotfig}{o}
 {
