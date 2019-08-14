@@ -4,7 +4,7 @@ FLAG_VERBOSE = -v
 
 PREAMBLE = ./templates/preamble-diderot.tex
 # resource paths don't seem to work
-PANDOC = pandoc --verbose --mathjax -f latex
+PANDOC = pandoc --mathjax -f latex
 
 
 ifeq ($(OS),Windows_NT)
@@ -29,6 +29,9 @@ default: book.pdf
 FORCE: 
 
 .PHONY: book book.pdf 
+
+html: FORCE
+	$(PANDOC) -s book-html.tex > book.html
 
 clean: 
 	rm *.aux *.idx *.log *.out *.toc */*.aux */*.idx */*.log */*.out 
@@ -64,10 +67,12 @@ endif
 ######################################################################
 ## BEGIN: PDF
 ######################################################################
-
-book.pdf:
+book: 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
+
+book.pdf: book
+
 
 
 skyline.pdf : book.pdf skyline/main.tex

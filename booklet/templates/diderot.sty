@@ -1,24 +1,11 @@
+\usepackage{xparse}    % used to deal with optional arguments
 \usepackage{environ}   % A better command for defining environments, used
                        % to drop contents when needed.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN: Diderot Environments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% wrap inside \[ and \] if targethtml is on
-% this seems to work in pandoc even if \targethtml is not defined
-% very odd behaviour but it might be because pandoc does not
-% handle \ifdefined properly.
-\newcommand{\htmlmath}[1]
-{
-\ifdefined\targethtml
-\[
-{#1}
-\]
-\else
-{#1}
-\fi
-}
 
 \NewDocumentEnvironment{diderotfig}{o}
 {
@@ -55,7 +42,6 @@
 \newtheorem{problem}[exercise]{Problem}
 \newtheorem*{solution}{Solution}
 \newtheorem*{task}{Task}
-
 
 \theoremstyle{remark}
 \newtheorem*{assumption}{Assumption}

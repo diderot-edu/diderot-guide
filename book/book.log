@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 AUG 2019 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 AUG 2019 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,7 +616,7 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'diderotfig' with sig. 'o' on line 26.
+. Defining environment 'diderotfig' with sig. 'o' on line 18.
 .................................................
 \c@theorem=\count183
 \c@definition=\count184
@@ -625,22 +625,22 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'flex' with sig. 'o' on line 149.
+. Defining environment 'flex' with sig. 'o' on line 141.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'gram' with sig. 'o' on line 163.
+. Defining environment 'gram' with sig. 'o' on line 155.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'preamble' with sig. 'o' on line 202.
+. Defining environment 'preamble' with sig. 'o' on line 194.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'proposition' with sig. 'o' on line 224.
+. Defining environment 'proposition' with sig. 'o' on line 216.
 .................................................
 )
 Package csquotes Info: Checking for multilingual support...
@@ -1195,10 +1195,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19144 strings out of 492995
- 324984 string characters out of 6132704
- 417750 words of memory out of 5000000
- 22143 multiletter control sequences out of 15000+600000
+ 19142 strings out of 492995
+ 324970 string characters out of 6132704
+ 417728 words of memory out of 5000000
+ 22141 multiletter control sequences out of 15000+600000
  33806 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,16n,35p,10386b,616s stack positions out of 5000i,500n,10000p,200000b,80000s
