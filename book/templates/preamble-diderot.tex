@@ -1,36 +1,4 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% BEGIN: PDFLATEX COMPATIBILITY
-%% These make sure that we can use the same LaTeX sources to generate
-%% PDF and XML
-%% 
-%% Do not modify this part. Skip to END: PDFLATEX...
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% For html generation, we delegate some math to mathjax, 
-% because pandoc doesn't deal with everything correctly.
-\newcommand{\htmlmath}[1]
-{
-\[
-{#1}
-\]
-}
-
-%% Diderot commands, download and attach are identity for html.
-\newcommand{\download}[2]{\download{#1}{#2}}
-\newcommand{\attach}[2]{\attach{#1}{#2}}
-
-% We render \infer using MathJax fractions.
-\newcommand{\infer}[2]{
-\cfrac{#2}{#1}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% END: PDFLATEX COMPATIBILITY
-%% These make sure that we can use the same LaTeX sources to generate
-%% PDF and XML
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN: YOUR MACROS
 %% Enter your macros below this line
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -783,4 +751,36 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% END: YOUR MACROS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: PDFLATEX COMPATIBILITY
+%% These make sure that we can use the same LaTeX sources to generate
+%% PDF and XML
+%% 
+%% Do not modify this part. Skip to END: PDFLATEX...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% For html generation, we delegate some math to mathjax, 
+% because pandoc doesn't deal with everything correctly.
+\newcommand{\htmlmath}[1]
+{
+\[
+{#1}
+\]
+}
+
+%% Diderot commands, download and attach are identity for html.
+\newcommand{\download}[2]{\download{#1}{#2}}
+\newcommand{\attach}[2]{\attach{#1}{#2}}
+
+% We render \infer using MathJax fractions.
+\newcommand{\infer}[2]{
+\cfrac{#2}{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: PDFLATEX COMPATIBILITY
+%% These make sure that we can use the same LaTeX sources to generate
+%% PDF and XML
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

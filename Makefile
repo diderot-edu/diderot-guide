@@ -15,7 +15,7 @@ else
 	endif
 endif
 
-DC_HOME = ~/DC
+# DC_HOME = ~/DC
 DC = $(DC_HOME)/dc
 DC_DBG = $(DC_HOME)/dc.dbg
 default: guide
@@ -75,9 +75,20 @@ endif
 ## BEGIN: PDF
 ######################################################################
 
-guide:
-	$(PDFLATEX) --jobname="guide" '\input{book}' ; 
-	$(PDFLATEX) --jobname="guide" '\input{book}' ; \
+book:
+	$(PDFLATEX) --jobname="book" '\input{book}' ; 
+	$(PDFLATEX) --jobname="book" '\input{book}' ; \
 
+book.pdf: book
+
+staff: book staff/staff.tex
+	$(PDFLATEX) --jobname="staff" '\includeonly{staff/staff} \input{book}'
+
+dc: book dc/dc.tex
+	$(PDFLATEX) --jobname="dc" '\includeonly{dc/dc} \input{book}'
+
+######################################################################
+## END: PDFs
+######################################################################
 
 

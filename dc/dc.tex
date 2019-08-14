@@ -181,7 +181,7 @@ In the mean time, you can request new atoms  (please send feedback here).
 
 \begin{important}
 Atoms are \defn{single standing}, that is to say surrounded by "vertical
-white spaces" or blank lines on both ends.
+white spaces" or blank lines on both ends (or LaTeX comments).
 %
 Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code will not be a definiton atom, but will be a plain paragraph atom, because definition is not single standing.
 
@@ -665,7 +665,8 @@ Books have parts and chapters. We recommend structuring these as follows, where 
 
 
 \begin{gram}[Making PDF and HTML]
-You can use \lstinline`pdflatex` to generate a PDF output.  See the \lstinline`Makefile` in book or booklet as examples.
+Inside the \lstinline`book\` and \lstinline`booklet\` directories, 
+you can use \lstinline`pdflatex` to generate a PDF output.  See the corresponding \lstinline`Makefile`.
 %
 For example, you can  invoke the \lstinline`Makefile` as follows to make a PDF:
 \begin{lstlisting}
@@ -675,7 +676,7 @@ $ make book.html
 \end{gram}
 
 
-\begin{gram}[Making PDF for a Single Chapte]
+\begin{gram}[Making PDF for a Single Chapter]
 To make specific chapters,  extend the Makefile to compile each chapter separately.  See the \lstinline`Makefile` in book or booklet as examples.
 %
 For example, you can compile the chapter \lstinline`probability` in the \lstinline`book` directory as follows.

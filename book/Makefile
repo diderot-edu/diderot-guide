@@ -53,8 +53,8 @@ reset:
 
 
 ######################################################################
-## PDFs
-
+## BEGIN: PDFs
+######################################################################
 
 book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
@@ -71,3 +71,7 @@ graph-contraction: book graph-contraction/contraction.tex  graph-contraction/edg
 
 	$(PDFLATEX) --jobname="graph-contraction" '\includeonly{graph-contraction/part, graph-contraction/introduction, graph-contraction/edge, graph-contraction/star, graph-contraction/connectivity} \input{book}'
 
+
+######################################################################
+## END: PDFs
+######################################################################
