@@ -20,8 +20,8 @@ else
 endif
 
 
-DC = $(DC_HOME)/texml -meta ./meta
-DCDBG = $(DC_HOME)/texml.dbg -meta ./meta 
+DC = $(DC_HOME)/dc -meta ./meta
+DCDBG = $(DC_HOME)/dc.dbg -meta ./meta 
 
 
 default: book.pdf

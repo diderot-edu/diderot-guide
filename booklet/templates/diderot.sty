@@ -167,6 +167,17 @@
 {\medskip}
 }
 
+
+\NewDocumentEnvironment{answer}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Answer.}}
+{\paragraph*{Answer [#1].}}
+}
+{ 
+}
+
+
 \NewDocumentEnvironment{gram}{o}
 {
 \IfNoValueTF{#1}
@@ -231,12 +242,18 @@
 \IfNoValueTF{#1}
 {\paragraph*{Proposition.}}
 {\paragraph*{Proposition [#1].}}
-
 }
 { 
-
 }
 
+\NewDocumentEnvironment{question}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Question.}}
+{\paragraph*{Question [#1].}}
+}
+{ 
+}
 
 %% \NewDocumentEnvironment{remark}{o}
 %% {
