@@ -4,6 +4,16 @@
 \usepackage{templates/diderot}
 \input{templates/preamble-diderot}
 
+% For html generation, we delegate some math to mathjax, 
+% because pandoc doesn't deal with everything correctly.
+\renewcommand{\htmlmath}[1]
+{
+\[
+{#1}
+\]
+}
+
+
 \title{Lab Book}
 
 \begin{document}

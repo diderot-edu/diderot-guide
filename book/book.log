@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 AUG 2019 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 AUG 2019 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -588,7 +588,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'diderotfig' with sig. 'o' on line 18.
+. Defining environment 'diderotfig' with sig. 'o' on line 40.
 .................................................
 \c@theorem=\count174
 \c@definition=\count175
@@ -597,22 +597,22 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'flex' with sig. 'o' on line 141.
+. Defining environment 'flex' with sig. 'o' on line 163.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'gram' with sig. 'o' on line 155.
+. Defining environment 'gram' with sig. 'o' on line 177.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'preamble' with sig. 'o' on line 194.
+. Defining environment 'preamble' with sig. 'o' on line 216.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'proposition' with sig. 'o' on line 216.
+. Defining environment 'proposition' with sig. 'o' on line 238.
 .................................................
 ) (./templates/preamble.tex
 \c@remark=\count178
