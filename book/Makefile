@@ -23,7 +23,7 @@ default: pdf
 
 FORCE: 
 
-.PHONY: book html pdf 
+.PHONY: book guide html pdf 
 
 html: FORCE
 	$(PANDOC) -s book-html.tex > book.html
@@ -59,6 +59,10 @@ reset:
 book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
+
+guide:
+	$(PDFLATEX) --jobname="diderot-guide" '\input{book}' ; 
+	$(PDFLATEX) --jobname="diderot-guide" '\input{book}' ; \
 
 pdf: book
 
