@@ -62,6 +62,7 @@ book:
 
 pdf: book
 
+
 ## Probability
 probability: book probability/theory.tex probability/randomvars.tex probability/expectation.tex
 	$(PDFLATEX) --jobname="probability" '\includeonly{probability/part, probability/theory, probability/randomvars, probability/expectation} \input{book}'

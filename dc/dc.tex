@@ -674,19 +674,22 @@ you can use \lstinline`pdflatex` to generate a PDF output.  See the correspondin
 %
 For example, you can  invoke the \lstinline`Makefile` as follows to make a PDF:
 \begin{lstlisting}
-$ make book.pdf
-$ make book.html
+$ make pdf
+$ make html
 \end{lstlisting}
 \end{gram}
 
 
-\begin{gram}[Making PDF for a Single Chapter]
+\begin{gram}[Making PDF/HTML for a Single Chapter]
 To make specific chapters,  extend the Makefile to compile each chapter separately.  See the \lstinline`Makefile` in book or booklet as examples.
 %
 For example, you can compile the chapter \lstinline`probability` in the \lstinline`book` directory as follows.
 \begin{lstlisting}
-$ make ch2
+$ make probability
 \end{lstlisting}
+
+To generate HTML for a single chapter, update \lstinline`book-html.tex` to exclude all other chapters and run \lstinline`make html`.
+
 \end{gram}
 
 
