@@ -18,11 +18,11 @@ endif
 # DC_HOME = ~/DC
 DC = $(DC_HOME)/dc
 DC_DBG = $(DC_HOME)/dc.dbg
-default: guide
+default: book
 
 FORCE: 
 
-.PHONY: guide 
+.PHONY: book
 
 clean: 
 	rm *.aux *.idx *.log *.out *.toc */*.aux */*.idx */*.log */*.out 

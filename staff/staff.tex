@@ -5,6 +5,28 @@
 This chapter describes common course management workflows for instructors and teaching assistants.
 \end{preamble}
 
+\section{Course Creation}
+
+To create a course on Diderot please email us at \lstinline`[aada,umut]@cs.cmu.edu`.
+%
+As part of the course creation process, we will determine if your course may be private (to your class only) or public (accessible to anybody with a Diderot account).
+%
+For a private course, we will set a passkey that can be used for students to register for the course.
+
+\section{User Accounts}
+In principle anybody may sign-up for Diderot.  
+%
+They will need a valid email address from an approved domain, e.g.,
+\lstinline`*.cmu.edu`.
+%
+The set of approved domains is determined by allowed domains of existing courses.
+%
+
+When a student logs onto Diderot, they will have access to all public
+courses and could register for a private course with the correct
+passkey.
+%
+
 
 \section{Course Home Page}
 
@@ -246,10 +268,17 @@ To edit the book, create and upload chapters, go to "Manage Books" and select yo
 \end{gram}
 
 
-\section{User Accounts} 
+\section{Course Registration} 
 
-\begin{gram}[Creation]
-To create user accounts, you can upload a roster in CSV format, which will email them all.
+Students can self-register for a Diderot course by using a  passkey created by the instructor (and provided to the students).  
+%
+To register, the students will need to use an email address from an instructor-speficied  \defn{domain}.
+%
+For example, at Carnegie Mellon, an instructor would typically allow a student to register by using their  \lstinline`andrew.cmu.edu` email only.
+%
+Instructors may invite teaching assistants and other instructors to their course.
+
+To invite users, you can upload an invitation list in CSV format. 
 %
 \begin{enumerate}
 \item
@@ -257,7 +286,7 @@ Go to ``Manage Users'' under ``Links''
 \item
 Click ``Add Users from CSV''.
 \end{enumerate}
-
+%
 The CSV files must have the following columns
 \begin{itemize}
 \item Last Name
@@ -268,20 +297,16 @@ The CSV files must have the following columns
 %
 The CSV file may contain additional columns.
 
-%
-It is usually wise to wait create accounts for your TAs a bit ahead of time so that they can start playing with Diderot. 
-%
-When you create accounts, the users receive email notifications and instructions on how to log on.
-\end{gram}
-
 \begin{example}[User CSV]
+The following CSV file could be used to invite an instructor and additional TA's to a course.
+
 \begin{lstlisting}
 Last Name,Preferred/First Name,Email,Role
 Srinathan,Ramgopal,ramu@cs.diderot.edu,Instructor
 Tesla,Nikola,tesla@diderot.edu,TA
 Hendrix,Jimmy,jimmy@gmail.com,TA
 Santana,Carlos,jrjacobsoniii@gmail.com,TA
-Clemens,Gustav,gustav@diderot.edu,Student
 \end{lstlisting}
+%Clemens,Gustav,gustav@diderot.edu,Student
 
 \end{example}
