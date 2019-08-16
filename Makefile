@@ -18,9 +18,9 @@ endif
 # DC_HOME = ~/DC
 DC = $(DC_HOME)/dc
 DC_DBG = $(DC_HOME)/dc.dbg
-default: book
+default: pdf
 
-FORCE: 
+FORCE: guide html pdf
 
 .PHONY: book
 
@@ -79,7 +79,11 @@ book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
 
-book.pdf: book
+pdf: book
+
+guide:
+	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{staff/staff, dc/dc, cli/cli}  \input{book}'
+
 
 staff: book staff/staff.tex
 	$(PDFLATEX) --jobname="staff" '\includeonly{staff/staff} \input{book}'
