@@ -378,29 +378,7 @@ E[X] &amp; = &amp; \displaystyle\sum_{x = 1}^{\infty}{x \cdot (1-p)^{x-1} p}
 <p><img src="./graph-contraction/media-introduction/contract-example3.jpg" alt="image" style="width:2in" /></p>
 <p>The edges <span class="math inline">\(\left\{ \texttt{a},\texttt{b} \right\}\)</span>, <span class="math inline">\(\left\{ \texttt{a},\texttt{c} \right\}\)</span>, and <span class="math inline">\(\left\{ \texttt{e},\texttt{f} \right\}\)</span> are internal edges, and the edges <span class="math inline">\(\left\{ \texttt{c},\texttt{d} \right\}\)</span>, <span class="math inline">\(\left\{ \texttt{b},\texttt{d} \right\}\)</span>, <span class="math inline">\(\left\{ \texttt{b},\texttt{e} \right\}\)</span> and <span class="math inline">\(\left\{ \texttt{d},\texttt{f} \right\}\)</span> are cut edges.</p>
 <p>By labeling the blocks <span class="math inline">\(\unicode{8216}\,{\texttt{abc}}\,\unicode{8217},\unicode{8216}\,{\texttt{d}}\,\unicode{8217}\)</span> and <span class="math inline">\(\unicode{8216}\,{\texttt{ef}}\,\unicode{8217}\)</span>, we can specify the graph partition with following partition map:</p>
-<p><span class="math display">\[{
-\begin{alignat}{1}
-( &amp; \left\{ \texttt{abc}, \texttt{d}, \texttt{ef} \right\},
-\\
- &amp; \left\{ \texttt{a} \mapsto
-    \texttt{abc}, \texttt{b} \mapsto \texttt{abc}, \texttt{c} \mapsto
-    \texttt{abc}, \texttt{d} \mapsto \texttt{d}, \texttt{e} \mapsto
-    \texttt{ef}, \texttt{f} \mapsto \texttt{ef} \right\}
-).
-\end{alignat}
-}\]</span></p>
 <p>Instead of assigning a fresh label to each block, we can choose a representative vertex. For example, by picking <span class="math inline">\(\texttt{a}, \texttt{d}\)</span>, and <span class="math inline">\(\texttt{e}\)</span> as representatives, we can represent the partition above using the following partition map</p>
-<p><span class="math display">\[{
-\begin{alignat}{1}
-( &amp; \left\{ \texttt{a},\texttt{d},\texttt{e} \right\}, 
-\\
-       &amp; \left\{ \texttt{a} \mapsto \texttt{a}, \texttt{b} \mapsto \texttt{a}, 
-               \texttt{c} \mapsto \texttt{a}, \texttt{d} \mapsto \texttt{d}, 
-               \texttt{e} \mapsto \texttt{e}, \texttt{f} \mapsto
-               \texttt{e} \right\}
-).
-\end{alignat}
-}\]</span></p>
 <h3 id="ex:graphcon::intro::graphcon">Graph Contraction</h3>
 <p>Graph contraction is a <a href="ch:design::contraction">contraction technique</a> for computing properties of graphs in parallel. As a contraction technique, it is used to solve a problem instance by reducing it to a smaller instance of the same problem.</p>
 <p>Graph contraction plays important role in parallel algorithm design, because divide-and-conquer can be difficult to apply to graph problems efficiently. Divide-and-conquer techniques usually require partitioning graphs into smaller graphs in a balanced fashion such that the number of cut edges is minimized. Because graphs can be highly irregular, they can be difficult to partition. In fact, graph partitioning problems are typically NP-hard.</p>

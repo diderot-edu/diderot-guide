@@ -69,14 +69,16 @@ Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from t
 \end{example}
 
 \begin{example}[PDF Generation]
-You can generate the PDF for the whole book by running the following.
+You can generate the PDF and HTML for the whole book by running the following.
 %
 \begin{lstlisting}
 $ cd examples/book
-$ make book.pdf
+$ make pdf
+$ make html
 
 $ cd examples/booklet
-$ make book.pdf
+$ make pdf
+$ make html
 \end{lstlisting}
 \end{example}
 
@@ -259,6 +261,7 @@ This if and only of if that.
 %
 %
 Both will have no impact on the PDF but on Diderot, you will have only one atom for the three sentences.
+
 
 \subsection{Groups}
 \label{sec:mtl::groups}
@@ -889,9 +892,9 @@ Here are few known limitations.
 \item Blank lines in DC will always start an atom.  For example if you pepper blank lines into your list, each list item will turn into a separate atom.  This is probably not what you have intended.  
 \begin{lstlisting}
 
-* Item 1 is its own atom, because it starts with an blank line.
+* Item 1 is its own atom.
 
-* Item 2 is its own atom, because it starts with an blank line.
+* Item 2 is its own atom.
 
 \end{lstlisting}
 
@@ -899,11 +902,11 @@ Here are few known limitations.
 
 \begin{lstlisting}
 
-* Item 1 is its own atom, because it starts with an blank line.
+* Item 1 is its own atom.
 
-    Here is a paragraph that you migh want to nest inside Item 1.  This will instead start a new atom in DC.  
+    This is a paragraph that you intended to nest inside Item 1 but  this will start a new atom in DC.  
 
-* Item 2 is its own atom, because it starts with an blank line.
+* Item 2 is its own atom.
 
 \end{lstlisting}
 

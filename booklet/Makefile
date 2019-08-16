@@ -24,11 +24,11 @@ DC = $(DC_HOME)/dc -meta ./meta
 DCDBG = $(DC_HOME)/dc.dbg -meta ./meta 
 
 
-default: book.pdf
+default: pdf
 
 FORCE: 
 
-.PHONY: book book.pdf 
+.PHONY: book html pdf
 
 html: FORCE
 	$(PANDOC) -s book-html.tex > book.html
@@ -43,6 +43,9 @@ reset:
 ######################################################################
 ## BEGIN: XML
 ######################################################################
+
+html: FORCE
+	$(PANDOC) -s book-html.tex > book.html
 
 %.xml : %.tex FORCE
 ifdef debug
@@ -71,11 +74,11 @@ book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
 
-book.pdf: book
+pdf: book
 
 
 
-skyline.pdf : book.pdf skyline/main.tex
+skyline : book.pdf skyline/main.tex
 	$(PDFLATEX) --jobname="skyline" '\includeonly{skyline/main}\input{book}'
 
 

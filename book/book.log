@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 AUG 2019 15:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 AUG 2019 07:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -602,17 +602,27 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'gram' with sig. 'o' on line 177.
+. Defining environment 'answer' with sig. 'o' on line 178.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'preamble' with sig. 'o' on line 216.
+. Defining environment 'gram' with sig. 'o' on line 188.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'proposition' with sig. 'o' on line 238.
+. Defining environment 'preamble' with sig. 'o' on line 227.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'proposition' with sig. 'o' on line 247.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-environment"
+. 
+. Defining environment 'question' with sig. 'o' on line 256.
 .................................................
 ) (./templates/preamble.tex
 \c@remark=\count178
@@ -1195,10 +1205,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19146 strings out of 492995
- 325055 string characters out of 6132704
- 417756 words of memory out of 5000000
- 22146 multiletter control sequences out of 15000+600000
+ 19162 strings out of 492995
+ 325371 string characters out of 6132704
+ 417902 words of memory out of 5000000
+ 22162 multiletter control sequences out of 15000+600000
  33806 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,16n,37p,10390b,616s stack positions out of 5000i,500n,10000p,200000b,80000s

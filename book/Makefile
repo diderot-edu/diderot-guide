@@ -19,11 +19,11 @@ endif
 DC = $(DC_HOME)/dc -meta ./meta
 DC_DBG = $(DC_HOME)/dc.dbg -meta ./meta
 
-default: book
+default: pdf
 
 FORCE: 
 
-.PHONY: book html book.pdf 
+.PHONY: book html pdf 
 
 html: FORCE
 	$(PANDOC) -s book-html.tex > book.html
@@ -60,7 +60,7 @@ book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
 
-book.pdf: book
+pdf: book
 
 ## Probability
 probability: book probability/theory.tex probability/randomvars.tex probability/expectation.tex
