@@ -40,14 +40,18 @@ You can click any ``mail''  button in this guide and send feedback or ask questi
 
 \section{Typesetting with LaTex}
 
-DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will be compatible with LaTeX. 
+DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and  you can generate a PDF document from your notes.
 %
-This means for example that you can generate a PDF document from your notes.
+The reverse direction, going from LaTeX to Diderot, is not as
+definitive but works reasonably well and with some care you can
+compile your LaTeX sources to XML .
 %
-The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well and using DC, you can compile your LaTeX sources to XML.
+In this section, we briefly cover some example LaTeX sources.  
 %
-DC also provides a few additional syntactic elements that helps improve the interactivity of the content.  
+For content development work, we strongly advise the authors to mirror
+the structure of the LaTeX sources described here.
 %
+
 
 \begin{definition}[Books and Booklets]
 After a LaTeX document is translated to XML via DC, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
@@ -96,14 +100,14 @@ $ make skyline/main.xml
 \end{example}
 
 
-\subsection{Basic Structure of LaTeX} 
+\subsection{Books, Chapters, and Sections} 
 
-As with Latex, DC requires a book to be organized into chapters, each of which then contains sections (section, subsection, subsubsection, and paragraph).  Each chapter and section can in turn contain ``elements'' each of which is an ``atom'' or a  ``group''.
+DC requires a book (or booklet) to be organized into chapters, each of which then contains sections (section, subsection, subsubsection, and paragraph).  Each chapter and section can in turn contain ``elements'' each of which is an ``atom'' or a  ``group''.
 
 
 \begin{example}[Sections]
 
-A chapter is typically structured into a number of sections.
+A chapter typically consists of a number of sections.
 
 \begin{lstlisting}
 \chapter{Introduction}
@@ -469,7 +473,7 @@ In principle, you could use fixed sizes, e.g.,
 %
 The problem with this approach is that the PDF output and the Diderot output will likely have different formats and the image that looks just fine on paper might look too big on Diderot or possibly vice versa.
 %
-I therefore recommend using relative widths using the following approach
+We therefore recommend using relative widths using the following approach
 \begin{lstlisting}
 \includegraphics[width=0.5\textwidth]{myimage.jpg}
 \end{lstlisting}
@@ -575,6 +579,8 @@ Here is a list of known limitations.
 
 \item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
 
+\item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
+
 \item Each chapter must have a unique label.
 
 \item Fancy packages are not supported.  Stick to basic latex and AMS Math packages.
@@ -592,9 +598,13 @@ The above limitations all pertain to XML generation.  Because DC works on a plai
 PDF.
 \end{remark}  
 
-\subsection{Compiling Latex to PDF, HTML, and XML}
-
-You can translate LaTeX to PDF, HTML, and XML by using the \lstinline`dc` binary.
+\subsection{Structuring your Sources and Compilation}
+\label{sec:dc::latex-structure}
+You can translate LaTeX to PDF, HTML, and XML by using the \lstinline`dc` binary.  
+%
+For this to work smoothly, we strongly advise following the structure
+of the book and the booklet examples included in this guide source
+code (in folders `book` and `booklet`) and described here.
 %
 The following instructions are tested on Mac OS X and Ubuntu.  The binaries in \lstinline`bin` might not work on systems that are not Mac or Linux/Unix-like. 
 
@@ -618,11 +628,14 @@ You don't need to modify this file.
 
 \item \lstinline`templates/packages.sty`
 
-Supplies packages for PDF generation.  You can add whatever package you want.  Some of these packages may be ignored for XML generation.   Do not include any command definitions in this file.
+Supplies packages for PDF generation.  You can add whatever package
+you want.  Most of these packages, except perhaps basics ones and AMS
+Math packages, will be ignored for XML generation.  Do not include any
+command definitions in this file.
 
 \item \lstinline`templates/preamble.tex` 
 
-   Supplies your macros that will be used by generating a pdf via pdflatex.  All macros should be included here and no packages should be included (use \lstinline`packages.sty` for packages.  For XML generation, each chapter will be compiled in the context of this file. 
+ Supplies your macros that will be used by generating a pdf via pdflatex.  All macros should be included here and no packages should be included (use \lstinline`packages.sty` for packages.  For XML generation, each chapter will be compiled in the context of this file. 
 
 
 \item \lstinline`templates/preamble-diderot.tex` 
@@ -630,15 +643,12 @@ Supplies packages for PDF generation.  You can add whatever package you want.  S
    Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one \lstinline`preamble.tex` and \lstinline`input` that file in your \lstinline`preamble-diderot.tex`.  The example in directory `booklet` does so.
 \end{itemize}    
 
-For ease of compilation and publishing on Diderot, we recommend
-structuring your book sources to streamline your workflow for PDF
-generation and for Diderot uploads.  We have found that the structure
-outlined below.  The example book and booklet provided follow this
-structure (see folders `book` and `booklet`).
+To simplify publishing on Diderot, we recommend organizing your book
+sources as outlined below. 
 
 \begin{gram}[Booklets]
  
- Booklets are books that don't have parts. For these  I recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want.  Place all media (images, videos etc) under a media/ subdirectory. 
+ Booklets are books that don't have parts. We recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want.  Place all media (images, videos etc) under a media/ subdirectory. 
 \begin{itemize}  
 \item \lstinline`ch1/main.tex`
 \item \lstinline`ch1/media/`: all my media files, *.png *.jgp, *.graffle, etc.
@@ -811,6 +821,13 @@ Special symbols should be escaped.
 \item In math mode \% is a LaTeX-Math special symbol and should be escaped.
 \end{itemize}
 \end{important}
+
+\begin{important}[Chapter Titles]
+In any given book, all chapter titles must be unique.  
+%
+This ensures that all chapters are uniquely labeled: \lstinline`dc` assigns a chapter with title ``This is a Chapter Title'' the label ``ch:this-is-a-chapter-title''.
+\end{important}
+
 
 \subsection{Chapters and Sections}
 
@@ -985,5 +1002,6 @@ pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta
 Once you figure out what the problem is what remains is to update your main document and proceed.
 %
 Basically the same workflow applies to Markdown inputs.
+
 
 This is all you need. Happy Diderowing!
