@@ -68,36 +68,35 @@ A Diderot \defn{booklet} is a collection of chapters.
 
 \begin{example}
 The folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
-%
-Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from the sources. 
 \end{example}
 
-\begin{example}[PDF Generation]
-You can generate the PDF and HTML for the whole book by running the following.
-%
-\begin{lstlisting}
-$ cd examples/book
-$ make pdf
-$ make html
+%% Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from the sources. 
+%% \begin{example}[PDF Generation]
+%% You can generate the PDF and HTML for the whole book by running the following.
+%% %
+%% \begin{lstlisting}
+%% $ cd examples/book
+%% $ make pdf
+%% $ make html
 
-$ cd examples/booklet
-$ make pdf
-$ make html
-\end{lstlisting}
-\end{example}
+%% $ cd examples/booklet
+%% $ make pdf
+%% $ make html
+%% \end{lstlisting}
+%% \end{example}
 
-\begin{example}[XML Generation]
-For ease of publication on Diderot, XML generation occurs on a chapter by chapter basis.
-%
-You can generate the XML for  each chapter by specifying the chapter path.
-\begin{lstlisting}
-$ cd examples/book
-$ make probability/expectation.xml
+%% \begin{example}[XML Generation]
+%% For ease of publication on Diderot, XML generation occurs on a chapter by chapter basis.
+%% %
+%% You can generate the XML for  each chapter by specifying the chapter path.
+%% \begin{lstlisting}
+%% $ cd examples/book
+%% $ make probability/expectation.xml
 
-$ cd examples/booklet
-$ make skyline/main.xml
-\end{lstlisting}
-\end{example}
+%% $ cd examples/booklet
+%% $ make skyline/main.xml
+%% \end{lstlisting}
+%% \end{example}
 
 
 \subsection{Books, Chapters, and Sections} 
