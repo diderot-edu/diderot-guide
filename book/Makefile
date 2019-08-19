@@ -19,8 +19,7 @@ else
 	endif
 endif
 
-DC = $(DC_HOME)/dc -meta ./meta
-DC_DBG = $(DC_HOME)/dc.dbg -meta ./meta
+DC = $(DC_HOME)/dc
 
 default: pdf
 
@@ -34,15 +33,15 @@ html: FORCE
 %.xml : %.tex FORCE
 ifdef debug
 ifdef verbose
-	$(DC) $(FLAG_DBG) $(FLAG_VERBOSE)  -meta ../meta -preamble $(PREAMBLE) $< -o $@
+	$(DC) $(FLAG_DBG) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC) $(FLAG_DBG) -meta ../meta -preamble $(PREAMBLE)  $< -o $@
+	$(DC) $(FLAG_DBG) -meta ./meta -preamble $(PREAMBLE)  $< -o $@
 endif
 else
 ifdef verbose
-	$(DC) $(FLAG_VERBOSE)  -meta ../meta -preamble $(PREAMBLE) $< -o $@
+	$(DC) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC)  -meta ../meta -preamble $(PREAMBLE)  $< -o $@
+	$(DC)  -meta ./meta -preamble $(PREAMBLE)  $< -o $@
 endif
 endif
 

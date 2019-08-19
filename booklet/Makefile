@@ -1,6 +1,7 @@
 PDFLATEX = pdflatex
 LATEX = latex
 FLAG_VERBOSE = -v 
+FLAG_DBG = -d 
 
 PREAMBLE = ./templates/preamble-diderot.tex
 # resource paths don't seem to work
@@ -20,8 +21,8 @@ else
 endif
 
 
-DC = $(DC_HOME)/dc -meta ./meta
-DCDBG = $(DC_HOME)/dc.dbg -meta ./meta 
+DC = $(DC_HOME)/dc 
+DCDBG = $(DC_HOME)/dc.dbg 
 
 
 default: pdf
@@ -47,18 +48,34 @@ reset:
 html: FORCE
 	$(PANDOC) -s book-html.tex > book.html
 
+
 %.xml : %.tex FORCE
 ifdef debug
 ifdef verbose
-	$(DC_DBG) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_DBG) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC_DBG) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_DBG) -meta ./meta -preamble $(PREAMBLE)  $< -o $@
 endif
 else
 ifdef verbose
-	$(DC) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC) $< -preamble $(PREAMBLE) -o $@
+	$(DC)  -meta ./meta -preamble $(PREAMBLE)  $< -o $@
+endif
+endif
+
+%.xml : %.md FORCE
+ifdef debug
+ifdef verbose
+	$(DC)  $(FLAG_DBG) $(FLAG_VERBOSE) $< -o $@
+ else
+	$(DC)  $(FLAG_DBG) $< -o $@
+endif
+else
+ifdef verbose
+	$(DC) $(FLAG_VERBOSE) $< -o $@
+ else
+	$(DC) $< -o $@
 endif
 endif
 
