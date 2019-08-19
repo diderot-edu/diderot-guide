@@ -721,6 +721,8 @@ To obtain more information from a run, you can turn on the verbose option.
 \begin{lstlisting}
 $ make verbose=true ch2/main.xml
 \end{lstlisting}
+
+Beware that you will likely see many warnings.  For this reason the utility of the verbose flag is not particularly high.
 \end{gram}
 
 \begin{gram}
@@ -729,7 +731,7 @@ Error messages from the XML translator are not particularly useful at this time.
 If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.
 %
 \begin{lstlisting}
-$ make debug=true ch2/main.xml
+$ make debug=true probability/theory.xml
 \end{lstlisting}
 
 If that fails, there is another relatively simply way to debug, see \href{sec:dc::internals}{Section Internals} for additional information.
@@ -744,16 +746,14 @@ This tools translates the given input LaTeX file to xml.
 $ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml
 \end{lstlisting}
 
+To turn on the debug mode, simply pass the flag \lstinline`-d`.
+\begin{lstlisting}
+$ dc  -d -meta ./meta -preamble preamble.tex input.tex -o output.xml
+\end{lstlisting}
+
 The meta folder contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
 \end{gram}
 
-\begin{gram}[dc.dbg] 
-This tools is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
-
-\begin{lstlisting}
-dc -meta ./meta -preamble preamble.tex input.tex -o output.xml
-\end{lstlisting}
-\end{gram}
 
 %% ## Tool: tex2tex
 %% This tools reads in your LaTeX sources, parses them, and writes it back.  It drops comments and normalized the whitespace but should otherwise return back a LaTeX file that is essentially the same as the input file.   You should not need to use this binary, which is primarily used for testing during development.
@@ -966,10 +966,13 @@ $ dc markdown/example.md
 \end{gram}
 
 \begin{gram}[The ``Debugger''] 
-The tool \lstinline`dc.dbg` is the "debug" version of the \lstinline`dc` binary above. As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages.  The debug version prints out the text that it parses, so you can have some sense of where things have gone wrong. 
+AS you might notice, \lstinline`dc` doesn't currenty give reasonable error messages, partly because if you can generate PDF and html from your LaTeX sources, it is unlikely for there to be errors. 
+%
+In case of an error, you can pass the \lstinline`-d` flag to \lstinline`dc` to tell her to print the atoms that it matches.
+%
 See also \href{sec:dc::internals}{Section Internals} for additional debugging help.
 \begin{lstlisting}
-dc.dbg input.md -o output.xml
+dc -d input.md -o output.xml
 \end{lstlisting}
 \end{gram}
 

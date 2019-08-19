@@ -1,8 +1,11 @@
+PANDOC = pandoc --mathjax -f latex 
 PDFLATEX = pdflatex
-LATEX = latex
-PREAMBLE = templates/preamble-diderot.tex
+
 FLAG_VERBOSE = -v 
 FLAG_DEBUG = -d
+
+PREAMBLE = templates/preamble-diderot.tex
+
 
 ifeq ($(OS),Windows_NT)
 	DC_HOME = ./bin/windows
@@ -20,7 +23,7 @@ endif
 DC = $(DC_HOME)/dc
 default: pdf
 
-FORCE: guide pdf
+FORCE: guide html pdf
 
 .PHONY: book
 
@@ -29,6 +32,10 @@ clean:
 
 reset: 
 	make clean; rm *.pdf; rm*.html; rm  *~; rm */*~; rm  \#*\#; rm */\#*\#; 
+
+
+html: FORCE
+	$(PANDOC) -s book-html.tex > book.html
 
 
 ######################################################################
