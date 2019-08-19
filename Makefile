@@ -2,6 +2,7 @@ PDFLATEX = pdflatex
 LATEX = latex
 PREAMBLE = templates/preamble-diderot.tex
 FLAG_VERBOSE = -v 
+FLAG_DEBUG = -d
 
 ifeq ($(OS),Windows_NT)
 	DC_HOME = ./bin/windows
@@ -17,7 +18,6 @@ endif
 
 # DC_HOME = ~/DC
 DC = $(DC_HOME)/dc
-DC_DBG = $(DC_HOME)/dc.dbg
 default: pdf
 
 FORCE: guide pdf
@@ -38,9 +38,9 @@ reset:
 %.xml : %.tex FORCE
 ifdef debug
 ifdef verbose
-	$(DC_DBG) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
+	$(DC) $(FLAG_DBG) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC_DBG)  -meta ./meta -preamble $(PREAMBLE)  $< -o $@
+	$(DC) $(FLAG_DBG) -meta ./meta -preamble $(PREAMBLE)  $< -o $@
 endif
 else
 ifdef verbose
@@ -53,9 +53,9 @@ endif
 %.xml : %.md FORCE
 ifdef debug
 ifdef verbose
-	$(DC_DBG) $(FLAG_VERBOSE) $< -o $@
+	$(DC)  $(FLAG_DBG) $(FLAG_VERBOSE) $< -o $@
  else
-	$(DC_DBG) $< -o $@
+	$(DC)  $(FLAG_DBG) $< -o $@
 endif
 else
 ifdef verbose

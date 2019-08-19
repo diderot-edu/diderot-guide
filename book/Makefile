@@ -1,7 +1,10 @@
 PDFLATEX = pdflatex
 PANDOC = pandoc --mathjax -f latex 
 
+
 FLAG_VERBOSE = -v 
+FLAG_DBG = -d
+
 PREAMBLE = ./templates/preamble-diderot.tex
 
 ifeq ($(OS),Windows_NT)
@@ -28,21 +31,36 @@ FORCE:
 html: FORCE
 	$(PANDOC) -s book-html.tex > book.html
 
-
 %.xml : %.tex FORCE
 ifdef debug
 ifdef verbose
-	$(DC_DBG) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_DBG) $(FLAG_VERBOSE)  -meta ../meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC_DBG) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_DBG) -meta ../meta -preamble $(PREAMBLE)  $< -o $@
 endif
 else
 ifdef verbose
-	$(DC) $(FLAG_VERBOSE) $< -preamble $(PREAMBLE) -o $@
+	$(DC) $(FLAG_VERBOSE)  -meta ../meta -preamble $(PREAMBLE) $< -o $@
  else
-	$(DC) $< -preamble $(PREAMBLE) -o $@
+	$(DC)  -meta ../meta -preamble $(PREAMBLE)  $< -o $@
 endif
 endif
+
+%.xml : %.md FORCE
+ifdef debug
+ifdef verbose
+	$(DC)  $(FLAG_DBG) $(FLAG_VERBOSE) $< -o $@
+ else
+	$(DC)  $(FLAG_DBG) $< -o $@
+endif
+else
+ifdef verbose
+	$(DC) $(FLAG_VERBOSE) $< -o $@
+ else
+	$(DC) $< -o $@
+endif
+endif
+
 
 clean: 
 	rm *.aux *.idx *.log *.out *.toc */*.aux */*.idx */*.log */*.out 

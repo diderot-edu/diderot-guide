@@ -476,13 +476,17 @@ We therefore recommend using relative widths using the following approach
 \begin{lstlisting}
 \includegraphics[width=0.5\textwidth]{myimage.jpg}
 \end{lstlisting}
-DC will translate this to 50\% width in html and 50\% of textwidth in PDF and the image will look consistent with its environment in both cases.  
+DC will translate this to 50\% width in html and 50\% of \lstinline`\textwidth` 
+in PDF and the image will look consistent with its environment in both cases.  
+%
+When specifying the width, it is important to always include the fraction.  For example, if you want the width to be exactly equal to \lstinline`\textwidth` then use \lstinline`width=1.0\textwidth`.
 
 \begin{note}
 For PDF output, the author could also use \lstinline`\textheight`.
 %
 But this is not meaningful for HTML output, and will not work as expected.
 \end{note}
+
 
 \begin{important}[Scale is not Supported]
 For PDF output it is also possible to use \lstinline`scale`.  For example,
