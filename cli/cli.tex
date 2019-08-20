@@ -25,28 +25,128 @@ You can click any ``mail''  button in this guide and send feedback or ask questi
 
 \section{Basic Usage}
 
-Run either \verb|diderot| or \verb|diderot_admin| and login with your Diderot credentials to open an interactive shell with the commands below.
+Use the \verb|diderot_student| or \verb|diderot_admin| scripts to interface with the CLI.
 %
-To exit, press \verb|Ctrl+D| or type \verb|exit| or \verb|quit|.
+For help about the CLI, use the \verb|-h| or \verb|--help| commands.
+
+\subsection{Credential Management}
+Credentials are passed to the CLI in one of two ways. 
 %
-For a list of all available commands, type \verb|help|. To get more information
-about a particular command, type either \verb|help <command>| or \verb|<command> -h|.
+The first is to simply pass your credentials via the CLI using the \verb|--username| and \verb|--password| flags on the CLI. 
+%
+A more convenient (and recommended) way is to use a \emph{credentials file}.
+%
+The credential file format is simply a text file with your username on the first line and your password on the second. 
+%
+Use the \verb|--credentials| argument to point the CLI towards a file containing your credentials.
+%
+For easier usage, the CLI automatically looks at the files \verb|~/private/.diderot/credentials| and \verb|~/.diderot/credentials |for a credentials file of this form. 
+%
+If this file exists, then the CLI will automatically log you in, and no credentials need to be explicitly provided to the CLI.
+%
+An important note is that your credentials file must have only "owner can read and write" permissions. To do this, run \verb|chmod 600 <credentials file>|.
+%
+An example credential file is below.
+\begin{verbatim}
+MyUsername
+MyPassword
+\end{verbatim}
+
+\begin{note}
+  The \verb|--username|/\verb|--password| or \verb|--credentials| arguments must be passed
+  to the CLI before the specific commands below!
+
+  For example, this command is correct:
+  \begin{verbatim}
+    diderot_student --credentials Path/To/My/Creds list_courses
+  \end{verbatim}
+  
+  This command is incorrect:
+  \begin{verbatim}
+    diderot_student list_courses --credentials Path/To/My/Creds
+  \end{verbatim}
+\end{note}
 
 \section{Student Interface}
 
 \begin{itemize}
-  \item \verb|list_courses|: List all available course labels.
+  \item \verb|list_courses|: List all available course labels that the user can access.
     Operations which require a course input must use the one of the labels returned from this command.
-  \item \verb|set_course|: Set the current target course for the CLI. All commands will now target the  specified course rather than requiring a course as input.
-  \item \verb|unset_course|: Removes the current set course. All course-specific commands
-    will now require a course label as input.
   \item \verb|list_assignments|: Lists all assignments for a course.
   \item \verb|download_assignment|: Downloads all handout/writeup files (if present) from a
     target course and assignment into the current directory.
   \item \verb|submit_assignment|: Submit a handin.tar file to a given course and homework.
 \end{itemize}
 
-% submit_assignment
+More details about each command are below.
+
+\subsection{list\_courses}
+
+\verb|list_courses| lists all course labels that the user has access to.
+%
+The labels returned from \verb|list_courses| must be used as arguments to all other
+operations that require a course label.
+%
+It accepts 0 arguments.
+
+Example Usage:
+\begin{verbatim}
+  diderot_student list_courses
+\end{verbatim}
+
+\subsection{list\_assignments}
+
+\verb|list_assignments| is used to list all available assignments for a particular course.
+%
+It accepts only 1 argument.
+\begin{itemize}
+  \item \verb|course|: Course label to list homeworks of.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  diderot_student list_assignments courselabel
+\end{verbatim}
+
+\subsection{download\_assignment}
+
+\verb|download_assignment| is used to download handout files associated with an assignment.
+%
+It attempts to download all handout files into the current directory.
+% 
+It accepts 2 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the homework belongs to.
+  \item \verb|homework|: Name of the homework to download handouts of.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  diderot_student download_assignment courselabel homeworkname
+\end{verbatim}
+
+\subsection{submit\_assignment}
+
+\verb|submit_assignment| is used to submit handin files to an assignment.
+%
+As of now, it \textbf{only} supports uploading handin tar files.
+%
+If your assignment is configured to accept anything other than tar files, 
+do not use this method to submit.
+%
+It accepts 3 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the homework belongs to.
+  \item \verb|homework|: Name of the homework to submit to.
+  \item \verb|handin_path|: Path to the handin.tar file.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  diderot_student submit_assignment courselabel homeworkname ~/Path/To/My/Handin
+\end{verbatim}
 
 \section{Admin Interface}
 
@@ -57,6 +157,7 @@ some commands relating to manipulation of books and assignments.
   \item \verb|list_books|: List all books, can optionally filter by course.
   \item \verb|list_parts|: List all parts of a book.
   \item \verb|list_chapters|: List all chapters of a book.
+  \item \verb|create_part|: List all parts of a book.
   \item \verb|create_chapter|: Create a chapter in a given part of a
     book. Optionally specify the new chapter's label and or title. If
     not, these values are filled in with a default.
@@ -69,8 +170,150 @@ some commands relating to manipulation of books and assignments.
   \item \verb|update_assignment|: Update the files relating to an existing homework on Diderot.  Upload any of the autograder tar, autograder makefile, pdf writeup, and student handout.
 \end{itemize}
 
-% create_chapter
+\subsection{list\_books}
 
-% update_book
+\verb|list_books| is used to list book labels that the user has access to.
+%
+The result from \verb|list_books| is used as the argument book label for commands
+that require a book label.
+%
+It accepts 2 arguments.
 
-% update_assignment
+\begin{itemize}
+  \item \verb|course|: Course label that the target book belongs to.
+  \item \verb|--all|: Optional flag to list all books regardless of course. Not to be used when specifying a course.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  diderot_admin list_books courselabel
+  diderot_admin list_books --all
+\end{verbatim}
+
+\subsection{list\_parts}
+
+\verb|list_parts| is used list the parts and numbers within a target book.
+It accepts 2 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the target book belongs to.
+  \item \verb|book|: Label of the target book.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  diderot_admin list_parts courselabel booklabel
+\end{verbatim}
+
+\subsection{list\_chapters}
+
+\verb|list_chapters| is used list the chapters and numbers within a target book.
+It accepts 2 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the target book belongs to.
+  \item \verb|book|: Label of the target book.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  diderot_admin list_chapters courselabel booklabel
+\end{verbatim}
+
+\subsection{create\_part}
+
+\verb|create_part| is used to create a part within a target book. It accepts 5 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the target book belongs to.
+  \item \verb|book|: Label of the target book.
+  \item \verb|title|: Title to give to the newly created part.
+  \item \verb|number|: Number to give the newly created part.
+  \item \verb|--label|: Optional label to give to the newly created part. It defaults to a random value if not provided.
+\end{itemize}
+
+The command will error out if there already exists a part within the book with the same number.
+
+Example Usage:
+\begin{verbatim}
+  diderot_admin create_part courselabel booklabel title number --label newlabel
+\end{verbatim}
+
+
+\subsection{create\_chapter}
+
+\verb|create_chapter| is used to create a chapter within a target book. It accepts 6 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the target book belongs to.
+  \item \verb|book|: Label of the target book.
+  \item \verb|--part|: Number of the part to create the chapter within. This argument is not used when the target book \emph{is a booklet}.
+  \item \verb|--number|: Number to give the newly created chapter.
+  \item \verb|--title|: Optional title to give to the newly created chapter. It defaults to 'Chapter'.
+  \item \verb|--label|: Optional label to give to the newly created chapter. It defaults to a random value if not provided.
+\end{itemize}
+
+The command will error out if there already exists a chapter within the book with the same number.
+
+Example Usage:
+\begin{verbatim}
+  diderot_admin create_chapter courselabel booklabel --part partnum \
+  --number newnum --title newtitle --label newlabel
+\end{verbatim}
+
+\subsection{upload\_chapter}
+
+\verb|upload_chapter| is used to upload PDF, slide, or xml/mlx content to a chapter.
+%
+It accepts quite a few arguments and combinations.
+
+\begin{itemize}
+  \item \verb|course|: Course label to upload chapter to.
+  \item \verb|book|: Book label to upload a chapter to.
+
+  \item \verb|--chapter_number| or \verb|--chapter_label|: Use one of these arguments to specify which chapter to upload content to. Use either the chapter's number within the book, or its label.
+
+  \item \verb|--pdf| or \verb|--slides| or \verb|--xml|: Use one of these arguments, specifying the desired file type to upload. Note that your slides must be in a PDF format to use the \verb|--slides| argument. The \verb|--xml| argument accepts both XML and MLX file formats.
+
+  \item \verb|--video_url|: Optional URL to a video to embed within the chapter. This argument can only be used with the \verb|--pdf| and \verb|--slides| arguments.
+
+  \item \verb|--xml_pdf|: Optional path to a PDF version of the XML content for printing. This argument can only be used with the \verb|--xml| argument.
+
+  \item \verb|--attach|: Optional list of paths to attachments to upload along with an XML chapter upload. This argument can only be used with the \verb|--xml| argument. The command accepts paths to individual files, globs, and folders. Folders are recursively traversed.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  diderot_admin upload_content courselabel bookname chapternumber \
+  --pdf Path/to/Pdf --video_url someurl
+
+  diderot_admin upload_content courselabel bookname chapternumber \
+  --slides Path/to/slides --video_url someurl
+
+  diderot_admin upload_content courselabel bookname chapternumber \
+  --xml Path/to/Xml --xml_pdf Path/To/XmlPdf \
+  --attach Path/To/File Path/To/Folder/ Path/With/Glob/*
+\end{verbatim}
+
+\subsection{update\_assignment}
+
+\verb|update_assignment| is used to update files related to an assignment on Diderot.
+%
+It accepts 6 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the assignment belongs to.
+  \item \verb|homework|: Name of the assignment to update.
+  \item \verb|--autograde-tar|: Optional path to the autograder tar file for the assignment. The autograde.tar file contains what is needed to run the assignment's autograder.
+  \item \verb|--autograde-makefile|: Optional path to the autograde-Makefile for the assignment. The autograde-Makefile is used to execute the autograder on a student handin.
+  \item \verb|--writeup|: Optional path to a PDF writeup of the assignment.
+  \item \verb|--handout|: Optional path to a handout file that students can download to start the assignment.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+  didetot_admin update_assignment courselabel homeworkname \
+  --autograde-tar Path/To/Tar \
+  --autograde-makefile Path/To/Makefile \
+  --writeup Path/To/Writeup --handout Path/To/Handout
+\end{verbatim}
