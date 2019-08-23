@@ -1,12 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PACKAGES
+%% BEGIN: Diderot Specific. Do not modify.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% DIDEROT ADDITION
-%% Pandoc cannot find this pack.
-%%\usepackage[utf8]{inputenc}
-
-% htmlmath
+%% DIDEROT htmlmath
 % This is purely for pandoc to insert delegate
 % handling of alignat to mathjax. Otherwise
 % pandoc tries to handle it and breaks it.
@@ -22,15 +18,15 @@
 \fi
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% PAGE LAYOUT
-\addtolength{\parskip}{7pt}
+%% BEGIN: Diderot Specific. Do not modify.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Your Macros Here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %% SHORTHANDS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\a}{{\alpha}\xspace}
 \newcommand{\la}{\leftarrow}
 \newcommand{\ra}{\rightarrow}
@@ -41,9 +37,7 @@
 \newcommand{\ninfty}{{-\infty}}
 \newcommand{\xmark}{\unicode{10008}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DEFINITIONS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % pandoc no like ensuremath
 \renewcommand{\ensuremath}[1]{#1}
@@ -51,9 +45,7 @@
 \newcommand{\lang}{\textsf{PARS}\xspace}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Random stuff
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%% Umut: Preferring colors, below.
@@ -769,3 +761,7 @@
 %% END: Graph Contraction
 
 %\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Your Macros Here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
