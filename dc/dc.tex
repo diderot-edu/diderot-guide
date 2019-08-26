@@ -146,10 +146,15 @@ The term \lstinline`element` in the example refers to an "atom" or a "group".
 \begin{definition}[Atom]
 To increase interactivity, Diderot relies on atoms.
 %
+Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph.
+%
+In diderot, each and every piece of text must be inside of an atom and just like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.
+%
+
 An \defn{atom} is either
 \begin{enumerate}
 \item a plain paragraph, or
-\item a single-standing environment of the form
+\item a single-standing section of the form
 
 \begin{lstlisting}
 \begin{<atom>}[Optional title]
@@ -179,6 +184,34 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 
 \end{definition}
 
+\begin{important}[Figure and Table Atoms]
+In addition to the atoms above, Diderot also supports figure and table atoms, which have a slightly different syntax
+\begin{lstlisting}
+\begin{<atom>}[Optional title]
+<atom body>
+\caption{Caption}
+\label{atom-label} % optional but recommended label
+\end{<atom>}
+\end{lstlisting}
+
+The reason for this exception is consistency with LaTeX.
+\end{important}
+
+\begin{important}[Nesting of Atoms]
+Atoms cannot be nested inside each other and they cannot be nested inside Latex environments. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
+
+For example, the following is wrong:
+\begin{lstlisting}
+\begin{itemize}
+\item 
+\begin{gram}[This is a titled paragraph]
+But is in wrong because it includes an atom (a kind of section) in a LaTeX environment.
+\end{gram}
+\end{itemize}
+\end{lstlisting}
+
+\end{important}
+
 \begin{note}
 Authors can currently use only these atoms defined above. We are working on allowing authors to define their own atoms.  
 %
@@ -189,7 +222,7 @@ In the mean time, you can request new atoms  (please send feedback here).
 Atoms are \defn{single standing}, that is to say surrounded by "vertical
 white spaces" or blank lines on both ends (or LaTeX comments).
 %
-Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code will not be a definiton atom, but will be a plain paragraph atom, because definition is not single standing.
+Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code is a plain paragraph atom but not a definition atom, because definition is not single standing.
 
 \begin{lstlisting}
 We can now define Kleene closure as follows.
@@ -223,6 +256,9 @@ Paragraph 2
 \end{definition}
 \end{lstlisting}
 \end{note}
+
+\begin{important}[Nesting of atoms]
+\end{important}
 
 \subsubsection{Controlling granularity}
 
@@ -462,10 +498,22 @@ main () {
 You can include JPEG or PNG images by using the usual \lstinline`includegraphics` command.  
 %
 We currently don't support PDF images (will be available shortly).
-
-There is one point to be careful about: sizing.  
 %
-In principle, you could use fixed sizes, e.g.,
+There is are two points to be careful about: naming and sizing.
+%
+
+When naming the images, it is important the file name of each and every image in a chapter is unique.
+%
+Diderot indexes images based on their filenames and ignores their paths.
+%
+For example, it will treat
+%
+\lstinline`/tmp/image1.jpg` and  \lstinline`image1.jpg`
+%
+as the same.
+
+
+When sizing your images, you could, in principle, use absolute sizes, e.g.,
 \begin{lstlisting}
 \includegraphics[width=5in]{myimage.jpg}
 \end{lstlisting}
@@ -496,6 +544,10 @@ For PDF output it is also possible to use \lstinline`scale`.  For example,
 
 This means that the image should be shown at 50\% of its actual dimensions.  This has  the same issues as the absolute measures approach. Furthermore, DC doesn't detect attempt to detect the actual dimensions of the image and this approach is not supported.
 \end{important}
+
+\begin{gram}[Uploading Images]
+When uploading a chapter, via the UI or via the CLI, the user needs to upload the images explicitly.   
+\end{gram}
 
 \subsection{Typesetting Mathematics}
 
