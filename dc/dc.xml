@@ -1,0 +1,6877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment name='chapter'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+DC: Diderot Compiler
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+DC: Diderot Compiler
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+mtl
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Overview
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Overview
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::overview
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::diderot
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::diderot
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Diderot is an online book system that integrates discussions with content. Diderot consists of two separate systems that are designed to work together:</p>
+<ul>
+<li><p>the Diderot website, which provides the users (instructors and students) with an online interface for reading books and holding discussions,</p></li>
+<li><p>the Diderot compiler, <strong><em>DC</em></strong> for short, that translates LaTeX and Markdown sources to Diderot-style XML.</p></li>
+</ul>
+<p>Diderot-style XML files may be uploaded onto the Diderot site. In addition to XML, Diderot site accepts conventional PDF documents and slide decks for upload.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Diderot is an online book system that integrates discussions with
+content.  Diderot consists of two separate systems that are
+designed to work together:
+\begin{itemize}
+\item the Diderot website, which
+provides the users (instructors and students) with an online interface
+for reading books and holding discussions, 
+\item the Diderot
+compiler, \defn{DC} for short, that translates LaTeX and Markdown
+sources to Diderot-style XML.
+\end{itemize}
+Diderot-style XML files may be uploaded onto the Diderot site. 
+In addition to XML, Diderot site accepts conventional PDF documents
+and slide decks for upload.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::sources-and-contributions
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Sources and Contributions
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Sources and Contributions
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::sources-and-contributions
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To go through the examples in this chapter, please clone <a href="https://github.com/diderot-edu/diderot-guide">this github repository</a> and follow the instructions in <code>INSTALL.md</code>.</p>
+<p>This guide is public. Feel free to contribute to the sources and send feedback on Diderot.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To go through the examples in this chapter, please clone 
+\href{https://github.com/diderot-edu/diderot-guide}{this github repository}
+and follow the instructions in \lstinline`INSTALL.md`. 
+
+This guide is public.  Feel free to contribute to the sources and send feedback on Diderot.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::questions-and-feedback
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+Questions and Feedback
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Questions and Feedback
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+nt:mtl::questions-and-feedback
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can click any “mail” button in this guide and send feedback or ask questions.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can click any ``mail''  button in this guide and send feedback or ask questions.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Typesetting with LaTex
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Typesetting with LaTex
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::typesetting-with-latex
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::compatible
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::compatible
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and you can generate a PDF document from your notes. The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well and with some care you can compile your LaTeX sources to XML . In this section, we briefly cover some example LaTeX sources. For content development work, we strongly advise the authors to mirror the structure of the LaTeX sources described here.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and  you can generate a PDF document from your notes.
+The reverse direction, going from LaTeX to Diderot, is not as
+definitive but works reasonably well and with some care you can
+compile your LaTeX sources to XML .
+In this section, we briefly cover some example LaTeX sources.  
+For content development work, we strongly advise the authors to mirror
+the structure of the LaTeX sources described here.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::books-and-booklets
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='definition'>
+<field name='title'>
+<![CDATA[
+Books and Booklets
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Books and Booklets
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+def:mtl::books-and-booklets
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>After a LaTeX document is translated to XML via DC, it can be uploaded as a <strong><em>chapter</em></strong> to a Diderot book or Diderot booklet.</p>
+<ul>
+<li><p>A Diderot <strong><em>book</em></strong> is a collection of parts, where each <strong><em>part</em></strong> is a collection of chapters.</p></li>
+<li><p>A Diderot <strong><em>booklet</em></strong> is a collection of chapters.</p></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+After a LaTeX document is translated to XML via DC, it can be uploaded as a \defn{chapter} to a Diderot book or Diderot booklet.  
+
+\begin{itemize}
+\item
+A Diderot \defn{book} is a collection of parts, where each \defn{part} is a collection of chapters.
+
+\item
+A Diderot \defn{booklet} is a collection of chapters. 
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- definition -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::folders
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::folders
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The folders <code>book</code> and <code>booklet</code> contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Books, Chapters, and Sections
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Books, Chapters, and Sections
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::books-chapters-and-sections
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::requires
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::requires
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>DC requires a book (or booklet) to be organized into chapters, each of which then contains sections (section, subsection, subsubsection, and paragraph). Each chapter and section can in turn contain “elements” each of which is an “atom” or a “group”.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+DC requires a book (or booklet) to be organized into chapters, each of which then contains sections (section, subsection, subsubsection, and paragraph).  Each chapter and section can in turn contain ``elements'' each of which is an ``atom'' or a  ``group''.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::sections
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Sections
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Sections
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::sections
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>A chapter typically consists of a number of sections.</p>
+<pre><code>\chapter{Introduction}  
+\label{ch:example}  % Chapters must have a label.  
+     
+&lt;elements&gt;  
+  
+\section{A Section}  
+\label{sec:example} % Optional but recommended section label.     
+  
+&lt;elements&gt;  
+  
+\subsection{A Subsection}  
+\label{sec:example::sub} % Optional but recommended section label.     
+  
+&lt;elements&gt;  
+  
+\subsubsection {A Subsubsection}  
+\label{sec:example::subsub}  
+&lt;elements&gt;  
+  
+\paragraph {A paragraph}  
+\label{sec:example::paragraph}  
+&lt;elements&gt;  
+  </code></pre>
+<p>The term <code>element</code> in the example refers to an "atom" or a "group".</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+A chapter typically consists of a number of sections.
+
+\begin{lstlisting}
+\chapter{Introduction}
+\label{ch:example}  % Chapters must have a label.
+   
+<elements>
+
+\section{A Section}
+\label{sec:example} % Optional but recommended section label.   
+
+<elements>
+
+\subsection{A Subsection}
+\label{sec:example::sub} % Optional but recommended section label.   
+
+<elements>
+
+\subsubsection {A Subsubsection}
+\label{sec:example::subsub}
+<elements>
+
+\paragraph {A paragraph}
+\label{sec:example::paragraph}
+<elements>
+
+\end{lstlisting}
+
+The term \lstinline`element` in the example refers to an "atom" or a "group".
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Atoms
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Atoms
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::atom
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='definition'>
+<field name='title'>
+<![CDATA[
+Atom
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Atom
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+def:mtl::atom
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To increase interactivity, Diderot relies on atoms. Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph. In diderot, each and every piece of text must be inside of an atom and just like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.</p>
+<p>An <strong><em>atom</em></strong> is either</p>
+<ol>
+<li><p>a plain paragraph, or</p></li>
+<li><p>a single-standing section of the form</p>
+<pre><code>\begin{&lt;atom&gt;}[Optional title]  
+\label{atom-label} % optional but recommended label  
+&lt;atom body&gt;  
+\end{&lt;atom&gt;}  </code></pre>
+<p>The term <code>&lt;atom&gt;</code> above can be replaced with any of the following:</p>
+<ul>
+<li><p><code>algorithm</code>, <code>answer</code>, <code>assumption</code>,</p></li>
+<li><p><code>code</code>, <code>corollary</code>, <code>costspec</code>,</p></li>
+<li><p><code>datastr</code> (data structure), <code>datatype</code>, <code>definition</code></p></li>
+<li><p><code>example</code>, <code>exercise</code>,</p></li>
+<li><p><code>gram</code> (non descript atom, i.e., a paragraph),</p></li>
+<li><p><code>hint</code>,</p></li>
+<li><p><code>important</code>,</p></li>
+<li><p><code>lemma</code>,</p></li>
+<li><p><code>note</code>,</p></li>
+<li><p><code>preamble</code> (as a first atom of chapter), <code>problem</code> (a problem for students to solve), <code>proof</code>, <code>proposition</code>,</p></li>
+<li><p><code>question</code>,</p></li>
+<li><p><code>remark</code> (an important note), <code>reminder</code>,</p></li>
+<li><p><code>solution</code> (a solution to an exercise/problem), <code>syntax</code> (a piece of syntax)</p></li>
+<li><p><code>task</code> (a task in an assignment), <code>theorem</code>.</p></li>
+</ul></li>
+</ol>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To increase interactivity, Diderot relies on atoms.
+Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph.
+In diderot, each and every piece of text must be inside of an atom and just like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.
+
+An \defn{atom} is either
+\begin{enumerate}
+\item a plain paragraph, or
+\item a single-standing section of the form
+
+\begin{lstlisting}
+\begin{<atom>}[Optional title]
+\label{atom-label} % optional but recommended label
+<atom body>
+\end{<atom>}
+\end{lstlisting}
+The term \lstinline`<atom>` above can be replaced with any of the following:
+\begin{itemize}
+\item \lstinline`algorithm`, \lstinline`answer`, \lstinline`assumption`,
+\item \lstinline`code`, \lstinline`corollary`, \lstinline`costspec`,
+\item \lstinline`datastr` (data structure), \lstinline`datatype`, \lstinline`definition`
+\item \lstinline`example`, \lstinline`exercise`,
+\item \lstinline`gram`  (non descript atom, i.e., a paragraph),
+\item \lstinline`hint`, 
+\item \lstinline`important`, 
+\item \lstinline`lemma`,
+\item \lstinline`note`,
+\item \lstinline`preamble` (as a  first atom of chapter), \lstinline`problem` (a problem for students to solve), \lstinline`proof`, \lstinline`proposition`,
+\item \lstinline`question`,
+\item \lstinline`remark` (an important note), \lstinline`reminder`,
+\item \lstinline`solution` (a solution to an exercise/problem), \lstinline`syntax` (a piece of syntax)
+\item \lstinline`task` (a task in an assignment), \lstinline`theorem`.
+\end{itemize}
+\end{enumerate}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- definition -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::figure-and-table-atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Figure and Table Atoms
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Figure and Table Atoms
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::figure-and-table-atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>In addition to the atoms above, Diderot also supports figure and table atoms, which have a slightly different syntax</p>
+<pre><code>\begin{&lt;atom&gt;}[Optional title]  
+&lt;atom body&gt;  
+\diderotcaption{Caption}  
+\label{atom-label} % optional but recommended label  
+\end{&lt;atom&gt;}  </code></pre>
+<p>The reason for this exception is consistency with LaTeX.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+In addition to the atoms above, Diderot also supports figure and table atoms, which have a slightly different syntax
+\begin{lstlisting}
+\begin{<atom>}[Optional title]
+<atom body>
+\caption{Caption}
+\label{atom-label} % optional but recommended label
+\end{<atom>}
+\end{lstlisting}
+
+The reason for this exception is consistency with LaTeX.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::nesting-of-atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Nesting of Atoms
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Nesting of Atoms
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::nesting-of-atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Atoms cannot be nested inside each other and they cannot be nested inside Latex environments. This is similar to not being able to define a LaTeX section inside a LaTeX environment.</p>
+<p>For example, the following is wrong:</p>
+<pre><code>\begin{itemize}  
+\item   
+\begin{gram}[This is a titled paragraph]  
+But is in wrong because it includes an atom (a kind of section) in a LaTeX environment.  
+\end{gram}  
+\end{itemize}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Atoms cannot be nested inside each other and they cannot be nested inside Latex environments. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
+
+For example, the following is wrong:
+\begin{lstlisting}
+\begin{itemize}
+\item 
+\begin{gram}[This is a titled paragraph]
+But is in wrong because it includes an atom (a kind of section) in a LaTeX environment.
+\end{gram}
+\end{itemize}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::authors
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+nt:mtl::authors
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Authors can currently use only these atoms defined above. We are working on allowing authors to define their own atoms. In the mean time, you can request new atoms (please send feedback here).</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Authors can currently use only these atoms defined above. We are working on allowing authors to define their own atoms.  
+In the mean time, you can request new atoms  (please send feedback here).
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Atoms are <strong><em>single standing</em></strong>, that is to say surrounded by "vertical white spaces" or blank lines on both ends (or LaTeX comments). Therefore, white space matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code is a plain paragraph atom but not a definition atom, because definition is not single standing.</p>
+<pre><code>We can now define Kleene closure as follows.  
+\begin{definition}  
+...  
+\end{definition}  </code></pre>
+<p>The following is a definition atom, because it is single standing.</p>
+<pre><code>  
+\begin{definition}  
+...  
+\end{definition}  
+  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Atoms are \defn{single standing}, that is to say surrounded by "vertical
+white spaces" or blank lines on both ends (or LaTeX comments).
+Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code is a plain paragraph atom but not a definition atom, because definition is not single standing.
+
+\begin{lstlisting}
+We can now define Kleene closure as follows.
+\begin{definition}
+...
+\end{definition}
+\end{lstlisting}
+
+The following is a definition atom, because it is single standing.
+\begin{lstlisting}
+
+\begin{definition}
+...
+\end{definition}
+
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::contain
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+nt:mtl::atoms
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Atoms can contain multiple paragraphs. The following text consists of a text-paragraph atom and a definition atom.</p>
+<pre><code>Paragraph 0. Sentence 1.  
+Sentence 2.  
+  
+\begin{definition}[Definition Title]  
+Paragraph 1  
+  
+Paragraph 2  
+\end{definition}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Atoms can contain multiple paragraphs.  The following text consists of a text-paragraph atom and a definition atom.
+
+
+\begin{lstlisting}
+Paragraph 0. Sentence 1.
+Sentence 2.
+
+\begin{definition}[Definition Title]
+Paragraph 1
+
+Paragraph 2
+\end{definition}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::nesting
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Nesting of atoms
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Nesting of atoms
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::nesting
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+
+<segment name='subsubsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Controlling granularity
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Controlling granularity
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::controlling-granularity
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::create
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::create
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>DC will create an atom for each text paragraph. If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user. For example, the following text consists of three small paragraphs.</p>
+<pre><code>If this then that.  
+  
+If that then this.  
+  
+This if and only of if that.  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+DC will create an atom for each text paragraph.  If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user.  For example, the following text consists of three small paragraphs.
+\begin{lstlisting}
+If this then that.
+
+If that then this.
+
+This if and only of if that.
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::usually
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::usually
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>We usually don’t write like this but sometimes it happens. In such a case, you may want to wrap this text into a single paragraph atom.</p>
+<pre><code>\begin{gram}[If and only If]  
+If this then that.  
+  
+If that then this.  
+  
+This if and only of if that.  
+\end{gram}  </code></pre>
+<p>Alternatively you can wrap the text by curly braces as follows.</p>
+<pre><code>{  
+If this then that.  
+  
+If that then this.  
+  
+This if and only of if that.  
+}  </code></pre>
+<p>Both will have no impact on the PDF but on Diderot, you will have only one atom for the three sentences.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+We usually don't write like this but sometimes it happens.
+In such a case, you may want to wrap this text into a single paragraph atom.
+\begin{lstlisting}
+\begin{gram}[If and only If]
+If this then that.
+
+If that then this.
+
+This if and only of if that.
+\end{gram}
+\end{lstlisting}
+Alternatively you can wrap the text by curly braces as follows.
+\begin{lstlisting}
+{
+If this then that.
+
+If that then this.
+
+This if and only of if that.
+}
+\end{lstlisting}
+Both will have no impact on the PDF but on Diderot, you will have only one atom for the three sentences.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsubsection -->
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Groups
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Groups
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::groups
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::group
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='definition'>
+<field name='title'>
+<![CDATA[
+Group
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Group
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+def:mtl::group
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>A <strong><em>group</em></strong> consist of a sequence of atoms. DC currently support only one kind of group: <code>flex</code>. On Diderot, a <code>flex</code> will display its first atom and allow the user to reveal the rest of the atoms by using a simple switch. This, for example, can be useful for hiding simple examples for a definition, the solution to an exercise, and a tangential remark, etc.</p>
+<pre><code>\begin{flex}  
+\begin{definition}[A Definition]  
+\label{def:a}  
+  
+A definition  
+\end{definition}  
+  
+\begin{example}[Simple Example I]  
+\label{ex:a-simple}  
+Simple example 1  
+\end{example}  
+  
+\begin{example}[Simple Example II]  
+\label{ex:a-simple-2}  
+Simple example 2  
+\end{example}  
+  
+\end{flex}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+A \defn{group} consist of a sequence of atoms.  DC currently support only one kind of group: \lstinline`flex`.  On Diderot, a \lstinline`flex` will display its first atom and allow the user to reveal the rest of the atoms by using a simple switch.  This, for example, can be useful for hiding simple examples for a definition, the solution to an exercise, and a tangential remark, etc. 
+
+\begin{lstlisting}
+\begin{flex}
+\begin{definition}[A Definition]
+\label{def:a}
+
+A definition
+\end{definition}
+
+\begin{example}[Simple Example I]
+\label{ex:a-simple}
+Simple example 1
+\end{example}
+
+\begin{example}[Simple Example II]
+\label{ex:a-simple-2}
+Simple example 2
+\end{example}
+
+\end{flex}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- definition -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::turned
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+nt:mtl::turned
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>This has turned out be a favorite feature of Diderot for authors and students alike. You can see how this ‘flex‘ example works below, where a definition atom has been paired flexibly with two examples. Click the drawer icon at the bottom left to open the ‘flex‘ and click again to close it.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+This has turned out be a favorite feature of Diderot for authors and students alike. 
+You can see how this `flex` example works below, where a definition atom
+has been paired flexibly with two examples.  Click the drawer icon
+at the bottom left to open the `flex` and click again to close it.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+<segment name='flex'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::a-definition
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='definition'>
+<field name='title'>
+<![CDATA[
+A Definition
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+A Definition
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+def:a
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p> A definition.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\label{def:a}
+A definition.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- definition -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Simple Example
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Simple Example
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+ex:simple-1
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p> Simple example 1</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\label{ex:simple-1}
+Simple example 1
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Simple Example
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Simple Example
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+ex:simple-2
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p> Simple example 2</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\label{ex:simple-2}
+Simple example 2
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- flex -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Labels and References
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Labels and References
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::labels-and-references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::uses
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::uses
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Diderot uses labels to identify atoms uniquely. All labels in a book must be unique. To help in authoring, we recommended giving each chapter a unique label, and prepending each label with that of the chapter.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Diderot uses labels to identify atoms uniquely. All labels
+in a book must be unique.  To help in authoring, we recommended giving
+each chapter a unique label, and prepending each label with that of
+the chapter.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::recommend
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::recommend
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>We recommend labeling content as follows.</p>
+<pre><code>\chapter{Introduction}  
+\label{ch:intro}  
+  
+\begin{preamble}  
+\label{prml:intro}  
+...  
+\end{preamble}  
+  
+\section{Overview}  
+\label{sec:intro::overview}  
+  
+  
+This is a paragraph (atom) without a label.  The following paragraph (atom) has a label.  
+  
+  
+\begin{gram}  
+\label{grm:intro::present}  
+In this  section, we present...  
+\end{gram}  
+  
+Here is another paragraph atom, consisting of two environments:  
+\begin{itemize}  
+...  
+\end{itemize}  
+\begin{enumerate}  
+...  
+\end{enumerate}  
+  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+We recommend labeling content as follows.
+
+\begin{lstlisting}
+\chapter{Introduction}
+\label{ch:intro}
+
+\begin{preamble}
+\label{prml:intro}
+...
+\end{preamble}
+
+\section{Overview}
+\label{sec:intro::overview}
+
+
+This is a paragraph (atom) without a label.  The following paragraph (atom) has a label.
+
+
+\begin{gram}
+\label{grm:intro::present}
+In this  section, we present...
+\end{gram}
+
+Here is another paragraph atom, consisting of two environments:
+\begin{itemize}
+...
+\end{itemize}
+\begin{enumerate}
+...
+\end{enumerate}
+
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+References
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+References
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To reference a label you can either use</p>
+<ul>
+<li><p><code>\href{label}{ref text}</code></p></li>
+<li><p><code>\ref{label}</code>.</p></li>
+</ul>
+<p>DC replaces the former with <code>\hyperref[][]</code> command so that we can get proper linked refs is latex/ pdf.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To reference a label you can either use
+\begin{itemize}
+\item \lstinline`\href{label}{ref text}`
+\item \lstinline`\ref{label}`.
+\end{itemize}
+DC replaces the former with \lstinline`\hyperref[][]` command so that we can get proper linked refs is latex/ pdf.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::generates
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::generates
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>DC generates a unique label for each atom, group, and section, in a document. When doing so, DC uses different prefixes for labels: <code>sec</code> for all sections, <code>grp</code> for groups, and the following for atoms. Atoms and their labels are shown below.</p>
+<pre><code>algorithm : &quot;alg&quot;  
+assumption : &quot;asm&quot;  
+code : &quot;cd&quot;  
+corollary : &quot;crl&quot;  
+costspec : &quot;cst&quot;  
+datastr : &quot;dtstr&quot;  
+datatype : &quot;adt&quot;  
+definition : &quot;def&quot;  
+example : &quot;xmpl&quot;  
+exercise : &quot;xrcs&quot;  
+hint : &quot;hint&quot;  
+important : &quot;imp&quot;  
+lemma : &quot;lem&quot;  
+note : &quot;nt&quot;  
+gram : &quot;grm&quot;  
+preamble : &quot;prmbl&quot;  
+problem : &quot;prb&quot;  
+proof : &quot;prf&quot;  
+proposition : &quot;prop&quot;  
+remark : &quot;rmrk&quot;  
+reminder : &quot;rmdr&quot;  
+slide : &quot;slide&quot;  
+solution : &quot;sol&quot;  
+syntax : &quot;syn&quot;  
+task : &quot;tsk&quot;  
+theorem : &quot;thm&quot;  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+DC generates a unique label for each atom, group, and section, in a document.
+When doing so, DC uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.   Atoms and their labels are shown below.
+\begin{lstlisting}
+algorithm : "alg"
+assumption : "asm"
+code : "cd"
+corollary : "crl"
+costspec : "cst"
+datastr : "dtstr"
+datatype : "adt"
+definition : "def"
+example : "xmpl"
+exercise : "xrcs"
+hint : "hint"
+important : "imp"
+lemma : "lem"
+note : "nt"
+gram : "grm"
+preamble : "prmbl"
+problem : "prb"
+proof : "prf"
+proposition : "prop"
+remark : "rmrk"
+reminder : "rmdr"
+slide : "slide"
+solution : "sol"
+syntax : "syn"
+task : "tsk"
+theorem : "thm"
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Code
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Code
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::code
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::lstlisting
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::lstlisting
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p> For code, you can use <code>\lstinline</code> and the <code>lstlisting</code> environment. The language has to be specified first (see below for an example). The Kate language highligting spec should be included in the "meta" directory and the name of the file should match that of the language. For example if <code>language = C</code>, then the Kate file should be <code>meta/C.xml</code>. If the language is a dialect, then, e.g., <code>language = \{[Cdialect]C}</code>, then the file should be called <code>CdialectC</code>. Kate highlighting definitions for most languages are available online. If you need a custom language, you can probably write one with a bit of effort by starting with the Kate specification for a suitably close language.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\label{sec:mtl::code}
+For code, you can use \lstinline`\lstinline` and the \lstinline`lstlisting` environment.  The language has to be specified first (see below for an example).  The Kate language highligting spec should be included in the "meta" directory and the name of the file should match that of the language.  For example if \lstinline`language = C`, then the Kate file should be \lstinline`meta/C.xml`.  If the language is a dialect, then, e.g., \lstinline`language = \{[Cdialect]C}`, then the file should be called \lstinline`CdialectC`.  
+Kate highlighting definitions for most languages are available online.
+If you need a custom language, you can probably write one with a bit of effort by starting with the Kate specification for a  suitably close language.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='flex'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::python-code
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Python Code
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Python Code
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::python-code
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Specify language as python, and include line-numbers on the left of each line. Don’t forget to include the Kate highlighting file for python in the meta directory.</p>
+<pre><code>\begin{lstlisting}[language = python, numbers = left]  
+def is_even (i):  
+  if i %2 = 0:  
+    return true  
+  else   
+    return false  
+\end{lstlisting}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Specify language as python, and include  line-numbers on the left of each line.
+Don't forget to include the Kate highlighting file for python in the meta directory.
+
+\begin{verbatim}
+\begin{lstlisting}[language = python, numbers = left]
+def is_even (i):
+  if i %2 = 0:
+    return true
+  else 
+    return false
+\end{lstlisting}
+\end{verbatim}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::render
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The code above will render like this:</p>
+<div class="sourceCode" id="cb1" data-numbers="left"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> is_even (i):  </a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="cf">if</span> i <span class="op">%</span><span class="dv">2</span> <span class="op">=</span> <span class="dv">0</span>:  </a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> true  </a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="cf">else</span>   </a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="cf">return</span> false  </a></code></pre></div>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The code above will render like this:
+\begin{lstlisting}[language = python, numbers = left]
+def is_even (i):
+  if i %2 = 0:
+    return true
+  else 
+    return false
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- flex -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::code-in-c-dialect
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Code in C Dialect
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Code in C Dialect
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::code-in-c-dialect
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Specify the dialect preferred, and don’t include line-numbers. Don’t forget to include the Kate highlighting file for the dialect in the meta directory.</p>
+<pre><code>\begin{lstlisting}[language = C0C]  
+main () {  
+  return void  
+}  
+\end{lstlisting}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Specify the dialect preferred, and don't include line-numbers.
+Don't forget to include the Kate highlighting file for the dialect in the meta directory.
+
+\begin{verbatim}
+\begin{lstlisting}[language = {[C0]C}]
+main () {
+  return void
+}
+\end{lstlisting}
+\end{verbatim}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Images
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Images
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::images
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::include
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::include
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can include JPEG or PNG images by using the usual <code>includegraphics</code> command. We don’t support PDF images, because current PDF viewers (browser plugins) are rather clunky and could adversely impact user experience. When including images, there are two points to be careful about: naming and sizing.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can include JPEG or PNG images by using the usual \lstinline`includegraphics` command.  
+We don't support PDF images, because current PDF viewers (browser plugins) are rather clunky and could adversely impact user experience.
+When including images, there are two points to be careful about: naming and sizing.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::naming
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::naming
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>When naming the images, it is important the file name of each and every image in a chapter is unique. Diderot indexes images based on their filenames and ignores their paths. For example, it will treat <code>/tmp/image1.jpg</code> and <code>image1.jpg</code> as the same .</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+When naming the images, it is important the file name of each and every image in a chapter is unique.
+Diderot indexes images based on their filenames and ignores their paths.
+For example, it will treat
+\lstinline`/tmp/image1.jpg` and  \lstinline`image1.jpg`
+as the same .
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::sizing
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::sizing
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>When sizing your images, you could, in principle, use absolute sizes, e.g.,</p>
+<pre><code>\includegraphics[width=5in]{myimage.jpg}  </code></pre>
+<p>The problem with this approach is that the PDF output and the Diderot output will likely have different formats and the image that looks just fine on paper might look too big on Diderot or possibly vice versa. We therefore recommend using relative widths using the following approach</p>
+<pre><code>\includegraphics[width=0.5\textwidth]{myimage.jpg}  </code></pre>
+<p>DC will translate this to 50% width in html and 50% of <code>\textwidth</code> in PDF and the image will look consistent with its environment in both cases. When specifying the width, it is important to always include the fraction. For example, if you want the width to be exactly equal to <code>\textwidth</code> then use <code>width=1.0\textwidth</code>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+When sizing your images, you could, in principle, use absolute sizes, e.g.,
+\begin{lstlisting}
+\includegraphics[width=5in]{myimage.jpg}
+\end{lstlisting}
+The problem with this approach is that the PDF output and the Diderot output will likely have different formats and the image that looks just fine on paper might look too big on Diderot or possibly vice versa.
+We therefore recommend using relative widths using the following approach
+\begin{lstlisting}
+\includegraphics[width=0.5\textwidth]{myimage.jpg}
+\end{lstlisting}
+DC will translate this to 50\% width in html and 50\% of \lstinline`\textwidth` 
+in PDF and the image will look consistent with its environment in both cases.  
+When specifying the width, it is important to always include the fraction.  For example, if you want the width to be exactly equal to \lstinline`\textwidth` then use \lstinline`width=1.0\textwidth`.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::output
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+nt:mtl::output
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>For PDF output, the author could also use <code>\textheight</code>. But this is not meaningful for HTML output, and will not work as expected.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+For PDF output, the author could also use \lstinline`\textheight`.
+But this is not meaningful for HTML output, and will not work as expected.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- note -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::scale-is-not-supported
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Scale is not Supported
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Scale is not Supported
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::scale-is-not-supported
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>For PDF output it is also possible to use <code>scale</code>. For example,</p>
+<pre><code>\includegraphics[scale=0.5]{myimage.jpg}  </code></pre>
+<p>This means that the image should be shown at 50% of its actual dimensions. This has the same issues as the absolute measures approach. Furthermore, DC doesn’t detect attempt to detect the actual dimensions of the image and this approach is not supported.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+For PDF output it is also possible to use \lstinline`scale`.  For example,
+\begin{lstlisting}
+\includegraphics[scale=0.5]{myimage.jpg}
+\end{lstlisting}
+
+This means that the image should be shown at 50\% of its actual dimensions.  This has  the same issues as the absolute measures approach. Furthermore, DC doesn't detect attempt to detect the actual dimensions of the image and this approach is not supported.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::uploading-images
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Uploading Images
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Uploading Images
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::uploading-images
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>When uploading a chapter, via the UI or via the CLI, the user needs to upload the images explicitly.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+When uploading a chapter, via the UI or via the CLI, the user needs to upload the images explicitly.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Typesetting Mathematics
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Typesetting Mathematics
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::typesetting-mathematics
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::mathjax
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::mathjax
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Diderot uses MathJax to render math environments. This works in many cases, especially for use that is consistent with AMS Math packages. There are a few important caveats.</p>
+<ul>
+<li><p>Once you switch to math, try to stay in math. You can switch to text mode using <code>\mbox</code> but if you use macros inside the <code>mbox</code>, then they might not work (because mathjax doesn’t know about your macros). For example, the following won’t work.</p>
+<pre><code>$\lstinline`xyz`$  </code></pre></li>
+<li><p>The "tabular" environment does not work in MathJax. Use "array" instead.</p></li>
+<li><p>The environment</p>
+<pre><code>\begin{alignat}   
+...   
+\end{alignat}  </code></pre>
+<p>should be wrapped with <code>\htmlmath</code>, e.g.,</p>
+<pre><code>\htmlmath{  
+\begin{alignat}   
+...   
+\end{alignat}  
+}  </code></pre></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
+\begin{itemize}
+\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
+\begin{lstlisting}
+$\lstinline`xyz`$
+\end{lstlisting}
+
+\item The "tabular" environment does not work in MathJax.  Use "array" instead.
+
+\item  The environment 
+\begin{lstlisting}
+\begin{alignat} 
+... 
+\end{alignat}
+\end{lstlisting}
+should be wrapped with \lstinline`\htmlmath`, e.g.,
+\begin{lstlisting}
+\htmlmath{
+\begin{alignat} 
+... 
+\end{alignat}
+}
+\end{lstlisting} 
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Indexing
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Indexing
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::indexing
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='flex'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::near
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::near
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>In the near term, we plan to index books automatically by doing some natural-language processing. To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: <code>\defb, \defe, \defn</code>. You can define these commands as follows or any other way you prefer.</p>
+<pre><code>\newcommand{\defb}[1]{\textbf{#1}}  
+\newcommand{\defe}[1]{\emph{#1}}  
+\newcommand{\defn}[1]{\textbf{\emph{#1}}}  </code></pre>
+<p>The indexing algorithm will look up these commands and link the use of these terms to their definition.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+In the near term, we plan to index books automatically by doing some natural-language processing.  
+To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: \lstinline`\defb, \defe, \defn`.  You can define these commands as follows or any other way you prefer.
+\begin{lstlisting}
+\newcommand{\defb}[1]{\textbf{#1}}
+\newcommand{\defe}[1]{\emph{#1}}
+\newcommand{\defn}[1]{\textbf{\emph{#1}}}
+\end{lstlisting}
+The indexing algorithm will look up these commands and link the use of these terms to their definition.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+def:algorithm
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p> An <strong><em>algorithm</em></strong> is a recipe for solving a problem.</p>
+<p> The <strong><em>single source shortest path problem</em></strong> or <strong><em>SSSP problem</em></strong> for short requires finding the shortest paths from a given source vertex to each and every vertex in a graph.</p>
+<p>Given these definitions, the following sentence will be processed so that the terms “algorithm” and “SSSP” are linked to the two definitions above. Dijkstra’s algorithm solves the SSSP problem.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\begin{definition}[Algorithm]
+\label{def:algorithm}
+An \defn{algorithm} is a recipe for solving a problem.
+\end{definition}
+
+
+\begin{definition}[Single Source Shortest Paths Problem]
+\label{def:sssp}
+The \defn{single source shortest path problem} or \defn{SSSP problem} for short requires finding  the shortest paths from a given source vertex to each and every vertex in a graph. 
+\end{definition}
+
+Given these definitions, the following sentence will be processed so that the terms ``algorithm'' and ``SSSP'' are linked to the two definitions above.
+Dijkstra's algorithm solves the SSSP problem.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- flex -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Colors
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Colors
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::colors
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::colors
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::colors
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can use colors as follows</p>
+<pre><code>\textcolor{red}{my text}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can use colors as follows
+\begin{lstlisting}
+\textcolor{red}{my text}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Limitations
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Limitations
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::latex
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::latex
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset. DC appears to work well for most uses. Here is a list of known limitations.</p>
+<ul>
+<li><p>For XML translation work, the chapter should be compileable to PDF.</p></li>
+<li><p>Do not use <code>\input</code> directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.</p></li>
+<li><p>All macro definitions via <code>newcommand</code> are restricted to the “preamble” of the book.</p></li>
+<li><p>Each chapter must have a unique label.</p></li>
+<li><p>Fancy packages are not supported. Stick to basic latex and AMS Math packages.</p></li>
+<li><p>Support for tabular environment is limited: borders will not show and columns will be centered. You can use the array (math/mathjax) as a substitute, and use <code>\mbox</code> for text fields.</p></li>
+<li><p>You can use <code>itemize</code> and <code>enumerate</code> in their basic form. Changing the label format with <code>enumitem</code> package and similar packages do not work. You can imitate these by using heading for your items.</p></li>
+<li><p>Labeling and references are limited to chapters, sections, and atoms. You can label these and refer to them, but you cannot label codelines, items in lists, etc.</p></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset.  
+DC appears to work well for most uses. 
+Here is a list of known limitations.  
+\begin{itemize}
+
+\item For XML translation work, the chapter should be compileable to PDF.
+
+\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
+
+\item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
+
+\item Each chapter must have a unique label.
+
+\item Fancy packages are not supported.  Stick to basic latex and AMS Math packages.
+
+\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
+ 
+\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
+
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
+
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='remark'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+rmrk:mtl::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The above limitations all pertain to XML generation. Because DC works on a plain LaTeX document, these don’t apply to generating other outputs such as PDF.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The above limitations all pertain to XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
+PDF.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- remark -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Embedding Videos
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Embedding Videos
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::embedding-videos
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::embed
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::embed
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can embed a video to your notes by using <code>\video{url}{text}</code> command. For example, the following code, when uploaded on diderot will embed the corresponding YouTube video.</p>
+<pre><code>Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can embed a video to your notes by using \lstinline`\video{url}{text}` command.
+For example, the following code, when uploaded on diderot will embed the corresponding YouTube video.
+\begin{lstlisting}
+Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::video-embedding
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Video Embedding
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Video Embedding
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::video-embedding
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The video embedding code will look like this.</p>
+<p>Here is a</p>
+<div class='video-container' style='margin-bottom:15px'><iframe class='ql-video' frameborder='0' allowfullscreen='true' src='https://www.youtube.com/embed/8QyE9D_3ezQ'>tango video.</iframe></div>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The video embedding code will look like this.
+
+Here is a \begin{verbatim}
+%%%% diderot_html
+<div class='video-container' style='margin-bottom:15px'><iframe class='ql-video' frameborder='0' allowfullscreen='true' src='https://www.youtube.com/embed/8QyE9D_3ezQ'>tango video.</iframe></div>
+\end{verbatim}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+File Attachments
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+File Attachments
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::file-attachments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::attach
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::attach
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can attach a file to a chapter by using the command <code>\href{file://path.name.ext}{referral text}</code> command. When uploading your chapter, simply include the file <code>name.ext</code> in your attachments.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can attach a file to a chapter by using the command \lstinline`\href{file://path.name.ext}{referral text}` command.
+When uploading your chapter, simply include the file \lstinline{name.ext} in your attachments.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::file-attachment
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+File Attachment
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+File Attachment
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::file-attachment
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The following code, when uploaded on diderot will create a link to the attached file (requires uploading the file <code>dc.tex</code> as an attachment).</p>
+<pre><code>Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guide.  </code></pre>
+<p>Here is the <a href="file://dc.tex">LaTeX source code</a> for this chapter of the guide.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The following code, when uploaded on diderot will create a link to the attached file (requires uploading the file \lstinline`dc.tex` as an attachment).  
+\begin{lstlisting}
+Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guide.
+\end{lstlisting}
+
+Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guide.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::uniqueness-of-attachments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Uniqueness of Attachments
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Uniqueness of Attachments
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::uniqueness-of-attachments
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>File name of each and every image and attachment in a chapter most be unique. Diderot indexes images and attachments based on their filenames and ignores their paths. For example, it will treat <code>/tmp/image1.jpg</code> and <code>image1.jpg</code> as the same.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+File name of each and every image and attachment in a chapter most be unique.
+Diderot indexes images and attachments based on their filenames and ignores their paths.
+For example, it will treat
+\lstinline`/tmp/image1.jpg` and  \lstinline`image1.jpg` 
+as the same.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Structuring your Sources and Compilation
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Structuring your Sources and Compilation
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:dc::latex-structure
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::translate
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::translate
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p> You can translate LaTeX to PDF, HTML, and XML by using the <code>dc</code> binary. For this to work smoothly, we strongly advise following the structure of the book and the booklet examples included in this guide source code (in folders ‘book‘ and ‘booklet‘) and described here. The following instructions are tested on Mac OS X and Ubuntu. The binaries in <code>bin</code> might not work on systems that are not Mac or Linux/Unix-like.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\label{sec:dc::latex-structure}
+You can translate LaTeX to PDF, HTML, and XML by using the \lstinline`dc` binary.  
+For this to work smoothly, we strongly advise following the structure
+of the book and the booklet examples included in this guide source
+code (in folders `book` and `booklet`) and described here.
+The following instructions are tested on Mac OS X and Ubuntu.  The binaries in \lstinline`bin` might not work on systems that are not Mac or Linux/Unix-like.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::book
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::folders
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>As examples, the folders <code>book</code> and <code>booklet</code> contain several files.</p>
+<ul>
+<li><p><code>book.tex</code></p>
+<p>This is the top level file for PDF generation. It is a conventional LaTeX document is but is stylized slightly for ease of use.</p></li>
+<li><p><code>book-html.tex</code></p>
+<p>This is the top level file for html generation. It is mostly a copy of <code>book.tex</code> but it uses slightly different packages.</p></li>
+<li><p><code>templates/diderot.sty</code></p>
+<p>Supplies diderot definitions needed for compiling latex to pdf’s. You don’t need to modify this file.</p></li>
+<li><p><code>templates/packages.sty</code></p>
+<p>Supplies packages for PDF generation. You can add whatever package you want. Most of these packages, except perhaps basics ones and AMS Math packages, will be ignored for XML generation. Do not include any command definitions in this file.</p></li>
+<li><p><code>templates/preamble.tex</code></p>
+<p>Supplies your macros that will be used by generating a pdf via pdflatex. All macros should be included here and no packages should be included (use <code>packages.sty</code> for packages. For XML generation, each chapter will be compiled in the context of this file.</p></li>
+<li><p><code>templates/preamble-diderot.tex</code></p>
+<p>Equivalent of preamble.tex but it is customized for XML output. This usually means that most macros will remain the same but some will be simplified to work with ‘pandoc‘. If you don’t need to customize, you can keep just one <code>preamble.tex</code> and <code>input</code> that file in your <code>preamble-diderot.tex</code>. The example in directory ‘booklet‘ does so.</p></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+As examples, 
+the folders \lstinline`book` and \lstinline`booklet` contain several files.
+\begin{itemize}
+\item \lstinline`book.tex`
+
+This is the top level file for PDF generation.  It is a conventional LaTeX document is but is stylized slightly for ease of use.  
+
+\item \lstinline`book-html.tex`
+
+This is the top level file for html generation.  It is mostly a copy of \lstinline`book.tex` but it uses slightly different packages.
+
+\item \lstinline`templates/diderot.sty`
+
+Supplies diderot definitions needed for compiling latex to pdf's.
+You don't need to modify this file.
+
+\item \lstinline`templates/packages.sty`
+
+Supplies packages for PDF generation.  You can add whatever package
+you want.  Most of these packages, except perhaps basics ones and AMS
+Math packages, will be ignored for XML generation.  Do not include any
+command definitions in this file.
+
+\item \lstinline`templates/preamble.tex` 
+
+ Supplies your macros that will be used by generating a pdf via pdflatex.  All macros should be included here and no packages should be included (use \lstinline`packages.sty` for packages.  For XML generation, each chapter will be compiled in the context of this file. 
+
+
+\item \lstinline`templates/preamble-diderot.tex` 
+
+   Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one \lstinline`preamble.tex` and \lstinline`input` that file in your \lstinline`preamble-diderot.tex`.  The example in directory `booklet` does so.
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::simplify
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::simplify
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To simplify publishing on Diderot, we recommend organizing your book sources as outlined below.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To simplify publishing on Diderot, we recommend organizing your book
+sources as outlined below.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::booklets
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Booklets
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Booklets
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::booklets
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Booklets are books that don’t have parts. We recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want. Place all media (images, videos etc) under a media/ subdirectory.</p>
+<ul>
+<li><p><code>ch1/main.tex</code></p></li>
+<li><p><code>ch1/media/</code>: all my media files, *.png *.jgp, *.graffle, etc.</p></li>
+<li><p><code>ch2/main.tex</code></p></li>
+<li><p><code>ch2/media/</code>: all my media files for chapter 2, *.png *.jgp, *.graffle, etc.</p></li>
+<li><p><code>ch3/main.tex</code></p></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Booklets are books that don't have parts. We recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want.  Place all media (images, videos etc) under a media/ subdirectory. 
+\begin{itemize}  
+\item \lstinline`ch1/main.tex`
+\item \lstinline`ch1/media/`: all my media files, *.png *.jgp, *.graffle, etc.
+\item \lstinline`ch2/main.tex`
+\item \lstinline`ch2/media/`: all my media files for chapter 2, *.png *.jgp, *.graffle, etc.
+\item \lstinline`ch3/main.tex`
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::books
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Books
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Books
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::books
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Books have parts and chapters. We recommend structuring these as follows, where ‘ch1, ch2‘ etc can be replaced with names of your choice.</p>
+<ul>
+<li><p><code>part1/ch1.tex</code></p></li>
+<li><p><code>part1/ch2.tex</code></p></li>
+<li><p><code>part1/media-ch1/</code></p></li>
+<li><p><code>part1/media-ch2/</code></p></li>
+<li><p><code>part2/ch3.tex</code></p></li>
+<li><p><code>part2/ch4.tex</code></p></li>
+<li><p><code>part2/ch5.tex</code></p></li>
+<li><p><code>part2/media-ch3/</code></p></li>
+<li><p><code>part2/media-ch4/</code></p></li>
+<li><p><code>part2/media-ch5/</code></p></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Books have parts and chapters. We recommend structuring these as follows, where `ch1, ch2` etc can be replaced with names of your choice.
+\begin{itemize}
+\item \lstinline`part1/ch1.tex`
+\item \lstinline`part1/ch2.tex`
+\item \lstinline`part1/media-ch1/`
+\item \lstinline`part1/media-ch2/`
+\item \lstinline`part2/ch3.tex`
+\item \lstinline`part2/ch4.tex`
+\item \lstinline`part2/ch5.tex`
+\item \lstinline`part2/media-ch3/`
+\item \lstinline`part2/media-ch4/`
+\item \lstinline`part2/media-ch5/`
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::making-pdf-and-html
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Making PDF and HTML
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Making PDF and HTML
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::making-pdf-and-html
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Inside the <code>book\</code> and <code>booklet\</code> directories, you can use <code>pdflatex</code> to generate a PDF output. See the corresponding <code>Makefile</code>. For example, you can invoke the <code>Makefile</code> as follows to make a PDF:</p>
+<pre><code>$ make pdf  
+$ make html  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Inside the \lstinline`book\` and \lstinline`booklet\` directories, 
+you can use \lstinline`pdflatex` to generate a PDF output.  See the corresponding \lstinline`Makefile`.
+For example, you can  invoke the \lstinline`Makefile` as follows to make a PDF:
+\begin{lstlisting}
+$ make pdf
+$ make html
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::making-pdf-html-for-a-single-chapter
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Making PDF/HTML for a Single Chapter
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Making PDF/HTML for a Single Chapter
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::making-pdf-html-for-a-single-chapter
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To make specific chapters, extend the Makefile to compile each chapter separately. See the <code>Makefile</code> in book or booklet as examples. For example, you can compile the chapter <code>probability</code> in the <code>book</code> directory as follows.</p>
+<pre><code>$ make probability  </code></pre>
+<p>To generate HTML for a single chapter, update <code>book-html.tex</code> to exclude all other chapters and run <code>make html</code>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To make specific chapters,  extend the Makefile to compile each chapter separately.  See the \lstinline`Makefile` in book or booklet as examples.
+For example, you can compile the chapter \lstinline`probability` in the \lstinline`book` directory as follows.
+\begin{lstlisting}
+$ make probability
+\end{lstlisting}
+
+To generate HTML for a single chapter, update \lstinline`book-html.tex` to exclude all other chapters and run \lstinline`make html`.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::making-xml
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Making XML
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Making XML
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::making-xml
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>XML generation proceeds on a chapter by chapter basis. To generate xml, simply use the Makefile provided as follows.</p>
+<pre><code>$ make ch2/main.xml  </code></pre>
+<p>To obtain more information from a run, you can turn on the verbose option.</p>
+<pre><code>$ make verbose=true ch2/main.xml  </code></pre>
+<p>Beware that you will likely see many warnings. For this reason the utility of the verbose flag is not particularly high.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+XML generation proceeds on a chapter by chapter basis.
+To generate xml, simply use the Makefile provided as follows.
+\begin{lstlisting}
+$ make ch2/main.xml
+\end{lstlisting}
+
+To obtain more information from a run, you can turn on the verbose option.
+\begin{lstlisting}
+$ make verbose=true ch2/main.xml
+\end{lstlisting}
+
+Beware that you will likely see many warnings.  For this reason the utility of the verbose flag is not particularly high.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::error
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::error
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Error messages from the XML translator are not particularly useful at this time. But, if you are able to generate a PDF and HTML (using <code>pandoc</code>), then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.</p>
+<pre><code>$ make debug=true probability/theory.xml  </code></pre>
+<p>If that fails, there is another relatively simply way to debug, see <a href="sec:dc::internals">Section Internals</a> for additional information.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF and HTML (using \lstinline`pandoc`), then you should be able to generate an XML. 
+If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.
+\begin{lstlisting}
+$ make debug=true probability/theory.xml
+\end{lstlisting}
+
+If that fails, there is another relatively simply way to debug, see \href{sec:dc::internals}{Section Internals} for additional information.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::using-dc-directly
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Using DC directly
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Using DC directly
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::using-dc-directly
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the DC tools directly. This tools translates the given input LaTeX file to xml.</p>
+<pre><code>$ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml  </code></pre>
+<p>To turn on the debug mode, simply pass the flag <code>-d</code>.</p>
+<pre><code>$ dc  -d -meta ./meta -preamble preamble.tex input.tex -o output.xml  </code></pre>
+<p>The meta folder contains some files that may be used in the xml translation. You can ignore this directory to start with and then start populating it based on your needs. The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the DC tools directly. 
+This tools translates the given input LaTeX file to xml.
+
+\begin{lstlisting}
+$ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml
+\end{lstlisting}
+
+To turn on the debug mode, simply pass the flag \lstinline`-d`.
+\begin{lstlisting}
+$ dc  -d -meta ./meta -preamble preamble.tex input.tex -o output.xml
+\end{lstlisting}
+
+The meta folder contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Typesetting with Markdown
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Typesetting with Markdown
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::typesetting-with-markdown
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::basic
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::basic
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>DC has basic support for Markdown to XML translation.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+DC has basic support for Markdown to XML translation.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::header
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Header
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Header
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::header
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>For translation to work Markdown documents should have either of the following two headers</p>
+<ul>
+<li><p>Without front matter</p>
+<pre><code># Chapter Title  
+...  </code></pre></li>
+<li><p>With YAML frontmatter.</p>
+<pre><code>---   
+Frontmatter  
+---  
+# Chapter Title  
+...  </code></pre></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+For translation to work Markdown documents should have either of the following two headers
+\begin{itemize}
+\item Without front matter
+\begin{lstlisting}
+# Chapter Title
+...
+\end{lstlisting}  
+
+\item  With YAML frontmatter.
+\begin{lstlisting}
+--- 
+Frontmatter
+---
+# Chapter Title
+...
+\end{lstlisting}  
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::special-symbols
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Special Symbols
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Special Symbols
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::special-symbols
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Special symbols should be escaped.</p>
+<ul>
+<li><p>The hash sign # is a special symbol in LaTeX and must be escaped when using LaTeX macros.</p></li>
+<li><p>In math mode % is a LaTeX-Math special symbol and should be escaped.</p></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Special symbols should be escaped.
+\begin{itemize}
+\item The hash sign \# is a special symbol in LaTeX and must be escaped when using LaTeX macros.
+\item In math mode \% is a LaTeX-Math special symbol and should be escaped.
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::chapter-titles
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+Chapter Titles
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Chapter Titles
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:mtl::chapter-titles
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>In any given book, all chapter titles must be unique. This ensures that all chapters are uniquely labeled: <code>dc</code> assigns a chapter with title “This is a Chapter Title” the label “ch:this-is-a-chapter-title”.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+In any given book, all chapter titles must be unique.  
+This ensures that all chapters are uniquely labeled: \lstinline`dc` assigns a chapter with title ``This is a Chapter Title'' the label ``ch:this-is-a-chapter-title''.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Chapters and Sections
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Chapters and Sections
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::chapters-and-sections
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::support
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::support
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>We support the atx-sytle headers, which start by 1-6 hash (#) signs, e.g.,</p>
+<pre><code># This is a chapter  
+  
+## This is a section  
+  
+### This is a subsection  
+  
+#### This is a subsubsection  
+  
+##### This is a paragraph  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+We support the atx-sytle headers, which start by 1-6 hash (\#) signs, e.g.,
+\begin{lstlisting}
+# This is a chapter
+
+## This is a section
+
+### This is a subsection
+
+#### This is a subsubsection
+
+##### This is a paragraph
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Code
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Code
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:dc::md::code
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::usual
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::usual
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Usual Markdown conventions apply. You can include inline code by using the backtick symbol. For code blocks use three or more backticks and specify the lanugage. It is important to finish a code block with the same number of backtics.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Usual Markdown conventions apply.  You can include inline code by using the backtick symbol. For code blocks use three or more backticks and specify the lanugage. It is important to finish a code block with the same number of backtics.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::html
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::html
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<pre><code>```html  
+&lt;!DOCTYPE html&gt;  
+&lt;html lang=&quot;en&quot;&gt;  
+&lt;head&gt;  
+    &lt;meta charset=&quot;utf-8&quot;/&gt;  
+    &lt;meta content=&quot;IE=edge&quot; http-equiv=&quot;X-UA-Compatible&quot;/&gt;  
+    &lt;meta content=&quot;width=device-width, initial-scale=1.0&quot; name=&quot;viewport&quot;/&gt;  
+...  
+  
+```  
+  
+```ocaml  
+let x = 2 in  
+2+2  
+```  
+  
+```python  
+def fun x:  
+  if x then x  
+  else x  
+```  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\begin{lstlisting}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+...
+
+```
+
+```ocaml
+let x = 2 in
+2+2
+```
+
+```python
+def fun x:
+  if x then x
+  else x
+```
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Typesetting Mathematics
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Typesetting Mathematics
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::typesetting
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::delimiters
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::delimiters
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can use the usual LaTeX delimiters to include mathematics, i.e., for inline style, use single dollar sign. For math blocks use double-dollars or <code>\[</code>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can use the usual LaTeX delimiters to include mathematics, i.e., for inline style, use single dollar sign.
+For math blocks use double-dollars or \lstinline`\[`.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Images
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Images
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::include
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='flex'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::jpeg
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::jpeg
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can include JPEG, PNG, and SVG images by using following syntax.</p>
+<pre><code>![caption](image_file.ext){width=xy%}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can include JPEG, PNG, and SVG images by using following syntax.
+\begin{lstlisting}
+![caption](image_file.ext){width=xy%}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:mtl::displays
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The following code displays the image <code>papers.svg</code>.</p>
+<pre><code>![A categorization of CS papers.](papers.svg){width=90%}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The following code displays the image \lstinline`papers.svg`.
+\begin{lstlisting}
+![A categorization of CS papers.](papers.svg){width=90%}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- flex -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Limitations
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Limitations
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::markdown
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::markdown
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::markdown
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Markdown to XML translation is relatively basic at this time. If you need a particular feature not supported here, please let us know. Here are few known limitations.</p>
+<ul>
+<li><p>Markdown usually allows blocks to be ended with equal or greater number of delimiter symbols than the start. For example a codeblock that starts with <code>```</code> can be ended with <code>```````</code>. DC insists on blocks to start and end with the same length delimeters.</p></li>
+<li><p>Blank lines in DC will always start an atom. For example if you pepper blank lines into your list, each list item will turn into a separate atom. This is probably not what you have intended.</p>
+<pre><code>  
+* Item 1 is its own atom.  
+  
+* Item 2 is its own atom.  
+  </code></pre></li>
+<li><p>DC does not allow nested paragraphs as some Markdown extensions do.</p>
+<pre><code>  
+* Item 1 is its own atom.  
+  
+    This is a paragraph that you intended to nest inside Item 1 but  this will start a new atom in DC.    
+  
+* Item 2 is its own atom.  
+  </code></pre></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Markdown to XML translation is relatively basic at this time.  If you need a particular feature not supported here, please let us know.
+Here are few known limitations.
+\begin{itemize}
+\item Markdown usually allows blocks to be ended with equal or greater number of delimiter symbols than the start. For example a codeblock that starts with \lstinline!```! can be ended with \lstinline!```````!.  DC insists on blocks to start and end with the same length delimeters.
+
+\item Blank lines in DC will always start an atom.  For example if you pepper blank lines into your list, each list item will turn into a separate atom.  This is probably not what you have intended.  
+\begin{lstlisting}
+
+* Item 1 is its own atom.
+
+* Item 2 is its own atom.
+
+\end{lstlisting}
+
+\item DC does not allow nested paragraphs as some Markdown extensions do.  
+
+\begin{lstlisting}
+
+* Item 1 is its own atom.
+
+    This is a paragraph that you intended to nest inside Item 1 but  this will start a new atom in DC.  
+
+* Item 2 is its own atom.
+
+\end{lstlisting}
+
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Compiling Markdown To XML
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Compiling Markdown To XML
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::compiling-markdown-to-xml
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::guide
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::guide
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The guide includes a very simple markdown document<code>markdown/example.md</code>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The guide includes a very simple markdown document\lstinline`markdown/example.md`.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::making
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Making XML
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Making XML
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::making
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>To generate xml, simply use the Makefile provided as follows.</p>
+<pre><code>$ make markdown/example.xml  </code></pre>
+<p>If you would like to know more about how thing are being handled, you can turn on the verbose option</p>
+<pre><code>$ make verbose=true markdown/example.xml   </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+To generate xml, simply use the Makefile provided as follows.
+\begin{lstlisting}
+$ make markdown/example.xml
+\end{lstlisting}
+If you would like to know more about how thing are being handled, you can turn on the verbose option
+\begin{lstlisting}
+$ make verbose=true markdown/example.xml 
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::using
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Using DC directly
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Using DC directly
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::using
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You could also use the DC tools directly as follows. The command will generate <code>markdown/example.xml</code>.</p>
+<pre><code>$ dc markdown/example.md  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You could also use the DC tools directly as follows.
+The command will generate  \lstinline`markdown/example.xml`.
+
+\begin{lstlisting}
+$ dc markdown/example.md
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::the-debugger
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+The “Debugger”
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+The ``Debugger''
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::the-debugger
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>AS you might notice, <code>dc</code> doesn’t currenty give reasonable error messages, partly because if you can generate PDF and html from your LaTeX sources, it is unlikely for there to be errors. In case of an error, you can pass the <code>-d</code> flag to <code>dc</code> to tell her to print the atoms that it matches. See also <a href="sec:dc::internals">Section Internals</a> for additional debugging help.</p>
+<pre><code>dc -d input.md -o output.xml  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+AS you might notice, \lstinline`dc` doesn't currenty give reasonable error messages, partly because if you can generate PDF and html from your LaTeX sources, it is unlikely for there to be errors. 
+In case of an error, you can pass the \lstinline`-d` flag to \lstinline`dc` to tell her to print the atoms that it matches.
+See also \href{sec:dc::internals}{Section Internals} for additional debugging help.
+\begin{lstlisting}
+dc -d input.md -o output.xml
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+</segment> <!-- section -->
+
+<segment name='section'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Internals
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Internals
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:dc::internals
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::high-level
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::high-level
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>When using DC, a high-level understanding of the DC’s internal could help. DC works by splitting the LaTeX or Markdown document into atoms, which it treats as units. It uses a Latex to HTML/XML or Latex to HTML/XML compiler to translate each atom and stitches the outputs back to construct the XML for the document. The current implementation works with <a href="https://www.pandoc.org">pandoc</a>, though other compilers such as <a href="https://dlmf.nist.gov/LaTeXML/">LaTeXML</a> were also used at some point in the past.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+When using DC, a high-level understanding of the DC's internal could help.
+DC works by splitting the LaTeX or Markdown document into atoms, which it treats as units.
+It uses a Latex to HTML/XML or Latex to HTML/XML compiler to translate each atom and stitches the outputs back to construct the XML for the document.
+The current implementation works with \href{https://www.pandoc.org}{pandoc}, though other compilers such as \href{https://dlmf.nist.gov/LaTeXML/}{LaTeXML} were also used at some point in the past.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::receive
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::receive
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>When you receive an error, it will likely look like this:</p>
+<pre><code>*latex_file_to_html: Executing command: pandoc --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html  
+Error in html translation.  
+Command exited with code: 65  
+Now exiting.make: *** [dc/dc.xml] Error 65  </code></pre>
+<p>The error occurred when compiling atom # 67, which is stored in the file <code>/tmp/67.tex</code>. To understand the error you can open this file. The file is a complete LaTeX file and you can edit it and run <code>pandoc</code> on it, possible with the flag <code>--verbose</code>, which will likely be helpful. You can ask <code>pandoc</code> to generate a standalone html, by passing the <code>-s</code> flag, so that you can open the result and examine how it looks rrin your browser.</p>
+<pre><code>pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -s -o /tmp/67.html  </code></pre>
+<p>Once you figure out what the problem is what remains is to update your main document and proceed. Basically the same workflow applies to Markdown inputs.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+When you receive an error, it will likely look like this:
+\begin{lstlisting}
+*latex_file_to_html: Executing command: pandoc --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html
+Error in html translation.
+Command exited with code: 65
+Now exiting.make: *** [dc/dc.xml] Error 65
+\end{lstlisting} 
+The error occurred when compiling atom \# 67, which is stored in the file \lstinline`/tmp/67.tex`.
+To understand the error you can open this file.  The file is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
+You can ask \lstinline`pandoc` to generate a standalone html, by passing the \lstinline`-s` flag, so that you can open the result and examine how it looks rrin your browser.
+\begin{lstlisting}
+pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -s -o /tmp/67.html
+\end{lstlisting}
+Once you figure out what the problem is what remains is to update your main document and proceed.
+Basically the same workflow applies to Markdown inputs.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:mtl::need
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:mtl::need
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>This is all you need. Happy Diderowing!</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+This is all you need. Happy Diderowing!
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- section -->
+
+</segment> <!-- chapter -->
