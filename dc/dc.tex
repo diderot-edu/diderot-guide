@@ -497,9 +497,9 @@ main () {
 
 You can include JPEG or PNG images by using the usual \lstinline`includegraphics` command.  
 %
-We currently don't support PDF images (will be available shortly).
+We don't support PDF images, because current PDF viewers (browser plugins) are rather clunky and could adversely impact user experience.
 %
-There is are two points to be careful about: naming and sizing.
+When including images, there are two points to be careful about: naming and sizing.
 %
 
 When naming the images, it is important the file name of each and every image in a chapter is unique.
@@ -510,7 +510,7 @@ For example, it will treat
 %
 \lstinline`/tmp/image1.jpg` and  \lstinline`image1.jpg`
 %
-as the same.
+as the same .
 
 
 When sizing your images, you could, in principle, use absolute sizes, e.g.,
@@ -585,7 +585,7 @@ should be wrapped with \lstinline`\htmlmath`, e.g.,
 \begin{flex}
 In the near term, we plan to index books automatically by doing some natural-language processing.  
 %
-To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: \lstinline`defb, \defe, \defn`.  You can define these commands as follows or any other way you prefer.
+To aid this, we recommend marking definitional terms by using one of the following LaTeX commands: \lstinline`\defb, \defe, \defn`.  You can define these commands as follows or any other way you prefer.
 %
 \begin{lstlisting}
 \newcommand{\defb}[1]{\textbf{#1}}
@@ -593,7 +593,7 @@ To aid this, we recommend marking definitional terms by using one of the followi
 \newcommand{\defn}[1]{\textbf{\emph{#1}}}
 \end{lstlisting}
 %
-The indexing algorithm will lookup these commands and link the use of these terms to their definition.
+The indexing algorithm will look up these commands and link the use of these terms to their definition.
 
 \begin{example}
 \begin{definition}[Algorithm]
@@ -652,6 +652,55 @@ Here is a list of known limitations.
 The above limitations all pertain to XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
 PDF.
 \end{remark}  
+
+\subsection{Embedding Videos}
+
+You can embed a video to your notes by using \lstinline`\video{url}{text}` command.
+%
+For example, the following code, when uploaded on diderot will embed the corresponding YouTube video.
+%
+\begin{lstlisting}
+Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
+\end{lstlisting}
+
+\begin{example}[Video Embedding]
+The video embedding code will look like this.
+
+Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
+
+\end{example}
+
+\subsection{File Attachments}
+
+You can attach a file to a chapter by using the command \lstinline`\href{file://path.name.ext}{referral text}` command.
+%
+When uploading your chapter, simply include the file \lstinline{name.ext} in your attachments.
+%
+
+
+\begin{example}[File Attachment]
+The following code, when uploaded on diderot will create a link to the attached file (requires uploading the file \lstinline`dc.tex` as an attachment).  
+%
+\begin{lstlisting}
+Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guide.
+\end{lstlisting}
+
+Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guide.
+\end{example}
+
+
+\begin{important}[Uniqueness of Attachments]
+File name of each and every image and attachment in a chapter most be unique.
+%
+Diderot indexes images and attachments based on their filenames and ignores their paths.
+%
+For example, it will treat
+%
+\lstinline`/tmp/image1.jpg` and  \lstinline`image1.jpg` 
+%
+as the same.
+
+\end{important}
 
 \subsection{Structuring your Sources and Compilation}
 \label{sec:dc::latex-structure}

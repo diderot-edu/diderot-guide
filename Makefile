@@ -23,7 +23,9 @@ endif
 DC = $(DC_HOME)/dc
 default: pdf
 
-FORCE: guide html pdf
+all:  guide html pdf
+
+FORCE:
 
 .PHONY: book
 

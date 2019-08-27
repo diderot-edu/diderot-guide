@@ -1,25 +1,34 @@
-\usepackage{xparse}  % Needed to deal with optional atom arguments
+\usepackage{xparse}    % used to deal with optional arguments
 \usepackage{environ}   % A better command for defining environments, used
                        % to drop contents when needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: DIDEROT COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% For pdf/latex we only use hyperref[label][reference text]
+%% format.  
+\renewcommand{\href}[2]{
+\hyperref[#1]{#2}
+}
+
+% For PDF generation, this is identity function
+\newcommand{\htmlmath}[1]{{#1}}
+
+% For PDF, we delegate download and attach to href.
+\newcommand{\download}[2]{\href{#1}{#2}}
+\newcommand{\attach}[2]{\href{#1}{#2}}
+\newcommand{\video}[2]{#2 (this video link is not available here)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: DIDEROT COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN: Diderot Environments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% wrap inside \[ and \] if targethtml is on
-% this seems to work in pandoc even if \targethtml is not defined
-% very odd behaviour but it might be because pandoc does not
-% handle \ifdefined properly.
-\newcommand{\htmlmath}[1]
-{
-\ifdefined\targethtml
-\[
-{#1}
-\]
-\else
-{#1}
-\fi
-}
 
 \NewDocumentEnvironment{diderotfig}{o}
 {
@@ -159,6 +168,17 @@
 {\medskip}
 }
 
+
+\NewDocumentEnvironment{answer}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Answer.}}
+{\paragraph*{Answer [#1].}}
+}
+{ 
+}
+
+
 \NewDocumentEnvironment{gram}{o}
 {
 \IfNoValueTF{#1}
@@ -223,12 +243,18 @@
 \IfNoValueTF{#1}
 {\paragraph*{Proposition.}}
 {\paragraph*{Proposition [#1].}}
-
 }
 { 
-
 }
 
+\NewDocumentEnvironment{question}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Question.}}
+{\paragraph*{Question [#1].}}
+}
+{ 
+}
 
 %% \NewDocumentEnvironment{remark}{o}
 %% {
