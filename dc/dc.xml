@@ -14,7 +14,7 @@ DC: Diderot Compiler
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-mtl
+dc
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -36,7 +36,7 @@ Overview
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::overview
+sec:dc::overview
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -57,7 +57,7 @@ sec:mtl::overview
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::diderot
+grp:dc::diderot
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -81,7 +81,7 @@ grp:mtl::diderot
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::diderot
+grm:dc::diderot
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -147,7 +147,7 @@ and slide decks for upload.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::sources-and-contributions
+grp:dc::sources-and-contributions
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -171,7 +171,7 @@ Sources and Contributions
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::sources-and-contributions
+imp:dc::sources-and-contributions
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -224,7 +224,7 @@ This guide is public.  Feel free to contribute to the sources and send feedback 
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::questions-and-feedback
+grp:dc::questions-and-feedback
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -248,7 +248,7 @@ Questions and Feedback
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-nt:mtl::questions-and-feedback
+nt:dc::questions-and-feedback
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -299,7 +299,7 @@ Typesetting with LaTex
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::typesetting-with-latex
+sec:dc::typesetting-with-latex
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -320,7 +320,7 @@ sec:mtl::typesetting-with-latex
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::compatible
+grp:dc::compatible
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -344,7 +344,7 @@ grp:mtl::compatible
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::compatible
+grm:dc::compatible
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -354,7 +354,7 @@ grm:mtl::compatible
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and you can generate a PDF document from your notes. The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well and with some care you can compile your LaTeX sources to XML . In this section, we briefly cover some example LaTeX sources. For content development work, we strongly advise the authors to mirror the structure of the LaTeX sources described here.</p>
+<p>DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and you can generate a PDF document from your notes. The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well and with some care you can compile your LaTeX sources to XML . In this section, we briefly cover some example LaTeX sources. For content development work, we strongly advise the authors to mirror the <a href="sec:dc::latex-structure">suggested structure of the LaTeX sources</a>.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
@@ -365,7 +365,8 @@ definitive but works reasonably well and with some care you can
 compile your LaTeX sources to XML .
 In this section, we briefly cover some example LaTeX sources.  
 For content development work, we strongly advise the authors to mirror
-the structure of the LaTeX sources described here.
+the
+\href{sec:dc::latex-structure}{suggested structure of the LaTeX sources}.
 ]]>
 </field> <!-- body_src -->
 
@@ -398,7 +399,7 @@ the structure of the LaTeX sources described here.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::books-and-booklets
+grp:dc::books-and-booklets
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -422,7 +423,7 @@ Books and Booklets
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-def:mtl::books-and-booklets
+def:dc::books-and-booklets
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -482,7 +483,7 @@ A Diderot \defn{booklet} is a collection of chapters.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::folders
+grp:dc::folders
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -506,7 +507,7 @@ grp:mtl::folders
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::folders
+xmpl:dc::folders
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -555,7 +556,7 @@ Books, Chapters, and Sections
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::books-chapters-and-sections
+sec:dc::books-chapters-and-sections
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -576,7 +577,7 @@ sec:mtl::books-chapters-and-sections
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::requires
+grp:dc::requires
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -600,7 +601,7 @@ grp:mtl::requires
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::requires
+grm:dc::requires
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -648,7 +649,7 @@ DC requires a book (or booklet) to be organized into chapters, each of which the
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::sections
+grp:dc::sections
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -672,7 +673,7 @@ Sections
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::sections
+xmpl:dc::sections
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -796,7 +797,7 @@ sec:mtl::atoms
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::atom
+grp:dc::atom
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -820,7 +821,7 @@ Atom
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-def:mtl::atom
+def:dc::atom
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -830,7 +831,7 @@ def:mtl::atom
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>To increase interactivity, Diderot relies on atoms. Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph. In diderot, each and every piece of text must be inside of an atom and just like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.</p>
+<p>To increase interactivity, Diderot relies on atoms. Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph. In diderot, essentially all content must be inside of atoms. Like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.</p>
 <p>An <strong><em>atom</em></strong> is either</p>
 <ol>
 <li><p>a plain paragraph, or</p></li>
@@ -863,7 +864,9 @@ def:mtl::atom
 <![CDATA[
 To increase interactivity, Diderot relies on atoms.
 Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph.
-In diderot, each and every piece of text must be inside of an atom and just like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.
+In diderot, essentially all content  must be inside of atoms.
+Like any other LaTeX section, an atom cannot be included inside of a
+LaTeX environment.
 
 An \defn{atom} is either
 \begin{enumerate}
@@ -926,7 +929,7 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::figure-and-table-atoms
+grp:dc::figure-and-table-atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -950,7 +953,7 @@ Figure and Table Atoms
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::figure-and-table-atoms
+imp:dc::figure-and-table-atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -960,18 +963,17 @@ imp:mtl::figure-and-table-atoms
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>In addition to the atoms above, Diderot also supports figure and table atoms, which have a slightly different syntax</p>
+<p>In addition to the atoms above, Diderot also supports <code>figure</code> and <code>table</code> atoms, which have slightly different syntax:</p>
 <pre><code>\begin{&lt;atom&gt;}[Optional title]  
 &lt;atom body&gt;  
 \diderotcaption{Caption}  
 \label{atom-label} % optional but recommended label  
 \end{&lt;atom&gt;}  </code></pre>
-<p>The reason for this exception is consistency with LaTeX.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-In addition to the atoms above, Diderot also supports figure and table atoms, which have a slightly different syntax
+In addition to the atoms above, Diderot also supports \lstinline`figure` and \lstinline`table` atoms, which have slightly different syntax:
 \begin{lstlisting}
 \begin{<atom>}[Optional title]
 <atom body>
@@ -979,8 +981,6 @@ In addition to the atoms above, Diderot also supports figure and table atoms, wh
 \label{atom-label} % optional but recommended label
 \end{<atom>}
 \end{lstlisting}
-
-The reason for this exception is consistency with LaTeX.
 ]]>
 </field> <!-- body_src -->
 
@@ -1013,7 +1013,7 @@ The reason for this exception is consistency with LaTeX.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::nesting-of-atoms
+grp:dc::nesting-of-atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1037,7 +1037,7 @@ Nesting of Atoms
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::nesting-of-atoms
+imp:dc::nesting-of-atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1047,26 +1047,26 @@ imp:mtl::nesting-of-atoms
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>Atoms cannot be nested inside each other and they cannot be nested inside Latex environments. This is similar to not being able to define a LaTeX section inside a LaTeX environment.</p>
+<p>An atom cannot be nested inside another atom and an atom cannot be nested inside a LaTeX environment. This is similar to not being able to define a LaTeX section inside a LaTeX environment.</p>
 <p>For example, the following is wrong:</p>
 <pre><code>\begin{itemize}  
 \item   
 \begin{gram}[This is a titled paragraph]  
-But is in wrong because it includes an atom (a kind of section) in a LaTeX environment.  
+But it is wrong, because it includes an atom inside of a LaTeX environment.  
 \end{gram}  
 \end{itemize}  </code></pre>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-Atoms cannot be nested inside each other and they cannot be nested inside Latex environments. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
+An atom cannot be nested inside another atom and an atom cannot be nested inside a LaTeX environment. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
 
 For example, the following is wrong:
 \begin{lstlisting}
 \begin{itemize}
 \item 
 \begin{gram}[This is a titled paragraph]
-But is in wrong because it includes an atom (a kind of section) in a LaTeX environment.
+But it is wrong, because it includes an atom inside of a LaTeX environment.
 \end{gram}
 \end{itemize}
 \end{lstlisting}
@@ -1102,7 +1102,7 @@ But is in wrong because it includes an atom (a kind of section) in a LaTeX envir
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::authors
+grp:dc::authors
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1126,7 +1126,7 @@ grp:mtl::authors
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-nt:mtl::authors
+nt:dc::authors
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1175,7 +1175,7 @@ In the mean time, you can request new atoms  (please send feedback here).
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::atoms
+grp:dc::atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1199,7 +1199,7 @@ grp:mtl::atoms
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::atoms
+imp:dc::atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1275,7 +1275,7 @@ The following is a definition atom, because it is single standing.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::contain
+grp:dc::contain
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1299,7 +1299,7 @@ grp:mtl::contain
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-nt:mtl::atoms
+nt:dc::atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1367,7 +1367,7 @@ Paragraph 2
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::nesting
+grp:dc::nesting
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1391,7 +1391,7 @@ Nesting of atoms
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::nesting
+imp:dc::nesting
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1440,7 +1440,7 @@ Controlling granularity
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::controlling-granularity
+sec:dc::controlling-granularity
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1461,7 +1461,7 @@ sec:mtl::controlling-granularity
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::create
+grp:dc::create
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1485,7 +1485,7 @@ grp:mtl::create
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::create
+grm:dc::create
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1545,7 +1545,7 @@ This if and only of if that.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::usually
+grp:dc::usually
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1569,7 +1569,7 @@ grp:mtl::usually
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::usually
+grm:dc::usually
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1680,7 +1680,7 @@ sec:mtl::groups
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::group
+grp:dc::group
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1704,7 +1704,7 @@ Group
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-def:mtl::group
+def:dc::group
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1791,7 +1791,7 @@ Simple example 2
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::turned
+grp:dc::turned
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1815,7 +1815,7 @@ grp:mtl::turned
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-nt:mtl::turned
+nt:dc::turned
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1866,7 +1866,7 @@ at the bottom left to open the `flex` and click again to close it.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::a-definition
+grp:dc::a-definition
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2042,7 +2042,7 @@ Labels and References
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::labels-and-references
+sec:dc::labels-and-references
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2063,7 +2063,7 @@ sec:mtl::labels-and-references
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::uses
+grp:dc::uses
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2087,7 +2087,7 @@ grp:mtl::uses
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::uses
+grm:dc::uses
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2138,7 +2138,7 @@ the chapter.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::recommend
+grp:dc::recommend
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2162,7 +2162,7 @@ grp:mtl::recommend
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::recommend
+xmpl:dc::recommend
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2269,7 +2269,7 @@ Here is another paragraph atom, consisting of two environments:
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::references
+grp:dc::references
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2293,7 +2293,7 @@ References
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::references
+grm:dc::references
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2351,7 +2351,7 @@ DC replaces the former with \lstinline`\hyperref[][]` command so that we can get
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::generates
+grp:dc::generates
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2375,7 +2375,7 @@ grp:mtl::generates
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::generates
+grm:dc::generates
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2502,7 +2502,7 @@ sec:mtl::code
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::lstlisting
+grp:dc::lstlisting
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2526,7 +2526,7 @@ grp:mtl::lstlisting
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::lstlisting
+grm:dc::lstlisting
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2577,7 +2577,7 @@ If you need a custom language, you can probably write one with a bit of effort b
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::python-code
+grp:dc::python-code
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2601,7 +2601,7 @@ Python Code
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::python-code
+xmpl:dc::python-code
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2668,7 +2668,7 @@ def is_even (i):
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::render
+grm:dc::render
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2728,7 +2728,7 @@ def is_even (i):
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::code-in-c-dialect
+grp:dc::code-in-c-dialect
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2752,7 +2752,7 @@ Code in C Dialect
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::code-in-c-dialect
+xmpl:dc::code-in-c-dialect
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2817,7 +2817,7 @@ Images
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::images
+sec:dc::images
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2838,7 +2838,7 @@ sec:mtl::images
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::include
+grp:dc::include
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2862,7 +2862,7 @@ grp:mtl::include
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::include
+grm:dc::include
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2912,7 +2912,7 @@ When including images, there are two points to be careful about: naming and sizi
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::naming
+grp:dc::naming
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2936,7 +2936,7 @@ grp:mtl::naming
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::naming
+grm:dc::naming
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2988,7 +2988,7 @@ as the same .
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::sizing
+grp:dc::sizing
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3012,7 +3012,7 @@ grp:mtl::sizing
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::sizing
+grm:dc::sizing
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3075,7 +3075,7 @@ When specifying the width, it is important to always include the fraction.  For 
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::output
+grp:dc::output
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3099,7 +3099,7 @@ grp:mtl::output
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-nt:mtl::output
+nt:dc::output
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3148,7 +3148,7 @@ But this is not meaningful for HTML output, and will not work as expected.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::scale-is-not-supported
+grp:dc::scale-is-not-supported
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3172,7 +3172,7 @@ Scale is not Supported
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::scale-is-not-supported
+imp:dc::scale-is-not-supported
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3227,7 +3227,7 @@ This means that the image should be shown at 50\% of its actual dimensions.  Thi
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::uploading-images
+grp:dc::uploading-images
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3251,7 +3251,7 @@ Uploading Images
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::uploading-images
+grm:dc::uploading-images
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3302,7 +3302,7 @@ Typesetting Mathematics
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::typesetting-mathematics
+sec:dc::typesetting-mathematics
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3323,7 +3323,7 @@ sec:mtl::typesetting-mathematics
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::mathjax
+grp:dc::mathjax
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3347,7 +3347,7 @@ grp:mtl::mathjax
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::mathjax
+grm:dc::mathjax
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3436,7 +3436,7 @@ Indexing
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::indexing
+sec:dc::indexing
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3457,7 +3457,7 @@ sec:mtl::indexing
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::near
+grp:dc::near
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3481,7 +3481,7 @@ grp:mtl::near
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::near
+grm:dc::near
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3606,7 +3606,7 @@ Colors
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::colors
+sec:dc::colors
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3627,7 +3627,7 @@ sec:mtl::colors
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::colors
+grp:dc::colors
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3651,7 +3651,7 @@ grp:mtl::colors
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::colors
+grm:dc::colors
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3727,7 +3727,7 @@ sec:mtl::limitations
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::latex
+grp:dc::latex
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3751,7 +3751,7 @@ grp:mtl::latex
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::latex
+grm:dc::latex
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3830,7 +3830,7 @@ Here is a list of known limitations.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::limitations
+grp:dc::limitations
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3854,7 +3854,7 @@ grp:mtl::limitations
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-rmrk:mtl::limitations
+rmrk:dc::limitations
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3906,7 +3906,7 @@ Embedding Videos
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::embedding-videos
+sec:dc::embedding-videos
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3927,7 +3927,7 @@ sec:mtl::embedding-videos
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::embed
+grp:dc::embed
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3951,7 +3951,7 @@ grp:mtl::embed
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::embed
+grm:dc::embed
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3961,13 +3961,13 @@ grm:mtl::embed
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>You can embed a video to your notes by using <code>\video{url}{text}</code> command. For example, the following code, when uploaded on diderot will embed the corresponding YouTube video.</p>
+<p>You can embed a video to your notes by using <code>\video{url}{text}</code> command, where <code>text</code> stands for a piece of text that will be displayed on browsers incapable of handling embedded video. For example, the following code, when uploaded on diderot will embed the corresponding YouTube video.</p>
 <pre><code>Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}  </code></pre>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-You can embed a video to your notes by using \lstinline`\video{url}{text}` command.
+You can embed a video to your notes by using \lstinline`\video{url}{text}` command, where \lstinline`text` stands for a piece of text that will be displayed on browsers incapable of handling embedded video.
 For example, the following code, when uploaded on diderot will embed the corresponding YouTube video.
 \begin{lstlisting}
 Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
@@ -4004,7 +4004,7 @@ Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::video-embedding
+grp:dc::video-embedding
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4028,7 +4028,7 @@ Video Embedding
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::video-embedding
+xmpl:dc::video-embedding
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4039,17 +4039,18 @@ xmpl:mtl::video-embedding
 <field name='body'>
 <![CDATA[
 <p>The video embedding code will look like this.</p>
-<p>Here is a</p>
-<div class='video-container' style='margin-bottom:15px'><iframe class='ql-video' frameborder='0' allowfullscreen='true' src='https://www.youtube.com/embed/8QyE9D_3ezQ'>tango video.</iframe></div>
+<p>Here is a tango video</p>
+<div class='video-container' style='margin-bottom:15px'><iframe class='ql-video' frameborder='0' allowfullscreen='true' src='https://www.youtube.com/embed/8QyE9D_3ezQ'>Murat and Michelle Erdemsel.</iframe></div>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
 The video embedding code will look like this.
 
-Here is a \begin{verbatim}
+Here is a tango video 
+\begin{verbatim}
 %%%% diderot_html
-<div class='video-container' style='margin-bottom:15px'><iframe class='ql-video' frameborder='0' allowfullscreen='true' src='https://www.youtube.com/embed/8QyE9D_3ezQ'>tango video.</iframe></div>
+<div class='video-container' style='margin-bottom:15px'><iframe class='ql-video' frameborder='0' allowfullscreen='true' src='https://www.youtube.com/embed/8QyE9D_3ezQ'>Murat and Michelle Erdemsel.</iframe></div>
 \end{verbatim}
 ]]>
 </field> <!-- body_src -->
@@ -4086,7 +4087,7 @@ File Attachments
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::file-attachments
+sec:dc::file-attachments
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4107,7 +4108,7 @@ sec:mtl::file-attachments
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::attach
+grp:dc::attach
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4131,7 +4132,7 @@ grp:mtl::attach
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::attach
+grm:dc::attach
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4180,7 +4181,7 @@ When uploading your chapter, simply include the file \lstinline{name.ext} in you
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::file-attachment
+grp:dc::file-attachment
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4204,7 +4205,7 @@ File Attachment
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::file-attachment
+xmpl:dc::file-attachment
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4259,7 +4260,7 @@ Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guid
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::uniqueness-of-attachments
+grp:dc::uniqueness-of-attachments
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4283,7 +4284,7 @@ Uniqueness of Attachments
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::uniqueness-of-attachments
+imp:dc::uniqueness-of-attachments
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4359,7 +4360,7 @@ sec:dc::latex-structure
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::translate
+grp:dc::translate
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4383,7 +4384,7 @@ grp:mtl::translate
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::translate
+grm:dc::translate
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4436,7 +4437,7 @@ The following instructions are tested on Mac OS X and Ubuntu.  The binaries in \
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::book
+grp:dc::book
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4460,7 +4461,7 @@ grp:mtl::book
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::folders
+grm:dc::folders
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4553,7 +4554,7 @@ command definitions in this file.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::simplify
+grp:dc::simplify
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4577,7 +4578,7 @@ grp:mtl::simplify
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::simplify
+grm:dc::simplify
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4626,7 +4627,7 @@ sources as outlined below.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::booklets
+grp:dc::booklets
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4650,7 +4651,7 @@ Booklets
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::booklets
+grm:dc::booklets
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4712,7 +4713,7 @@ Booklets are books that don't have parts. We recommend creating one directory pe
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::books
+grp:dc::books
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4736,7 +4737,7 @@ Books
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::books
+grm:dc::books
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4808,7 +4809,7 @@ Books have parts and chapters. We recommend structuring these as follows, where 
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::making-pdf-and-html
+grp:dc::making-pdf-and-html
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4832,7 +4833,7 @@ Making PDF and HTML
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::making-pdf-and-html
+grm:dc::making-pdf-and-html
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4888,7 +4889,7 @@ $ make html
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::making-pdf-html-for-a-single-chapter
+grp:dc::making-pdf-html-for-a-single-chapter
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4912,7 +4913,7 @@ Making PDF/HTML for a Single Chapter
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::making-pdf-html-for-a-single-chapter
+grm:dc::making-pdf-html-for-a-single-chapter
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4968,7 +4969,7 @@ To generate HTML for a single chapter, update \lstinline`book-html.tex` to exclu
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::making-xml
+grp:dc::making-xml
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4992,7 +4993,7 @@ Making XML
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::making-xml
+grm:dc::making-xml
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5055,7 +5056,7 @@ Beware that you will likely see many warnings.  For this reason the utility of t
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::error
+grp:dc::error
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5079,7 +5080,7 @@ grp:mtl::error
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::error
+grm:dc::error
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5135,7 +5136,7 @@ If that fails, there is another relatively simply way to debug, see \href{sec:dc
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::using-dc-directly
+grp:dc::using-dc-directly
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5159,7 +5160,7 @@ Using DC directly
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::using-dc-directly
+grm:dc::using-dc-directly
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5228,7 +5229,7 @@ Typesetting with Markdown
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::typesetting-with-markdown
+sec:dc::typesetting-with-markdown
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5249,7 +5250,7 @@ sec:mtl::typesetting-with-markdown
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::basic
+grp:dc::basic
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5273,7 +5274,7 @@ grp:mtl::basic
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::basic
+grm:dc::basic
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5321,7 +5322,7 @@ DC has basic support for Markdown to XML translation.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::header
+grp:dc::header
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5345,7 +5346,7 @@ Header
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::header
+grm:dc::header
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5420,7 +5421,7 @@ Frontmatter
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::special-symbols
+grp:dc::special-symbols
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5444,7 +5445,7 @@ Special Symbols
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::special-symbols
+imp:dc::special-symbols
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5500,7 +5501,7 @@ Special symbols should be escaped.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::chapter-titles
+grp:dc::chapter-titles
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5524,7 +5525,7 @@ Chapter Titles
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:mtl::chapter-titles
+imp:dc::chapter-titles
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5574,7 +5575,7 @@ Chapters and Sections
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::chapters-and-sections
+sec:dc::chapters-and-sections
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5595,7 +5596,7 @@ sec:mtl::chapters-and-sections
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::support
+grp:dc::support
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5619,7 +5620,7 @@ grp:mtl::support
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::support
+grm:dc::support
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5711,7 +5712,7 @@ sec:dc::md::code
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::usual
+grp:dc::usual
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5735,7 +5736,7 @@ grp:mtl::usual
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::usual
+grm:dc::usual
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5783,7 +5784,7 @@ Usual Markdown conventions apply.  You can include inline code by using the back
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::html
+grp:dc::html
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5807,7 +5808,7 @@ grp:mtl::html
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::html
+xmpl:dc::html
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5900,7 +5901,7 @@ Typesetting Mathematics
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::typesetting
+sec:dc::typesetting
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5921,7 +5922,7 @@ sec:mtl::typesetting
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::delimiters
+grp:dc::delimiters
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5945,7 +5946,7 @@ grp:mtl::delimiters
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::delimiters
+grm:dc::delimiters
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5997,7 +5998,7 @@ Images
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::include
+sec:dc::include
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6018,7 +6019,7 @@ sec:mtl::include
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::jpeg
+grp:dc::jpeg
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6042,7 +6043,7 @@ grp:mtl::jpeg
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::jpeg
+grm:dc::jpeg
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6095,7 +6096,7 @@ You can include JPEG, PNG, and SVG images by using following syntax.
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:mtl::displays
+xmpl:dc::displays
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6150,7 +6151,7 @@ Limitations
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::markdown
+sec:dc::limitations
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6171,7 +6172,7 @@ sec:mtl::markdown
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::markdown
+grp:dc::markdown
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6195,7 +6196,7 @@ grp:mtl::markdown
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::markdown
+grm:dc::markdown
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6289,7 +6290,7 @@ Compiling Markdown To XML
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:mtl::compiling-markdown-to-xml
+sec:dc::compiling-markdown-to-xml
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6310,7 +6311,7 @@ sec:mtl::compiling-markdown-to-xml
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::guide
+grp:dc::guide
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6334,7 +6335,7 @@ grp:mtl::guide
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::guide
+grm:dc::guide
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6382,7 +6383,7 @@ The guide includes a very simple markdown document\lstinline`markdown/example.md
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::making
+grp:dc::making
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6406,7 +6407,7 @@ Making XML
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::making
+grm:dc::making
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6464,7 +6465,7 @@ $ make verbose=true markdown/example.xml
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::using
+grp:dc::using
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6488,7 +6489,7 @@ Using DC directly
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::using
+grm:dc::using
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6542,7 +6543,7 @@ $ dc markdown/example.md
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::the-debugger
+grp:dc::the-debugger
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6566,7 +6567,7 @@ The ``Debugger''
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::the-debugger
+grm:dc::the-debugger
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6646,7 +6647,7 @@ sec:dc::internals
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::high-level
+grp:dc::high-level
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6670,7 +6671,7 @@ grp:mtl::high-level
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::high-level
+grm:dc::high-level
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6721,7 +6722,7 @@ The current implementation works with \href{https://www.pandoc.org}{pandoc}, tho
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::receive
+grp:dc::receive
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6745,7 +6746,7 @@ grp:mtl::receive
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::receive
+grm:dc::receive
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6814,7 +6815,7 @@ Basically the same workflow applies to Markdown inputs.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:mtl::need
+grp:dc::need
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6838,7 +6839,7 @@ grp:mtl::need
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:mtl::need
+grm:dc::need
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6848,12 +6849,12 @@ grm:mtl::need
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>This is all you need. Happy Diderowing!</p>
+<p>This is all you need to start withe. Enjoy Diderot!</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-This is all you need. Happy Diderowing!
+This is all you need to start withe.  Enjoy Diderot!
 ]]>
 </field> <!-- body_src -->
 

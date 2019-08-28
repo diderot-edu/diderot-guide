@@ -1,5 +1,5 @@
 \chapter{DC: Diderot Compiler}
-\label{mtl}
+\label{dc}
  
 
 \section{Overview}
@@ -49,7 +49,8 @@ compile your LaTeX sources to XML .
 In this section, we briefly cover some example LaTeX sources.  
 %
 For content development work, we strongly advise the authors to mirror
-the structure of the LaTeX sources described here.
+the
+\href{sec:dc::latex-structure}{suggested structure of the LaTeX sources}.
 %
 
 
@@ -148,7 +149,10 @@ To increase interactivity, Diderot relies on atoms.
 %
 Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph.
 %
-In diderot, each and every piece of text must be inside of an atom and just like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.
+In diderot, essentially all content  must be inside of atoms.
+%
+Like any other LaTeX section, an atom cannot be included inside of a
+LaTeX environment.
 %
 
 An \defn{atom} is either
@@ -185,7 +189,7 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 \end{definition}
 
 \begin{important}[Figure and Table Atoms]
-In addition to the atoms above, Diderot also supports figure and table atoms, which have a slightly different syntax
+In addition to the atoms above, Diderot also supports \lstinline`figure` and \lstinline`table` atoms, which have slightly different syntax:
 \begin{lstlisting}
 \begin{<atom>}[Optional title]
 <atom body>
@@ -193,19 +197,17 @@ In addition to the atoms above, Diderot also supports figure and table atoms, wh
 \label{atom-label} % optional but recommended label
 \end{<atom>}
 \end{lstlisting}
-
-The reason for this exception is consistency with LaTeX.
 \end{important}
 
 \begin{important}[Nesting of Atoms]
-Atoms cannot be nested inside each other and they cannot be nested inside Latex environments. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
+An atom cannot be nested inside another atom and an atom cannot be nested inside a LaTeX environment. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
 
 For example, the following is wrong:
 \begin{lstlisting}
 \begin{itemize}
 \item 
 \begin{gram}[This is a titled paragraph]
-But is in wrong because it includes an atom (a kind of section) in a LaTeX environment.
+But it is wrong, because it includes an atom inside of a LaTeX environment.
 \end{gram}
 \end{itemize}
 \end{lstlisting}
@@ -655,7 +657,7 @@ PDF.
 
 \subsection{Embedding Videos}
 
-You can embed a video to your notes by using \lstinline`\video{url}{text}` command.
+You can embed a video to your notes by using \lstinline`\video{url}{text}` command, where \lstinline`text` stands for a piece of text that will be displayed on browsers incapable of handling embedded video.
 %
 For example, the following code, when uploaded on diderot will embed the corresponding YouTube video.
 %
@@ -666,7 +668,9 @@ Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
 \begin{example}[Video Embedding]
 The video embedding code will look like this.
 
-Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
+Here is a tango video 
+%
+\video{https://www.youtube.com/embed/8QyE9D_3ezQ}{Murat and Michelle Erdemsel.}
 
 \end{example}
 
@@ -1111,4 +1115,4 @@ Once you figure out what the problem is what remains is to update your main docu
 Basically the same workflow applies to Markdown inputs.
 
 
-This is all you need. Happy Diderowing!
+This is all you need to start withe.  Enjoy Diderot!
