@@ -922,12 +922,25 @@ Frontmatter
 \end{itemize}
 \end{gram}
 
-\begin{important}[Special Symbols]
-Special symbols should be escaped.
+\begin{important}[Special Symbols and HTML code]
+We have observed a couple of common mistakes in Markdown that can lead to problems publishing your work on Diderot.
+
+First one concerns special symbols, which should be escaped.
 \begin{itemize}
 \item The hash sign \# is a special symbol in LaTeX and must be escaped when using LaTeX macros.
 \item In math mode \% is a LaTeX-Math special symbol and should be escaped.
 \end{itemize}
+
+The second concerns html code.  You can use html tags in Markdown for various formatting purposes.  If you want to use html syntax for  any other reason, then please indicate that it is code.  For example, the following is an incorrect use of html code, because it doesn't close the tag \lstinline`table`:
+\begin{lstlisting}
+Here is an example html tag ``<table>''
+\end{listlisting}
+
+The unclosed html tag here should be placed inside a code, e.g., by using back-tick delimiters. 
+\begin{lstlisting}
+Here is an example html tag `<table>`
+\end{listlisting}
+
 \end{important}
 
 \begin{important}[Chapter Titles]
