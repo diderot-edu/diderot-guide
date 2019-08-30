@@ -5421,7 +5421,7 @@ Frontmatter
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::special-symbols
+grp:dc::special-symbols-and-html-code
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5430,12 +5430,12 @@ grp:dc::special-symbols
 <atom name='important'>
 <field name='title'>
 <![CDATA[
-Special Symbols
+Special Symbols and HTML code
 ]]>
 </field> <!-- title -->
 <field name='title_src'>
 <![CDATA[
-Special Symbols
+Special Symbols and HTML code
 ]]>
 </field> <!-- title_src -->
 <field name='cover'>
@@ -5445,7 +5445,7 @@ Special Symbols
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-imp:dc::special-symbols
+imp:dc::special-symbols-and-html-code
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5455,20 +5455,37 @@ imp:dc::special-symbols
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>Special symbols should be escaped.</p>
+<p>We have observed a couple of common mistakes in Markdown that can lead to problems publishing your work on Diderot.</p>
+<p>First one concerns special symbols, which should be escaped.</p>
 <ul>
 <li><p>The hash sign # is a special symbol in LaTeX and must be escaped when using LaTeX macros.</p></li>
 <li><p>In math mode % is a LaTeX-Math special symbol and should be escaped.</p></li>
 </ul>
+<p>The second concerns html code. You can use html tags in Markdown for various formatting purposes. If you want to use html syntax for any other reason, then please indicate that it is code. For example, the following is an incorrect use of html code, because it doesn’t close the tag <code>table</code>:</p>
+<pre><code>Here is an example html tag ``&lt;table&gt;&#39;&#39;  </code></pre>
+<p>The unclosed html tag here should be placed inside a code, e.g., by using back-tick delimiters.</p>
+<pre><code>Here is an example html tag `&lt;table&gt;`  </code></pre>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-Special symbols should be escaped.
+We have observed a couple of common mistakes in Markdown that can lead to problems publishing your work on Diderot.
+
+First one concerns special symbols, which should be escaped.
 \begin{itemize}
 \item The hash sign \# is a special symbol in LaTeX and must be escaped when using LaTeX macros.
 \item In math mode \% is a LaTeX-Math special symbol and should be escaped.
 \end{itemize}
+
+The second concerns html code.  You can use html tags in Markdown for various formatting purposes.  If you want to use html syntax for  any other reason, then please indicate that it is code.  For example, the following is an incorrect use of html code, because it doesn't close the tag \lstinline`table`:
+\begin{lstlisting}
+Here is an example html tag ``<table>''
+\end{lstlisting}
+
+The unclosed html tag here should be placed inside a code, e.g., by using back-tick delimiters. 
+\begin{lstlisting}
+Here is an example html tag `<table>`
+\end{lstlisting}
 ]]>
 </field> <!-- body_src -->
 
