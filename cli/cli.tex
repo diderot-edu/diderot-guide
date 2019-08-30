@@ -75,7 +75,7 @@ MyPassword
   \item \verb|list_assignments|: Lists all assignments for a course.
   \item \verb|download_assignment|: Downloads all handout/writeup files (if present) from a
     target course and assignment into the current directory.
-  \item \verb|submit_assignment|: Submit a handin.tar file to a given course and homework.
+  \item \verb|submit_assignment|: Submit a file to a given course and homework.
 \end{itemize}
 
 More details about each command are below.
@@ -130,17 +130,15 @@ Example Usage:
 
 \verb|submit_assignment| is used to submit handin files to an assignment.
 %
-As of now, it \textbf{only} supports uploading handin tar files.
-%
-If your assignment is configured to accept anything other than tar files, 
-do not use this method to submit.
+Please make sure to check your homework handouts to see what file types
+your homework expects.
 %
 It accepts 3 arguments.
 
 \begin{itemize}
   \item \verb|course|: Course label that the homework belongs to.
   \item \verb|homework|: Name of the homework to submit to.
-  \item \verb|handin_path|: Path to the handin.tar file.
+  \item \verb|handin_path|: Path to the handin file.
 \end{itemize}
 
 Example Usage:
