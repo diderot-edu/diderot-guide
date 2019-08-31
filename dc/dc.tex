@@ -622,38 +622,6 @@ You can use colors as follows
 \textcolor{red}{my text}
 \end{lstlisting}
 
-\subsection{Limitations}
-\label{sec:mtl::limitations}
-
-LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset.  
-%
-DC appears to work well for most uses. 
-%
-Here is a list of known limitations.  
-\begin{itemize}
-
-\item For XML translation work, the chapter should be compileable to PDF.
-
-\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
-
-\item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
-
-\item Each chapter must have a unique label.
-
-\item Fancy packages are not supported.  Stick to basic latex and AMS Math packages.
-
-\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
- 
-\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
-
-\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
-
-\end{itemize}
-
-\begin{remark}
-The above limitations all pertain to XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
-PDF.
-\end{remark}  
 
 \subsection{Embedding Videos}
 
@@ -706,7 +674,41 @@ as the same.
 
 \end{important}
 
-\subsection{Structuring your Sources and Compilation}
+\subsection{Limitations}
+\label{sec:mtl::limitations}
+
+LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset.  
+%
+DC appears to work well for most uses. 
+%
+Here is a list of known limitations.  
+\begin{itemize}
+
+\item For XML translation work, the chapter should be compileable to PDF.  In general, recommended practice is to make sure that you can generate a PDF from your sources and then generate an XML.
+
+\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
+
+\item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
+
+\item Each chapter must have a unique label.
+
+\item Fancy packages are not supported.  Stick to basic latex and AMS Math packages.
+
+\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
+ 
+\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
+
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
+
+\end{itemize}
+
+\begin{remark}
+The above limitations all pertain to XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
+PDF.
+\end{remark}  
+
+
+\subsection{Structuring your Sources and Compilation (Best Practices)}
 \label{sec:dc::latex-structure}
 You can translate LaTeX to PDF, HTML, and XML by using the \lstinline`dc` binary.  
 %
@@ -829,6 +831,10 @@ $ make verbose=true ch2/main.xml
 
 Beware that you will likely see many warnings.  For this reason the utility of the verbose flag is not particularly high.
 \end{gram}
+
+\begin{important}[PDF before XML]
+Before generating the XML for a chapter, it is highly recommended to check that you can generate PDF for the chapter.  This is because XML generation is relatively ``forgiving'' and, for example, simply omits undefined macros without complaining.  By generating PDF first, the author could avoid many errors that can be more time-consuming to fix after the material is published on Diderot.
+\end{important}
 
 \begin{gram}
 Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF and HTML (using \lstinline`pandoc`), then you should be able to generate an XML. 

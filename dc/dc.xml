@@ -3697,206 +3697,6 @@ You can use colors as follows
 </field> <!-- point_value -->
 <field name='title'>
 <![CDATA[
-Limitations
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Limitations
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-sec:mtl::limitations
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::latex
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::latex
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset. DC appears to work well for most uses. Here is a list of known limitations.</p>
-<ul>
-<li><p>For XML translation work, the chapter should be compileable to PDF.</p></li>
-<li><p>Do not use <code>\input</code> directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.</p></li>
-<li><p>All macro definitions via <code>newcommand</code> are restricted to the “preamble” of the book.</p></li>
-<li><p>Each chapter must have a unique label.</p></li>
-<li><p>Fancy packages are not supported. Stick to basic latex and AMS Math packages.</p></li>
-<li><p>Support for tabular environment is limited: borders will not show and columns will be centered. You can use the array (math/mathjax) as a substitute, and use <code>\mbox</code> for text fields.</p></li>
-<li><p>You can use <code>itemize</code> and <code>enumerate</code> in their basic form. Changing the label format with <code>enumitem</code> package and similar packages do not work. You can imitate these by using heading for your items.</p></li>
-<li><p>Labeling and references are limited to chapters, sections, and atoms. You can label these and refer to them, but you cannot label codelines, items in lists, etc.</p></li>
-</ul>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset.  
-DC appears to work well for most uses. 
-Here is a list of known limitations.  
-\begin{itemize}
-
-\item For XML translation work, the chapter should be compileable to PDF.
-
-\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
-
-\item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
-
-\item Each chapter must have a unique label.
-
-\item Fancy packages are not supported.  Stick to basic latex and AMS Math packages.
-
-\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
- 
-\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
-
-\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
-
-\end{itemize}
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::limitations
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='remark'>
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-rmrk:dc::limitations
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>The above limitations all pertain to XML generation. Because DC works on a plain LaTeX document, these don’t apply to generating other outputs such as PDF.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-The above limitations all pertain to XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
-PDF.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- remark -->
-
-</segment> <!-- cluster -->
-
-
-</segment> <!-- subsection -->
-
-<segment name='subsection'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
 Embedding Videos
 ]]>
 </field> <!-- title -->
@@ -4330,12 +4130,212 @@ as the same.
 </field> <!-- point_value -->
 <field name='title'>
 <![CDATA[
-Structuring your Sources and Compilation
+Limitations
 ]]>
 </field> <!-- title -->
 <field name='title_src'>
 <![CDATA[
-Structuring your Sources and Compilation
+Limitations
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+sec:mtl::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:dc::latex
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::latex
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset. DC appears to work well for most uses. Here is a list of known limitations.</p>
+<ul>
+<li><p>For XML translation work, the chapter should be compileable to PDF. In general, recommended practice is to make sure that you can generate a PDF from your sources and then generate an XML.</p></li>
+<li><p>Do not use <code>\input</code> directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.</p></li>
+<li><p>All macro definitions via <code>newcommand</code> are restricted to the “preamble” of the book.</p></li>
+<li><p>Each chapter must have a unique label.</p></li>
+<li><p>Fancy packages are not supported. Stick to basic latex and AMS Math packages.</p></li>
+<li><p>Support for tabular environment is limited: borders will not show and columns will be centered. You can use the array (math/mathjax) as a substitute, and use <code>\mbox</code> for text fields.</p></li>
+<li><p>You can use <code>itemize</code> and <code>enumerate</code> in their basic form. Changing the label format with <code>enumitem</code> package and similar packages do not work. You can imitate these by using heading for your items.</p></li>
+<li><p>Labeling and references are limited to chapters, sections, and atoms. You can label these and refer to them, but you cannot label codelines, items in lists, etc.</p></li>
+</ul>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset.  
+DC appears to work well for most uses. 
+Here is a list of known limitations.  
+\begin{itemize}
+
+\item For XML translation work, the chapter should be compileable to PDF.  In general, recommended practice is to make sure that you can generate a PDF from your sources and then generate an XML.
+
+\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
+
+\item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
+
+\item Each chapter must have a unique label.
+
+\item Fancy packages are not supported.  Stick to basic latex and AMS Math packages.
+
+\item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
+ 
+\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
+
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
+
+\end{itemize}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:dc::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='remark'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+rmrk:dc::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The above limitations all pertain to XML generation. Because DC works on a plain LaTeX document, these don’t apply to generating other outputs such as PDF.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The above limitations all pertain to XML generation.  Because DC works on a plain LaTeX document, these don't apply to generating other outputs such as 
+PDF.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- remark -->
+
+</segment> <!-- cluster -->
+
+
+</segment> <!-- subsection -->
+
+<segment name='subsection'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+Structuring your Sources and Compilation (Best Practices)
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Structuring your Sources and Compilation (Best Practices)
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
@@ -5038,6 +5038,78 @@ Beware that you will likely see many warnings.  For this reason the utility of t
 ]]>
 </field> <!-- caption_src -->
 </atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:dc::pdf-before-xml
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='important'>
+<field name='title'>
+<![CDATA[
+PDF before XML
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+PDF before XML
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+imp:dc::pdf-before-xml
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Before generating the XML for a chapter, it is highly recommended to check that you can generate PDF for the chapter. This is because XML generation is relatively “forgiving” and, for example, simply omits undefined macros without complaining. By generating PDF first, the author could avoid many errors that can be more time-consuming to fix after the material is published on Diderot.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Before generating the XML for a chapter, it is highly recommended to check that you can generate PDF for the chapter.  This is because XML generation is relatively ``forgiving'' and, for example, simply omits undefined macros without complaining.  By generating PDF first, the author could avoid many errors that can be more time-consuming to fix after the material is published on Diderot.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- important -->
 
 </segment> <!-- cluster -->
 
