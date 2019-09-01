@@ -14,7 +14,7 @@ DC: Diderot Compiler
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-dc
+ch:dc
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -182,7 +182,7 @@ imp:dc::sources-and-contributions
 <field name='body'>
 <![CDATA[
 <p>To go through the examples in this chapter, please clone <a href="https://github.com/diderot-edu/diderot-guide">this github repository</a> and follow the instructions in <code>INSTALL.md</code>.</p>
-<p>This guide is public. Feel free to contribute to the sources and send feedback on Diderot.</p>
+<p>This guide is public. Feel free to contribute to the sources and send feedback.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
@@ -191,7 +191,7 @@ To go through the examples in this chapter, please clone
 \href{https://github.com/diderot-edu/diderot-guide}{this github repository}
 and follow the instructions in \lstinline`INSTALL.md`. 
 
-This guide is public.  Feel free to contribute to the sources and send feedback on Diderot.
+This guide is public.  Feel free to contribute to the sources and send feedback.
 ]]>
 </field> <!-- body_src -->
 
@@ -206,78 +206,6 @@ This guide is public.  Feel free to contribute to the sources and send feedback 
 ]]>
 </field> <!-- caption_src -->
 </atom> <!-- important -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::questions-and-feedback
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='note'>
-<field name='title'>
-<![CDATA[
-Questions and Feedback
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Questions and Feedback
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-nt:dc::questions-and-feedback
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>You can click any “mail” button in this guide and send feedback or ask questions.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-You can click any ``mail''  button in this guide and send feedback or ask questions.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- note -->
 
 </segment> <!-- cluster -->
 
@@ -685,26 +613,26 @@ xmpl:dc::sections
 <![CDATA[
 <p>A chapter typically consists of a number of sections.</p>
 <pre><code>\chapter{Introduction}  
-\label{ch:example}  % Chapters must have a label.  
+\label{ch:introduction}  % Chapters must have a label.  
      
 &lt;elements&gt;  
   
 \section{A Section}  
-\label{sec:example} % Optional but recommended section label.     
+\label{sec:introduction} % Optional but recommended section label.     
   
 &lt;elements&gt;  
   
 \subsection{A Subsection}  
-\label{sec:example::sub} % Optional but recommended section label.     
+\label{sec:introduction::sub} % Optional but recommended section label.     
   
 &lt;elements&gt;  
   
 \subsubsection {A Subsubsection}  
-\label{sec:example::subsub}  
+\label{sec:introduction::subsub}  
 &lt;elements&gt;  
   
 \paragraph {A paragraph}  
-\label{sec:example::paragraph}  
+\label{sec:introduction::paragraph}  
 &lt;elements&gt;  
   </code></pre>
 <p>The term <code>element</code> in the example refers to an "atom" or a "group".</p>
@@ -716,26 +644,26 @@ A chapter typically consists of a number of sections.
 
 \begin{lstlisting}
 \chapter{Introduction}
-\label{ch:example}  % Chapters must have a label.
+\label{ch:introduction}  % Chapters must have a label.
    
 <elements>
 
 \section{A Section}
-\label{sec:example} % Optional but recommended section label.   
+\label{sec:introduction} % Optional but recommended section label.   
 
 <elements>
 
 \subsection{A Subsection}
-\label{sec:example::sub} % Optional but recommended section label.   
+\label{sec:introduction::sub} % Optional but recommended section label.   
 
 <elements>
 
 \subsubsection {A Subsubsection}
-\label{sec:example::subsub}
+\label{sec:introduction::subsub}
 <elements>
 
 \paragraph {A paragraph}
-\label{sec:example::paragraph}
+\label{sec:introduction::paragraph}
 <elements>
 
 \end{lstlisting}
@@ -4324,966 +4252,6 @@ PDF.
 
 </segment> <!-- subsection -->
 
-<segment name='subsection'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-Structuring your Sources and Compilation (Best Practices)
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Structuring your Sources and Compilation (Best Practices)
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-sec:dc::latex-structure
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::translate
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::translate
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p> You can translate LaTeX to PDF, HTML, and XML by using the <code>dc</code> binary. For this to work smoothly, we strongly advise following the structure of the book and the booklet examples included in this guide source code (in folders ‘book‘ and ‘booklet‘) and described here. The following instructions are tested on Mac OS X and Ubuntu. The binaries in <code>bin</code> might not work on systems that are not Mac or Linux/Unix-like.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-\label{sec:dc::latex-structure}
-You can translate LaTeX to PDF, HTML, and XML by using the \lstinline`dc` binary.  
-For this to work smoothly, we strongly advise following the structure
-of the book and the booklet examples included in this guide source
-code (in folders `book` and `booklet`) and described here.
-The following instructions are tested on Mac OS X and Ubuntu.  The binaries in \lstinline`bin` might not work on systems that are not Mac or Linux/Unix-like.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::book
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::folders
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>As examples, the folders <code>book</code> and <code>booklet</code> contain several files.</p>
-<ul>
-<li><p><code>book.tex</code></p>
-<p>This is the top level file for PDF generation. It is a conventional LaTeX document is but is stylized slightly for ease of use.</p></li>
-<li><p><code>book-html.tex</code></p>
-<p>This is the top level file for html generation. It is mostly a copy of <code>book.tex</code> but it uses slightly different packages.</p></li>
-<li><p><code>templates/diderot.sty</code></p>
-<p>Supplies diderot definitions needed for compiling latex to pdf’s. You don’t need to modify this file.</p></li>
-<li><p><code>templates/packages.sty</code></p>
-<p>Supplies packages for PDF generation. You can add whatever package you want. Most of these packages, except perhaps basics ones and AMS Math packages, will be ignored for XML generation. Do not include any command definitions in this file.</p></li>
-<li><p><code>templates/preamble.tex</code></p>
-<p>Supplies your macros that will be used by generating a pdf via pdflatex. All macros should be included here and no packages should be included (use <code>packages.sty</code> for packages. For XML generation, each chapter will be compiled in the context of this file.</p></li>
-<li><p><code>templates/preamble-diderot.tex</code></p>
-<p>Equivalent of preamble.tex but it is customized for XML output. This usually means that most macros will remain the same but some will be simplified to work with ‘pandoc‘. If you don’t need to customize, you can keep just one <code>preamble.tex</code> and <code>input</code> that file in your <code>preamble-diderot.tex</code>. The example in directory ‘booklet‘ does so.</p></li>
-</ul>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-As examples, 
-the folders \lstinline`book` and \lstinline`booklet` contain several files.
-\begin{itemize}
-\item \lstinline`book.tex`
-
-This is the top level file for PDF generation.  It is a conventional LaTeX document is but is stylized slightly for ease of use.  
-
-\item \lstinline`book-html.tex`
-
-This is the top level file for html generation.  It is mostly a copy of \lstinline`book.tex` but it uses slightly different packages.
-
-\item \lstinline`templates/diderot.sty`
-
-Supplies diderot definitions needed for compiling latex to pdf's.
-You don't need to modify this file.
-
-\item \lstinline`templates/packages.sty`
-
-Supplies packages for PDF generation.  You can add whatever package
-you want.  Most of these packages, except perhaps basics ones and AMS
-Math packages, will be ignored for XML generation.  Do not include any
-command definitions in this file.
-
-\item \lstinline`templates/preamble.tex` 
-
- Supplies your macros that will be used by generating a pdf via pdflatex.  All macros should be included here and no packages should be included (use \lstinline`packages.sty` for packages.  For XML generation, each chapter will be compiled in the context of this file. 
-
-
-\item \lstinline`templates/preamble-diderot.tex` 
-
-   Equivalent of preamble.tex but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to customize, you can keep just one \lstinline`preamble.tex` and \lstinline`input` that file in your \lstinline`preamble-diderot.tex`.  The example in directory `booklet` does so.
-\end{itemize}
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::simplify
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::simplify
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>To simplify publishing on Diderot, we recommend organizing your book sources as outlined below.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-To simplify publishing on Diderot, we recommend organizing your book
-sources as outlined below.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::booklets
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-Booklets
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Booklets
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::booklets
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>Booklets are books that don’t have parts. We recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want. Place all media (images, videos etc) under a media/ subdirectory.</p>
-<ul>
-<li><p><code>ch1/main.tex</code></p></li>
-<li><p><code>ch1/media/</code>: all my media files, *.png *.jgp, *.graffle, etc.</p></li>
-<li><p><code>ch2/main.tex</code></p></li>
-<li><p><code>ch2/media/</code>: all my media files for chapter 2, *.png *.jgp, *.graffle, etc.</p></li>
-<li><p><code>ch3/main.tex</code></p></li>
-</ul>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-Booklets are books that don't have parts. We recommend creating one directory per chapter and placing a single main.tex file to include all contain that you want.  Place all media (images, videos etc) under a media/ subdirectory. 
-\begin{itemize}  
-\item \lstinline`ch1/main.tex`
-\item \lstinline`ch1/media/`: all my media files, *.png *.jgp, *.graffle, etc.
-\item \lstinline`ch2/main.tex`
-\item \lstinline`ch2/media/`: all my media files for chapter 2, *.png *.jgp, *.graffle, etc.
-\item \lstinline`ch3/main.tex`
-\end{itemize}
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::books
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-Books
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Books
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::books
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>Books have parts and chapters. We recommend structuring these as follows, where ‘ch1, ch2‘ etc can be replaced with names of your choice.</p>
-<ul>
-<li><p><code>part1/ch1.tex</code></p></li>
-<li><p><code>part1/ch2.tex</code></p></li>
-<li><p><code>part1/media-ch1/</code></p></li>
-<li><p><code>part1/media-ch2/</code></p></li>
-<li><p><code>part2/ch3.tex</code></p></li>
-<li><p><code>part2/ch4.tex</code></p></li>
-<li><p><code>part2/ch5.tex</code></p></li>
-<li><p><code>part2/media-ch3/</code></p></li>
-<li><p><code>part2/media-ch4/</code></p></li>
-<li><p><code>part2/media-ch5/</code></p></li>
-</ul>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-Books have parts and chapters. We recommend structuring these as follows, where `ch1, ch2` etc can be replaced with names of your choice.
-\begin{itemize}
-\item \lstinline`part1/ch1.tex`
-\item \lstinline`part1/ch2.tex`
-\item \lstinline`part1/media-ch1/`
-\item \lstinline`part1/media-ch2/`
-\item \lstinline`part2/ch3.tex`
-\item \lstinline`part2/ch4.tex`
-\item \lstinline`part2/ch5.tex`
-\item \lstinline`part2/media-ch3/`
-\item \lstinline`part2/media-ch4/`
-\item \lstinline`part2/media-ch5/`
-\end{itemize}
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::making-pdf-and-html
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-Making PDF and HTML
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Making PDF and HTML
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::making-pdf-and-html
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>Inside the <code>book\</code> and <code>booklet\</code> directories, you can use <code>pdflatex</code> to generate a PDF output. See the corresponding <code>Makefile</code>. For example, you can invoke the <code>Makefile</code> as follows to make a PDF:</p>
-<pre><code>$ make pdf  
-$ make html  </code></pre>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-Inside the \lstinline`book\` and \lstinline`booklet\` directories, 
-you can use \lstinline`pdflatex` to generate a PDF output.  See the corresponding \lstinline`Makefile`.
-For example, you can  invoke the \lstinline`Makefile` as follows to make a PDF:
-\begin{lstlisting}
-$ make pdf
-$ make html
-\end{lstlisting}
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::making-pdf-html-for-a-single-chapter
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-Making PDF/HTML for a Single Chapter
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Making PDF/HTML for a Single Chapter
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::making-pdf-html-for-a-single-chapter
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>To make specific chapters, extend the Makefile to compile each chapter separately. See the <code>Makefile</code> in book or booklet as examples. For example, you can compile the chapter <code>probability</code> in the <code>book</code> directory as follows.</p>
-<pre><code>$ make probability  </code></pre>
-<p>To generate HTML for a single chapter, update <code>book-html.tex</code> to exclude all other chapters and run <code>make html</code>.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-To make specific chapters,  extend the Makefile to compile each chapter separately.  See the \lstinline`Makefile` in book or booklet as examples.
-For example, you can compile the chapter \lstinline`probability` in the \lstinline`book` directory as follows.
-\begin{lstlisting}
-$ make probability
-\end{lstlisting}
-
-To generate HTML for a single chapter, update \lstinline`book-html.tex` to exclude all other chapters and run \lstinline`make html`.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::making-xml
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-Making XML
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Making XML
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::making-xml
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>XML generation proceeds on a chapter by chapter basis. To generate xml, simply use the Makefile provided as follows.</p>
-<pre><code>$ make ch2/main.xml  </code></pre>
-<p>To obtain more information from a run, you can turn on the verbose option.</p>
-<pre><code>$ make verbose=true ch2/main.xml  </code></pre>
-<p>Beware that you will likely see many warnings. For this reason the utility of the verbose flag is not particularly high.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-XML generation proceeds on a chapter by chapter basis.
-To generate xml, simply use the Makefile provided as follows.
-\begin{lstlisting}
-$ make ch2/main.xml
-\end{lstlisting}
-
-To obtain more information from a run, you can turn on the verbose option.
-\begin{lstlisting}
-$ make verbose=true ch2/main.xml
-\end{lstlisting}
-
-Beware that you will likely see many warnings.  For this reason the utility of the verbose flag is not particularly high.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::pdf-before-xml
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='important'>
-<field name='title'>
-<![CDATA[
-PDF before XML
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-PDF before XML
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-imp:dc::pdf-before-xml
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>Before generating the XML for a chapter, it is highly recommended to check that you can generate PDF for the chapter. This is because XML generation is relatively “forgiving” and, for example, simply omits undefined macros without complaining. By generating PDF first, the author could avoid many errors that can be more time-consuming to fix after the material is published on Diderot.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-Before generating the XML for a chapter, it is highly recommended to check that you can generate PDF for the chapter.  This is because XML generation is relatively ``forgiving'' and, for example, simply omits undefined macros without complaining.  By generating PDF first, the author could avoid many errors that can be more time-consuming to fix after the material is published on Diderot.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- important -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::error
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::error
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>Error messages from the XML translator are not particularly useful at this time. But, if you are able to generate a PDF and HTML (using <code>pandoc</code>), then you should be able to generate an XML. If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.</p>
-<pre><code>$ make debug=true probability/theory.xml  </code></pre>
-<p>If that fails, there is another relatively simply way to debug, see <a href="sec:dc::internals">Section Internals</a> for additional information.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-Error messages from the XML translator are not particularly useful at this time.  But, if you are able to generate a PDF and HTML (using \lstinline`pandoc`), then you should be able to generate an XML. 
-If you encounter a puzzling error try the "debug" version which will print the atoms as it goes through the input.
-\begin{lstlisting}
-$ make debug=true probability/theory.xml
-\end{lstlisting}
-
-If that fails, there is another relatively simply way to debug, see \href{sec:dc::internals}{Section Internals} for additional information.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:dc::using-dc-directly
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='title'>
-<![CDATA[
-Using DC directly
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Using DC directly
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::using-dc-directly
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the DC tools directly. This tools translates the given input LaTeX file to xml.</p>
-<pre><code>$ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml  </code></pre>
-<p>To turn on the debug mode, simply pass the flag <code>-d</code>.</p>
-<pre><code>$ dc  -d -meta ./meta -preamble preamble.tex input.tex -o output.xml  </code></pre>
-<p>The meta folder contains some files that may be used in the xml translation. You can ignore this directory to start with and then start populating it based on your needs. The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-Assuming that you structure your book as suggested above, then you will mostly be using the Makefile but you could also use the DC tools directly. 
-This tools translates the given input LaTeX file to xml.
-
-\begin{lstlisting}
-$ dc  -meta ./meta -preamble preamble.tex input.tex -o output.xml
-\end{lstlisting}
-
-To turn on the debug mode, simply pass the flag \lstinline`-d`.
-\begin{lstlisting}
-$ dc  -d -meta ./meta -preamble preamble.tex input.tex -o output.xml
-\end{lstlisting}
-
-The meta folder contains some files that may be used in the xml translation.  You can ignore this directory to start with and then start populating it based on your needs.  The main file that you might want to add are Kate highlighting specifications to be used for highlighting code.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-
-</segment> <!-- subsection -->
-
 </segment> <!-- section -->
 
 <segment name='section'>
@@ -6472,7 +5440,7 @@ The guide includes a very simple markdown document\lstinline`markdown/example.md
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::making
+grp:dc::making-xml
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6496,7 +5464,7 @@ Making XML
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:dc::making
+grm:dc::making-xml
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6554,7 +5522,7 @@ $ make verbose=true markdown/example.xml
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::using
+grp:dc::using-dc-directly
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6578,7 +5546,7 @@ Using DC directly
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:dc::using
+grm:dc::using-dc-directly
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6736,7 +5704,7 @@ sec:dc::internals
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::high-level
+grp:dc::using
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -6760,7 +5728,7 @@ grp:dc::high-level
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:dc::high-level
+grm:dc::using
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...

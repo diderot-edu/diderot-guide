@@ -91,7 +91,7 @@ book:
 pdf: book
 
 guide:
-	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{staff/staff, dc/dc, cli/cli}  \input{book}'
+	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{staff/staff, dc/dc, publish/publish, cli/cli}  \input{book}'
 
 
 staff: book staff/staff.tex

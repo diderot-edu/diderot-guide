@@ -1,13 +1,14 @@
 \chapter{Publishing Your Work On Diderot}
 \label{ch:publish}
 
-Diderot allows author to generate interactive books from LaTeX and Markdown sources.
+Diderot allows authors to generate interactive books from LaTeX and Markdown sources.
 %
-This compilation and cloud services that Diderot use to enable this are currently being developed and are far from being completely polished.
+This compilation and cloud services that Diderot uses to enable this are far from complete.
 %
 For ease of use, we therefore strongly recommend the authors to follow certain ``best practices.''
 %
-In this chapter, we describe the structure of a Diderot ``book'' and a ``booklet'' and our recommendations for organizing these to minimize errors and mistakes.
+In this chapter, we first describe the basic concepts of publishing on
+Diderot and then describe the structure of a Diderot ``book'' and a ``booklet'' and our recommendations for organizing these to minimize mistakes.
 %
 For brevity, we consider LaTeX sources here, but the practices generalize to Markdown sources.
   
@@ -35,48 +36,70 @@ After you release a chapter, it becomes available to your readers, who might sta
 %
 In other words, released content is out in the wild and has now affected users.
 %
-Updating content after it is released  therefore raises a number of questions (should be allowed at all? if so, under what circumstances?), and is complex from a technical point of view.
+Updating content after it is released  therefore raises a number of questions, e.g.,
+\begin{itemize}
+\item should it be allowed at all? (For example, fixing an error pointed out by a student makes a good question look like an unnecessary question.)
 
-Putting aside the high-level questions and assuming that we allow
-unrestricted updates to released content, there are a number of
-technical difficulties: the key challenge is updating released
-content is identifying what has been changed and what has not.  
+\item if it should be allowed, then under what circumstances, who decides, how should it be implemented?
+\end{itemize}
+
+Beyond these important questions, updates are complex from a technical
+point of view: the key challenge is identifying what has been changed
+and what has not.
 %
-To see why let's say that you have published and released a chapter on Diderot and later realized that you want to make some updates, and so you edited the chapter.
+To see why let's say that you have published and released a chapter on Diderot and later realized that you want to make some updates, and so you edited the chapter sources.
 %
-Now, if you want to update the chapter,  Diderot needs to figure out which sections and atoms have been edited and which ones remain the same.  This is not easy, because to figure this out, Diderot needs information from you about what exactly you have edited.  For example, let's say you have swapped the position of two paragraphs in your text, this is an ambiguous change for Diderot, because it cannot distinguish this edit from complete rewriting of the two paragraphs (i.e., did you swap or did you rewrite?).
+Now, if you want to update the released chapter on Diderot, then
+Diderot needs to figure out which sections and atoms have been edited
+and which ones remain the same.  This is not easy, because to figure
+this out, Diderot needs information from you about what exactly you
+have edited.  For example, let's say you have swapped the position of
+two paragraphs in your text, this is an ambiguous change for Diderot,
+because it cannot distinguish this edit from complete rewriting of the
+two paragraphs (i.e., did you swap or did you rewrite?). 
+%
+This is important, because it impacts how the affects of the atoms on the users should be propagated.  
+
 %
 A second technical concern is treatment of deleted content.  Let's say that you have deleted a paragraph, but a student took personal notes on this paragraph.  What should happen to students' notes?  Should they also be deleted? If not' then they would be pointing to deleted content and their notes would make no sense.  
 
 \begin{gram}[Releasing Content is One Way]
-These challenges are not insurmountable but we have at this time decided to proceed with the principle that:
-\\
-A chapter will not be updated after it is released.
+These challenges are not insurmountable but we have at this time decided to proceed with the principle that: a chapter will not be updated after it is released.
 \end{gram}
 
 
 \begin{gram}[Best Practices]
-The recommended practice for publishing content on Diderot is therefore to publish it in unreleased form, inspect the material, and ideally have your fellow co-instructor and TAs look over the content, give you feedback (they can send feedback on unreleased content), update the content according to feedback, and only then release it.
+The best practice for publishing content on Diderot is to publish it in unreleased form first, inspect the material, and ideally have your fellow co-instructor and TAs look over the content, give you feedback (they can send feedback on unreleased content), update the content according to feedback, and then release it. 
+%
+As you release content, remember that it is a one-way road.
 \end{gram}
 
 \begin{gram}[Fixing Small Errors After Release]
 Mistakes do happen and there are several ways to fix small errors in released chapters.
 
 \begin{itemize}
+\item \textbf{Unreleasing:}
+If you accidentally released a chapter and a small amount of time has passed, or if the chapter is corrupt in a major way, you can unrelease the chapter.
+%
+Having unreleased it, you can update the contents as you wish, and all other user interactions  prior to the updates will be deleted.
+%
+After you make your updates, you can release the chapter as usual.
+%
+
 \item \textbf{Online edits:}
-perhaps the easiest way is to edit an affected atom on Diderot.  This is often sufficient to fix small typos.  (Don't forget to update your LaTeX or Markdown source).
+for small corrections, perhaps the easiest way is to edit the affected atoms online on Diderot.  For example, this is usually sufficient to fix small typos.  (Don't forget to update your LaTeX or Markdown source).
 
 \item \textbf{XML edits:}
 %
-For larger changes, you can edit the XML of the chapter directly and reupload the XML.  To edit the XML, it is very important no to alter \lstinline`label` fields.  The contents of all else can be edited.
+For larger changes, you can edit the XML of the chapter directly and reupload the XML.  When editing the XML, it is very important not to alter \lstinline`label` fields.  The contents of all else can be edited.
 
 \item \textbf{LaTeX edits:}
 Certain LaTeX and Markdown edits are also feasible.  For example, you can simply add new content to the tail of your LaTeX/Markdown chapter source but as you do this, it is very important to not alter any of the prior content. 
-
+\end{itemize}
 \end{gram}
 
 \begin{gram}[The Ultimate Method]
-For LaTeX, there is a way to write your sources in such that essentially any updates except deletion of released sections of atoms are possible after release.  The idea is to completely atomize your chapter by making sure that each piece of text is inside of an atom and giving each section and each atom a unique label.
+If you are using LaTeX, then there is a way to write your sources in such that essentially any updates except deletion of released sections or atoms are possible after release.  The idea is to completely atomize your chapter by making sure that each piece of text is inside of an atom and giving each section, group, and each atom a unique label and never change these labels.
 %
 This approach could be feasible for small texts such as assignments but tends to be too labor intensive for larger text such as book chapters.
 \end{gram}
@@ -119,7 +142,7 @@ Supplies your macros that will be used by generating a PDF via pdflatex.  All ma
 
 \item \lstinline`templates/preamble-diderot.tex` 
 
-Equivalent of \lstlinline`preamble.tex` but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to extensive customization, you can keep just one \lstinline`preamble.tex` and \lstinline`input` that file in your \lstinline`preamble-diderot.tex`, as in the \lstinline`booklet` example.
+Equivalent of \lstinline`preamble.tex` but it is customized for XML output.  This usually means that most macros will remain the same but some will be simplified to work with `pandoc`.  If you don't need to extensive customization, you can keep just one \lstinline`preamble.tex` and \lstinline`input` that file in your \lstinline`preamble-diderot.tex`, as in the \lstinline`booklet` example.
 %
 \begin{lstlisting}
 % File: preamble-diderot.tex
