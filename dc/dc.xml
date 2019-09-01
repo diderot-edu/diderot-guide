@@ -147,6 +147,79 @@ and slide decks for upload.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
+grp:dc::review
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::review
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>In this chapter, we briefly review typesetting for Diderot using LaTex and Markdown. In <a href="ch:publish">the next chapter</a>, we discuss some important points about how to publish content on Diderot and how to structure your source code.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+In this chapter, we briefly review typesetting for Diderot using LaTex and Markdown.
+In \href{ch:publish}{the next chapter}, we discuss some important points about how to publish content on Diderot and how to structure your source code.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
 grp:dc::sources-and-contributions
 </field> <!-- label -->
 <field name='depend'>
@@ -182,16 +255,13 @@ imp:dc::sources-and-contributions
 <field name='body'>
 <![CDATA[
 <p>To go through the examples in this chapter, please clone <a href="https://github.com/diderot-edu/diderot-guide">this github repository</a> and follow the instructions in <code>INSTALL.md</code>.</p>
-<p>This guide is public. Feel free to contribute to the sources and send feedback.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
 To go through the examples in this chapter, please clone 
 \href{https://github.com/diderot-edu/diderot-guide}{this github repository}
-and follow the instructions in \lstinline`INSTALL.md`. 
-
-This guide is public.  Feel free to contribute to the sources and send feedback.
+and follow the instructions in \lstinline`INSTALL.md`.
 ]]>
 </field> <!-- body_src -->
 
@@ -282,7 +352,7 @@ grm:dc::compatible
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and you can generate a PDF document from your notes. The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well and with some care you can compile your LaTeX sources to XML . In this section, we briefly cover some example LaTeX sources. For content development work, we strongly advise the authors to mirror the <a href="sec:dc::latex-structure">suggested structure of the LaTeX sources</a>.</p>
+<p>DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and you can generate a PDF document from your notes. The reverse direction, going from LaTeX to Diderot, is not as definitive but works reasonably well and with some care you can compile your LaTeX sources to XML.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
@@ -290,11 +360,7 @@ grm:dc::compatible
 DC is compatible with LaTeX. Whatever updates you make to upload your notes on Diderot will remain compatible with LaTeX and  you can generate a PDF document from your notes.
 The reverse direction, going from LaTeX to Diderot, is not as
 definitive but works reasonably well and with some care you can
-compile your LaTeX sources to XML .
-In this section, we briefly cover some example LaTeX sources.  
-For content development work, we strongly advise the authors to mirror
-the
-\href{sec:dc::latex-structure}{suggested structure of the LaTeX sources}.
+compile your LaTeX sources to XML.
 ]]>
 </field> <!-- body_src -->
 

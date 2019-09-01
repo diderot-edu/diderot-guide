@@ -1,17 +1,21 @@
 \chapter{Publishing Your Work On Diderot}
 \label{ch:publish}
 
+\begin{gram}
 Diderot allows authors to generate interactive books from LaTeX and Markdown sources.
 %
-This compilation and cloud services that Diderot uses to enable this are far from complete.
+Interactive books, however, do raise a number of issues that are not straightforward to handle by starting with just LaTeX/Markdown sources, whose information content makes it difficult to enable certain operations such as live updates.
+%
+Another difficulty is the complexities of translating LaTeX/Markdown sources (especially LaTeX) to be online friendly.
+
 %
 For ease of use, we therefore strongly recommend the authors to follow certain ``best practices.''
 %
 In this chapter, we first describe the basic concepts of publishing on
-Diderot and then describe the structure of a Diderot ``book'' and a ``booklet'' and our recommendations for organizing these to minimize mistakes.
+Diderot and then describe the structure of a Diderot ``book'' and a ``booklet'' and our recommendations for organizing these.
 %
 For brevity, we consider LaTeX sources here, but the practices generalize to Markdown sources.
-  
+\end{gram}
 
 \begin{important}[Sources]
 To go through the examples in this chapter, please clone 
@@ -23,7 +27,8 @@ and follow the instructions in \lstinline`INSTALL.md`.
 The examples are tested on Mac OS X and Ubuntu.  The binaries in \lstinline`bin` might not work on systems that are not Mac or Linux/Unix-like. 
 \end{important}
 
-\subsection{Released and Unreleased Content}
+\section{Released and Unreleased Content}
+\label{sec:publish::released-unreleased}
 
 You can publish content on Diderot in two different forms: ``unreleased'' and ``released''.
 %
@@ -40,11 +45,13 @@ Updating content after it is released  therefore raises a number of questions, e
 \begin{itemize}
 \item should it be allowed at all? (For example, fixing an error pointed out by a student makes a good question look like an unnecessary question.)
 
-\item if it should be allowed, then under what circumstances, who decides, how should it be implemented?
+\item if it should be allowed, then under what circumstances should it be allowed, who should decide?
 \end{itemize}
 
 Beyond these important questions, updates are complex from a technical
-point of view: the key challenge is identifying what has been changed
+point of view.
+%
+The first issue is identifying what has been changed
 and what has not.
 %
 To see why let's say that you have published and released a chapter on Diderot and later realized that you want to make some updates, and so you edited the chapter sources.
@@ -58,13 +65,13 @@ two paragraphs in your text, this is an ambiguous change for Diderot,
 because it cannot distinguish this edit from complete rewriting of the
 two paragraphs (i.e., did you swap or did you rewrite?). 
 %
-This is important, because it impacts how the affects of the atoms on the users should be propagated.  
+This is important, because it impacts how the effects should be propagated to the users.  
 
 %
-A second technical concern is treatment of deleted content.  Let's say that you have deleted a paragraph, but a student took personal notes on this paragraph.  What should happen to students' notes?  Should they also be deleted? If not' then they would be pointing to deleted content and their notes would make no sense.  
+A second technical concern is treatment of deleted content.  Let's say that you have deleted a paragraph, but a student took personal notes on this paragraph.  What should happen to students' notes?  Should they also be deleted? If not,  then they would be pointing to deleted content and their notes would make no sense.  
 
 \begin{gram}[Releasing Content is One Way]
-These challenges are not insurmountable but we have at this time decided to proceed with the principle that: a chapter will not be updated after it is released.
+These challenges are not insurmountable but we have at this time decided to proceed with this principle: a chapter will not be updated after it is released.
 \end{gram}
 
 
@@ -74,7 +81,7 @@ The best practice for publishing content on Diderot is to publish it in unreleas
 As you release content, remember that it is a one-way road.
 \end{gram}
 
-\begin{gram}[Fixing Small Errors After Release]
+\begin{gram}[Fixing Errors After Release]
 Mistakes do happen and there are several ways to fix small errors in released chapters.
 
 \begin{itemize}
@@ -85,13 +92,16 @@ Having unreleased it, you can update the contents as you wish, and all other use
 %
 After you make your updates, you can release the chapter as usual.
 %
+Because unreleasing deletes all student interactions, this option should be used with care.
 
 \item \textbf{Online edits:}
 for small corrections, perhaps the easiest way is to edit the affected atoms online on Diderot.  For example, this is usually sufficient to fix small typos.  (Don't forget to update your LaTeX or Markdown source).
 
 \item \textbf{XML edits:}
 %
-For larger changes, you can edit the XML of the chapter directly and reupload the XML.  When editing the XML, it is very important not to alter \lstinline`label` fields.  The contents of all else can be edited.
+For larger changes, you can edit the XML of the chapter directly and
+reupload the XML.  When editing the XML, it is very important not to
+alter \lstinline`label` fields and update only the \lstinline`body` and \lstinline`title` fields.
 
 \item \textbf{LaTeX edits:}
 Certain LaTeX and Markdown edits are also feasible.  For example, you can simply add new content to the tail of your LaTeX/Markdown chapter source but as you do this, it is very important to not alter any of the prior content. 
