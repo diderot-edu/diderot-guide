@@ -173,8 +173,9 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 \item \lstinline`important`, 
 \item \lstinline`lemma`,
 \item \lstinline`note`,
+\item \lstinline`observe`, \lstinline`observation`,
 \item \lstinline`preamble` (as a  first atom of chapter), \lstinline`problem` (a problem for students to solve), \lstinline`proof`, \lstinline`proposition`,
-\item \lstinline`question`,
+\item \lstinline`question`, \lstinline`quote`,
 \item \lstinline`remark` (an important note), \lstinline`reminder`,
 \item \lstinline`solution` (a solution to an exercise/problem), \lstinline`syntax` (a piece of syntax)
 \item \lstinline`task` (a task in an assignment), \lstinline`theorem`.
@@ -355,7 +356,7 @@ Simple example 2
   
 
 \subsection{Labels and References}
-
+\label{sec:dc::labels-refs}
 Diderot uses labels to identify atoms uniquely. All labels
 in a book must be unique.  To help in authoring, we recommended giving
 each chapter a unique label, and prepending each label with that of
@@ -428,10 +429,13 @@ important : "imp"
 lemma : "lem"
 note : "nt"
 gram : "grm"
+observe : "obs"
+observation : "obs"
 preamble : "prmbl"
 problem : "prb"
 proof : "prf"
 proposition : "prop"
+quote : "quo"
 remark : "rmrk"
 reminder : "rmdr"
 slide : "slide"

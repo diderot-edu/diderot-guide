@@ -845,8 +845,9 @@ def:dc::atom
 <li><p><code>important</code>,</p></li>
 <li><p><code>lemma</code>,</p></li>
 <li><p><code>note</code>,</p></li>
+<li><p><code>observe</code>, <code>observation</code>,</p></li>
 <li><p><code>preamble</code> (as a first atom of chapter), <code>problem</code> (a problem for students to solve), <code>proof</code>, <code>proposition</code>,</p></li>
-<li><p><code>question</code>,</p></li>
+<li><p><code>question</code>, <code>quote</code>,</p></li>
 <li><p><code>remark</code> (an important note), <code>reminder</code>,</p></li>
 <li><p><code>solution</code> (a solution to an exercise/problem), <code>syntax</code> (a piece of syntax)</p></li>
 <li><p><code>task</code> (a task in an assignment), <code>theorem</code>.</p></li>
@@ -884,8 +885,9 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 \item \lstinline`important`, 
 \item \lstinline`lemma`,
 \item \lstinline`note`,
+\item \lstinline`observe`, \lstinline`observation`,
 \item \lstinline`preamble` (as a  first atom of chapter), \lstinline`problem` (a problem for students to solve), \lstinline`proof`, \lstinline`proposition`,
-\item \lstinline`question`,
+\item \lstinline`question`, \lstinline`quote`,
 \item \lstinline`remark` (an important note), \lstinline`reminder`,
 \item \lstinline`solution` (a solution to an exercise/problem), \lstinline`syntax` (a piece of syntax)
 \item \lstinline`task` (a task in an assignment), \lstinline`theorem`.
@@ -2036,7 +2038,7 @@ Labels and References
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-sec:dc::labels-and-references
+sec:dc::labels-refs
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2091,11 +2093,12 @@ grm:dc::uses
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>Diderot uses labels to identify atoms uniquely. All labels in a book must be unique. To help in authoring, we recommended giving each chapter a unique label, and prepending each label with that of the chapter.</p>
+<p> Diderot uses labels to identify atoms uniquely. All labels in a book must be unique. To help in authoring, we recommended giving each chapter a unique label, and prepending each label with that of the chapter.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
+\label{sec:dc::labels-refs}
 Diderot uses labels to identify atoms uniquely. All labels
 in a book must be unique.  To help in authoring, we recommended giving
 each chapter a unique label, and prepending each label with that of
@@ -2395,10 +2398,13 @@ important : &quot;imp&quot;
 lemma : &quot;lem&quot;  
 note : &quot;nt&quot;  
 gram : &quot;grm&quot;  
+observe : &quot;obs&quot;  
+observation : &quot;obs&quot;  
 preamble : &quot;prmbl&quot;  
 problem : &quot;prb&quot;  
 proof : &quot;prf&quot;  
 proposition : &quot;prop&quot;  
+quote : &quot;quo&quot;  
 remark : &quot;rmrk&quot;  
 reminder : &quot;rmdr&quot;  
 slide : &quot;slide&quot;  
@@ -2428,10 +2434,13 @@ important : "imp"
 lemma : "lem"
 note : "nt"
 gram : "grm"
+observe : "obs"
+observation : "obs"
 preamble : "prmbl"
 problem : "prb"
 proof : "prf"
 proposition : "prop"
+quote : "quo"
 remark : "rmrk"
 reminder : "rmdr"
 slide : "slide"
