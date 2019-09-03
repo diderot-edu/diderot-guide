@@ -34,14 +34,22 @@ You can publish content on Diderot in two different forms: ``unreleased'' and ``
 %
 When you first upload some content in the form of a book chapter on Diderot, the chapter is unreleased by default.
 %
-You can release the chapter by using Book Managemement features, but before you  do, beware that releasing should be treated as a one-way feature.
+Unreleased chapters are visible to course staff and they create various kinds of posts (e.g., feedback, questions, etc) on the content.
+%
+Unreleased chapters, however, are not visible to students.
+%
+You can release the chapter by using Book Managemement features. 
+%
+Doing so makes them visible to the students.
+%
+Before you release a chapter, pleate  beware that releasing should be treated as a one-way feature.
 %
 
 \begin{gram}[Released Content: Implications for Authors and Users]
 \label{grm:publish::released::user-implications}
-After you release a chapter, it becomes available to your readers, who might start taking notes on its content and discussing it, by for example asking questions to course staff.
+After you release a chapter, it becomes available to the students, who might start taking notes on its content and discussing it, by for example asking questions to course staff.
 %
-In other words, released content is out in the wild and has now affected users.
+In other words, released content is out in the wild and has now affected students.
 %
 
 Updating content after it is released  therefore raises a number of questions, e.g.,
@@ -81,24 +89,38 @@ This change is  ambiguous to Diderot, because it cannot
 distinguish this edit from complete rewriting of the two paragraphs
 (i.e., did you swap or did you rewrite?).
 %
-The distinction is important, because it impacts how the updates affects the users.  
+The distinction is important, because it impacts how the updates affect the students.
 %
+In the case of a swap, Diderot hardly needs to take any action.
+%
+In the case of a complete rewrite, Diderot would ideally allow the student to become aware of the change and take some action.
 \end{example}
 
 
 \begin{gram}[Releasing Content is One Way]
-These challenges are not insurmountable but dealing with them in the ``right way'' requires the development of a rather complex infrastructure to resolve with conflicts created by live updates.
+These challenges are not insurmountable but dealing with them in the ``right way'' requires the development of a rather complex infrastructure to resolve the conflicts created by live updates.
 %
 At this time, we have therefore decided to proceed with this
 principle: a chapter will not be updated after it is released.
 %
 
 Specifically, Diderot  refuses to live update a (released) chapter if it \emph{``deletes live blocks''}, which means that proceeding with the update deletes a block (an atom, a group, or a section), which has been released to the users.
+%
 
-There is one important exception to this rule, which allows the authors to perform live updates reasonably liberally.  We discuss this approach, which is based on ``atomic sources''  in 
 %
-\href{sec:publish::full-atomization}{the next section}.
+There is an important exception to this rule: ``fully labeled sources''.
 %
+Diderot makes the decision on whether a live update should proceed or not by an identification system that it uses to give a unique label to each block.
+%
+The authors can fully control this identification system, and thus also fully control live updates.
+%
+But doing so requires a bit more work from the authors': they need to given each block a unique label.
+%
+Please proceed to read 
+%
+\href{sec:publish::full-labeling}{the next section}
+%
+to learn more about this approach and an experimental tool that can help generate labels.
 \end{gram}
 
 
@@ -119,9 +141,9 @@ We have designed this process to facilitate easy updates for unreleased content.
 Mistakes do happen and there are several ways to fix errors in released chapters.  
 %
 If your sources are
-\href{sec:publish::full-atomization}{atomic, live updates are generally feasible}.
+\href{sec:publish::full-labeling}{fully labeled, live updates are generally feasible}.
 %
-If your sources are not atomic, then the following options are available. 
+If your sources are not fully labeled, then the following options are available. 
 
 \begin{itemize}
 \item \textbf{Unreleasing:}
@@ -155,11 +177,19 @@ For example, you can simply add new content to the tail of your LaTeX/Markdown c
 %
 Similarly, if you want to change your preamble file (where your macros are defined), then you will be able to use your LaTeX sources to generate and XML and re-upload the file. 
 
-\item If none of the above work, you can ``abandon'' your released chapter.  Let's say that you released Chapter 2 a while back and noticed later some serious problems with it. You don't feel comfortable to unrelease it because it has been a week since its release, the above solutions don't apply.  In this case, you can deprecate this chapter by changing its title to ``Deprecated'' and creating a Chapter 2.1 (Yes, chapters can be assigned real numbers, where the decimal is thought as a version number) with the updated content.  
+\item \textbf{Versioning:} If none of the above work, you can ``abandon'' your released chapter.  Let's say that you released Chapter 2 a while back and noticed later some serious problems with it. You don't feel comfortable unreleasing it because it has been a week since its release, and the above solutions don't apply.  In this case, you can deprecate this chapter by changing its title to ``Deprecated'' and creating a new Chapter 2.1 (Chapters can be a real number with a single decimal, where the decimal is thought as a version number) with the updated content.  When uploading the new content, please remember to change the labels of the new chapter to make sure that it doesn't overlap with the old.  For example, if you have prefixed all your labels with 
+%
+\lstinline`chap2`
+%
+then replacing that string with 
+%
+\lstinline`chap2fixed:` 
+%
+could work.
 \end{itemize}
 \end{gram}
 
-\begin{gram}[The Innerworkings]
+\begin{gram}[The Automatic Labeling Algorithm of Diderot]
 It might help to understand the innerworkings of Diderot a bit to understand the limitations on live updates.
 %
 When you use Diderot's compiler to compile your sources to XML, the compiler generates a unique \defn{label} for each block (atom, group, or section).  
@@ -185,24 +215,25 @@ Now, changing your latex sources could change the labels auto-generated by Dider
 %
 Therefore, simply giving a label to each of your atoms allows you to perform updates on released content.
 %
-This is the basic idea \href{sec:publish::full-atomization}{behind the atomic method}.
+This is the basic idea \href{sec:publish::full-labeling}{behind the full-labeling method}.
 \end{gram}
 
-\section{The Atomic Method for LaTeX}
-\label{sec:publish::full-atomization}
+\section{Full Labeling in LaTeX}
+\label{sec:publish::full-labeling}
 
 \begin{gram}
-If you use LaTeX, then there is a way to write your sources in such that 
-many kinds of live updates are feasible on released content.  
+If you use LaTeX, then there is a way to write your sources to unlock live updates.
 %
-The idea is to ``atomize'' your chapter fully by making sure that each piece of text is inside of an atom and giving each section, group, and each atom a unique label and never change these labels (at least if you intend to live update).
+The idea is to atomize your chapter fully by making sure that each piece of text is inside of an atom and giving each section, group, and atom a unique label.
+%
+The labels given should not be changed between live updates, but could be changed otherwise (e.g., from one semester to the next).
 %
 \end{gram}
 
 
-\begin{example}[An Atomic Assignment]
+\begin{example}[An Fully Labeled Assignment]
 
-Here is a fully atomic assignment.  Note that the chapter, all sections, and all atoms have labels.  When assigning labels, note that they must be unique within the book; it is therefore good practice to prefix them with chapter label.
+Here is a fully labeled assignment.  Note that the chapter, all sections, and all atoms have labels.  When assigning labels, note that they must be unique within the book; it is therefore good practice to prefix them with chapter label.
 %
 
 \begin{lstlisting}
@@ -245,9 +276,11 @@ Prove that if P = NP, then life is good.
 
 
 \begin{important}
-The atomic approach is usually feasible for small texts such as assignments but tends to be too labor intensive for larger text such as book chapters.
+The full labeling approach is usually feasible for small texts such as assignments but tends to be too labor intensive for larger text such as book chapters.
 %
-We have a compilation tool that can automatically atomize chapters for you but this tool is currently in experimental stage, if you are interested in experimenting with it \href{mailto:umut@cs.cmu.edu}{please contact Umut}.
+We have a compilation tool that can automatically label chapters for you but this tool is currently in experimental stage.
+%
+If you are interested in experimenting with it \href{mailto:umut@cs.cmu.edu}{please contact Umut}.
 \end{important}
 
 Labeling all blocks in a chapter allows Diderot to match them when you want to update a released section: blocks with the same label are matched and the online content is updated with the new one.
