@@ -1,3 +1,6 @@
+# Make GUIDE_DIR point to your Diderot guide directory
+GUIDE_DIR = ..
+
 PDFLATEX = pdflatex
 LATEX = latex
 FLAG_VERBOSE = -v 
@@ -9,17 +12,16 @@ PANDOC = pandoc --mathjax -f latex
 
 
 ifeq ($(OS),Windows_NT)
-	DC_HOME = ../bin/windows
+	DC_HOME = $(GUIDE_DIR)/bin/windows
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		DC_HOME = ../bin/ubuntu
+		DC_HOME = $(GUIDE_DIR)/bin/ubuntu
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		DC_HOME = ../bin/macos
+		DC_HOME = $(GUIDE_DIR)/bin/macos
 	endif
 endif
-
 
 DC = $(DC_HOME)/dc 
 DCDBG = $(DC_HOME)/dc.dbg 
@@ -44,10 +46,6 @@ reset:
 ######################################################################
 ## BEGIN: XML
 ######################################################################
-
-html: FORCE
-	$(PANDOC) -s book-html.tex > book.html
-
 
 %.xml : %.tex FORCE
 ifdef debug

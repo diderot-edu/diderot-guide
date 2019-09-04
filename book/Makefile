@@ -1,3 +1,7 @@
+# Make GUIDE_DIR point to your Diderot guide directory
+GUIDE_DIR = ..
+
+
 PDFLATEX = pdflatex
 PANDOC = pandoc --mathjax -f latex 
 
@@ -8,14 +12,14 @@ FLAG_DBG = -d
 PREAMBLE = ./templates/preamble-diderot.tex
 
 ifeq ($(OS),Windows_NT)
-	DC_HOME = ../bin/windows
+	DC_HOME = $(GUIDE_DIR)/bin/windows
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		DC_HOME = ../bin/ubuntu
+		DC_HOME = $(GUIDE_DIR)/bin/ubuntu
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		DC_HOME = ../bin/macos
+		DC_HOME = $(GUIDE_DIR)/bin/macos
 	endif
 endif
 
@@ -25,7 +29,7 @@ default: pdf
 
 FORCE: 
 
-.PHONY: book guide html pdf 
+.PHONY: book html pdf 
 
 html: FORCE
 	$(PANDOC) -s book-html.tex > book.html
@@ -76,10 +80,6 @@ reset:
 book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
-
-guide:
-	$(PDFLATEX) --jobname="diderot-guide" '\input{book}' ; 
-	$(PDFLATEX) --jobname="diderot-guide" '\input{book}' ; \
 
 pdf: book
 

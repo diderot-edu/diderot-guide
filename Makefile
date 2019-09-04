@@ -1,3 +1,6 @@
+# Make this point to your Diderot guide directory
+GUIDE_DIR = ./
+
 PANDOC = pandoc --mathjax -f latex 
 PDFLATEX = pdflatex
 
@@ -8,14 +11,14 @@ PREAMBLE = templates/preamble-diderot.tex
 
 
 ifeq ($(OS),Windows_NT)
-	DC_HOME = ./bin/windows
+	DC_HOME = $(GUIDE_DIR)/bin/windows
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		DC_HOME = ./bin/ubuntu
+		DC_HOME = $(GUIDE_DIR)/bin/ubuntu
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		DC_HOME = ./bin/macos
+		DC_HOME = $(GUIDE_DIR)/bin/macos
 	endif
 endif
 
