@@ -695,9 +695,9 @@ Here is a list of known limitations.
 
 \item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
  
-\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
+\item You can use \lstinline`itemize`, \lstinline`enumerate`, and \lstinline`description` environments in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
 
-\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them.  Labels in other latex environments such as, items in lists, code lines, and equations are not supported.
 
 \end{itemize}
 
