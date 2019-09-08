@@ -1,8 +1,9 @@
 \chapter{Diderot Command Line Interface}
 
-Diderot has a command line interface available to make interacting
-with the platform a little easier if you prefer using the command
-line instead of web UI's.
+Diderot offers a command line interface to simplify interaction with
+the platform via the command line.
+%
+The main advantage of the CLI over the web interface is that it is possible to upload materials onto the platform more quickly.
 
 \begin{important}[Sources and Contributions]
 
@@ -15,13 +16,12 @@ To download the CLI, please clone
 and follow the instructions in \lstinline`README.md`. 
 
 The Diderot CLI is public. Feel free to contribute or open an issue if there
-are any commands or utilities that you think would be useful to have. Please
-send feedback about the CLI on Diderot.
+are any commands or utilities that you think would be useful to have.
+%
+Please feel free to send feedback by 
+\href{https://github.com/diderot-edu/diderot-cli/issues}{opening an issue}.
 \end{important}
 
-\begin{note}[Questions and Feedback]
-You can click any ``mail''  button in this guide and send feedback or ask questions. 
-\end{note}
 
 \section{Basic Usage}
 
@@ -44,28 +44,41 @@ For easier usage, the CLI automatically looks at the files \verb|~/private/.dide
 %
 If this file exists, then the CLI will automatically log you in, and no credentials need to be explicitly provided to the CLI.
 %
-An important note is that your credentials file must have only "owner can read and write" permissions. To do this, run \verb|chmod 600 <credentials file>|.
+
+\begin{important}
+Your credentials file must have only "owner can read and write" permissions. 
 %
+You can  run \verb|chmod 600 <credentials file>| to set the appropriate permissions.
+\end{important}
+
+\begin{example}
 An example credential file is below.
 \begin{verbatim}
 MyUsername
 MyPassword
 \end{verbatim}
+\end{example}
 
-\begin{note}
-  The \verb|--username|/\verb|--password| or \verb|--credentials| arguments must be passed
-  to the CLI before the specific commands below!
+\begin{important}
+If you are using a custom path (rather than the default path) for your credentials file, or passing your username and password explicitly, then you will need supply these arguments as the first in the command.
+%
+Specifically, the
+%
+\verb|--username|/\verb|--password| or \verb|--credentials| 
+%
+arguments must be passed to the CLI as the first argument, before
+additional commands!
 
-  For example, this command is correct:
-  \begin{verbatim}
-    diderot_student --credentials Path/To/My/Creds list_courses
-  \end{verbatim}
+For example, this command is correct:
+\begin{verbatim}
+$ diderot_student --credentials Path/To/My/Creds list_courses
+\end{verbatim}
   
-  This command is incorrect:
-  \begin{verbatim}
-    diderot_student list_courses --credentials Path/To/My/Creds
-  \end{verbatim}
-\end{note}
+This command is incorrect:
+\begin{verbatim}
+$ diderot_student list_courses --credentials Path/To/My/Creds
+\end{verbatim}
+\end{important}
 
 \section{Student Interface}
 
@@ -91,7 +104,7 @@ It accepts 0 arguments.
 
 Example Usage:
 \begin{verbatim}
-  diderot_student list_courses
+$ diderot_student list_courses
 \end{verbatim}
 
 \subsection{list\_assignments}
@@ -105,7 +118,7 @@ It accepts only 1 argument.
 
 Example Usage:
 \begin{verbatim}
-  diderot_student list_assignments courselabel
+$  diderot_student list_assignments courselabel
 \end{verbatim}
 
 \subsection{download\_assignment}
@@ -123,7 +136,7 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-  diderot_student download_assignment courselabel homeworkname
+$  diderot_student download_assignment courselabel homeworkname
 \end{verbatim}
 
 \subsection{submit\_assignment}
@@ -143,7 +156,7 @@ It accepts 3 arguments.
 
 Example Usage:
 \begin{verbatim}
-  diderot_student submit_assignment courselabel homeworkname ~/Path/To/My/Handin
+$  diderot_student submit_assignment courselabel homeworkname ~/Path/To/My/Handin
 \end{verbatim}
 
 \section{Admin Interface}
@@ -184,8 +197,8 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-  diderot_admin list_books courselabel
-  diderot_admin list_books --all
+$  diderot_admin list_books courselabel
+$  diderot_admin list_books --all
 \end{verbatim}
 
 \subsection{list\_parts}
@@ -200,7 +213,7 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-  diderot_admin list_parts courselabel booklabel
+$  diderot_admin list_parts courselabel booklabel
 \end{verbatim}
 
 \subsection{list\_chapters}
@@ -215,7 +228,7 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-  diderot_admin list_chapters courselabel booklabel
+$  diderot_admin list_chapters courselabel booklabel
 \end{verbatim}
 
 \subsection{create\_part}
@@ -234,8 +247,7 @@ The command will error out if there already exists a part within the book with t
 
 Example Usage:
 \begin{verbatim}
-  diderot_admin create_part courselabel booklabel title number --label newlabel
-\end{verbatim}
+$ diderot_admin create_part courselabel booklabel title number --label nnew-labelend{verbatim}
 
 
 \subsection{create\_chapter}
@@ -255,7 +267,7 @@ The command will error out if there already exists a chapter within the book wit
 
 Example Usage:
 \begin{verbatim}
-  diderot_admin create_chapter courselabel booklabel --part partnum \
+$ diderot_admin create_chapter courselabel booklabel --part partnum \
   --number newnum --title newtitle --label newlabel
 \end{verbatim}
 
@@ -282,13 +294,13 @@ It accepts quite a few arguments and combinations.
 
 Example Usage:
 \begin{verbatim}
-  diderot_admin upload_content courselabel bookname chapternumber \
+$ diderot_admin upload_content courselabel bookname chapternumber \
   --pdf Path/to/Pdf --video_url someurl
 
-  diderot_admin upload_content courselabel bookname chapternumber \
+$ diderot_admin upload_content courselabel bookname chapternumber \
   --slides Path/to/slides --video_url someurl
 
-  diderot_admin upload_content courselabel bookname chapternumber \
+$ diderot_admin upload_content courselabel bookname chapternumber \
   --xml Path/to/Xml --xml_pdf Path/To/XmlPdf \
   --attach Path/To/File Path/To/Folder/ Path/With/Glob/*
 \end{verbatim}
@@ -310,7 +322,7 @@ It accepts 6 arguments.
 
 Example Usage:
 \begin{verbatim}
-  didetot_admin update_assignment courselabel homeworkname \
+$ didetot_admin update_assignment courselabel homeworkname \
   --autograde-tar Path/To/Tar \
   --autograde-makefile Path/To/Makefile \
   --writeup Path/To/Writeup --handout Path/To/Handout
