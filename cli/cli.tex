@@ -177,7 +177,7 @@ some commands relating to manipulation of books and assignments.
   \item \verb|create_chapter|: Create a chapter in a given part of a
     book. Optionally specify the new chapter's label and or title. If
     not, these values are filled in with a default.
-
+  \item \verb|{release/unrelease}_chapter|: Release or unrelease an existing chapter.
   \item \verb|upload_chapter|: Update the content of an existing
     chapter. Upload either a standalone pdf, pdf of a slideshow, or an
     xml document and image attachments.  The image upload accepts
@@ -252,7 +252,7 @@ The command will error out if there already exists a part within the book with t
 
 Example Usage:
 \begin{verbatim}
-$ diderot_admin create_part courselabel booklabel title number --label nnew-label
+$ diderot_admin create_part courselabel booklabel title number --label new-label
 \end{verbatim}
 
 
@@ -275,6 +275,23 @@ Example Usage:
 \begin{verbatim}
 $ diderot_admin create_chapter courselabel booklabel --part partnum \
   --number newnum --title newtitle --label newlabel
+\end{verbatim}
+
+\subsection{release/unrelease\_chapter}
+
+\verb|release_chapter| and \verb|unrelease_chapter| are used to release or unrelease a chapter. They each accept 3 arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label to release a chapter in. 
+  \item \verb|book|: Book label to release a chapter in.
+
+  \item \verb|--chapter_number| or \verb|--chapter_label|: Use one of these arguments to specify which chapter to release. Use either the chapter's number within the book, or its label.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+$ diderot_admin release_chapter courselabel booklabel --chapter_label chapterlabel
+$ diderot_admin unrelease_chapter courselabel booklabel --chapter_label chapterlabel
 \end{verbatim}
 
 \subsection{upload\_chapter}
