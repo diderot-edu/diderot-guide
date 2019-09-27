@@ -9,10 +9,10 @@ Interactive books, however, do raise a number of issues that are not straightfor
 Another difficulty is the complexities of translating LaTeX/Markdown sources (especially LaTeX) to be online friendly.
 
 %
-For ease of use, we therefore strongly recommend the authors to follow certain ``best practices.''
+Fortunately, Diderot offers an array of tools to deal with this complexity.
 %
 In this chapter, we first describe the basic concepts of publishing on
-Diderot and then describe the structure of a Diderot ``book'' and a ``booklet'' and our recommendations for organizing these.
+Diderot and then describe the structure of a Diderot ``book'' and a ``booklet'' and our recommendations for organizing these and creating content.
 %
 For brevity, we consider LaTeX sources here, but the practices generalize to Markdown sources.
 \end{gram}
@@ -102,18 +102,34 @@ In the case of a complete rewrite, Diderot would ideally allow the student to be
 \end{example}
 
 
-\begin{gram}[Releasing Content is One Way]
-These challenges are not insurmountable but dealing with them in the ``right way'' requires the development of a rather complex infrastructure to resolve the conflicts created by live updates.
+\begin{gram}[Releasing Content]
+These challenges are not that hard to overcome but, at this time, we have decided to proceed with a simplifying principle: a chapter will not undergo major updates after it is released, but smaller updates, e.g., typo fixes, addition of some text, etc could be common. 
 %
-At this time, we have therefore decided to proceed with this
-principle: a chapter will not be updated after it is released.
-%
+Diderot, however, does not allow deletion of an entire atom, e.g., a definition, a theorem, etc, though a deletion can be simulated by editing the content of that atom.
+\end{gram}
 
-Specifically, Diderot  refuses to live update a (released) chapter if it \emph{``deletes live blocks''}, which means that proceeding with the update deletes a block (an atom, a group, or a section), which has been released to the users.
-%
+\begin{gram}[Using Diderot Latex Files for Live Updates]
+\label{grm:publisg::diderot-atomic}
+When you use the Diderot compiler, \lstinline`dc`, in addition to an XML file, it will also generate a \defn{Diderot LateX} file.  For example, if you run 
 
+\lstinline`$ make main.xml`
+
+the compiler will generate the XML file for your source \lstinline`main.tex` and also the file 
+
+\lstinline`diderot_main.tex`
+
+This file is ``fully atomized'' or \defn{atomic} in the sense that the contents has been partitioned into  blocks, representative units of Diderot.
 %
-There is an important exception to this rule: ``fully labeled sources''.
+Other than explicit marking of atom boundries, the atomic file has the same content as the original \lstinline`main.tex`
+%
+and can be used to perform live updates. In particular you can edit the atomic file as you prefer as long as you don't change any of the existing labels and don't delete atoms or sections.  You can add new sections and atoms as long as you assign them labels.
+ 
+\end{gram}
+
+
+\begin{note}[Atomic Sources]
+%
+The atomic file that the Diderot compiler generates is a special instance of a a ``fully labeled source file''.
 %
 Diderot makes the decision on whether a live update should proceed or not by an identification system that it uses to give a unique label to each block.
 %
@@ -125,7 +141,7 @@ Please proceed to read
 %
 \href{sec:publish::full-labeling}{the next section}
 %
-to learn more about this approach and an experimental tool that can help generate labels.
+to learn more about this approach and a Diderot tool that can help generate labels.
 \end{gram}
 
 
@@ -135,11 +151,11 @@ The best practice for publishing content on Diderot is to publish it
 \item in unreleased form first, 
 \item inspect the material,
 \item ideally, have your fellow co-instructor and TAs give you feedback (Diderot allows sending feedback on unreleased content), and 
-\item update the content according to feedback, and then release it. 
+\item update the content according to feedback, and release it.
+\item Immediately after the release, save the LaTeX file (and its \lstinline`dc`-generated atomic version if desired) for live updates and error corrections.
 \end{itemize}
 
-We have designed this process to facilitate easy updates for unreleased content.  Course staff may give feedback on unreleased chapters, and upon updates, such feedback will be deleted, eliminating thus otherwise inconsistent feedback from released chapters.
-%
+This process aims to facilitate easy updates for unreleased content and reasonably easy updates for released content. 
 \end{gram}
 
 \begin{gram}[Live Update]
@@ -148,9 +164,31 @@ Mistakes do happen and there are several ways to fix errors in released chapters
 If your sources are
 \href{sec:publish::full-labeling}{fully labeled, live updates are generally feasible}.
 %
-If your sources are not fully labeled, then the following options are available. 
+If your sources are not fully labeled, then you can use your
+%
+\href{grm:publisg::diderot-atomic}{Diderot atomic file}
+%
+generated by the compiler to make updates.
+%
+In the unlikely even that you have not stored that file, you may find a copy of it in the temporary directory supplied to the compiled.  The file will look like this \lstinline`Diderot_main_UUID.tex` where the string \lstinline`UUID` is replaced by a UUID string and \lstinline`main` is the name of the original file.
+%
+
+In the very unlikely event nearly all has been lost, there are still several ways to make live updates.
 
 \begin{itemize}
+\item \textbf{Regenarate the Atomic File:} Atomic file generation is
+  deterministic.  That is the same content will generate the same
+  atomic file.  Thus, if you have the LaTeX source that you wish to
+  update (that is the file before you start making your changes), you
+  can run the Diderot compiler again to regenarate the atomic file.
+  After you have the atomic file, you may proceed to make your changes
+  as you prefer see
+%
+ \href{grm:publisg::diderot-atomic}{Diderot atomic  file} 
+%
+for more details.
+%
+
 \item \textbf{Unreleasing:}
 In some circumstances, you can simply \defn{unrelease} a chapter, effectively pulling it from user's view (excepting your course staff).
 %
@@ -227,7 +265,7 @@ This is the basic idea \href{sec:publish::full-labeling}{behind the full-labelin
 \label{sec:publish::full-labeling}
 
 \begin{gram}
-If you use LaTeX, then there is a way to write your sources to unlock live updates.
+If you use LaTeX, then there is a way to write your sources to unlock live updates and enable ``continuous publishing''.
 %
 The idea is to atomize your chapter fully by making sure that each piece of text is inside of an atom and giving each section, group, and atom a unique label.
 %
@@ -238,7 +276,7 @@ The labels given should not be changed between live updates, but could be change
 
 \begin{example}[An Fully Labeled Assignment]
 
-Here is a fully labeled assignment.  Note that the chapter, all sections, and all atoms have labels.  When assigning labels, note that they must be unique within the book; it is therefore good practice to prefix them with chapter label.
+Here is a fully labeled, or \defn{atomic}, assignment.  Note that the chapter, all sections, and all atoms have labels.  When assigning labels, note that they must be unique within the book; it is therefore good practice to prefix them with chapter label.
 %
 
 \begin{lstlisting}
@@ -283,9 +321,10 @@ Prove that if P = NP, then life is good.
 \begin{important}
 The full labeling approach is usually feasible for small texts such as assignments but tends to be too labor intensive for larger text such as book chapters.
 %
-We have a compilation tool that can automatically label chapters for you but this tool is currently in experimental stage.
+The Diderot compiler \lstinline`dc` can  automatically label chapters for you.  Simply run the compiler to generate the xml and it will give generate an atomic version your source for you, see
+ \href{grm:publisg::diderot-atomic}{Diderot atomic  file} 
 %
-If you are interested in experimenting with it \href{mailto:umut@cs.cmu.edu}{please contact Umut}.
+for more details.
 \end{important}
 
 Labeling all blocks in a chapter allows Diderot to match them when you want to update a released section: blocks with the same label are matched and the online content is updated with the new one.
