@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 SEP 2019 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  4 OCT 2019 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -588,7 +588,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'diderotfig' with sig. 'o' on line 40.
+. Defining environment 'diderotfig' with sig. 'o' on line 37.
 .................................................
 \c@theorem=\count174
 \c@definition=\count175
@@ -597,32 +597,32 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'flex' with sig. 'o' on line 163.
+. Defining environment 'flex' with sig. 'o' on line 160.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'answer' with sig. 'o' on line 178.
+. Defining environment 'answer' with sig. 'o' on line 175.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'gram' with sig. 'o' on line 188.
+. Defining environment 'gram' with sig. 'o' on line 185.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'preamble' with sig. 'o' on line 227.
+. Defining environment 'preamble' with sig. 'o' on line 224.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'proposition' with sig. 'o' on line 247.
+. Defining environment 'proposition' with sig. 'o' on line 244.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-environment"
 . 
-. Defining environment 'question' with sig. 'o' on line 256.
+. Defining environment 'question' with sig. 'o' on line 253.
 .................................................
 ) (./templates/preamble.tex
 \c@remark=\count178
@@ -946,10 +946,10 @@ e3.jpg used on input line 182.
  [24 <./graph-contraction/media-introduction/contract-example3.jpg>]
 
 LaTeX Warning: Hyper reference `ch:design::contraction' on page 25 undefined on
- input line 231.
+ input line 227.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--288
+Underfull \hbox (badness 10000) in paragraph at lines 281--284
 
  []
 
@@ -961,7 +961,7 @@ File: ./graph-contraction/media-introduction/contract-example5.jpg Graphic file
 
 <use ./graph-contraction/media-introduction/contract-example5.jpg>
 Package pdftex.def Info: ./graph-contraction/media-introduction/contract-exampl
-e5.jpg used on input line 306.
+e5.jpg used on input line 302.
 (pdftex.def)             Requested size: 361.34999pt x 83.04062pt.
 
 <./graph-contraction/media-introduction/graph-contraction-example-1.jpg, id=375
@@ -971,7 +971,7 @@ aphic file (type jpg)
 
 <use ./graph-contraction/media-introduction/graph-contraction-example-1.jpg>
 Package pdftex.def Info: ./graph-contraction/media-introduction/graph-contracti
-on-example-1.jpg used on input line 311.
+on-example-1.jpg used on input line 307.
 (pdftex.def)             Requested size: 289.07999pt x 187.6427pt.
 
 [26 <./graph-contraction/media-introduction/contract-example5.jpg> <./graph-con
@@ -1205,13 +1205,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19162 strings out of 492995
- 325371 string characters out of 6132704
- 416902 words of memory out of 5000000
- 22162 multiletter control sequences out of 15000+600000
+ 19161 strings out of 492995
+ 325363 string characters out of 6132704
+ 417896 words of memory out of 5000000
+ 22161 multiletter control sequences out of 15000+600000
  33806 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,16n,37p,10390b,616s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,16n,37p,10390b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
@@ -1233,7 +1233,7 @@ s/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
 alatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino
 /uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri8
 a.pfb>
-Output written on book.pdf (53 pages, 1194733 bytes).
+Output written on book.pdf (53 pages, 1194719 bytes).
 PDF statistics:
  698 PDF objects out of 1000 (max. 8388607)
  602 compressed objects within 7 object streams

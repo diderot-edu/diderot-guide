@@ -57,7 +57,7 @@ sec:dc::overview
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::diderot
+grp:grm:dc::diderot
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -147,7 +147,7 @@ and slide decks for upload.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::review
+grp:grm:dc::review
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -220,7 +220,7 @@ In \href{ch:publish}{the next chapter}, we discuss some important points about h
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::sources-and-contributions
+grp:imp:dc::sources-and-contributions
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -255,13 +255,18 @@ imp:dc::sources-and-contributions
 <field name='body'>
 <![CDATA[
 <p>To go through the examples in this chapter, please clone <a href="https://github.com/diderot-edu/diderot-guide">this github repository</a> and follow the instructions in <code>INSTALL.md</code>.</p>
+<p>This guide is public and it source are available <a href="https://github.com/diderot-edu/diderot-guide">in this repo</a>. Please send feeback by <a href="https://github.com/diderot-edu/diderot-guide/issues">opening an issue</a>.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
 To go through the examples in this chapter, please clone 
 \href{https://github.com/diderot-edu/diderot-guide}{this github repository}
-and follow the instructions in \lstinline`INSTALL.md`.
+and follow the instructions in \lstinline`INSTALL.md`. 
+
+This guide is public and it source are available 
+\href{https://github.com/diderot-edu/diderot-guide}{in this repo}.
+Please send feeback by \href{https://github.com/diderot-edu/diderot-guide/issues}{opening an issue}.
 ]]>
 </field> <!-- body_src -->
 
@@ -318,7 +323,7 @@ sec:dc::typesetting-with-latex
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::compatible
+grp:grm:dc::compatible
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -393,7 +398,7 @@ compile your LaTeX sources to XML.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::books-and-booklets
+grp:def:dc::books-and-booklets
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -477,7 +482,7 @@ A Diderot \defn{booklet} is a collection of chapters.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::folders
+grp:xmpl:dc::folders
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -571,7 +576,7 @@ sec:dc::books-chapters-and-sections
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::requires
+grp:grm:dc::requires
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -643,7 +648,7 @@ DC requires a book (or booklet) to be organized into chapters, each of which the
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::sections
+grp:xmpl:dc::sections
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -791,7 +796,7 @@ sec:mtl::atoms
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::atom
+grp:def:dc::atom
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -925,7 +930,7 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::figure-and-table-atoms
+grp:imp:dc::figure-and-table-atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1009,7 +1014,7 @@ In addition to the atoms above, Diderot also supports \lstinline`figure` and \ls
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::nesting-of-atoms
+grp:imp:dc::nesting-of-atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1098,7 +1103,7 @@ But it is wrong, because it includes an atom inside of a LaTeX environment.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::authors
+grp:nt:dc::authors
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1171,7 +1176,7 @@ In the mean time, you can request new atoms  (please send feedback here).
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::atoms
+grp:imp:dc::atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1271,7 +1276,7 @@ The following is a definition atom, because it is single standing.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::contain
+grp:nt:dc::atoms
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1363,7 +1368,7 @@ Paragraph 2
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::nesting
+grp:imp:dc::nesting
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1457,7 +1462,7 @@ sec:dc::controlling-granularity
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::create
+grp:grm:dc::create
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1541,7 +1546,7 @@ This if and only of if that.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::usually
+grp:grm:dc::usually
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1676,7 +1681,7 @@ sec:mtl::groups
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::group
+grp:def:dc::group
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1787,7 +1792,7 @@ Simple example 2
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::turned
+grp:nt:dc::turned
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -1862,7 +1867,7 @@ at the bottom left to open the `flex` and click again to close it.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::a-definition
+grp:def:a
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2059,7 +2064,7 @@ sec:dc::labels-refs
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::uses
+grp:grm:dc::uses
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2135,7 +2140,7 @@ the chapter.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::recommend
+grp:xmpl:dc::recommend
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2266,7 +2271,7 @@ Here is another paragraph atom, consisting of two environments:
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::references
+grp:grm:dc::references
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2348,7 +2353,7 @@ DC replaces the former with \lstinline`\hyperref[][]` command so that we can get
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::generates
+grp:grm:dc::generates
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2505,7 +2510,7 @@ sec:mtl::code
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::lstlisting
+grp:grm:dc::lstlisting
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2580,7 +2585,7 @@ If you need a custom language, you can probably write one with a bit of effort b
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::python-code
+grp:xmpl:dc::python-code
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2731,7 +2736,7 @@ def is_even (i):
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::code-in-c-dialect
+grp:xmpl:dc::code-in-c-dialect
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2841,7 +2846,7 @@ sec:dc::images
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::include
+grp:grm:dc::include
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2915,7 +2920,7 @@ When including images, there are two points to be careful about: naming and sizi
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::naming
+grp:grm:dc::naming
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2991,7 +2996,7 @@ as the same .
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::sizing
+grp:grm:dc::sizing
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3078,7 +3083,7 @@ When specifying the width, it is important to always include the fraction.  For 
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::output
+grp:nt:dc::output
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3151,7 +3156,7 @@ But this is not meaningful for HTML output, and will not work as expected.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::scale-is-not-supported
+grp:imp:dc::scale-is-not-supported
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3230,7 +3235,7 @@ This means that the image should be shown at 50\% of its actual dimensions.  Thi
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::uploading-images
+grp:grm:dc::uploading-images
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3326,7 +3331,7 @@ sec:dc::typesetting-mathematics
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::mathjax
+grp:grm:dc::mathjax
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3365,16 +3370,6 @@ grm:dc::mathjax
 <li><p>Once you switch to math, try to stay in math. You can switch to text mode using <code>\mbox</code> but if you use macros inside the <code>mbox</code>, then they might not work (because mathjax doesn’t know about your macros). For example, the following won’t work.</p>
 <pre><code>$\lstinline`xyz`$  </code></pre></li>
 <li><p>The "tabular" environment does not work in MathJax. Use "array" instead.</p></li>
-<li><p>The environment</p>
-<pre><code>\begin{alignat}   
-...   
-\end{alignat}  </code></pre>
-<p>should be wrapped with <code>\htmlmath</code>, e.g.,</p>
-<pre><code>\htmlmath{  
-\begin{alignat}   
-...   
-\end{alignat}  
-}  </code></pre></li>
 </ul>
 ]]>
 </field> <!-- body -->
@@ -3388,21 +3383,6 @@ $\lstinline`xyz`$
 \end{lstlisting}
 
 \item The "tabular" environment does not work in MathJax.  Use "array" instead.
-
-\item  The environment 
-\begin{lstlisting}
-\begin{alignat} 
-... 
-\end{alignat}
-\end{lstlisting}
-should be wrapped with \lstinline`\htmlmath`, e.g.,
-\begin{lstlisting}
-\htmlmath{
-\begin{alignat} 
-... 
-\end{alignat}
-}
-\end{lstlisting} 
 \end{itemize}
 ]]>
 </field> <!-- body_src -->
@@ -3460,7 +3440,7 @@ sec:dc::indexing
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::near
+grp:grm:dc::near
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3630,7 +3610,7 @@ sec:dc::colors
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::colors
+grp:grm:dc::colors
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3730,7 +3710,7 @@ sec:dc::embedding-videos
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::embed
+grp:grm:dc::embed
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3807,7 +3787,7 @@ Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::video-embedding
+grp:xmpl:dc::video-embedding
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3911,7 +3891,7 @@ sec:dc::file-attachments
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::attach
+grp:grm:dc::attach
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -3984,7 +3964,7 @@ When uploading your chapter, simply include the file \lstinline{name.ext} in you
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::file-attachment
+grp:xmpl:dc::file-attachment
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4063,7 +4043,7 @@ Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guid
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::uniqueness-of-attachments
+grp:imp:dc::uniqueness-of-attachments
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4163,7 +4143,7 @@ sec:mtl::limitations
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::latex
+grp:grm:dc::latex
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4205,8 +4185,8 @@ grm:dc::latex
 <li><p>Each chapter must have a unique label.</p></li>
 <li><p>Fancy packages are not supported. Stick to basic latex and AMS Math packages.</p></li>
 <li><p>Support for tabular environment is limited: borders will not show and columns will be centered. You can use the array (math/mathjax) as a substitute, and use <code>\mbox</code> for text fields.</p></li>
-<li><p>You can use <code>itemize</code> and <code>enumerate</code> in their basic form. Changing the label format with <code>enumitem</code> package and similar packages do not work. You can imitate these by using heading for your items.</p></li>
-<li><p>Labeling and references are limited to chapters, sections, and atoms. You can label these and refer to them, but you cannot label codelines, items in lists, etc.</p></li>
+<li><p>You can use <code>itemize</code>, <code>enumerate</code>, and <code>description</code> environments in their basic form. Changing the label format with <code>enumitem</code> package and similar packages do not work. You can imitate these by using heading for your items.</p></li>
+<li><p>Labeling and references are limited to chapters, sections, and atoms. You can label these and refer to them. Labels in other latex environments such as, items in lists, code lines, and equations are not supported.</p></li>
 </ul>
 ]]>
 </field> <!-- body -->
@@ -4229,9 +4209,9 @@ Here is a list of known limitations.
 
 \item Support for tabular environment is limited: borders will not show and columns will be centered.  You can use the array (math/mathjax) as a substitute, and  use \lstinline`\mbox` for text fields.  
  
-\item You can use \lstinline`itemize` and \lstinline`enumerate` in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
+\item You can use \lstinline`itemize`, \lstinline`enumerate`, and \lstinline`description` environments in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
 
-\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them, but you cannot label codelines, items in lists, etc.
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them.  Labels in other latex environments such as, items in lists, code lines, and equations are not supported.
 
 \end{itemize}
 ]]>
@@ -4266,7 +4246,7 @@ Here is a list of known limitations.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::limitations
+grp:rmrk:dc::limitations
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4365,7 +4345,7 @@ sec:dc::typesetting-with-markdown
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::basic
+grp:grm:dc::basic
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4437,7 +4417,7 @@ DC has basic support for Markdown to XML translation.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::header
+grp:grm:dc::header
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4536,7 +4516,7 @@ Frontmatter
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::special-symbols-and-html-code
+grp:imp:dc::special-symbols-and-html-code
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4633,7 +4613,7 @@ Here is an example html tag `<table>`
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::chapter-titles
+grp:imp:dc::chapter-titles
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4728,7 +4708,7 @@ sec:dc::chapters-and-sections
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::support
+grp:grm:dc::support
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4844,7 +4824,7 @@ sec:dc::md::code
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::usual
+grp:grm:dc::usual
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4916,7 +4896,7 @@ Usual Markdown conventions apply.  You can include inline code by using the back
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::html
+grp:xmpl:dc::html
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5054,7 +5034,7 @@ sec:dc::typesetting
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::delimiters
+grp:grm:dc::delimiters
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5151,7 +5131,7 @@ sec:dc::include
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::jpeg
+grp:grm:dc::jpeg
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5304,7 +5284,7 @@ sec:dc::limitations
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::markdown
+grp:grm:dc::markdown
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5443,7 +5423,7 @@ sec:dc::compiling-markdown-to-xml
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::guide
+grp:grm:dc::guide
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5515,7 +5495,7 @@ The guide includes a very simple markdown document\lstinline`markdown/example.md
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::making-xml
+grp:grm:dc::making-xml
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5597,7 +5577,7 @@ $ make verbose=true markdown/example.xml
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::using-dc-directly
+grp:grm:dc::using-dc-directly
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5675,7 +5655,7 @@ $ dc markdown/example.md
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::the-debugger
+grp:grm:dc::the-debugger
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5779,7 +5759,7 @@ sec:dc::internals
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::using
+grp:grm:dc::using
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5854,7 +5834,7 @@ The current implementation works with \href{https://www.pandoc.org}{pandoc}, tho
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::receive
+grp:grm:dc::receive
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5947,7 +5927,7 @@ Basically the same workflow applies to Markdown inputs.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:dc::need
+grp:grm:dc::need
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
