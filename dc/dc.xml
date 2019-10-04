@@ -915,7 +915,7 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 
 </segment> <!-- cluster -->
 
-<segment name='cluster'>
+<segment name='flex'>
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
@@ -967,7 +967,7 @@ imp:dc::figure-and-table-atoms
 <p>In addition to the atoms above, Diderot also supports <code>figure</code> and <code>table</code> atoms, which have slightly different syntax:</p>
 <pre><code>\begin{&lt;atom&gt;}[Optional title]  
 &lt;atom body&gt;  
-\diderotcaption{Caption}  
+\caption{Caption}  
 \label{atom-label} % optional but recommended label  
 \end{&lt;atom&gt;}  </code></pre>
 ]]>
@@ -997,7 +997,152 @@ In addition to the atoms above, Diderot also supports \lstinline`figure` and \ls
 </field> <!-- caption_src -->
 </atom> <!-- important -->
 
-</segment> <!-- cluster -->
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+xmpl:dc::latex
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The following LaTeX code for a table atom generates the atom shown below.</p>
+<pre><code>\begin{table}  
+\label{tbl:dc::motor-efficiency}  
+\begin{tabular}{cc}  
+Type of Motor &amp; Efficiency  
+\\  
+Internal combustion &amp; \%20  
+\\  
+Electric &amp; \%90  
+\end{tabular}  
+\caption{Energy efficiency of different kinds of motors}  
+\end{table}  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The following LaTeX code for a table atom generates the atom shown below.
+
+\begin{lstlisting}
+\begin{table}
+\label{tbl:dc::motor-efficiency}
+\begin{tabular}{cc}
+Type of Motor & Efficiency
+\\
+Internal combustion & \%20
+\\
+Electric & \%90
+\end{tabular}
+\caption{Energy efficiency of different kinds of motors}
+\end{table}
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+<atom name='table'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+tbl:dc::motor-efficiency
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Type of Motor</td>
+<td style="text-align: center;">Efficiency</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Internal combustion</td>
+<td style="text-align: center;">%20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Electric</td>
+<td style="text-align: center;">%90</td>
+</tr>
+</tbody>
+</table>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+\label{tbl:dc::motor-efficiency}
+\begin{tabular}{cc}
+Type of Motor & Efficiency
+\\
+Internal combustion & \%20
+\\
+Electric & \%90
+\end{tabular}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+<p>Energy efficiency of different kinds of motors</p>
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+Energy efficiency of different kinds of motors
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- table -->
+
+</segment> <!-- flex -->
 
 <segment name='cluster'>
 <field name='point_value'>

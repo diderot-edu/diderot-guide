@@ -189,6 +189,8 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 
 \end{definition}
 
+\begin{flex}
+
 \begin{important}[Figure and Table Atoms]
 In addition to the atoms above, Diderot also supports \lstinline`figure` and \lstinline`table` atoms, which have slightly different syntax:
 \begin{lstlisting}
@@ -199,6 +201,39 @@ In addition to the atoms above, Diderot also supports \lstinline`figure` and \ls
 \end{<atom>}
 \end{lstlisting}
 \end{important}
+
+
+\begin{example}
+The following LaTeX code for a table atom generates the atom shown below.
+
+\begin{lstlisting}
+\begin{table}
+\label{tbl:dc::motor-efficiency}
+\begin{tabular}{cc}
+Type of Motor & Efficiency
+\\
+Internal combustion & \%20
+\\
+Electric & \%90
+\end{tabular}
+\caption{Energy efficiency of different kinds of motors}
+\end{table}
+\end{lstlisting}
+
+\end{example}
+
+\begin{table}
+\label{tbl:dc::motor-efficiency}
+\begin{tabular}{cc}
+Type of Motor & Efficiency
+\\
+Internal combustion & \%20
+\\
+Electric & \%90
+\end{tabular}
+\caption{Energy efficiency of different kinds of motors}
+\end{table}
+\end{flex}
 
 \begin{important}[Nesting of Atoms]
 An atom cannot be nested inside another atom and an atom cannot be nested inside a LaTeX environment. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
