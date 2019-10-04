@@ -927,38 +927,38 @@ dc -d input.md -o output.xml
 \end{lstlisting}
 \end{gram}
 
-\section{Internals}
-\label{sec:dc::internals}
+%% \section{Internals}
+%% \label{sec:dc::internals}
 
-When using DC, a high-level understanding of the DC's internal could help.
-%
-DC works by splitting the LaTeX or Markdown document into atoms, which it treats as units.
-%
-It uses a Latex to HTML/XML or Latex to HTML/XML compiler to translate each atom and stitches the outputs back to construct the XML for the document.
-%
-The current implementation works with \href{https://www.pandoc.org}{pandoc}, though other compilers such as \href{https://dlmf.nist.gov/LaTeXML/}{LaTeXML} were also used at some point in the past.
+%% When using DC, a high-level understanding of the DC's internal could help.
+%% %
+%% DC works by splitting the LaTeX or Markdown document into atoms, which it treats as units.
+%% %
+%% It uses a Latex to HTML/XML or Latex to HTML/XML compiler to translate each atom and stitches the outputs back to construct the XML for the document.
+%% %
+%% The current implementation works with \href{https://www.pandoc.org}{pandoc}, though other compilers such as \href{https://dlmf.nist.gov/LaTeXML/}{LaTeXML} were also used at some point in the past.
 
-When you receive an error, it will likely look like this:
-\begin{lstlisting}
-*latex_file_to_html: Executing command: pandoc --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html
-Error in html translation.
-Command exited with code: 65
-Now exiting.make: *** [dc/dc.xml] Error 65
-\end{lstlisting} 
-% 
-The error occurred when compiling atom \# 67, which is stored in the file \lstinline`/tmp/67.tex`.
-%
-To understand the error you can open this file.  The file is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
-%
-You can ask \lstinline`pandoc` to generate a standalone html, by passing the \lstinline`-s` flag, so that you can open the result and examine how it looks rrin your browser.
-%
-\begin{lstlisting}
-pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -s -o /tmp/67.html
-\end{lstlisting}
-%
-Once you figure out what the problem is what remains is to update your main document and proceed.
-%
-Basically the same workflow applies to Markdown inputs.
+%% When you receive an error, it will likely look like this:
+%% \begin{lstlisting}
+%% *latex_file_to_html: Executing command: pandoc --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -o /tmp/67.html
+%% Error in html translation.
+%% Command exited with code: 65
+%% Now exiting.make: *** [dc/dc.xml] Error 65
+%% \end{lstlisting} 
+%% % 
+%% The error occurred when compiling atom \# 67, which is stored in the file \lstinline`/tmp/67.tex`.
+%% %
+%% To understand the error you can open this file.  The file is a complete LaTeX file and you can edit it and run \lstinline`pandoc` on it, possible with the flag \lstinline`--verbose`, which will likely be helpful.
+%% %
+%% You can ask \lstinline`pandoc` to generate a standalone html, by passing the \lstinline`-s` flag, so that you can open the result and examine how it looks rrin your browser.
+%% %
+%% \begin{lstlisting}
+%% pandoc --verbose --mathjax --lua-filter ./meta/codeblock.lua --lua-filter ./meta/span.lua /tmp/67.tex -s -o /tmp/67.html
+%% \end{lstlisting}
+%% %
+%% Once you figure out what the problem is what remains is to update your main document and proceed.
+%% %
+%% Basically the same workflow applies to Markdown inputs.
 
 
-This is all you need to start withe.  Enjoy Diderot!
+%% This is all you need to start withe.  Enjoy Diderot!
