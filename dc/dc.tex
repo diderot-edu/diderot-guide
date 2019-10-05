@@ -435,7 +435,9 @@ To reference a label you can either use
 \item \lstinline`\ref{label}`.
 \end{itemize}
 %
-DC replaces the former with \lstinline`\hyperref[][]` command so that we can get proper linked refs is latex/ pdf.
+Note that the latter is compatible with PDF generation, whereas the former is not handled by \lstinline`pdflatex` as we would hope (generate a reference to the section).
+
+Note that you can use \lstinline`\href{url}{ref text}` to generate a link to a url.
 \end{gram}
 
 DC generates a unique label for each atom, group, and section, in a document.

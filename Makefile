@@ -99,18 +99,24 @@ guide:
 
 staff: book staff/staff.tex
 	$(PDFLATEX) --jobname="staff" '\includeonly{staff/staff} \input{book}'
-
+	cp staff.pdf staff/
 dc: book dc/dc.tex
 	$(PDFLATEX) --jobname="dc" '\includeonly{dc/dc} \input{book}'
-
+	cp dc.pdf dc/
 cli: book cli/cli.tex
 	$(PDFLATEX) --jobname="cli" '\includeonly{cli/cli} \input{book}'
-
+	cp cli.pdf cli/
 publish: book publish/publish.tex
 	$(PDFLATEX) --jobname="publish" '\includeonly{publish/publish} \input{book}'
+	cp publish.pdf publish/
 
 student: book student/student.tex
 	$(PDFLATEX) --jobname="student" '\includeonly{student/student} \input{book}'
+	cp student.pdf student/
+
+all-pdf: staff dc cli publish
+
+all-xml: staff/staff.xml dc/dc.xml cli/cli.xml publish/publish.xml
 
 ######################################################################
 ## END: PDFs

@@ -2367,7 +2367,8 @@ grm:dc::references
 <li><p><code>\href{label}{ref text}</code></p></li>
 <li><p><code>\ref{label}</code>.</p></li>
 </ul>
-<p>DC replaces the former with <code>\hyperref[][]</code> command so that we can get proper linked refs is latex/ pdf.</p>
+<p>Note that the latter is compatible with PDF generation, whereas the former is not handled by <code>pdflatex</code> as we would hope (generate a reference to the section).</p>
+<p>Note that you can use <code>\href{url}{ref text}</code> to generate a link to a url.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
@@ -2377,7 +2378,9 @@ To reference a label you can either use
 \item \lstinline`\href{label}{ref text}`
 \item \lstinline`\ref{label}`.
 \end{itemize}
-DC replaces the former with \lstinline`\hyperref[][]` command so that we can get proper linked refs is latex/ pdf.
+Note that the latter is compatible with PDF generation, whereas the former is not handled by \lstinline`pdflatex` as we would hope (generate a reference to the section).
+
+Note that you can use \lstinline`\href{url}{ref text}` to generate a link to a url.
 ]]>
 </field> <!-- body_src -->
 
