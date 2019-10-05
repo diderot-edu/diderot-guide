@@ -482,7 +482,7 @@ A Diderot \defn{booklet} is a collection of chapters.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:xmpl:dc::folders
+grp:xmpl:dc::https
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -506,7 +506,7 @@ grp:xmpl:dc::folders
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-xmpl:dc::folders
+xmpl:dc::https
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -516,12 +516,14 @@ xmpl:dc::folders
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>The folders <code>book</code> and <code>booklet</code> contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.</p>
+<p>In <a href="https://github.com/diderot-edu/diderot-guide">guide sources</a>, the folders <code>book</code> and <code>booklet</code> contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-The folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
+In
+\href{https://github.com/diderot-edu/diderot-guide}{guide sources},
+the folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
 ]]>
 </field> <!-- body_src -->
 
@@ -830,11 +832,11 @@ def:dc::atom
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>To increase interactivity, Diderot relies on atoms. Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph. In diderot, essentially all content must be inside of atoms. Like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.</p>
+<p>To increase interactivity, Diderot relies on atoms. Atoms are smallest unit of sections and can be included in any section (i.e., section, subsection, subsubsection, and paragraph). In diderot, essentially all content must be inside of atoms. Like any other LaTeX section, an atom cannot be included inside of a LaTeX environment.</p>
 <p>An <strong><em>atom</em></strong> is either</p>
 <ol>
 <li><p>a plain paragraph, or</p></li>
-<li><p>a single-standing section of the form</p>
+<li><p>a named block of text of the form</p>
 <pre><code>\begin{&lt;atom&gt;}[Optional title]  
 \label{atom-label} % optional but recommended label  
 &lt;atom body&gt;  
@@ -863,7 +865,7 @@ def:dc::atom
 <field name='body_src'>
 <![CDATA[
 To increase interactivity, Diderot relies on atoms.
-Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph.
+Atoms are smallest unit of sections and can be included in any section (i.e., section,  subsection, subsubsection, and paragraph).
 In diderot, essentially all content  must be inside of atoms.
 Like any other LaTeX section, an atom cannot be included inside of a
 LaTeX environment.
@@ -871,7 +873,7 @@ LaTeX environment.
 An \defn{atom} is either
 \begin{enumerate}
 \item a plain paragraph, or
-\item a single-standing section of the form
+\item a named block of text of the form
 
 \begin{lstlisting}
 \begin{<atom>}[Optional title]
@@ -1029,13 +1031,13 @@ xmpl:dc::latex
 <pre><code>\begin{table}  
 \label{tbl:dc::motor-efficiency}  
 \begin{tabular}{cc}  
-Type of Motor &amp; Efficiency  
+Type &amp; Efficiency  
 \\  
-Internal combustion &amp; \%20  
+Internal combustion Engine &amp; \%20  
 \\  
-Electric &amp; \%90  
+Electric Motor &amp; \%90  
 \end{tabular}  
-\caption{Energy efficiency of different kinds of motors}  
+\caption{Energy efficiency of internal-combustion engines are significantly lower than those of electric motors.}  
 \end{table}  </code></pre>
 ]]>
 </field> <!-- body -->
@@ -1047,13 +1049,13 @@ The following LaTeX code for a table atom generates the atom shown below.
 \begin{table}
 \label{tbl:dc::motor-efficiency}
 \begin{tabular}{cc}
-Type of Motor & Efficiency
+Type & Efficiency
 \\
-Internal combustion & \%20
+Internal combustion Engine & \%20
 \\
-Electric & \%90
+Electric Motor & \%90
 \end{tabular}
-\caption{Energy efficiency of different kinds of motors}
+\caption{Energy efficiency of internal-combustion engines are significantly lower than those of electric motors.}
 \end{table}
 \end{lstlisting}
 ]]>
@@ -1102,15 +1104,15 @@ tbl:dc::motor-efficiency
 <table>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Type of Motor</td>
+<td style="text-align: center;">Type</td>
 <td style="text-align: center;">Efficiency</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">Internal combustion</td>
+<td style="text-align: center;">Internal combustion Engine</td>
 <td style="text-align: center;">%20</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">Electric</td>
+<td style="text-align: center;">Electric Motor</td>
 <td style="text-align: center;">%90</td>
 </tr>
 </tbody>
@@ -1121,23 +1123,23 @@ tbl:dc::motor-efficiency
 <![CDATA[
 \label{tbl:dc::motor-efficiency}
 \begin{tabular}{cc}
-Type of Motor & Efficiency
+Type & Efficiency
 \\
-Internal combustion & \%20
+Internal combustion Engine & \%20
 \\
-Electric & \%90
+Electric Motor & \%90
 \end{tabular}
 ]]>
 </field> <!-- body_src -->
 
 <field name='caption'>
 <![CDATA[
-<p>Energy efficiency of different kinds of motors</p>
+<p>Energy efficiency of internal-combustion engines are significantly lower than those of electric motors.</p>
 ]]>
 </field> <!-- caption -->
 <field name='caption_src'>
 <![CDATA[
-Energy efficiency of different kinds of motors
+Energy efficiency of  internal-combustion engines are significantly lower than those of electric motors.
 ]]>
 </field> <!-- caption_src -->
 </atom> <!-- table -->
@@ -1193,7 +1195,7 @@ imp:dc::nesting-of-atoms
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>An atom cannot be nested inside another atom and an atom cannot be nested inside a LaTeX environment. This is similar to not being able to define a LaTeX section inside a LaTeX environment.</p>
+<p>A named atom cannot be nested inside another named atom. Similarly, a named atom cannot be nested inside a LaTeX environment.</p>
 <p>For example, the following is wrong:</p>
 <pre><code>\begin{itemize}  
 \item   
@@ -1205,7 +1207,8 @@ But it is wrong, because it includes an atom inside of a LaTeX environment.
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-An atom cannot be nested inside another atom and an atom cannot be nested inside a LaTeX environment. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
+A named atom cannot be nested inside another named atom.
+Similarly, a named atom cannot be nested inside a LaTeX environment.
 
 For example, the following is wrong:
 \begin{lstlisting}
@@ -1230,6 +1233,78 @@ But it is wrong, because it includes an atom inside of a LaTeX environment.
 ]]>
 </field> <!-- caption_src -->
 </atom> <!-- important -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:nt:dc::atom
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='note'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+nt:dc::atom
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>While an atom can be a paragraph, not every paragraph is an atom. Paragraphs only at the “top level”, not inside LaTeX environments are atoms.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+While an atom can be a paragraph, not every paragraph is an atom.  Paragraphs only at the ``top level'', not inside LaTeX environments are atoms.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- note -->
 
 </segment> <!-- cluster -->
 
@@ -1282,13 +1357,14 @@ nt:dc::authors
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>Authors can currently use only these atoms defined above. We are working on allowing authors to define their own atoms. In the mean time, you can request new atoms (please send feedback here).</p>
+<p>Authors can currently use only the atoms defined above. We are working on allowing authors to define their own atoms. In the mean time, you can request new atoms by <a href="mailto:umut@cs.cmu.edu">emailing Umut</a>.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-Authors can currently use only these atoms defined above. We are working on allowing authors to define their own atoms.  
-In the mean time, you can request new atoms  (please send feedback here).
+Authors can currently use only the atoms defined above. We are working on allowing authors to define their own atoms.  
+In the mean time, you can request new atoms by 
+\href{mailto:umut@cs.cmu.edu}{emailing Umut}.
 ]]>
 </field> <!-- body_src -->
 
@@ -1406,170 +1482,6 @@ The following is a definition atom, because it is single standing.
 
 </segment> <!-- cluster -->
 
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:nt:dc::atoms
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='note'>
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-nt:dc::atoms
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>Atoms can contain multiple paragraphs. The following text consists of a text-paragraph atom and a definition atom.</p>
-<pre><code>Paragraph 0. Sentence 1.  
-Sentence 2.  
-  
-\begin{definition}[Definition Title]  
-Paragraph 1  
-  
-Paragraph 2  
-\end{definition}  </code></pre>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-Atoms can contain multiple paragraphs.  The following text consists of a text-paragraph atom and a definition atom.
-
-
-\begin{lstlisting}
-Paragraph 0. Sentence 1.
-Sentence 2.
-
-\begin{definition}[Definition Title]
-Paragraph 1
-
-Paragraph 2
-\end{definition}
-\end{lstlisting}
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- note -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:imp:dc::nesting
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='important'>
-<field name='title'>
-<![CDATA[
-Nesting of atoms
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Nesting of atoms
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-imp:dc::nesting
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- important -->
-
-</segment> <!-- cluster -->
-
 
 <segment name='subsubsection'>
 <field name='point_value'>
@@ -1641,7 +1553,7 @@ grm:dc::create
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>DC will create an atom for each text paragraph. If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user. For example, the following text consists of three small paragraphs.</p>
+<p>DC will create an atom for each top-level paragraph (paragraph not nested inside LaTeX environments). If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user. For example, the following text consists of three small paragraphs.</p>
 <pre><code>If this then that.  
   
 If that then this.  
@@ -1651,7 +1563,7 @@ This if and only of if that.  </code></pre>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-DC will create an atom for each text paragraph.  If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user.  For example, the following text consists of three small paragraphs.
+DC will create an atom for each top-level paragraph (paragraph not nested inside LaTeX environments).  If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user.  For example, the following text consists of three small paragraphs.
 \begin{lstlisting}
 If this then that.
 
@@ -1869,12 +1781,12 @@ A definition
 \end{definition}  
   
 \begin{example}[Simple Example I]  
-\label{ex:a-simple}  
+\label{xmpl:a-simple}  
 Simple example 1  
 \end{example}  
   
 \begin{example}[Simple Example II]  
-\label{ex:a-simple-2}  
+\label{xmpl:a-simple-2}  
 Simple example 2  
 \end{example}  
   
@@ -1894,12 +1806,12 @@ A definition
 \end{definition}
 
 \begin{example}[Simple Example I]
-\label{ex:a-simple}
+\label{xmpl:a-simple}
 Simple example 1
 \end{example}
 
 \begin{example}[Simple Example II]
-\label{ex:a-simple-2}
+\label{xmpl:a-simple-2}
 Simple example 2
 \end{example}
 
@@ -2243,16 +2155,16 @@ grm:dc::uses
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p> Diderot uses labels to identify atoms uniquely. All labels in a book must be unique. To help in authoring, we recommended giving each chapter a unique label, and prepending each label with that of the chapter.</p>
+<p> Diderot uses labels to identify atoms uniquely. All labels in a book must be unique. To help in authoring, we recommended giving each chapter a unique label, and prepending each label in that chapter, with the chapter label.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
 \label{sec:dc::labels-refs}
-Diderot uses labels to identify atoms uniquely. All labels
-in a book must be unique.  To help in authoring, we recommended giving
-each chapter a unique label, and prepending each label with that of
-the chapter.
+Diderot uses labels to identify atoms uniquely. All labels in a book
+must be unique.  To help in authoring, we recommended giving each
+chapter a unique label, and prepending each label in that chapter,
+with the chapter label.
 ]]>
 </field> <!-- body_src -->
 
@@ -2324,7 +2236,7 @@ xmpl:dc::recommend
 \label{ch:intro}  
   
 \begin{preamble}  
-\label{prml:intro}  
+\label{prmbl:intro}  
 ...  
 \end{preamble}  
   
@@ -2336,7 +2248,7 @@ This is a paragraph (atom) without a label.  The following paragraph (atom) has 
   
   
 \begin{gram}  
-\label{grm:intro::present}  
+\label{gr:intro::present}  
 In this  section, we present...  
 \end{gram}  
   
@@ -2359,7 +2271,7 @@ We recommend labeling content as follows.
 \label{ch:intro}
 
 \begin{preamble}
-\label{prml:intro}
+\label{prmbl:intro}
 ...
 \end{preamble}
 
@@ -2371,7 +2283,7 @@ This is a paragraph (atom) without a label.  The following paragraph (atom) has 
 
 
 \begin{gram}
-\label{grm:intro::present}
+\label{gr:intro::present}
 In this  section, we present...
 \end{gram}
 
@@ -2599,6 +2511,82 @@ syntax : "syn"
 task : "tsk"
 theorem : "thm"
 \end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:grm:dc::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+Limitations
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Limitations
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::limitations
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>In LaTeX you can label pretty much anything. For example, you can label a line of code and refer to it via a number. In DC, labeling is restricted to atoms, sections, and chapters, with the exception of equation labels, which are supported. Learn more about the <a href="sec:dc::typesetting-mathematics">equation labels</a>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+In LaTeX you can label pretty much anything. 
+For example, you can label a line of code and refer to it via a number.
+In DC, labeling is restricted to atoms, sections, and chapters, with the exception of equation labels, which are supported.
+Learn more about the 
+\href{sec:dc::typesetting-mathematics}{equation labels}.
 ]]>
 </field> <!-- body_src -->
 
@@ -3510,25 +3498,14 @@ grm:dc::mathjax
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>Diderot uses MathJax to render math environments. This works in many cases, especially for use that is consistent with AMS Math packages. There are a few important caveats.</p>
-<ul>
-<li><p>Once you switch to math, try to stay in math. You can switch to text mode using <code>\mbox</code> but if you use macros inside the <code>mbox</code>, then they might not work (because mathjax doesn’t know about your macros). For example, the following won’t work.</p>
-<pre><code>$\lstinline`xyz`$  </code></pre></li>
-<li><p>The "tabular" environment does not work in MathJax. Use "array" instead.</p></li>
-</ul>
+<p>Diderot uses MathJax to render math environments. This works in many cases, especially for use that is consistent with AMS Math packages. A reasonably complete list of commands available in <a href="http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm#alphaList">MathJax can be found here.</a></p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
-\begin{itemize}
-\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
-\begin{lstlisting}
-$\lstinline`xyz`$
-\end{lstlisting}
-
-\item The "tabular" environment does not work in MathJax.  Use "array" instead.
-\end{itemize}
+Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  
+A reasonably complete list of commands available in 
+\href{http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm#alphaList}{MathJax can be found here.}
 ]]>
 </field> <!-- body_src -->
 
@@ -3543,6 +3520,373 @@ $\lstinline`xyz`$
 ]]>
 </field> <!-- caption_src -->
 </atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:grm:dc::caveat
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::caveat
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>There is one important caveat. Once you switch to math mode, try to stay in math mode. You can switch to text mode using <code>\text</code> but if you use macros inside the <code>\text</code>, then they might not work (because mathjax doesn’t know about your macros). For example, the following won’t work.</p>
+<pre><code>$\lstinline`xyz`$  </code></pre>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+There is one important caveat. 
+Once you switch to math mode, try to stay in math mode.  You can switch to text mode using \lstinline`\text` but if you use macros inside  the \lstinline`\text`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
+\begin{lstlisting}
+$\lstinline`xyz`$
+\end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:grm:dc::support
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::support
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Diderot and DC support equation numbering via MathJax with one restriction: the reference to an equation must be made in the same chapter that the equation is defined in. To refer to an equation label simply use the macro <code>\eqref</code> in math mode. Note that <code>\eqref</code> must be used in math mode and does not work in text mode.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Diderot and DC support equation numbering via MathJax with one restriction: the reference to an equation must be made in the same chapter that the equation is defined in.
+To refer to an equation label simply use the macro \lstinline`\eqref` in math mode.  Note that \lstinline`\eqref` must be used in math mode and does not work in text mode.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:eq:sample
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Equation Labels
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Equation Labels
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+eq:sample
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>The following LaTeX source defines an equation label and refers to it.</p>
+<pre><code>\begin{equation}  
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}  
+  \label{eq:sample}  
+\end{equation}  
+  
+Consider  Equation~$\eqref{eq:sample}$ shown above.  </code></pre>
+<p>It will be rendered as follows.</p>
+<p><span class="math display">\[\begin{equation}  
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}  
+  \label{eq:sample}  
+\end{equation}\]</span></p>
+<p>Consider Equation <span class="math inline">\(\eqref{eq:sample}\)</span> shown above.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+The following LaTeX source defines an equation label and refers to it. 
+
+\begin{lstlisting}
+\begin{equation}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample}
+\end{equation}
+
+Consider  Equation~$\eqref{eq:sample}$ shown above.
+\end{lstlisting}
+
+It will be rendered as follows.
+
+\[ \begin{equation}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample}
+\end{equation} \]
+
+Consider Equation~$\eqref{eq:sample}$ shown above.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:eq:sample-2
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='example'>
+<field name='title'>
+<![CDATA[
+Multiple Equations
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Multiple Equations
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+eq:sample-2
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>Other environments such as <code>align</code> may be used to typeset multiple equations and label them. As an example, consider the following LaTeX code.</p>
+<pre><code>\begin{align}  
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}  
+  \label{eq:sample-2}  
+\\  
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}  
+  \label{eq:sample-3}  
+\end{align}  
+  
+Equation~$\eqref{eq:sample-3}$ follows from Equation~$\eqref{eq:sample-2}$.  And furthermore, Equation~$\eqref{eq:sample-2}$ follows from Equation~$\eqref{eq:sample-3}$.    </code></pre>
+<p>This will render on Diderot as follows.</p>
+<p><span class="math display">\[\begin{align}  
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}  
+  \label{eq:sample-2}  
+\\  
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}  
+  \label{eq:sample-3}  
+\end{align}\]</span></p>
+<p>Equation <span class="math inline">\(\eqref{eq:sample-3}\)</span> follows from Equation <span class="math inline">\(\eqref{eq:sample-2}\)</span>. And furthermore, Equation <span class="math inline">\(\eqref{eq:sample-2}\)</span> follows from Equation <span class="math inline">\(\eqref{eq:sample-3}\)</span>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+Other environments such as \lstinline`align` may be used to typeset multiple equations and label them. 
+As an example, consider the following LaTeX code.
+
+\begin{lstlisting}
+\begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-2}
+\\
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-3}
+\end{align}
+
+Equation~$\eqref{eq:sample-3}$ follows from Equation~$\eqref{eq:sample-2}$.  And furthermore, Equation~$\eqref{eq:sample-2}$ follows from Equation~$\eqref{eq:sample-3}$.  
+\end{lstlisting}
+
+This will render on Diderot as follows.
+
+\[ \begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-2}
+\\
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-3}
+\end{align} \]
+
+Equation~$\eqref{eq:sample-3}$ follows from Equation~$\eqref{eq:sample-2}$.  And furthermore, Equation~$\eqref{eq:sample-2}$ follows from Equation~$\eqref{eq:sample-3}$.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- example -->
 
 </segment> <!-- cluster -->
 
@@ -4853,7 +5197,7 @@ sec:dc::chapters-and-sections
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:grm:dc::support
+grp:grm:dc::atx-sytle
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -4877,7 +5221,7 @@ grp:grm:dc::support
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:dc::support
+grm:dc::atx-sytle
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -5834,15 +6178,14 @@ grm:dc::the-debugger
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>AS you might notice, <code>dc</code> doesn’t currenty give reasonable error messages, partly because if you can generate PDF and html from your LaTeX sources, it is unlikely for there to be errors. In case of an error, you can pass the <code>-d</code> flag to <code>dc</code> to tell her to print the atoms that it matches. See also <a href="sec:dc::internals">Section Internals</a> for additional debugging help.</p>
+<p>As you might notice, <code>dc</code> doesn’t currenty give reasonable error messages, partly because if you can generate PDF and html from your LaTeX sources, it is unlikely for there to be errors. In case of an error, you can pass the <code>-d</code> flag to <code>dc</code> to tell her to print the atoms that it matches.</p>
 <pre><code>dc -d input.md -o output.xml  </code></pre>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-AS you might notice, \lstinline`dc` doesn't currenty give reasonable error messages, partly because if you can generate PDF and html from your LaTeX sources, it is unlikely for there to be errors. 
+As you might notice, \lstinline`dc` doesn't currenty give reasonable error messages, partly because if you can generate PDF and html from your LaTeX sources, it is unlikely for there to be errors. 
 In case of an error, you can pass the \lstinline`-d` flag to \lstinline`dc` to tell her to print the atoms that it matches.
-See also \href{sec:dc::internals}{Section Internals} for additional debugging help.
 \begin{lstlisting}
 dc -d input.md -o output.xml
 \end{lstlisting}

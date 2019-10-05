@@ -103,6 +103,15 @@ staff: book staff/staff.tex
 dc: book dc/dc.tex
 	$(PDFLATEX) --jobname="dc" '\includeonly{dc/dc} \input{book}'
 
+cli: book cli/cli.tex
+	$(PDFLATEX) --jobname="cli" '\includeonly{cli/cli} \input{book}'
+
+publish: book publish/publish.tex
+	$(PDFLATEX) --jobname="publish" '\includeonly{publish/publish} \input{book}'
+
+student: book student/student.tex
+	$(PDFLATEX) --jobname="student" '\includeonly{student/student} \input{book}'
+
 ######################################################################
 ## END: PDFs
 ######################################################################

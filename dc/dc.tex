@@ -68,7 +68,10 @@ A Diderot \defn{booklet} is a collection of chapters.
 \end{definition}
 
 \begin{example}
-The folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
+In
+\href{https://github.com/diderot-edu/diderot-guide}{guide sources},
+%
+the folders \lstinline`book` and \lstinline`booklet` contain a sample book (consisting of parts and chapters) and booklet (consisting only of chapters) respectively.
 \end{example}
 
 %% Each come with a  \lstinline`Makefile` for generating PDF and Diderot-XML from the sources. 
@@ -147,7 +150,7 @@ The term \lstinline`element` in the example refers to an "atom" or a "group".
 \begin{definition}[Atom]
 To increase interactivity, Diderot relies on atoms.
 %
-Atoms are smallest unit of sections and can be included in any section, subsection, subsubsection, and paragraph.
+Atoms are smallest unit of sections and can be included in any section (i.e., section,  subsection, subsubsection, and paragraph).
 %
 In diderot, essentially all content  must be inside of atoms.
 %
@@ -158,7 +161,7 @@ LaTeX environment.
 An \defn{atom} is either
 \begin{enumerate}
 \item a plain paragraph, or
-\item a single-standing section of the form
+\item a named block of text of the form
 
 \begin{lstlisting}
 \begin{<atom>}[Optional title]
@@ -210,33 +213,34 @@ The following LaTeX code for a table atom generates the atom shown below.
 \begin{table}
 \label{tbl:dc::motor-efficiency}
 \begin{tabular}{cc}
-Type of Motor & Efficiency
+Type & Efficiency
 \\
-Internal combustion & \%20
+Internal combustion Engine & \%20
 \\
-Electric & \%90
+Electric Motor & \%90
 \end{tabular}
-\caption{Energy efficiency of different kinds of motors}
+\caption{Energy efficiency of internal-combustion engines are significantly lower than those of electric motors.}
 \end{table}
 \end{lstlisting}
-
 \end{example}
 
 \begin{table}
 \label{tbl:dc::motor-efficiency}
 \begin{tabular}{cc}
-Type of Motor & Efficiency
+Type & Efficiency
 \\
-Internal combustion & \%20
+Internal combustion Engine & \%20
 \\
-Electric & \%90
+Electric Motor & \%90
 \end{tabular}
-\caption{Energy efficiency of different kinds of motors}
+\caption{Energy efficiency of  internal-combustion engines are significantly lower than those of electric motors.}
 \end{table}
 \end{flex}
 
 \begin{important}[Nesting of Atoms]
-An atom cannot be nested inside another atom and an atom cannot be nested inside a LaTeX environment. This is similar to not being able to define a LaTeX section inside a LaTeX environment.
+A named atom cannot be nested inside another named atom.
+%
+Similarly, a named atom cannot be nested inside a LaTeX environment.
 
 For example, the following is wrong:
 \begin{lstlisting}
@@ -247,13 +251,17 @@ But it is wrong, because it includes an atom inside of a LaTeX environment.
 \end{gram}
 \end{itemize}
 \end{lstlisting}
-
 \end{important}
 
 \begin{note}
-Authors can currently use only these atoms defined above. We are working on allowing authors to define their own atoms.  
+While an atom can be a paragraph, not every paragraph is an atom.  Paragraphs only at the ``top level'', not inside LaTeX environments are atoms. 
+\end{note}
+
+\begin{note}
+Authors can currently use only the atoms defined above. We are working on allowing authors to define their own atoms.  
 %
-In the mean time, you can request new atoms  (please send feedback here).
+In the mean time, you can request new atoms by 
+\href{mailto:umut@cs.cmu.edu}{emailing Umut}.
 \end{note}
 
 \begin{important}
@@ -279,28 +287,9 @@ The following is a definition atom, because it is single standing.
 \end{lstlisting}
 \end{important}
 
-\begin{note}
-Atoms can contain multiple paragraphs.  The following text consists of a text-paragraph atom and a definition atom.
-
-
-\begin{lstlisting}
-Paragraph 0. Sentence 1.
-Sentence 2.
-
-\begin{definition}[Definition Title]
-Paragraph 1
-
-Paragraph 2
-\end{definition}
-\end{lstlisting}
-\end{note}
-
-\begin{important}[Nesting of atoms]
-\end{important}
-
 \subsubsection{Controlling granularity}
 
-DC will create an atom for each text paragraph.  If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user.  For example, the following text consists of three small paragraphs.
+DC will create an atom for each top-level paragraph (paragraph not nested inside LaTeX environments).  If a piece of text contains many small (one or two line) paragraphs, it can distracting for the user.  For example, the following text consists of three small paragraphs.
 %
 \begin{lstlisting}
 If this then that.
@@ -355,12 +344,12 @@ A definition
 \end{definition}
 
 \begin{example}[Simple Example I]
-\label{ex:a-simple}
+\label{xmpl:a-simple}
 Simple example 1
 \end{example}
 
 \begin{example}[Simple Example II]
-\label{ex:a-simple-2}
+\label{xmpl:a-simple-2}
 Simple example 2
 \end{example}
 
@@ -397,10 +386,10 @@ Simple example 2
 
 \subsection{Labels and References}
 \label{sec:dc::labels-refs}
-Diderot uses labels to identify atoms uniquely. All labels
-in a book must be unique.  To help in authoring, we recommended giving
-each chapter a unique label, and prepending each label with that of
-the chapter.
+Diderot uses labels to identify atoms uniquely. All labels in a book
+must be unique.  To help in authoring, we recommended giving each
+chapter a unique label, and prepending each label in that chapter,
+with the chapter label.
 
 
 \begin{example}
@@ -412,7 +401,7 @@ We recommend labeling content as follows.
 \label{ch:intro}
 
 \begin{preamble}
-\label{prml:intro}
+\label{prmbl:intro}
 ...
 \end{preamble}
 
@@ -424,7 +413,7 @@ This is a paragraph (atom) without a label.  The following paragraph (atom) has 
 
 
 \begin{gram}
-\label{grm:intro::present}
+\label{gr:intro::present}
 In this  section, we present...
 \end{gram}
 
@@ -484,6 +473,19 @@ syntax : "syn"
 task : "tsk"
 theorem : "thm"
 \end{lstlisting}
+
+
+\begin{gram}[Limitations]
+In LaTeX you can label pretty much anything. 
+%
+For example, you can label a line of code and refer to it via a number.
+%
+In DC, labeling is restricted to atoms, sections, and chapters, with the exception of equation labels, which are supported.
+%
+Learn more about the 
+\href{sec:dc::typesetting-mathematics}{equation labels}.
+
+\end{gram}
 
 \subsection{Code}
 \label{sec:mtl::code}
@@ -591,18 +593,80 @@ When uploading a chapter, via the UI or via the CLI, the user needs to upload th
 \end{gram}
 
 \subsection{Typesetting Mathematics}
+\label{sec:dc::typesetting-mathematics}
 
-Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  There are a few important caveats. 
+Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  
 %
-\begin{itemize}
-\item Once you switch to math, try to stay in math.  You can switch to text mode using \lstinline`\mbox` but if you use macros inside  the \lstinline`mbox`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
+A reasonably complete list of commands available in 
+\href{http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm#alphaList}{MathJax can be found here.}
+%
+
+There is one important caveat. 
+%
+Once you switch to math mode, try to stay in math mode.  You can switch to text mode using \lstinline`\text` but if you use macros inside  the \lstinline`\text`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 
 \begin{lstlisting}
 $\lstinline`xyz`$
 \end{lstlisting}
 
-\item The "tabular" environment does not work in MathJax.  Use "array" instead.
-\end{itemize}
 
+
+Diderot and DC support equation numbering via MathJax with one restriction: the reference to an equation must be made in the same chapter that the equation is defined in.
+%
+To refer to an equation label simply use the macro \lstinline`\eqref` in math mode.  Note that \lstinline`\eqref` must be used in math mode and does not work in text mode.
+
+\begin{example}[Equation Labels]
+The following LaTeX source defines an equation label and refers to it. 
+
+\begin{lstlisting}
+\begin{equation}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample}
+\end{equation}
+
+Consider  Equation~$\eqref{eq:sample}$ shown above.
+\end{lstlisting}
+
+It will be rendered as follows.
+
+\begin{equation}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample}
+\end{equation}
+
+Consider Equation~$\eqref{eq:sample}$ shown above.
+
+
+\end{example}
+
+\begin{example}[Multiple Equations]
+Other environments such as \lstinline`align` may be used to typeset multiple equations and label them. 
+%
+As an example, consider the following LaTeX code.
+
+\begin{lstlisting}
+\begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-2}
+\\
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-3}
+\end{align}
+
+Equation~$\eqref{eq:sample-3}$ follows from Equation~$\eqref{eq:sample-2}$.  And furthermore, Equation~$\eqref{eq:sample-2}$ follows from Equation~$\eqref{eq:sample-3}$.  
+\end{lstlisting}
+
+This will render on Diderot as follows.
+
+\begin{align}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-2}
+\\
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample-3}
+\end{align}
+
+Equation~$\eqref{eq:sample-3}$ follows from Equation~$\eqref{eq:sample-2}$.  And furthermore, Equation~$\eqref{eq:sample-2}$ follows from Equation~$\eqref{eq:sample-3}$.  
+\end{example}
 
 \subsection{Indexing}
 
