@@ -3652,13 +3652,13 @@ grm:dc::support
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>Diderot and DC support equation numbering via MathJax with one restriction: the reference to an equation must be made in the same chapter that the equation is defined in. To refer to an equation label simply use the macro <code>\eqref</code> in math mode. Note that <code>\eqref</code> must be used in math mode and does not work in text mode.</p>
+<p>Diderot and DC support equation numbering via MathJax with one restriction: the reference to an equation must be made in the same chapter that the equation is defined in. To refer to an equation label simply use the macro <code>\eqref</code> or <code>\ref</code> in math mode. Note that the reference should be from within the math mode.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
 Diderot and DC support equation numbering via MathJax with one restriction: the reference to an equation must be made in the same chapter that the equation is defined in.
-To refer to an equation label simply use the macro \lstinline`\eqref` in math mode.  Note that \lstinline`\eqref` must be used in math mode and does not work in text mode.
+To refer to an equation label simply use the macro \lstinline`\eqref` or \lstinline`\ref` in math mode.  Note that the reference should be from within the math mode.
 ]]>
 </field> <!-- body_src -->
 
