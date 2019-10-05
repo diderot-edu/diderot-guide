@@ -5,12 +5,6 @@
 %% BEGIN: DIDEROT COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% For pdf/latex we only use hyperref[label][reference text]
-%% format.  
-\renewcommand{\href}[2]{
-\hyperref[#1]{#2}
-}
-
 % For PDF, we delegate download and attach to href.
 \newcommand{\download}[2]{\href{#1}{#2}}
 \newcommand{\attach}[2]{\href{#1}{#2}}
