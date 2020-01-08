@@ -477,6 +477,28 @@ theorem : "thm"
 \end{lstlisting}
 
 
+\begin{gram}[Book References]
+You can reference a book by using the syntax 
+%
+\lstinline`\ref{book-label/}`. 
+% 
+The trailing slash tells DC and Diderot that this is a book
+reference rather than a reference to a label within this book. 
+%
+On Diderot, this reference will generate a link to the book within
+the course.
+%
+\end{gram}
+
+\begin{gram}[Inter-Book References]
+You can make references between books.  For example recitation book
+could refer to a label in the textbook by using the syntax
+%
+\lstinline`\href{TB/def:shortest-paths}`,
+%
+ where \lstinline`TB` is the label of the book being referred to.
+\end{gram}
+
 \begin{gram}[Limitations]
 In LaTeX you can label pretty much anything. 
 %
