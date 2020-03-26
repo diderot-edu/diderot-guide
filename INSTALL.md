@@ -8,7 +8,7 @@ The necessary tools to build the guide don't exist on Windows, but it can be bui
 - Install WSL as documented in the [Microsoft Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10). (Choose Ubuntu as the Linux subsystem) 
 - A Ubuntu tile will be added to the start menu. 
 - Launch the Ubuntu WSL from the start menu.
-- The WSL creates a traditional Unix home directory. The original Windows home directory is available at `/mnt/c/Users/USERNAME`
+- The WSL opens a traditional Unix home directory which is separate from the Windows home directory. The Windows home directory is available at `/mnt/c/Users/USERNAME`
 - To continue setting up, follow the Unbuntu steps below.
 
 ## Ubuntu
