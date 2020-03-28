@@ -64,6 +64,12 @@ grp:grm:dc::diderot
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -154,6 +160,12 @@ grp:grm:dc::review
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -227,6 +239,12 @@ grp:imp:dc::sources-and-contributions
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Sources and Contributions
@@ -330,6 +348,12 @@ grp:grm:dc::compatible
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -405,6 +429,12 @@ grp:def:dc::books-and-booklets
 </field> <!-- depend -->
 
 <atom name='definition'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Books and Booklets
@@ -489,6 +519,12 @@ grp:xmpl:dc::https
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -585,6 +621,12 @@ grp:grm:dc::requires
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -657,6 +699,12 @@ grp:xmpl:dc::sections
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Sections
@@ -805,6 +853,12 @@ grp:def:dc::atom
 </field> <!-- depend -->
 
 <atom name='definition'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Atom
@@ -939,6 +993,12 @@ grp:imp:dc::figure-and-table-atoms
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Figure and Table Atoms
@@ -1000,6 +1060,12 @@ In addition to the atoms above, Diderot also supports \lstinline`figure` and \ls
 </atom> <!-- important -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1074,6 +1140,12 @@ Electric Motor & \%90
 </atom> <!-- example -->
 
 <atom name='table'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1168,6 +1240,12 @@ grp:imp:dc::nesting-of-atoms
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Nesting of Atoms
@@ -1258,6 +1336,12 @@ grp:nt:dc::atom
 </field> <!-- depend -->
 
 <atom name='note'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1330,6 +1414,12 @@ grp:nt:dc::authors
 </field> <!-- depend -->
 
 <atom name='note'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1404,6 +1494,12 @@ grp:imp:dc::atoms
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1526,6 +1622,12 @@ grp:grm:dc::create
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1610,6 +1712,12 @@ grp:grm:dc::usually
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1745,6 +1853,12 @@ grp:def:dc::group
 </field> <!-- depend -->
 
 <atom name='definition'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Group
@@ -1856,6 +1970,12 @@ grp:nt:dc::turned
 </field> <!-- depend -->
 
 <atom name='note'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1931,6 +2051,12 @@ grp:def:a
 </field> <!-- depend -->
 
 <atom name='definition'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 A Definition
@@ -1981,6 +2107,12 @@ A definition.
 </atom> <!-- definition -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Simple Example
@@ -2031,6 +2163,12 @@ Simple example 1
 </atom> <!-- example -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Simple Example
@@ -2128,6 +2266,12 @@ grp:grm:dc::uses
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2204,6 +2348,12 @@ grp:xmpl:dc::recommend
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2335,6 +2485,12 @@ grp:grm:dc::references
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 References
@@ -2420,6 +2576,12 @@ grp:grm:dc::generates
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2546,6 +2708,170 @@ theorem : "thm"
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
+grp:grm:dc::book-references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
+<field name='title'>
+<![CDATA[
+Book References
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Book References
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::book-references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can reference a book by using the syntax <code>\ref{book-label/}</code>. The trailing slash tells DC and Diderot that this is a book reference rather than a reference to a label within this book. On Diderot, this reference will generate a link to the book within the course.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can reference a book by using the syntax 
+\lstinline`\ref{book-label/}`. 
+The trailing slash tells DC and Diderot that this is a book
+reference rather than a reference to a label within this book. 
+On Diderot, this reference will generate a link to the book within
+the course.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:grm:dc::inter-book-references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
+<field name='title'>
+<![CDATA[
+Inter-Book References
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Inter-Book References
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::inter-book-references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can make references between books. For example recitation book could refer to a label in the textbook by using the syntax <code>\href{TB/def:shortest-paths}</code>, where <code>TB</code> is the label of the book being referred to.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can make references between books.  For example recitation book
+could refer to a label in the textbook by using the syntax
+\lstinline`\href{TB/def:shortest-paths}`,
+ where \lstinline`TB` is the label of the book being referred to.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
 grp:grm:dc::limitations
 </field> <!-- label -->
 <field name='depend'>
@@ -2553,6 +2879,12 @@ grp:grm:dc::limitations
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Limitations
@@ -2653,6 +2985,12 @@ grp:grm:dc::lstlisting
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2728,6 +3066,12 @@ grp:xmpl:dc::python-code
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Python Code
@@ -2795,6 +3139,12 @@ def is_even (i):
 </atom> <!-- example -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2879,6 +3229,12 @@ grp:xmpl:dc::code-in-c-dialect
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Code in C Dialect
@@ -2989,6 +3345,12 @@ grp:grm:dc::include
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3063,6 +3425,12 @@ grp:grm:dc::naming
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3139,6 +3507,12 @@ grp:grm:dc::sizing
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3226,6 +3600,12 @@ grp:nt:dc::output
 </field> <!-- depend -->
 
 <atom name='note'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3299,6 +3679,12 @@ grp:imp:dc::scale-is-not-supported
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Scale is not Supported
@@ -3378,6 +3764,12 @@ grp:grm:dc::uploading-images
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Uploading Images
@@ -3474,6 +3866,12 @@ grp:grm:dc::mathjax
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3548,6 +3946,12 @@ grp:grm:dc::caveat
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3625,6 +4029,12 @@ grp:grm:dc::support
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3698,6 +4108,12 @@ grp:eq:sample
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Equation Labels
@@ -3800,6 +4216,12 @@ grp:eq:sample-2
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Multiple Equations
@@ -3939,6 +4361,12 @@ grp:grm:dc::near
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3999,6 +4427,12 @@ The indexing algorithm will look up these commands and link the use of these ter
 </atom> <!-- gram -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4109,6 +4543,12 @@ grp:grm:dc::colors
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4209,6 +4649,12 @@ grp:grm:dc::embed
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4286,6 +4732,12 @@ grp:xmpl:dc::video-embedding
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Video Embedding
@@ -4390,6 +4842,12 @@ grp:grm:dc::attach
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4463,6 +4921,12 @@ grp:xmpl:dc::file-attachment
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 File Attachment
@@ -4542,6 +5006,12 @@ grp:imp:dc::uniqueness-of-attachments
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Uniqueness of Attachments
@@ -4642,6 +5112,12 @@ grp:grm:dc::latex
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4745,6 +5221,12 @@ grp:rmrk:dc::limitations
 </field> <!-- depend -->
 
 <atom name='remark'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4844,6 +5326,12 @@ grp:grm:dc::basic
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4916,6 +5404,12 @@ grp:grm:dc::header
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Header
@@ -5015,6 +5509,12 @@ grp:imp:dc::special-symbols-and-html-code
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Special Symbols and HTML code
@@ -5112,6 +5612,12 @@ grp:imp:dc::chapter-titles
 </field> <!-- depend -->
 
 <atom name='important'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Chapter Titles
@@ -5207,6 +5713,12 @@ grp:grm:dc::atx-sytle
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5323,6 +5835,12 @@ grp:grm:dc::usual
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5395,6 +5913,12 @@ grp:xmpl:dc::html
 </field> <!-- depend -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5533,6 +6057,12 @@ grp:grm:dc::delimiters
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5630,6 +6160,12 @@ grp:grm:dc::jpeg
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5683,6 +6219,12 @@ You can include JPEG, PNG, and SVG images by using following syntax.
 </atom> <!-- gram -->
 
 <atom name='example'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5783,6 +6325,12 @@ grp:grm:dc::markdown
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5922,6 +6470,12 @@ grp:grm:dc::guide
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5994,6 +6548,12 @@ grp:grm:dc::making-xml
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Making XML
@@ -6076,6 +6636,12 @@ grp:grm:dc::using-dc-directly
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 Using DC directly
@@ -6154,6 +6720,12 @@ grp:grm:dc::the-debugger
 </field> <!-- depend -->
 
 <atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
 <field name='title'>
 <![CDATA[
 The “Debugger”

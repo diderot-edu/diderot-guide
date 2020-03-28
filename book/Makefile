@@ -1,13 +1,9 @@
 # Make GUIDE_DIR point to your Diderot guide directory
 GUIDE_DIR = ..
 
-
 PDFLATEX = pdflatex
 PANDOC = pandoc --mathjax -f latex 
 
-
-FLAG_VERBOSE = -v 
-FLAG_DBG = -d
 
 PREAMBLE = ./templates/preamble-diderot.tex
 
@@ -34,42 +30,14 @@ FORCE:
 html: FORCE
 	$(PANDOC) -s book-html.tex > book.html
 
-%.xml : %.tex FORCE
-ifdef debug
-ifdef verbose
-	$(DC) $(FLAG_DBG) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
- else
-	$(DC) $(FLAG_DBG) -meta ./meta -preamble $(PREAMBLE)  $< -o $@
-endif
-else
-ifdef verbose
-	$(DC) $(FLAG_VERBOSE)  -meta ./meta -preamble $(PREAMBLE) $< -o $@
- else
-	$(DC)  -meta ./meta -preamble $(PREAMBLE)  $< -o $@
-endif
-endif
-
-%.xml : %.md FORCE
-ifdef debug
-ifdef verbose
-	$(DC)  $(FLAG_DBG) $(FLAG_VERBOSE) $< -o $@
- else
-	$(DC)  $(FLAG_DBG) $< -o $@
-endif
-else
-ifdef verbose
-	$(DC) $(FLAG_VERBOSE) $< -o $@
- else
-	$(DC) $< -o $@
-endif
-endif
-
-
 clean: 
 	rm *.aux *.idx *.log *.out *.toc */*.aux */*.idx */*.log */*.out 
 
 reset: 
 	make clean; rm *.pdf; rm*.html; rm  *~; rm */*~; rm  \#*\#; rm */\#*\#; 
+
+# Include xml rules
+include $(GUIDE_DIR)/resources/makefile-xml-target
 
 
 

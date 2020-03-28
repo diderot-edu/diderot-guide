@@ -91,7 +91,9 @@ book:
 	$(PDFLATEX) --jobname="book" '\input{book}' ; 
 	$(PDFLATEX) --jobname="book" '\input{book}' ; \
 
-pdf: book
+%.pdf : %.tex book
+	$(PDFLATEX) --shell-escape --jobname="target" "\includeonly{$*}\input{book} ";
+	mv target.pdf $@
 
 guide:
 	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{staff/staff, dc/dc, publish/publish, cli/cli}  \input{book}'
