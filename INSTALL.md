@@ -1,7 +1,9 @@
 # Installation
 
-Diderot specific binaries for MacOS and Linux are located in the bin directory of the guide.
-Download the guide here: https://github.com/diderot-edu/diderot-guide
+Prerequisite: download the guide here: https://github.com/diderot-edu/diderot-guide
+
+Diderot specific binaries MacOS and Linux (Ubuntu) are located in the `bin` directory.  You can run Linux (Ubuntu) binaries on Windows by installing a Linux subsystem.
+
 
 
 ## MacOS
