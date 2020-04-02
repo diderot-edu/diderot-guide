@@ -1,6 +1,7 @@
 # Installation
 
-Diderot specific binaries for MacOS and Linux are located in the bin directory.
+Diderot specific binaries for MacOS and Linux are located in the bin directory of the guide.
+Download the guide here: https://github.com/diderot-edu/diderot-guide
 
 
 ## MacOS
@@ -10,8 +11,6 @@ Diderot specific binaries for MacOS and Linux are located in the bin directory.
 
 
 ## Windows
-The necessary tools to build the guide don't exist on Windows, but it can be built by using the Windows Subsysem for Linux (WSL).
-
 - Install WSL as documented in the [Microsoft Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10). (Choose Ubuntu as the Linux subsystem) 
 - A Ubuntu tile will be added to the start menu. 
 - Launch the Ubuntu WSL from the start menu.
