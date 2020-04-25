@@ -96,7 +96,7 @@ book:
 	mv target.pdf $@
 
 guide:
-	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{staff/staff, dc/dc, publish/publish, cli/cli}  \input{book}'
+	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{staff/staff, dc/dc, publish/publish, quiz/quiz, cli/cli}  \input{book}'
 
 
 staff: book staff/staff.tex
@@ -112,13 +112,17 @@ publish: book publish/publish.tex
 	$(PDFLATEX) --jobname="publish" '\includeonly{publish/publish} \input{book}'
 	cp publish.pdf publish/
 
+quiz: book quiz/quiz.tex
+	$(PDFLATEX) --jobname="quiz" '\includeonly{quiz/quiz} \input{book}'
+	cp quiz.pdf quiz/
+
 student: book student/student.tex
 	$(PDFLATEX) --jobname="student" '\includeonly{student/student} \input{book}'
 	cp student.pdf student/
 
-all-pdf: staff dc cli publish
+all-pdf: staff dc cli publish quiz 
 
-all-xml: staff/staff.xml dc/dc.xml cli/cli.xml publish/publish.xml
+all-xml: staff/staff.xml dc/dc.xml cli/cli.xml publish/publish.xml quiz/quiz.xml
 
 ######################################################################
 ## END: PDFs
