@@ -113,6 +113,8 @@ marked in the first diagram with
 
 \subsection{Implementation}
 
+\begin{gram}
+\label{gr:skyline::implement}
 We define \sml{type skyline = (int * int) Seq.t}. We maintain the convention
 that all skylines are \textbf{sorted by $x$-coordinate}, and \textbf{do not
 contain redundant points}. Throughout, we assume that all $x$-coordinates are
@@ -131,6 +133,7 @@ fun skyline B =
 \end{verbatim}
 \sml{singleton} has been implemented for you in \sml{MkSkyline.sml} and has
 constant work and span. All you have to do is implement \sml{combine}.
+\end{gram}
 
 \begin{note}
 You may assume all $x$-coordinates in $B$ are unique.
