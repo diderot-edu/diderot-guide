@@ -7,100 +7,205 @@ You can use Diderot to administer tests, quizzes, and exams.  This chapter prese
 
 
 \section{Submittable Chapters}
+\label{ch:quiz::submittable-chapters}
 
-The basic idea is to create a \defn{submittable chapter} on Diderot and upload the test problems onto the chapter.  To create the test problems, the author can use LaTeX.  The supported problem types include
+The basic idea is to create a \defn{submittable chapter} on Diderot and typeset the chapter using LaTeX.  The supported problem types include
 \begin{itemize}
 \item multiple choice (including true/false) problems, where the test taker picks one of the
   choices
 \item multiple-answer problems, where the test-taker can choose more than one of the choices
-\item free response problems, where the test taker writes their answer in a designated area
+\item free response problems, where the test taker writes their answer in a designated area and if so desired attach an image, and
 \item fill-in-the-blanks problems, where the test taker fills in the missing parts of a solution.
 \end{itemize}
 
+Diderot supports using mathematics (via MathJax) in answering questions.  
+%
+Algorithms or code in fixed-font can be included in all problems, including in fill-in-the-blanks question.
 
-Diderot supports using mathematics (using MathJax) and attaching images into answer.  Algorithms or code in fixed-font can be included in all problems, including in fill-in-the-blanks question.
+\section{Time Management}
+\label{ch:quiz::time-management}
+
+Diderot manages exam time in a way that mirrors in-class exams.
+
+\begin{gram}[Time Limit and Due Date]
+Each submittable chapter may be assigned a \defn{time limit} that
+specifies the duration of the test.  For example, a quiz may be 20
+minutes long.
+
+Each submittable chapter may also be assigned a \defn{due date} specifying a date and a time until which it must be completed. 
+\end{gram}
+
+\begin{gram}[Taking the Exam]
+Once a submittable chapter is released, a student can create a submission and take the test.  During the test, the students will see the remaining time on their screen.  The remaining time is calculated for each student as minimum of the unused portion of the time limit, and time left until the due date of the chapter.  This means that if a students starts an exam 30 minutes later that it is scheduled time, they will have 30 minutes less time to complete the exam.
+
+After the due date of a submittable chapter, the students may not take the exam and will not see its contents.
+
+Diderot does not use the release date of a chapter to enforce that the students start only at that time.  The students can start as soon as the chapter is released.
+\end{gram}
+
+\section{Saving and Submitting an Exam}
+\label{ch:quiz::submit}
+
+\begin{gram}
+Diderot saves a test-taker's exam frequently (every few seconds) to make sure that no work would be lost due to problem such as internet connectivity.  
+
+At any time, the student can submit their exam by clicking the ``Submit'' button.
+
+When the time expires, the most recent version of the exam is submitted automatically.
+\end{gram}
+
+\section{Accommodations}
+\label{ch:quiz::accommodations}
+
+\begin{gram}
+Personal accommodations of the students are automatically taken into account when a student is taking the exam.  For example, if a student has 50\% extra-time accommodation, then Diderot will take this is into account when administering the exam to that student.  
+
+The instructor can change accommodations for each student on the Users page. 
+\end{gram}
+
+\section{Handling Questions During the Exam}
+
+The students can ask questions during a quiz by using Diderot's
+integrated question-and-answer system.
+%
+The best practice is to require the students to ask questions only
+through the quiz chapter by selecting the atom that they have a
+question about and creating their question.
+%
+When the question is created the course staff will be notified and may answer the question. 
+%
+When their question is answered, the student will receive a notification on Diderot and can read the response.
+%
+To improve consistency between answer and to prevent concurrent answers to the same question, we have found it useful for the course staff to join a shared conference call, e.g., via zoom and coordinate their answers. 
+ 
 
 \section{Type Setting Quizzes Using LaTeX}
+\label{ch:quiz::typesetting}
+
+\subsection{Basic Concepts}
+The basic construct for writing quiz problems is called a  prompt, which intuitively speaking, asks the user to do something.
 
 
-The author can attach to any atom a sequence of \defn{prompts}, which come in two flavors: questions prompts and answer prompts.
+\begin{gram}[Prompts]
+Prompts come in two flavors: questions prompts and answer prompts.
 %
 
 \defn{Question prompts}  include 
 %
-\lstinline`\ask` for free-response questions, 
+\begin{itemize}
+\item \lstinline`\ask` for free-response questions, 
 %
-\lstinline`\onechoice` for multiple choice questions with a single correct answer, 
+\item \lstinline`\onechoice` for multiple choice questions with a single correct answer, 
 %
-\lstinline`\anycoice` for multiple answer questions with any number correct answers, and 
+\item \lstinline`\anychoice` for multiple answer questions with any number correct answers, and 
 %
-\lstinline`\asktf` for true-false questions.
+\item \lstinline`\asktf` for true-false questions.
+\end{itemize}
 
 \defn{Solution prompts}  include 
 %
-\lstinline`\sol` for free-response solution, 
+\begin{itemize}
+
+\item \lstinline`\sol` for free-response solution, 
 %
-\lstinline`\solfin` for fill-in-the-blanks solution, 
+\item \lstinline`\solfin` for fill-in-the-blanks solution, 
 %
-\lstinline`\choice` and \lstinline`\choice*` for an incorrect and correct choice, 
+\item \lstinline`\choice` and \lstinline`\choice*` for an incorrect and correct choice, 
 %
 \lstinline`\solt` and \lstinline`\solf`   for true and false answers.
+\end{itemize}
 
 A question typically consisting of a question prompt followed by any
 number of solution prompts.  
 %
 Any number of questions may be attached  to an atom.
+\end{gram}
 
-There are two ways to specify point values.
 %
 
 \begin{gram}[Point Values]
-The author can assign integer point values to each atom. The point value must be specified with a period at the end should be the first argument to the atom.
+There are several ways to specify point values to questions, some more
+straightforward, some more complicated and finer grain.
+
+The author can assign integer point values to each atom. 
 %
-For example \lstinline`\begin{problem}[10.]` specifies a  problem with ten points, and
+The point value must terminate with a period and should be the first argument to the atom.
 %
-\lstinline`\begin{problem}[10.][Problem Title]` specifies a  problem with ten points and and the title
-\lstinline`Problem Title`.
-%
-By default an atom's points are distributed to its questions evenly,
-which can result in non-integral, even ``irrational'' point scores, such as $3.33333333...\ldots 3$. 
+
+By default an atom's points are distributed evenly across all the
+prompts, which can result in non-integral, even ``irrational'' point
+values, such as $3.33333333...\ldots 3$.  
 %
 \end{gram}
 
+\begin{example}
+The heading
+%
+ \lstinline`\begin{problem}[10.]` specifies a problem with ten points
+   and no title.
+
+The heading
+%
+\lstinline`\begin{problem}[10.][Problem Title]` 
+%
+specifies a  problem with ten points and and the title
+\lstinline`Problem Title`.
+%
+\end{example}
 
 \begin{gram}[Question Factors]
-The author can specify a real-valued \defn{factor} for each question prompt.  For
-example, For example \lstinline`\ask[2.0]` specifies a factor of $2.0$
-for this question prompt. If there are multiple questions in an atom,
-their factor values are added and the point value of the atom is
-distributed over the questions in proportion with their factors.  For
-example, if a problem atom is worth $9$ points and its two questions
-prompts have factors $2.0$ and $1.0$, then the first question will be
-assigned $6.0$ points and the second question will be assigned $3.0$
-points.
+The author can specify the real-valued \defn{factor} of each question prompt.  
+%
+If a question does not have an explicitly specified factor, it is
+assigned a default factor of $1.0$.
 
-If a question does not have a factor, it is given a default factor of $1.0$. 
+For example 
+%
+\lstinline`\ask[2.0]` 
+%
+specifies a factor of $2.0$ for this question prompt. 
+
+
+If there are multiple questions in an atom, their factor values are
+added and the point value of the atom is distributed over the
+questions in proportion with their factors.
+
+For example, if a problem atom is worth $9$ points and its two
+questions prompts have factors $2.0$ and $1.0$, then the first
+question will be assigned $6.0$ points and the second question will be
+assigned $3.0$ points.
+
+
 \end{gram}
 
 \begin{gram}[Solution  Factors]
-The author can specify a real-valued \defn{factor} for each solution prompt.  For
-example, For example \lstinline`\sol[0.5]` specifies a factor of $0.5$
-for this solution prompt. If there are multiple solution prompts
-belonging to a question prompt, then their factors are added and the
-factor of question is distributed over the solutions in proportion
-with their factors.  For example, if a question has a factor of $9.0$
-and its two solutions prompts have factors $0.5$ and $1.0$, then
-the first solution prompt will be assigned $3.0$ factors and the second question
-prompt will be assigned $6.0$ factors.  The point value  for each solution prompt will in turn be determined by the point value of the atom.
+The author can specify the real-valued \defn{factor} of each solution prompt.  
+%
+When not specified, each solution factor taken on a default value.
+%
+For free-response solutions, this default factor is $1.0$.
+%
+For correct-choice prompts, the default factor is $1.0$; for incorrect
+choice prompts the default factor is $0.0$.
 
-By default free-response solution have a default factor of $1.0$ and
-so are correct-choice prompts.  Incorrect choice prompts have a factor value of $0.0$
+For example \lstinline`\sol[0.5]` specifies a factor of $0.5$ for this
+solution prompt. 
+
+If there are multiple solution prompts belonging to a question prompt,
+then their factors are totaled and the factor of question is distributed
+over the solutions in proportion with their factors.  
+
+For example, if a question has a factor of $9.0$ and its two solutions
+prompts have factors $0.5$ and $1.0$, then the first solution prompt
+will be assigned $3.0$ factors and the second question prompt will be
+assigned $6.0$ factors.  The point value for each solution prompt will
+in turn be determined by the point value of the atom.
+
+
 \end{gram}
 
 
-%
-\lstinline`\begin{problem}[10.][Problem Title]` specifies a  problem with ten points and and the title
-\lstinline`Problem Title`.
+\subsection{Examples}
 
 \begin{example}[Free response with a single solution]
 The code below will generate a question and a text box for the student
@@ -325,12 +430,12 @@ Select all the correct statements belowe.
 The following example illustrates factor distributions between
 questions and solutions.  Because the problem does not specify point
 values it receives the total factor of $17$ as the point value.
+
 \begin{lstlisting}
 \begin{problem}[Tricky Factors]
-Give a closed-form
-solution in terms of $\Theta$ for the following recurrences.  Also, state
-whether the recurrence is dominated at the root, the leaves, or
-equally at all levels of the recurrence tree.
+Give a closed-form solution in terms of $\Theta$ for the following
+recurrences.  Also, state whether the recurrence is dominated at the
+root, the leaves, or equally at all levels of the recurrence tree.
 
 % This question prompt distributes 9 factors over 1.5 factors
 \ask[9.]
@@ -361,12 +466,12 @@ $\Theta (n \lg n)$, balanced.
 \begin{example}
 Consider now the same example as above, but this time
 the problem specifies a point value of $34.0$
+
 \begin{lstlisting}
 \begin{problem}[34.][Tricky Factors and Points]
-Give a closed-form
-solution in terms of $\Theta$ for the following recurrences.  Also, state
-whether the recurrence is dominated at the root, the leaves, or
-equally at all levels of the recurrence tree.
+Give a closed-form solution in terms of $\Theta$ for the following
+recurrences.  Also, state whether the recurrence is dominated at the
+root, the leaves, or equally at all levels of the recurrence tree.
 
 % This question prompt distributes 9 factors over 1.5 factors
 \ask[9.]
@@ -393,40 +498,3 @@ $\Theta (n \lg n)$, balanced.
 \end{lstlisting}
 \end{example}
 
-\section{Time Management}
-
-Diderot manages exam time in a way that mirrors in-class exams.
-
-\begin{gram}[Time Limit and Due Date]
-Each submittable chapter may be assigned a \defn{time limit} that
-specifies the duration of the test.  For example, a quiz may be 20
-minutes long.
-
-Each submittable chapter may also be assigned a \defn{due date} specifying a date and a time until which it must be completed. 
-\end{gram}
-
-\begin{gram}[Taking the Exam]
-Once a submittable chapter is released, a student can create a submission and take the test.  During the test, the students will see the remaining time on their screen.  The remaining time is calculated for each student as minimum of the unused portion of the time limit, and time left until the due date of the chapter.  This means that if a students starts an exam 30 minutes later that it is scheduled time, they will have 30 minutes less time to complete the exam.
-
-After the due date of a submittable chapter, the students may not take the exam and will not see its contents.
-
-Diderot does not use the release date of a chapter to enforce that the students start only at that time.  The students can start as soon as the chapter is released.
-\end{gram}
-
-\section{Saving and Submitting an Exam}
-
-\begin{gram}
-Diderot saves a test-taker's exam frequently (every few seconds) to make sure that no work would be lost due to problem such as internet connectivity.  
-
-At any time, the student can submit their exam by clicking the ``Submit'' button.
-
-When the time expires, the most recent version of the exam is submitted automatically.
-\end{gram}
-
-\section{Accommodations}
-
-\begin{gram}
-Personal accommodations of the students are automatically taken into account when a student is taking the exam.  For example, if a student has 50\% extra-time accommodation, then Diderot will take this is into account when administering the exam to that student.  
-
-The instructor can change accommodations for each student on the Users page. 
-\end{gram}
