@@ -96,12 +96,16 @@ book:
 	mv target.pdf $@
 
 guide:
-	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{staff/staff, dc/dc, publish/publish, quiz/quiz, cli/cli}  \input{book}'
+	$(PDFLATEX) --jobname="diderot-guide" '\includeonly{lms/lms, dc/dc, publish/publish, quiz/quiz, cli/cli}  \input{book}'
+
+overview: book overview/overview.tex
+	$(PDFLATEX) --jobname="overview" '\includeonly{overview/overview} \input{book}'
+	cp overview.pdf overview/
 
 
-staff: book staff/staff.tex
-	$(PDFLATEX) --jobname="staff" '\includeonly{staff/staff} \input{book}'
-	cp staff.pdf staff/
+lms: book lms/lms.tex
+	$(PDFLATEX) --jobname="lms" '\includeonly{lms/lms} \input{book}'
+	cp lms.pdf lms/
 dc: book dc/dc.tex
 	$(PDFLATEX) --jobname="dc" '\includeonly{dc/dc} \input{book}'
 	cp dc.pdf dc/
@@ -120,9 +124,9 @@ student: book student/student.tex
 	$(PDFLATEX) --jobname="student" '\includeonly{student/student} \input{book}'
 	cp student.pdf student/
 
-all-pdf: staff dc cli publish quiz 
+all-pdf: lms dc cli publish quiz 
 
-all-xml: staff/staff.xml dc/dc.xml cli/cli.xml publish/publish.xml quiz/quiz.xml
+all-xml: lms/lms.xml dc/dc.xml cli/cli.xml publish/publish.xml quiz/quiz.xml
 
 ######################################################################
 ## END: PDFs
