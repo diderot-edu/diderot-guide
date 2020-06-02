@@ -2,12 +2,15 @@
 \label{ch:overview}
 
 \begin{gram}
-Diderot is a relatively large system with many features. This guide presents a rough guide to some of these features.  Diderot is rapidly evolving, especially due to very high demand for new features and services and this guide is almost always out of date.
+\label{ch:overview::intro}
+Diderot is a relatively large system with many features. This guide presents a rough guide to some of these features.  Diderot is rapidly evolving, especially due to very high demand for new features and services. This guide is almost always out of date.
+\end{gram}
 
+\begin{gram}
+\label{ch:overview::features}
 At a high level, Diderot combines various features of online interactive books,  social networks, and LMSs (Learning Management Systems).
 % 
 Specific features of Diderot include the following.
-\end{gram}
 
 \begin{itemize}
 
@@ -17,9 +20,11 @@ Specific features of Diderot include the following.
 for transforming traditional plain-text (LaTeX and Markdown) and PDF documents to interactive, online books. 
 
 \item 
-Public and private books: instructors can choose to make their materials publicly available to everybody or can restrict access to their students, also on a selective (book by book) basis.
+Public and private books: instructors can make an online book publicly
+available or make them private, by giving access only to enrolled
+students.
 
-\item Community courses: a community server that allows anybody to register for a community course by using an instructor-specified email domain (e.g., \@...cmu.edu, \@...edu).
+\item Community courses: a community server that allows anybody to register for a community course by supplying an instructor-specified email domain (e.g., \@...cmu.edu, \@...edu).
  
 \item \href{ch:lms}{Course management tools} for managing student enrollment and grades.
 
@@ -27,13 +32,17 @@ Public and private books: instructors can choose to make their materials publicl
 
 \item An \href{ch:quiz}{online exam and quiz system} with an integrated Q \& A and discussions.  
 
-\item A cloud-based code submission system and autograder that can put
-  effectively any amount of compute power at the fingertips of the
-  user.
+\item A cloud-based code submission system and autograder. Students
+  can submit their code for grading on a cloud-based
+  autograder. Instructors can choose effectively any amount of compute
+  power, ranging from small machine instances to larger ones.
 
-\item A \href{ch:cli}{command-line-interface} that can be used to perform many course management task from the command line.
+\item A \href{ch:cli}{command-line-interface} that can be used to
+  perform many task from the command line, e.g., uploading content,
+  submitting assignments.
 
 \item
   Cloud-based implementation that seamlessly scales and trivially
   deploys at any institution without requiring any onsite IT services.
 \end{itemize}
+\end{gram}

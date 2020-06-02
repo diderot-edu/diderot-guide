@@ -2299,16 +2299,22 @@ grm:dc::uses
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p> Diderot uses labels to identify atoms uniquely. All labels in a book must be unique. To help in authoring, we recommended giving each chapter a unique label, and prepending each label in that chapter, with the chapter label.</p>
+<p>Diderot uses labels to identify various segments of a book, including chapters, sections, subsections, atoms etc. Labels in a chapter must all be unique but labels across chapters don’t have to be. We recommended giving each “unique segment” its own unique label. For example, if you have an exam problem on Fibonacci numbers, you can label thes problem as <code>prb:fib</code>. You can then include the same exam problem in two different exams within the same book. To help in authoring, we recommended giving each chapter a unique label, and prepending each label in that chapter, with the chapter label.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-\label{sec:dc::labels-refs}
-Diderot uses labels to identify atoms uniquely. All labels in a book
-must be unique.  To help in authoring, we recommended giving each
-chapter a unique label, and prepending each label in that chapter,
-with the chapter label.
+Diderot uses labels to identify various segments of a book, including
+chapters, sections, subsections, atoms etc. 
+Labels in a chapter must all be unique but labels across chapters
+don't have to be.
+We recommended giving each ``unique segment'' its own unique label.
+For example, if you have an exam problem on Fibonacci numbers, you can
+label thes problem as \lstinline`prb:fib`.  You can then include the
+same exam problem in two different exams within the same book.
+To help in authoring, we recommended giving each chapter a unique
+label, and prepending each label in that chapter, with the chapter
+label.
 ]]>
 </field> <!-- body_src -->
 
@@ -2569,7 +2575,7 @@ Note that you can use \lstinline`\href{url}{ref text}` to generate a link to a u
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
-grp:grm:dc::generates
+grp:grm:dc::segment
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2599,7 +2605,7 @@ grp:grm:dc::generates
 ...NOT.PROVIDED.SOUND...
 </field> <!-- sound -->
 <field name='label'>
-grm:dc::generates
+grm:dc::segment
 </field> <!-- label -->
 <field name='depend'>
 ...NOT.PROVIDED.DEPEND...
@@ -2609,7 +2615,7 @@ grm:dc::generates
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>DC generates a unique label for each atom, group, and section, in a document. When doing so, DC uses different prefixes for labels: <code>sec</code> for all sections, <code>grp</code> for groups, and the following for atoms. Atoms and their labels are shown below.</p>
+<p>If a segment of a document is not given a label, then DC generates a unique label for it. When doing so, DC uses different prefixes for labels: <code>sec</code> for all sections, <code>grp</code> for groups, and the following for atoms. Atoms and their labels are shown below.</p>
 <pre><code>algorithm : &quot;alg&quot;  
 assumption : &quot;asm&quot;  
 code : &quot;cd&quot;  
@@ -2643,7 +2649,8 @@ theorem : &quot;thm&quot;  </code></pre>
 </field> <!-- body -->
 <field name='body_src'>
 <![CDATA[
-DC generates a unique label for each atom, group, and section, in a document.
+If a segment of a document is not given a label, then DC generates a
+unique label for it.
 When doing so, DC uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.   Atoms and their labels are shown below.
 \begin{lstlisting}
 algorithm : "alg"
@@ -2676,6 +2683,108 @@ syntax : "syn"
 task : "tsk"
 theorem : "thm"
 \end{lstlisting}
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
+grp:grm:dc::reference-resolution
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
+<field name='title'>
+<![CDATA[
+Reference resolution
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+Reference resolution
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::reference-resolution
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>When Diderot sees a reference to a label, it resolves it by looking for it in the course in the following order</p>
+<ol>
+<li><p>within the same chapter,</p></li>
+<li><p>within the same book in decreasing chapter-rank order,</p></li>
+<li><p>within the course in any other book in increasing book-rank order.</p></li>
+</ol>
+<p>If a label is multiply defined within a book, Diderot uses the reference is the chapter with the highest rank.</p>
+<p>Note that you can reference a segment defined in another book. For example the recitation book could reference a label <code>def:shortest-paths</code> defined in the textbook of the course by using the usual syntax <code>\href{def:shortest-paths}</code>. If you know the book that you are referencing, you can also use the following syntax <code>\href{TB/def:shortest-paths}</code>, where <code>TB</code> is the label of the book that the target segment is defined in.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+When Diderot sees a reference to a label, it resolves it by looking
+for it in the course in the following order
+\begin{enumerate}
+\item within the same chapter,
+\item within the same book in decreasing chapter-rank order,
+\item within the course in any other book in increasing book-rank order.
+\end{enumerate}
+If a label is multiply defined within a book, Diderot uses the
+reference is the chapter with the highest rank.
+
+Note that you can reference a segment defined in another book.  For
+example the recitation book could reference a label
+\lstinline`def:shortest-paths` defined in the textbook of the course by
+using the usual syntax
+\lstinline`\href{def:shortest-paths}`.
+If you know the book that you are referencing, you can also use the following syntax
+\lstinline`\href{TB/def:shortest-paths}`,
+ where \lstinline`TB` is the label of the book that the target segment is defined in.
 ]]>
 </field> <!-- body_src -->
 
@@ -2759,87 +2868,6 @@ The trailing slash tells DC and Diderot that this is a book
 reference rather than a reference to a label within this book. 
 On Diderot, this reference will generate a link to the book within
 the course.
-]]>
-</field> <!-- body_src -->
-
-<field name='caption'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption -->
-<field name='caption_src'>
-<![CDATA[
-...NOT.PROVIDED.CAPTION...
-]]>
-</field> <!-- caption_src -->
-</atom> <!-- gram -->
-
-</segment> <!-- cluster -->
-
-<segment name='cluster'>
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='title'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-...NOT.PROVIDED.TITLE...
-]]>
-</field> <!-- title_src -->
-<field name='label'>
-grp:grm:dc::inter-book-references
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-
-<atom name='gram'>
-<field name='pl'>
-...NOT.PROVIDED.PL...
-</field> <!-- pl -->
-<field name='pl_version'>
-...NOT.PROVIDED.PL_VERSION...
-</field> <!-- pl_version -->
-<field name='title'>
-<![CDATA[
-Inter-Book References
-]]>
-</field> <!-- title -->
-<field name='title_src'>
-<![CDATA[
-Inter-Book References
-]]>
-</field> <!-- title_src -->
-<field name='cover'>
-...NOT.PROVIDED.COVER...
-</field> <!-- cover -->
-<field name='sound'>
-...NOT.PROVIDED.SOUND...
-</field> <!-- sound -->
-<field name='label'>
-grm:dc::inter-book-references
-</field> <!-- label -->
-<field name='depend'>
-...NOT.PROVIDED.DEPEND...
-</field> <!-- depend -->
-<field name='point_value'>
-0.0
-</field> <!-- point_value -->
-<field name='body'>
-<![CDATA[
-<p>You can make references between books. For example recitation book could refer to a label in the textbook by using the syntax <code>\href{TB/def:shortest-paths}</code>, where <code>TB</code> is the label of the book being referred to.</p>
-]]>
-</field> <!-- body -->
-<field name='body_src'>
-<![CDATA[
-You can make references between books.  For example recitation book
-could refer to a label in the textbook by using the syntax
-\lstinline`\href{TB/def:shortest-paths}`,
- where \lstinline`TB` is the label of the book being referred to.
 ]]>
 </field> <!-- body_src -->
 
@@ -3173,11 +3201,11 @@ grm:dc::render
 <field name='body'>
 <![CDATA[
 <p>The code above will render like this:</p>
-<div class="sourceCode" id="cb1" data-numbers="left"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> is_even (i):  </a>
-<a class="sourceLine" id="cb1-2" title="2">  <span class="cf">if</span> i <span class="op">%</span><span class="dv">2</span> <span class="op">=</span> <span class="dv">0</span>:  </a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> true  </a>
-<a class="sourceLine" id="cb1-4" title="4">  <span class="cf">else</span>   </a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="cf">return</span> false  </a></code></pre></div>
+<div class="sourceCode" id="cb1" data-numbers="left"><pre class="sourceCode numberSource python numberLines python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> is_even (i):  </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">if</span> i <span class="op">%</span><span class="dv">2</span> <span class="op">=</span> <span class="dv">0</span>:  </span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">return</span> true  </span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="cf">else</span>   </span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="cf">return</span> false  </span></code></pre></div>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
@@ -5148,7 +5176,6 @@ grm:dc::latex
 <p>LaTeX has grown rich (and perhaps too rich) but many authors tend to use a small subset. DC appears to work well for most uses. Here is a list of known limitations.</p>
 <ul>
 <li><p>For XML translation work, the chapter should be compileable to PDF. In general, recommended practice is to make sure that you can generate a PDF from your sources and then generate an XML.</p></li>
-<li><p>Do not use <code>\input</code> directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.</p></li>
 <li><p>All macro definitions via <code>newcommand</code> are restricted to the “preamble” of the book.</p></li>
 <li><p>Each chapter must have a unique label.</p></li>
 <li><p>Fancy packages are not supported. Stick to basic latex and AMS Math packages.</p></li>
@@ -5167,8 +5194,6 @@ Here is a list of known limitations.
 
 \item For XML translation work, the chapter should be compileable to PDF.  In general, recommended practice is to make sure that you can generate a PDF from your sources and then generate an XML.
 
-\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
-
 \item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
 
 \item Each chapter must have a unique label.
@@ -5179,7 +5204,7 @@ Here is a list of known limitations.
  
 \item You can use \lstinline`itemize`, \lstinline`enumerate`, and \lstinline`description` environments in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
 
-\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them.  Labels in other latex environments such as, items in lists, code lines, and equations are not supported.
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them.  Labels in other latex environments such as, items in lists, code lines, and equations are not supported. 
 
 \end{itemize}
 ]]>

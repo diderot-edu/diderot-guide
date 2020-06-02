@@ -386,10 +386,23 @@ Simple example 2
 
 \subsection{Labels and References}
 \label{sec:dc::labels-refs}
-Diderot uses labels to identify atoms uniquely. All labels in a book
-must be unique.  To help in authoring, we recommended giving each
-chapter a unique label, and prepending each label in that chapter,
-with the chapter label.
+
+Diderot uses labels to identify various segments of a book, including
+chapters, sections, subsections, atoms etc. 
+%
+Labels in a chapter must all be unique but labels across chapters
+don't have to be.
+%
+We recommended giving each ``unique segment'' its own unique label.
+%
+For example, if you have an exam problem on Fibonacci numbers, you can
+label thes problem as \lstinline`prb:fib`.  You can then include the
+same exam problem in two different exams within the same book.
+%
+%
+To help in authoring, we recommended giving each chapter a unique
+label, and prepending each label in that chapter, with the chapter
+label.
 
 
 \begin{example}
@@ -440,7 +453,8 @@ Note that the latter is compatible with PDF generation, whereas the former is no
 Note that you can use \lstinline`\href{url}{ref text}` to generate a link to a url.
 \end{gram}
 
-DC generates a unique label for each atom, group, and section, in a document.
+If a segment of a document is not given a label, then DC generates a
+unique label for it.
 %
 When doing so, DC uses different prefixes for labels: \lstinline`sec` for all sections, \lstinline`grp` for groups, and the following for atoms.   Atoms and their labels are shown below.
 %
@@ -476,6 +490,34 @@ task : "tsk"
 theorem : "thm"
 \end{lstlisting}
 
+\begin{gram}[Reference resolution]
+When Diderot sees a reference to a label, it resolves it by looking
+for it in the course in the following order
+%
+\begin{enumerate}
+\item within the same chapter,
+\item within the same book in decreasing chapter-rank order,
+\item within the course in any other book in increasing book-rank order.
+\end{enumerate}
+%
+If a label is multiply defined within a book, Diderot uses the
+reference is the chapter with the highest rank.
+% 
+
+Note that you can reference a segment defined in another book.  For
+example the recitation book could reference a label
+\lstinline`def:shortest-paths` defined in the textbook of the course by
+using the usual syntax
+%
+\lstinline`\href{def:shortest-paths}`.
+%
+If you know the book that you are referencing, you can also use the following syntax
+%
+\lstinline`\href{TB/def:shortest-paths}`,
+%
+ where \lstinline`TB` is the label of the book that the target segment is defined in.
+\end{gram}
+
 
 \begin{gram}[Book References]
 You can reference a book by using the syntax 
@@ -490,14 +532,6 @@ the course.
 %
 \end{gram}
 
-\begin{gram}[Inter-Book References]
-You can make references between books.  For example recitation book
-could refer to a label in the textbook by using the syntax
-%
-\lstinline`\href{TB/def:shortest-paths}`,
-%
- where \lstinline`TB` is the label of the book being referred to.
-\end{gram}
 
 \begin{gram}[Limitations]
 In LaTeX you can label pretty much anything. 
@@ -796,8 +830,6 @@ Here is a list of known limitations.
 
 \item For XML translation work, the chapter should be compileable to PDF.  In general, recommended practice is to make sure that you can generate a PDF from your sources and then generate an XML.
 
-\item Do not use \lstinline`\input` directives in your chapters but you can use them in preambles and packages included at the top of the LaTeX document.
-
 \item All macro definitions via \lstinline`newcommand` are restricted to the ``preamble'' of the book.
 
 \item Each chapter must have a unique label.
@@ -808,7 +840,7 @@ Here is a list of known limitations.
  
 \item You can use \lstinline`itemize`, \lstinline`enumerate`, and \lstinline`description` environments in their basic form.  Changing the label format with \lstinline`enumitem` package and similar packages do not work.  You can imitate these by using heading for your items.  
 
-\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them.  Labels in other latex environments such as, items in lists, code lines, and equations are not supported.
+\item Labeling and references are limited to chapters, sections, and atoms.  You can label these and refer to them.  Labels in other latex environments such as, items in lists, code lines, and equations are not supported. 
 
 \end{itemize}
 
