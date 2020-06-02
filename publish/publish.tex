@@ -47,8 +47,6 @@ You can release the chapter by using Book Managemement features.
 %
 Doing so makes them visible to the students.
 %
-Before you release a chapter, pleate  beware that releasing should be treated as a one-way feature.
-%
 
 \begin{gram}[Released Content: Implications for Authors and Users]
 \label{grm:publish::released::user-implications}
@@ -64,6 +62,21 @@ Updating content after it is released  therefore raises a number of questions, e
 \item if it should be allowed, then under what circumstances should it be allowed, who should decide?
 \end{itemize}
 \end{gram}
+
+\begin{gram}[Versioning]
+The simplest answer to the problem above is to simply publish a new versions (revisions) instead of modifying existing versions.
+%
+For example suppose that you have published and released an initial version (version 0) of homework $2$ as chapter $2$ of your homeworks book.
+%
+After releasing the chapter, you want to make some significant changes, one way to do this is to simply create a chapter $2.1$ and release this as the version 1 of the homework.
+%
+Further versions can be released as chapters $2.2$, $2.3$, etc.
+\end{gram}
+
+\begin{gram}[Other Approaches]
+If you don't want to use versioning, but update the content live and ``in place'' then there are other possible solutions.  Please read on.
+\end{gram}
+
 
 \begin{gram}[Technical Issues with Live Updates]
 Beyond these important questions, live-updates  to released content are complex from a technical point of view.
@@ -103,6 +116,10 @@ In the case of a complete rewrite, Diderot would ideally allow the student to be
 
 
 \begin{gram}[Releasing Content]
+For the aforementioned reasons, Diderot is somewhat conservative about the kinds of updates it support to existing content.
+
+
+
 These challenges are not that hard to overcome but, at this time, we have decided to proceed with a simplifying principle: a chapter will not undergo major updates after it is released, but smaller updates, e.g., typo fixes, addition of some text, etc could be common. 
 %
 Diderot, however, does not allow deletion of an entire atom, e.g., a definition, a theorem, etc, though a deletion can be simulated by editing the content of that atom.
