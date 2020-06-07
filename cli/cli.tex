@@ -329,6 +329,40 @@ $ diderot_admin upload_chapter courselabel bookname --chapter_number chapternumb
   --attach Path/To/File Path/To/Folder/ Path/With/Glob/*
 \end{verbatim}
 
+\subsection{upload\_book}
+
+\begin{gram}
+\verb|upload_book| uploads a complete booklet or book by creating all the necessary parts and chapters as specified in a json file.
+
+It accepts two arguments.
+%
+\begin{itemize}
+  \item \verb|course|: Course label that the book belongs to.
+  \item \verb|book-data|: JSON file describing the book or booklet.
+\end{itemize}
+\end{gram}
+
+Example Usage:
+\begin{verbatim}
+diderot_admin --url https://community.diderot.one upload_book  "CMU:Pittsburgh, PA:15210:Community:2020" volume-1.json
+\end{verbatim}
+ 
+\begin{gram}{JSON  for book uploads}
+The JSON format required by book uploads is relatively self explanatory.
+The file must specify the label of the book or booklet and then the parts (if applicable) and the chapters in the book. 
+%
+\begin{itemize}
+\item Here is an example 
+\href{file://booklet-example.json}
+{JSON file for a booklet}.
+\item Here is an example JSON file 
+\href{file://book-example.json}
+{JSON file for a book}.
+\end{itemize}
+\end{gram}
+
+
+
 \subsection{update\_assignment}
 
 \verb|update_assignment| is used to update files related to an assignment on Diderot.
@@ -346,7 +380,7 @@ It accepts 6 arguments.
 
 Example Usage:
 \begin{verbatim}
-$ didetot_admin update_assignment courselabel homeworkname \
+$ diderot_admin update_assignment courselabel homeworkname \
   --autograde-tar Path/To/Tar \
   --autograde-makefile Path/To/Makefile \
   --writeup Path/To/Writeup --handout Path/To/Handout
