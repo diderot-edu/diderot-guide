@@ -51,6 +51,10 @@ book:
 
 pdf: book
 
+## Any chapter pdf, e.g., make probability/theory.pdf
+%.pdf : %.tex book
+	$(PDFLATEX) --shell-escape --jobname="target" "\includeonly{$*}\input{book} ";
+	mv target.pdf $@
 
 ## Probability
 probability: book probability/theory.tex probability/randomvars.tex probability/expectation.tex

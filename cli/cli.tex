@@ -329,6 +329,44 @@ $ diderot_admin upload_chapter courselabel bookname --chapter_number chapternumb
   --attach Path/To/File Path/To/Folder/ Path/With/Glob/*
 \end{verbatim}
 
+\subsection{Uploading Chapter by using a Makefile}
+
+\begin{gram}
+The user can use several simple Makefile rules to upload chapters onto
+Diderot without.  To this end, the user will need to include
+\verb|resources/makefile-upload-to-diderot| Makefile recipe in their
+Makefile and then use rules that look like this
+\begin{verbatim}
+overview: overview/overview.xml overview/overview.pdf
+upload_overview: NO=1
+upload_overview: FILE=overview/overview
+upload_overview: overview upload_xml_pdf
+\end{verbatim}
+
+Here the variable \verb|NO| specifies the chapter number and \verb|FILE| specifies the xml and pdf file names, assumed to be \verb|FILE.xml| and \verb|FILE.pdf| respectively.  
+%
+For a book chapter, the part can be specified using \verb|PART_NO| variable.
+%
+For attachments, the verb|ATTACH| variable may be used.
+%
+The book which will receive the upload can specified by using the \verb|LABEL_TEXTBOOK| valiable.
+For example,
+
+\begin{verbatim}
+upload_introduction_genome: TEXTBOOK="TB.VOL.1"
+upload_introduction_genome: PART_NO=1 
+upload_introduction_genome: NO=4
+upload_introduction_genome: FILE=genome/genome
+upload_introduction_genome: ATTACH=genome/media/*.jpg 
+upload_introduction_genome: genome/genome.xml genome/genome.pdf upload_xml_pdf_attach
+\end{verbatim}
+\end{gram}
+
+\begin{gram}[Example Makefile]
+The \href{file://cli/attachments/Makefile-guide}{Makefile for the guide} uses this technique.
+
+\end{gram}
+
 \subsection{upload\_book}
 
 \begin{gram}
@@ -353,10 +391,10 @@ The file must specify the label of the book or booklet and then the parts (if ap
 %
 \begin{itemize}
 \item Here is an example 
-\href{file://booklet-example.json}
+\href{file://cli/attachments/booklet-example.json}
 {JSON file for a booklet}.
 \item Here is an example JSON file 
-\href{file://book-example.json}
+\href{file://cli/attachment/book-example.json}
 {JSON file for a book}.
 \end{itemize}
 \end{gram}

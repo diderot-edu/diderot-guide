@@ -51,9 +51,9 @@ book:
 
 pdf: book
 
-
-
-skyline : book.pdf skyline/main.tex
-	$(PDFLATEX) --jobname="skyline" '\includeonly{skyline/main}\input{book}'
+## Any chapter pdf, e.g., make skyline/main.pdf
+%.pdf : %.tex book
+	$(PDFLATEX) --shell-escape --jobname="target" "\includeonly{$*}\input{book} ";
+	mv target.pdf $@
 
 

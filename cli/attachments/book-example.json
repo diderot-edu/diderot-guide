@@ -1,0 +1,130 @@
+{
+  "book" : "TB.VOL.2",
+  "parts": [
+    {
+      "number": 1,
+      "title": "Graphs and Graph Search",
+      "label": "part:graphs"
+    },
+    {
+      "number": 2,
+      "title": "Shortest Paths",
+      "label": "part:shortest-paths"
+    },
+    {
+      "number": 3,
+      "title": "Graph Contraction",
+      "label": "part:graphcon"
+    },
+    {
+      "number": 4,
+      "title": "Minimum Spanning Trees",
+      "label": "part:mst"
+    }
+  "chapters": [
+    {
+       "number": 1,
+       "part": 1,
+       "xml": "graphs/graphs.xml",
+       "xml_pdf": "sequences/graphs.pdf"
+       "attachments": ["graphs/media/*.jpg"]
+    },
+    {
+       "number": 2,
+       "part": 1,
+       "xml": "graph-search/search.xml",
+       "xml_pdf": "graph-search/search.pdf"
+    },
+    {
+       "number": 3,
+       "part": 1,
+       "xml": "graph-search/bfs.xml",
+       "xml_pdf": "graph-search/bfs.pdf"
+       "attachments": ["graph-search/media-bfs/*.jpg"]
+    },
+    {
+       "number": 4,
+       "part": 1,
+       "xml": "graph-search/dfs.xml",
+       "xml_pdf": "graph-search/dfs.pdf"
+       "attachments": ["graph-search/media-dfs/*.jpg"]
+    },
+    {
+       "number": 5,
+       "part": 2,
+       "xml": "shortest-paths/introduction.xml",
+       "xml_pdf": "shortest-paths/introduction.pdf"
+       "attachments": ["shortest-paths/media-introduction/*.jpg"]
+    },
+    {
+       "number": 6,
+       "part": 2,
+       "xml": "shortest-paths/dijkstra.xml",
+       "xml_pdf": "shortest-paths/dijkstra.pdf"
+       "attachments": ["shortest-paths/media-dijkstra/*.jpg"]
+    },
+    {
+       "number": 7,
+       "part": 2,
+       "xml": "shortest-paths/bellmanford.xml",
+       "xml_pdf": "shortest-paths/bellmanford.pdf"
+       "attachments": ["shortest-paths/media-bellman-ford/*.jpg"]
+    },
+    {
+       "number": 8,
+       "part": 2,
+       "xml": "shortest-paths/johnson.xml",
+       "xml_pdf": "shortest-paths/johnson.pdf"
+       "attachments": ["shortest-paths/media-johnson/*.jpg"]
+    },
+    {
+       "number": 9,
+       "part": 3,
+       "xml": "graph-contraction/introduction.xml",
+       "xml_pdf": "graph-contraction/introduction.pdf"
+       "attachments": ["graph-contraction/media-introduction/*.jpg"]
+    },
+    {
+       "number": 10,
+       "part": 3,
+       "xml": "graph-contraction/edge.xml",
+       "xml_pdf": "graph-contraction/edge.pdf"
+       "attachments": ["graph-contraction/media-edge/*.jpg"]
+    },
+    {
+       "number": 11,
+       "part": 3,
+       "xml": "graph-contraction/star.xml",
+       "xml_pdf": "graph-contraction/star.pdf"
+       "attachments": ["graph-contraction/media-star/*.jpg"]
+    },
+    {
+       "number": 12,
+       "part": 3,
+       "xml": "graph-contraction/connectivity.xml",
+       "xml_pdf": "graph-contraction/connectivity.pdf"
+       "attachments": ["graph-contraction/media-connectivity/*.jpg"]
+    },
+    {
+       "number": 13,
+       "part": 4,
+       "xml": "mst/intro.xml",
+       "xml_pdf": "mst/intro.pdf"
+       "attachments": ["mst/media-intro/*.jpg"]
+    },
+    {
+       "number": 14,
+       "part": 4,
+       "xml": "mst/seq.xml",
+       "xml_pdf": "mst/seq.pdf"
+       "attachments": ["mst/media-seq/*.jpg"]
+    },
+    {
+       "number": 15,
+       "part": 4,
+       "xml": "mst/par.xml",
+       "xml_pdf": "mst/par.pdf"
+       "attachments": ["mst/media-par/*.jpg"]
+    }
+   ]
+}
