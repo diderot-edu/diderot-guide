@@ -1,0 +1,17 @@
+\begin{problem}[5.][Shortest Weighted]
+
+Given a graph with integer edge weights between $1$ and $5$
+(inclusive), you want to find the shortest \emph{weighted} path
+between a pair of vertices. 
+
+\ask
+How would you reduce this problem to the
+shortest \emph{unweighted} path problem, which can be solved using
+BFS?
+
+\sol
+Replace each edge with weight $i$ with a simple path of $i$ edges
+each with weight $1$. Then solve with BFS.
+
+\end{problem}
+

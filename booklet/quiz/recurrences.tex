@@ -1,0 +1,71 @@
+Recall that $f(n)$ is $\Theta(g(n))$
+if $f(n) \in O(g(n))$ and $g(n) \in O(f(n))$.
+%Find tight bounds in
+%terms of $\Theta$ for the following recurrences.
+
+
+\begin{note}
+You do not have to show your work, but it might help you get partial credit.
+\end{note}
+
+\begin{problem}[16.]
+Give a closed-form
+solution in terms of $\Theta$ for the following recurrences.  Also, state
+whether the recurrence is dominated at the root, the leaves, or
+equally at all levels of the recurrence tree.
+
+
+\ask
+Give closed form for  
+$f(n) = 5f(n/5) + \Theta(n)$
+
+%\hint[0.2] Here is a hint
+%\explain[0.1] Some explanation.  Recall that Theta means big oh + omeca.
+
+\sol
+$\Theta (n \lg n)$.
+
+\onechoice
+
+\choice Balanced
+\choice Leaves Dominated
+\choice* Root dominated 
+
+
+
+\ask
+Give closed form for  
+$f(n) = 3f(n/2) + \Theta(n^2)$
+
+\sol
+$\Theta(n^2)$
+
+\onechoice  According to brick method, the recurrence is
+\choice Balanced
+\choice Leaves Dominated
+\choice* Root dominated
+
+\ask
+$f(n) = f(n/2) + \Theta(\lg n)$
+
+\sol
+$\Theta (\lg^2 n)$
+
+\onechoice  According to brick method, the recurrence is
+\choice* Balanced
+\choice Leaves Dominated
+\choice Root dominated
+
+\ask
+$f(n) = 5f(n/8) +\Theta(n^{2/3})$
+
+\sol
+$\Theta(n^{\lg_8 5})$ (roughly $\Theta(n^{0.77})$) leaves.
+
+\onechoice  According to brick method, the recurrence is
+\choice Balanced
+\choice* Leaves Dominated
+\choice Root dominated
+
+\end{problem}
+

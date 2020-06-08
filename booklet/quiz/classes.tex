@@ -1,0 +1,22 @@
+\begin{problem}[4.][Classes]
+
+Lets say you are given a table that maps every student to the set of
+classes they take.  
+
+\ask
+
+Fill in the algorithm below that returns all classes,
+assuming there is at least one student in each class.  Your algorithm
+must run in $O(m \log n)$ work and $O((\log m)(\log n))$ span, where
+$n$ is the number of students and $m$ is the sum of the number of
+classes taken across all students.    Note, our solution is one line.
+
+\solfin
+
+\begin{lstlisting}[numbers=none]
+fun allClasses(T : classSet studentTable) : classSet = 
+    ____ Table.reduce Set.union Set.empty T ____
+
+\end{lstlisting}
+
+\end{problem}

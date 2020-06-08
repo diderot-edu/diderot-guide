@@ -1,0 +1,104 @@
+%\section{(MST) MST and Tree Contraction}
+
+In \emph{SegmentLab}, you implemented Bor\r{u}vka's algorithm that
+interleaved star contractions and finding minimum weight edges.  In
+this question you will analyze Bor\r{u}vka's algorithm more carefully.
+
+We'll assume throughout this problem that the edges are undirected,
+and each edge is labeled with a unique identifier ($\ell$). The
+weights of the edges do not need to be unique, and $m = |E|$ and $n =
+|V|$.
+
+\begin{lstlisting}[language=Caml, numbers=none]
+(* returns the set of edges in the minimum  spanning tree of G *)
+
+MST (G = (V,E)) = 
+  if |E| = 0 then {}
+  else let
+    F = {min weight edge incident on v : v in V}
+    (V',P) = contract each tree in the forest (V,F) to a single vertex
+                  V' = remaining vertices
+                  P = mapping from each v in V to its representative in V'
+    E' = { (P_u, P_v, l) : (u, v,  l) in E  |  P_u <> P_v }
+  in 
+    MST (G' = (V',E')) union {l : (u,v,l) in F}
+  end
+\end{lstlisting}
+
+\begin{problem}
+\ask[4.]
+Show an example graph with $4$ vertices in which \cd{F} will not include all
+the edges of the MST.  Specify the graph as a set of vertices and edges, e.g., $V = \{0, 1, 2\}$ and $E = \{\{0,1\}, \{0,2\}\}$.
+
+\sol
+\begin{verbatim}
+      3
+   o --- o
+ 1 |     | 2
+   o     o
+\end{verbatim}
+
+\ask[4.]
+Prove that the set of edges $F$ must be a forest (i.e. $F$ has no cycle).
+
+\sol
+Answer 1: The MST does not have a cycle (it is a tree) and F is a subset of F
+so it can't have a cycle.
+
+Answer 2: AFSOC that there is a cycle.  Consider the maximum weight
+edge on the cycle.  Neither of its endpoints will choose it since they
+both have lighter edges.  Contradiction.
+\end{problem}
+
+\newpage
+
+\begin{problem}[4.]
+\ask
+Suggest a technique to efficiently contract the forest in parallel.
+What is a tight asymptotic bound for the work and span of your contract,
+in terms of $n$? Explain briefly. Are these bounds worst case or
+expected case?
+
+\sol
+Use star contraction as described in class. Since in contraction a tree
+will always stay a tree, the number of edges must go down with the number
+of vertices. Therefore total work will be $O(n)$ and span will be
+$O(\log^2 n)$ in expectation.
+\end{problem}
+
+\begin{problem}[4.]
+\ask
+Argue that each recursive call to \sml{MST} removes, in the worst
+case, at least \emph{half} of the vertices; that is, $|V'| \leq \frac{|V|}{2}$.
+
+\sol
+Every vertex will join at least one other vertex. Since edges have
+two directions, at least $n/2$ of them must be selected, which will remove
+at least $n/2$ vertices ($n = |V|$).
+\end{problem}
+
+\begin{problem}[4.]
+\ask
+What is the maximum number of edges that could remain after one step
+(i.e. what is $|E'|$)? Explain briefly.
+
+\sol
+$m - n/2$ since at least $n/2$ edges are removed, as described in
+previous answer.
+\end{problem}
+
+\begin{problem}[5.]
+\ask
+What is the expected work and span of the overall algorithm in terms of
+$m$ and $n$? Explain briefly. You can assume that calculating $F$ takes
+$O(m)$ work and $O(\log n)$ span.
+
+\sol
+Since vertices go down by at least a factor of $1/2$ on each round,
+there will be at most $\log n$ rounds.  The cost of each round is
+dominated by calculating $F$, $O(m)$ work and $O(\log n)$ span and the
+contraction of forests $O(n)$ work and $O(\log^2 n)$ span.
+Multiplying the max of each of these by $\log n$ gives $O(m \log n)$ work
+and $O(\log^3 n)$ span.
+\end{problem}
+

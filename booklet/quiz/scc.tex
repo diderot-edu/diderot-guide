@@ -1,0 +1,71 @@
+%\section{(Graphs) Strongly Connected Components}
+
+In this question, you will write 2 functions on directed graphs.
+We assume that key comparisons take $O(1)$ work  and  that graphs are represented as:
+\begin{lstlisting}[language=Caml, numbers=none]
+type graph = vertexSet vertexTable
+\end{lstlisting}
+
+
+\begin{problem}[10.]
+Given a directed graph $G = (V,E)$, its transpose $G^T$ is
+another directed graph on the same vertices, with every edge flipped.
+More formally, $G^T = (V,E')$, where
+$$E' = \{(b,a)~|~(a,b) \in E \}.$$
+
+\ask
+Here is a skeleton of an SML definition for \cd{transpose} that computes
+the transpose of a graph. Fill in the blanks to complete the implementation.
+Your implementation must have $O(|E| \log |V|)$ work and $O(\log^2 |V|)$
+span.
+
+\solfin
+
+\begin{lstlisting}[language=Caml,numbers=none]
+function transpose (G : graph) : graph = 
+let
+  val S = vertexTable.toSeq(G)    
+
+  function flip(u,nbrs) = Seq.map ____     (fn v.(v,u))     ____ (vertexSet.toSeq nbrs)
+
+  val ET = Seq.flatten(Seq.map flip S
+  val T = vertexTable.____  collect              ____  ET
+in
+  vertexTable.map ____ vertexSet.fromSeq T               ____
+end
+\end{lstlisting} 
+\end{problem}
+
+
+\begin{problem}[10.]
+A \emph{strongly connected component} of a directed graph $G = (V,E)$ is a subset $S$ of $V$ such
+that every vertex $u \in S$ can reach every other vertex $v \in S$ (i.e.,
+there is a directed path from $u$ to $v$), and such that no other vertex in
+$V$ can be added to $S$ without violating this condition. Every vertex
+belongs to exactly one strongly connected component{} in a graph.
+
+\ask
+Implement the function:
+\begin{lstlisting}[language=Caml,numbers=none]
+val scc~:~graph * vertex -> vertexSet
+\end{lstlisting}
+such that \cd{scc(G,v)} returns the strongly connected component{} containing $v$. You may assume
+the existence of a function:
+\begin{lstlisting}[language=Caml,numbers=none]
+val reachable: graph * vertex -> vertexSet
+\end{lstlisting}
+such that \cd{reachable(G,v)} returns all the vertices reachable from $v$
+in $G$. Not including the cost of \cd{reachable}, your algorithm must
+have $O(|E|\log|V|)$ work and $O(\log^2 |V|)$ span.  You might find
+\cd{transpose} useful and can assume the given time bounds.
+
+
+\solfin
+\begin{lstlisting}[language=Caml,numbers=none]
+fun scc ($G$ : graph, v : vertex) : vertexSet = 
+    ____  vertexSet.intersection(reachable(G,v),}                 ____
+    ____ reachable(transpose(G,v)))}                              ____
+\end{lstlisting}
+
+\end{problem}
+
