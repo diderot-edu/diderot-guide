@@ -373,13 +373,18 @@ The \href{file://cli/attachments/Makefile-guide}{Makefile for the guide} uses th
 \subsection{upload\_book}
 
 \begin{gram}
-\verb|upload_book| uploads a complete booklet or book by creating all the necessary parts and chapters as specified in a json file.
+\verb|upload_book| uploads a set of parts and chapters into a book or booklet.
+%
+It can be used to upload a complete booklet or book by creating all
+the necessary parts and chapters as specified in a json file.
+%
+It can also be used to upload any subset of parts and chapters.
 
 It accepts two arguments.
 %
 \begin{itemize}
   \item \verb|course|: Course label that the book belongs to.
-  \item \verb|book-data|: JSON file describing the book or booklet.
+  \item \verb|book-data|: JSON file describing the parts and chapters to be uploaded (or the book/booklet).
 \end{itemize}
 \end{gram}
 
