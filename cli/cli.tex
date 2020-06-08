@@ -329,7 +329,7 @@ $ diderot_admin upload_chapter courselabel bookname --chapter_number chapternumb
   --attach Path/To/File Path/To/Folder/ Path/With/Glob/*
 \end{verbatim}
 
-\subsection{Uploading Chapter by using a Makefile}
+\subsection{Uploading Chapters with a Makefile}
 
 \begin{gram}
 The user can use several simple Makefile rules to upload chapters onto
@@ -347,10 +347,13 @@ Here the variable \verb|NO| specifies the chapter number and \verb|FILE| specifi
 %
 For a book chapter, the part can be specified using \verb|PART_NO| variable.
 %
-For attachments, the verb|ATTACH| variable may be used.
+For attachments, the \verb|ATTACH| variable may be used.
 %
-The book which will receive the upload can specified by using the \verb|LABEL_TEXTBOOK| valiable.
-For example,
+The user can specify the course and the book being uploaded into by using the
+\verb|LABEL_COURSE| and \verb|LABEL_TEXTBOOK| variables. 
+
+Below is an example rule, where \verb|LABEL_COURSE| was set earlier in the Makefile.
+
 
 \begin{verbatim}
 upload_introduction_genome: TEXTBOOK="TB.VOL.1"
@@ -385,7 +388,7 @@ Example Usage:
 diderot_admin --url https://community.diderot.one upload_book  "CMU:Pittsburgh, PA:15210:Community:2020" volume-1.json
 \end{verbatim}
  
-\begin{gram}{JSON  for book uploads}
+\begin{gram}[JSON  for book uploads]
 The JSON format required by book uploads is relatively self explanatory.
 The file must specify the label of the book or booklet and then the parts (if applicable) and the chapters in the book. 
 %
