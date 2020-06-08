@@ -1,0 +1,165 @@
+%\section{(Sets and Tables) Bingled}
+
+After forming your company Bingle to index the web allowing word
+searches based on logical combination of terms (e.g. ``big'' and
+``small''), you discover that there are already a couple companies out
+there that do it....and lo-and-behold, they even have similar names.
+You therefore decide to extend yours with additional features.  In
+particular you want to support phrase queries: e.g. find all
+documents where ``fun algorithms'' appears.
+
+You decide the right way to represent the index is as a table of sets
+where the keys of the table are strings (i.e. the words) and the
+elements of the sets are pairs of values consisting of a document
+identifier and an integer location in the document where the string
+appears.  So, for example the following collection of three documents
+with integer document identifiers:
+%
+\begin{quote}
+\[
+\begin{array}{ll}
+\langle 
+& (1, \cdm{``the~big~dog''}), 
+\\
+& (2, \cdm{``a~big~dog~ate~a~hat''}),
+\\
+& (3, \cdm{``i~read~a~big~book''})
+\\
+\rangle
+\end{array}
+\]
+\end{quote}
+~\\
+the document index would be represented as
+\[
+\begin{array}{lll}
+\cdm{idx} = & \{ & \cdm{``a''} \mapsto \cset{(2,0),(2,4),(3,2)}
+\\
+            &    &  \cdm{``big''} \mapsto \cset{(1,1),(2,1),(3,3)},
+\\
+            &   & \cdm{``dog''} \mapsto \cset{(1,2),(2,2)},
+\\
+            &   & \ldots
+\\
+            & \} &
+\end{array}
+\]
+
+In particular you want to support the following interface
+%
+\begin{lstlisting}[language=Caml,numbers=none]
+signature INDEX = sig
+  type word = string
+  type docId = int
+  type index = docIdIntSet wordTable
+  
+  (* represents all documents and all locations where a phrase appears *)
+  type docList
+
+  val makeIndex : (docId * string) seq -> index    
+  val find : index -> word -> docList
+  val adj : docList * docList -> docList
+  val toSeq : docList -> docId seq 
+end
+\end{lstlisting}
+%
+where, given an index \cd{idx},
+%
+\begin{lstlisting}[language=Caml,numbers=none]
+toSeq (adj (find idx "210", find idx "rocks"))
+\end{lstlisting}
+%
+would return a sequence of identifiers of documents
+where ``210'' appears immediately before ``rocks'', and 
+\\
+\begin{lstlisting}[language=Caml,numbers=none]
+toSeq (adj (find idx "Umut", adj (find idx "loves", find idx "climbing")))
+\end{lstlisting}
+~\\
+would return a sequence of identifiers of documents
+where the phrase ``Umut loves climbing'' appears.
+
+\begin{problem}[8.]
+
+\ask
+Show the pseudocode for generating the index from the sequence of documents.
+It should not be more than 8 lines of code and assuming all words have
+length less than some constant, must run in $O(n \log n)$ work and
+$O(\log^2 n)$ span, where $n$ is the total number of words across all
+documents.    
+%
+You can use the function
+%
+\begin{lstlisting}[language=Caml,numbers=none]
+toWords~:~string -> string seq
+\end{lstlisting}
+%
+that breaks a text string into a sequence of words.
+
+\solfin
+\begin{lstlisting}[language=Caml, numbers=none]
+type index = docIdIntSet wordTable
+
+fun makeIndex (docs : (docId  * string) seq) : index =
+  let
+      ____ fun tagWords (id,doc) =                                     ____
+      ____ let val words = toWords doc                                 ____
+      ____ in                                                          ____
+      ____ Seq.tabulate (fn i = (nth i words, (id, i)) (length words)  ____
+      ____ end                                                         ____
+
+      ____ val allPairs = Seq.flatten (Seq.map tagWords docs)          ____
+
+      ____ val wordTable = Table.collect allPairs                      ____
+      ____                                                             ____
+      ____                                                             ____
+      ____                                                             ____
+      ____                                                             ____
+in                  
+    ____ Table.map Set.fromSeq wordTable                               ____
+end
+\end{lstlisting}
+\end{problem}
+
+\begin{problem}[8.]
+
+Show code for a function \texttt{adj(docList1, docList2)} that given
+two docLists returns a docList in which those two words
+are adjacent.  For example for the index generated from the documents
+above, 
+\begin{lstlisting}[language=Caml,numbers=none]
+toSeq(adj(find idx "a", find idx "big")) 
+\end{lstlisting}
+would return
+$\cseq{2, 3}$.  For full credit \texttt{adj} must be an associative operator.
+
+\ask
+Define the \sml{docList} type and implement the function \sml{adj} as defined above.
+You might find the function \sml{setmap} useful. The solution should
+only be a few lines of code.
+\begin{lstlisting}[numbers=none]
+fun setmap f s = Set.fromSeq (Seq.map f (Set.toSeq s)) 
+\end{lstlisting}
+
+
+\solfin
+\begin{lstlisting}[language=Caml,numbers=none]
+type docList = (docIdIntSet) * int
+
+fun adj (____      (d1,l1)      ____ , ____     (d2,l2)      ____ )  : docList = 
+  let 
+      ____ val d2' = setmap (fn (d,i) = (d, i-l1)) d2                     ____
+  in  
+      ____ (Set.intersection (d1,d2'), l1+l2)                             ____
+  end
+\end{lstlisting}
+
+
+%% (* FYI: not part of exam *)
+%% fun find idx word = 
+%%   case Table.find idx word =>
+%%     NONE => (Set.empty(), 1)
+%%   | SOME d => (d, 1)
+   
+\end{problem}
+

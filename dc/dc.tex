@@ -655,10 +655,6 @@ When uploading a chapter, via the UI or via the CLI, the user needs to upload th
 
 Diderot uses MathJax to render math environments.  This works in many cases, especially for use that is consistent with AMS Math packages.  
 %
-A reasonably complete list of commands available in 
-\href{http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm#alphaList}{MathJax can be found here.}
-%
-
 There is one important caveat. 
 %
 Once you switch to math mode, try to stay in math mode.  You can switch to text mode using \lstinline`\text` but if you use macros inside  the \lstinline`\text`, then they might not work (because mathjax doesn't know about your macros).  For example, the following won't work. 

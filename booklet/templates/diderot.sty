@@ -4,10 +4,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN: DIDEROT COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % For PDF, we delegate download and attach to href.
-\newcommand{\download}[2]{\href{#1}{#2}}
-\newcommand{\attach}[2]{\href{#1}{#2}}
+\newcommand{\download}[2]{\href{#2}{#1}}
+\newcommand{\attach}[2]{\href{#2}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% END: DIDEROT COMMANDS
@@ -52,7 +51,7 @@
 
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}[chapter]
-\newtheorem{problem}[exercise]{Problem}
+%\newtheorem{problem}[exercise]{Problem}
 \newtheorem*{solution}{Solution}
 \newtheorem*{task}{Task}
 
@@ -217,16 +216,19 @@
 { 
 }
 
-%% \NewDocumentEnvironment{problem}{o}
-%% {
-%% \IfNoValueTF{#1}
-%% {\paragraph*{Problem.}}
-%% {\paragraph*{Problem [#1].}}
-
-%% }
-%% { 
-
-%% }
+\NewDocumentEnvironment{problem}{oo}
+{
+\IfNoValueTF{#1}
+{\noindent\textbf{Problem.}}
+{\IfNoValueTF{#2}
+  {\noindent\textbf{Problem (#1 Points).}}
+  {{\noindent\textbf{Problem (#1 Points)~~{#2}.}}}
+}
+{
+}
+}
+{
+}
 
 \NewDocumentEnvironment{proposition}{o}
 {
@@ -240,8 +242,8 @@
 \NewDocumentEnvironment{question}{o}
 {
 \IfNoValueTF{#1}
-{\paragraph*{Question.}}
-{\paragraph*{Question [#1].}}
+{\noindent\textbf{Question.}}
+{\noindent\textbf{Question [#1].}}
 }
 { 
 }
@@ -308,4 +310,56 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% END: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Exams
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\explain}{\paragraph{Explanation.}}
+\newcommand{\notes}{\paragraph{Notes.}}
+
+%% True False
+\newcommand{\asktf}[1][]{\paragraph{True or False?}}
+\newcommand{\solt}[1][]{\textbf{Solution: True}}
+\newcommand{\solf}[1][]{\textbf{Solution: False}}
+\newcommand{\solfin}[1][]{\textbf{Fill in the blanks:}}
+% \newcommand{\fin}[1]{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\newcommand{\fin}[2][]{#2}
+%\newcommand{\fin}[1]{#1}
+\newcommand{\continue}{}
+
+
+%% Free Response
+\NewDocumentCommand{\ask}{o}{
+    \IfNoValueTF{#1}
+    {\medskip\noindent\textbf{Question.}}             % No points
+    {\medskip\noindent\textbf{Question (#1 Points).}}  % Points
+}
+
+\NewDocumentCommand{\sol}{o}{
+    \IfNoValueTF{#1}
+    {\noindent\textbf{Solution.}}             % No points
+    {\noindent\textbf{Solution (#1 Factors).}}  % Points
+}
+
+
+
+
+%% Multiple choire
+\newcommand{\onechoice}[1][]{\paragraph{Select one:}}
+
+%% Multiple answer
+\newcommand{\anychoice}[1][]{\paragraph{Select any:}}
+\NewDocumentCommand{\choice}{so}{
+  \IfBooleanTF#1
+    {\par $\checkmark$}% Star 
+    {\par --}% No star
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Diderot Exams
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,5 +1,6 @@
 # Make GUIDE_DIR point to your Diderot guide directory
 GUIDE_DIR = ..
+META_DIR = $(GUIDE_DIR)/meta
 
 PDFLATEX = pdflatex
 LATEX = latex
@@ -20,8 +21,7 @@ else
 	endif
 endif
 
-DC = $(DC_HOME)/dc 
-DCDBG = $(DC_HOME)/dc.dbg 
+DC = $(DC_HOME)/dc -meta $(META_DIR) 
 
 
 default: pdf

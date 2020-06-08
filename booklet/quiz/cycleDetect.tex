@@ -1,0 +1,17 @@
+\begin{problem}[4.][Parallel Cycle Detection]
+\ask
+Describe in words how you would as part of star contraction 
+efficiently detect that an undirected graph has a cycle.  \textbf{No more than two sentences.}
+
+\sol
+If during star contraction we find any self edges not involved in
+contraction itself then there is a cycle.   However,
+we need to be careful not to remove duplicate edges, and only to
+contract along a single duplicate edge.
+
+%% -4 if claim detecting duplicate edges is sufficient.  It is not sufficient because you can contract duplicate edges at the same time\\
+%% %
+%% -2 if say detect self edge, but do not point out issue with duplicates.\\
+%% %
+%% 0 for DFS, BFS, etc.
+\end{problem}
