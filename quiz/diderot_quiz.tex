@@ -201,6 +201,31 @@ these steps.
 \section{Type Setting Quizzes Using LaTeX}
 \label{ch:quiz::typesetting}
 
+\begin{cluster}
+\label{grp:grm:quiz::compiler}
+
+\begin{gram}
+\label{grm:quiz::compiler}
+Diderot compiler \lstinline`DC` can generate online quizzes from LaTeX sources. Diderot’s online quizzes are quite powerful and provide the instructor and the user with several convenient features. This section covers some of the basic features of the Diderot quizzes.  
+
+\end{gram}
+\end{cluster}
+
+\begin{cluster}
+\label{grp:grm:quiz::guide}
+
+\begin{gram}
+\label{grm:quiz::guide}
+The guide repository provides an example quiz 
+\href{https://github.com/diderot-edu/diderot-guide/tree/master/booklet}{under booklet directory}. 
+This quiz can be translated into XML by using \lstinline`DC` and running the command 
+\lstinline`$ make quiz/quiz.xml`
+and may then be uploaded into a chapter. 
+Please see \href{ch:dc}{the chapter on DC} for more details on how to use \lstinline`DC`.
+
+\end{gram}
+\end{cluster}
+
 
 \subsection{Basic Concepts}
 \label{sec:quiz::basic-concepts}
@@ -430,6 +455,8 @@ If you have answered incorrect, you can also provide a counterexample
 here: \fin{2~~~~~~}.  (We are adding some additional space to the
 solution so that we don't give any tips about the solution via the
 length of the space).
+
+You can also control spacing more precisely by optionally passing the number of characters that you wish to leave to be filled.  For example \fin[10]{three} will leave exactly 10 characters for the blank space to be filled in.
 \end{problem}
 \end{lstlisting}
 
