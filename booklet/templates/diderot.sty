@@ -4,16 +4,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN: DIDEROT COMMANDS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% For pdf/latex we only use hyperref[label][reference text]
-%% format.  
-\renewcommand{\href}[2]{
-\hyperref[#1]{#2}
-}
-
-% For PDF generation, this is identity function
-\newcommand{\htmlmath}[1]{{#1}}
-
 % For PDF, we delegate download and attach to href.
 \newcommand{\download}[2]{\href{#2}{#1}}
 \newcommand{\attach}[2]{\href{#2}{#1}}
