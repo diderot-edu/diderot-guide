@@ -4,13 +4,6 @@
 \begin{gram}
 Diderot allows authors to generate interactive books from LaTeX and Markdown sources.
 %
-Interactive books, however, do raise a number of issues that are not straightforward to handle by starting with just LaTeX/Markdown sources, whose information content makes it difficult to enable certain operations such as live updates.
-%
-Another difficulty is the complexities of translating LaTeX/Markdown sources (especially LaTeX) to be online friendly.
-
-%
-Fortunately, Diderot offers an array of tools to deal with this complexity.
-%
 In this chapter, we first describe the basic concepts of publishing on
 Diderot and then describe the structure of a Diderot ``book'' and a ``booklet'' and our recommendations for organizing these and creating content.
 %
@@ -26,7 +19,7 @@ and follow the instructions in \lstinline`INSTALL.md`.
 %
 The examples are tested on Mac OS X and Ubuntu.  The binaries in \lstinline`bin` might not work on systems that are not Mac or Linux/Unix-like. 
 
-This guide is public and it source are available 
+This guide is public and its sources are available 
 \href{https://github.com/diderot-edu/diderot-guide}{in this repo}.
 %
 Please send feeback by \href{https://github.com/diderot-edu/diderot-guide/issues}{opening an issue}.
@@ -64,27 +57,33 @@ Updating content after it is released  therefore raises a number of questions, e
 \end{gram}
 
 \begin{gram}[Versioning]
-The simplest answer to the problem above is to simply publish a new versions (revisions) instead of modifying existing versions.
+The simplest answer to the problem above is to publish a new versions (revisions) instead of modifying existing versions.
 %
 For example suppose that you have published and released an initial version (version 0) of homework $2$ as chapter $2$ of your homeworks book.
 %
-After releasing the chapter, you want to make some significant changes, one way to do this is to simply create a chapter $2.1$ and release this as the version 1 of the homework.
+After releasing the chapter, you want to make some significant changes.  You can  do this by simply creating a chapter $2.1$ and releasing this as the version 1 of the homework.
 %
 Further versions can be released as chapters $2.2$, $2.3$, etc.
+
 \end{gram}
 
-\begin{gram}[Other Approaches]
-If you don't want to use versioning, but update the content live and ``in place'' then there are other possible solutions.  Please read on.
+\begin{gram}[Other Approaches: Live Updates]
+If you don't want to use versioning, but update the content ``live'' or ``in place'' then there are other possible solutions but these are a bit more complex.  Please read on.
+\end{gram}
+
+
+\begin{gram}[Releasing Content]
+Diderot is somewhat conservative about the kinds of updates it support to existing content, because it does not want to allow student author content to be deleted by instructor actions.  
+%
+Diderot assumes that a chapter will not undergo major updates after it is released, but smaller updates, e.g., typo fixes, addition of some text, etc could be common. 
 \end{gram}
 
 
 \begin{gram}[Technical Issues with Live Updates]
-Beyond these important questions, live-updates  to released content are complex from a technical point of view.
-%
-The first issue is identifying what has been changed
+One issue with live-updates is identifying what has been changed
 and what has not.
 %
-To see why let's say that you have published and released a chapter on Diderot and later realized that you want to make some updates, and so you edited the chapter sources.
+Let's say that you have published and released a chapter on Diderot and later realized that you want to make some updates, and so you edited the chapter sources.
 %
 Now, if you want to update the released chapter on Diderot, then
 Diderot needs to figure out which sections and atoms have been edited
@@ -93,7 +92,7 @@ and which ones remain the same.
 This is not easy, because Diderot doesn't know the full history of your edits.
 
 %
-A second technical concern is treatment of deleted content.  Let's say that you have deleted a paragraph, but a student took personal notes on this paragraph.  What should happen to students' notes?
+A second concern is treatment of deleted content.  Let's say that you have deleted a paragraph, but a student took personal notes on this paragraph.  What should happen to students' notes?
 %
 Should they also be deleted? 
 %
@@ -114,16 +113,6 @@ In the case of a swap, Diderot hardly needs to take any action.
 In the case of a complete rewrite, Diderot would ideally allow the student to become aware of the change and take some action.
 \end{example}
 
-
-\begin{gram}[Releasing Content]
-For the aforementioned reasons, Diderot is somewhat conservative about the kinds of updates it support to existing content.
-
-
-
-These challenges are not that hard to overcome but, at this time, we have decided to proceed with a simplifying principle: a chapter will not undergo major updates after it is released, but smaller updates, e.g., typo fixes, addition of some text, etc could be common. 
-%
-Diderot, however, does not allow deletion of an entire atom, e.g., a definition, a theorem, etc, though a deletion can be simulated by editing the content of that atom.
-\end{gram}
 
 \begin{gram}[Using  Atomic Files for Live Updates]
 \label{grm:publisg::diderot-atomic}
