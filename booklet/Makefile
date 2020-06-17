@@ -30,9 +30,6 @@ FORCE:
 
 .PHONY: book html pdf
 
-html: FORCE
-	$(PANDOC) -s book-html.tex > book.html
-
 clean: 
 	rm *.aux *.idx *.log *.out *.toc */*.aux */*.idx */*.log */*.out 
 

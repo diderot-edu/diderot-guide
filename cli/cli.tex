@@ -376,7 +376,7 @@ The \href{file://cli/attachments/Makefile-guide}{Makefile for the guide} uses th
 \verb|upload_book| uploads a set of parts and chapters into a book or booklet.
 %
 It can be used to upload a complete booklet or book by creating all
-the necessary parts and chapters as specified in a json file.
+the necessary parts and chapters specified in a json file.
 %
 It can also be used to upload any subset of parts and chapters.
 
@@ -390,8 +390,9 @@ It accepts two arguments.
 
 Example Usage:
 \begin{verbatim}
-diderot_admin --url https://community.diderot.one upload_book  "CMU:Pittsburgh, PA:15210:Community:2020" volume-1.json
+diderot_admin upload_book  "CMU:Pittsburgh, PA:15210:Community:2020" volume-1.json
 \end{verbatim}
+%
  
 \begin{gram}[JSON  for book uploads]
 The JSON format required by book uploads is relatively self explanatory.
@@ -405,6 +406,13 @@ The file must specify the label of the book or booklet and then the parts (if ap
 \href{file://cli/attachment/book-example.json}
 {JSON file for a book}.
 \end{itemize}
+
+Each chapter field must contain \verb|number| specifying the chapter
+number and in addition may contain any subset of \verb|xml|,
+\verb|xml_pdf|, \verb|pdf|, \verb|title|, \verb|label|.  Note that for
+\verb|xml| chapters, the label specified in the chapter takes
+precedence over specified in the json file if any.
+
 \end{gram}
 
 
