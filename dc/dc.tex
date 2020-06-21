@@ -395,13 +395,12 @@ don't have to be.
 We recommended giving each ``unique segment'' its own unique label.
 %
 For example, if you have an exam problem on Fibonacci numbers, you can
-label thes problem as \lstinline`prb:fib`.  You can then include the
+label the problem as \lstinline`prb:fib`.  You can then include the
 same exam problem in two different exams within the same book.
 %
 %
-To help in authoring, we recommended giving each chapter a unique
-label, and prepending each label in that chapter, with the chapter
-label.
+We recommended using the label of a chapter as a prefix in all labels
+within that chapter.
 
 
 \begin{example}
@@ -447,7 +446,12 @@ To reference a label you can either use
 \item \lstinline`\ref{label}`.
 \end{itemize}
 %
-Note that the latter is compatible with PDF generation, whereas the former is not handled by \lstinline`pdflatex` as we would hope (generate a reference to the section).
+The latter is compatible with PDF generation, whereas the former is not handled by \lstinline`pdflatex` as we would hope (generate a reference to the section).
+%
+
+For a reference of the form \lstinline`\ref{label}`, Diderot generates
+a reference text from the title of the entity being referred to.  If
+the entity is not titled, then it uses the text ``Reference''.
 
 Note that you can use \lstinline`\href{url}{ref text}` to generate a link to a url.
 \end{gram}

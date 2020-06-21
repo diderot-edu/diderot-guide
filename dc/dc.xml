@@ -2298,7 +2298,7 @@ grm:dc::uses
 </field> <!-- point_value -->
 <field name='body'>
 <![CDATA[
-<p>Diderot uses labels to identify various segments of a book, including chapters, sections, subsections, atoms etc. Labels in a chapter must all be unique but labels across chapters don’t have to be. We recommended giving each “unique segment” its own unique label. For example, if you have an exam problem on Fibonacci numbers, you can label thes problem as <code>prb:fib</code>. You can then include the same exam problem in two different exams within the same book. To help in authoring, we recommended giving each chapter a unique label, and prepending each label in that chapter, with the chapter label.</p>
+<p>Diderot uses labels to identify various segments of a book, including chapters, sections, subsections, atoms etc. Labels in a chapter must all be unique but labels across chapters don’t have to be. We recommended giving each “unique segment” its own unique label. For example, if you have an exam problem on Fibonacci numbers, you can label the problem as <code>prb:fib</code>. You can then include the same exam problem in two different exams within the same book. We recommended using the label of a chapter as a prefix in all labels within that chapter.</p>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
@@ -2309,11 +2309,10 @@ Labels in a chapter must all be unique but labels across chapters
 don't have to be.
 We recommended giving each ``unique segment'' its own unique label.
 For example, if you have an exam problem on Fibonacci numbers, you can
-label thes problem as \lstinline`prb:fib`.  You can then include the
+label the problem as \lstinline`prb:fib`.  You can then include the
 same exam problem in two different exams within the same book.
-To help in authoring, we recommended giving each chapter a unique
-label, and prepending each label in that chapter, with the chapter
-label.
+We recommended using the label of a chapter as a prefix in all labels
+within that chapter.
 ]]>
 </field> <!-- body_src -->
 
@@ -2528,7 +2527,8 @@ grm:dc::references
 <li><p><code>\href{label}{ref text}</code></p></li>
 <li><p><code>\ref{label}</code>.</p></li>
 </ul>
-<p>Note that the latter is compatible with PDF generation, whereas the former is not handled by <code>pdflatex</code> as we would hope (generate a reference to the section).</p>
+<p>The latter is compatible with PDF generation, whereas the former is not handled by <code>pdflatex</code> as we would hope (generate a reference to the section).</p>
+<p>For a reference of the form <code>\ref{label}</code>, Diderot generates a reference text from the title of the entity being referred to. If the entity is not titled, then it uses the text “Reference”.</p>
 <p>Note that you can use <code>\href{url}{ref text}</code> to generate a link to a url.</p>
 ]]>
 </field> <!-- body -->
@@ -2539,7 +2539,11 @@ To reference a label you can either use
 \item \lstinline`\href{label}{ref text}`
 \item \lstinline`\ref{label}`.
 \end{itemize}
-Note that the latter is compatible with PDF generation, whereas the former is not handled by \lstinline`pdflatex` as we would hope (generate a reference to the section).
+The latter is compatible with PDF generation, whereas the former is not handled by \lstinline`pdflatex` as we would hope (generate a reference to the section).
+
+For a reference of the form \lstinline`\ref{label}`, Diderot generates
+a reference text from the title of the entity being referred to.  If
+the entity is not titled, then it uses the text ``Reference''.
 
 Note that you can use \lstinline`\href{url}{ref text}` to generate a link to a url.
 ]]>
