@@ -5,9 +5,8 @@ Prerequisite: download the guide here: https://github.com/diderot-edu/diderot-gu
 Diderot specific binaries MacOS and Linux (Ubuntu) are located in the `bin` directory.  You can run Linux (Ubuntu) binaries on Windows by installing a Linux subsystem.
 
 
-
 ## MacOS
- 1) Install pandoc version 2.7.2. Go to the link below and install the right package for your system. https://github.com/jgm/pandoc/releases/tag/2.7.2
+ 1) Install pandoc (tested up to  version 2.9.2.1)
 
 2) The binaries that you need for the guide are included here in ./bin.
 
