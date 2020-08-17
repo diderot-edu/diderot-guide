@@ -2903,6 +2903,87 @@ the course.
 ]]>
 </field> <!-- title_src -->
 <field name='label'>
+grp:grm:dc::url-references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+
+<atom name='gram'>
+<field name='pl'>
+...NOT.PROVIDED.PL...
+</field> <!-- pl -->
+<field name='pl_version'>
+...NOT.PROVIDED.PL_VERSION...
+</field> <!-- pl_version -->
+<field name='title'>
+<![CDATA[
+URL References
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+URL References
+]]>
+</field> <!-- title_src -->
+<field name='cover'>
+...NOT.PROVIDED.COVER...
+</field> <!-- cover -->
+<field name='sound'>
+...NOT.PROVIDED.SOUND...
+</field> <!-- sound -->
+<field name='label'>
+grm:dc::url-references
+</field> <!-- label -->
+<field name='depend'>
+...NOT.PROVIDED.DEPEND...
+</field> <!-- depend -->
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='body'>
+<![CDATA[
+<p>You can use the <code>\href</code> command to link to a url. If the url has a tilde sign, some pdflatex distributions seem to complain. In this case, please use the <code>\url</code> command, e.g., Here is the Diderot website: <a href="https://diderot.one">https://diderot.one</a>.</p>
+]]>
+</field> <!-- body -->
+<field name='body_src'>
+<![CDATA[
+You can use the \lstinline`\href` command to link to a url.  If the
+url has a tilde sign, some pdflatex distributions seem to complain.
+In this case, please use the \lstinline`\url` command, e.g.,
+Here is the Diderot website: \url{https://diderot.one}.
+]]>
+</field> <!-- body_src -->
+
+<field name='caption'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption -->
+<field name='caption_src'>
+<![CDATA[
+...NOT.PROVIDED.CAPTION...
+]]>
+</field> <!-- caption_src -->
+</atom> <!-- gram -->
+
+</segment> <!-- cluster -->
+
+<segment name='cluster'>
+<field name='point_value'>
+0.0
+</field> <!-- point_value -->
+<field name='title'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title -->
+<field name='title_src'>
+<![CDATA[
+...NOT.PROVIDED.TITLE...
+]]>
+</field> <!-- title_src -->
+<field name='label'>
 grp:grm:dc::limitations
 </field> <!-- label -->
 <field name='depend'>
@@ -3204,11 +3285,11 @@ grm:dc::render
 <field name='body'>
 <![CDATA[
 <p>The code above will render like this:</p>
-<div class="sourceCode" id="cb1" data-numbers="left"><pre class="sourceCode numberSource python numberLines python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> is_even (i):  </span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">if</span> i <span class="op">%</span><span class="dv">2</span> <span class="op">=</span> <span class="dv">0</span>:  </span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">return</span> true  </span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="cf">else</span>   </span>
-<span id="cb1-5"><a href="#cb1-5"></a>    <span class="cf">return</span> false  </span></code></pre></div>
+<div class="sourceCode" id="cb1" data-numbers="left"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> is_even (i):  </a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="cf">if</span> i <span class="op">%</span><span class="dv">2</span> <span class="op">=</span> <span class="dv">0</span>:  </a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> true  </a>
+<a class="sourceLine" id="cb1-4" title="4">  <span class="cf">else</span>   </a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="cf">return</span> false  </a></code></pre></div>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
