@@ -101,8 +101,13 @@ upload_quiz: NO=5
 upload_quiz: FILE=quiz/quiz
 upload_quiz: quiz upload_xml_pdf
 
+codelabs: codelabs/codelabs.xml codelabs/codelabs.pdf
+upload_codelabs: NO=6
+upload_codelabs: FILE=codelabs/codelabs
+upload_codelabs: codelabs upload_xml_pdf
+
 cli: cli/cli.xml cli/cli.pdf
-upload_cli: NO=6
+upload_cli: NO=7
 upload_cli: FILE=cli/cli
 upload_cli: ATTACH=cli/attachments
 upload_cli: cli upload_xml_pdf_attach

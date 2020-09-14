@@ -1,0 +1,52 @@
+\chapter{CodeLabs: A Cloud-Based Code Autograder}
+\label{ch:codelabs}
+
+Codelabs is a cloud-based code autograder.  To set it up, you will
+need a Docker file for your grading environment.  That is pretty much
+all.  In terms of the Autograder setup, CodeLabs is compatible with
+Autolab and you can use your Autolab autograders and makefiles as is.
+
+Codelabs operates in two modes: standalone and chapter-grader. 
+%
+In the standalone mode, students submit their assignments to a CodeLab
+by using the CodeLabs interface or the Diderot CLI.
+%
+In the chapter-grader mode, the CodeLab is coupled with a submittable
+(quiz) chapter.
+%
+When a student makes a submission on the chapter, the (coupled) CodeLab is invoked with the answers of the student.
+
+\section{Standalone Mode}
+\label{sec:codelabs::standalone}
+
+\begin{gram}[Autograder output format]
+\label{sec:codelabs::standalone::output}
+
+In the standalone mode, the autograder is expected to some output ending with a JSON string mappin problem names (as defined in the Grading tab) to the scores for that student, e.g.,
+  
+\begin{lstlisting}
+{
+  "scores":
+  {"Shortest path": 5.0, "Longest path": 7.0, "Widest path": 15.0}
+}
+\end{lstlisting}
+  
+\end{gram}
+
+
+\section{Chapter-Grader Mode}
+\label{sec:codelabs::chapter}
+
+\begin{gram}[Autograder output format]
+\label{sec:codelabs::chapter::output}
+  
+In the chapter-grade mode, the JSON string should include additional information, including the rank for the problem (1, 2, 3, ...) and the total points available.  For example
+
+\begin{lstlisting}
+{"scores":
+    {"1: Shortest path (10 pts)": 5.0,
+     "2: Longest path (20 pts)": 7.0,
+     "3: Widest path (30 pts)": 15.0,
+ }}
+\end{lstlisting}
+\end{gram}
