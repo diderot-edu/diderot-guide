@@ -22,12 +22,25 @@ When a student makes a submission on the chapter, the (coupled) CodeLab is invok
 \begin{gram}[Autograder output format]
 \label{sec:codelabs::standalone::output}
 
-In the standalone mode, the autograder is expected to some output ending with a JSON string mappin problem names (as defined in the Grading tab) to the scores for that student, e.g.,
+In the standalone mode, the autograder is expected to some output ending with a JSON string mapping problem names (as defined in the Grading tab) to the scores for that student, e.g.,
   
 \begin{lstlisting}
 {
   "scores":
   {"Shortest path": 5.0, "Longest path": 7.0, "Widest path": 15.0}
+}
+\end{lstlisting}
+
+If the scoreboard is turned on and you would like to display a list of
+submissions based on their score, include in the autograder aboutput a \lstinline`scoreboard` field, e.g.,
+
+
+\begin{lstlisting}
+{
+  "scores":
+  {"Shortest path": 5.0, "Longest path": 7.0, "Widest path": 15.0},
+  "scoreboard": 
+  7.0  
 }
 \end{lstlisting}
   
