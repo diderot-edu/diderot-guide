@@ -4,14 +4,31 @@
 Codelabs is a cloud-based code autograder.  To set it up, you will
 need a Docker file for your grading environment.  That is pretty much
 all.  In terms of the Autograder setup, CodeLabs is compatible with
-Autolab and you can use your Autolab autograders and makefiles as is.
+Autolab and you can use your Autolab autograders and Make files as is.
 
-Codelabs operates in two modes: standalone and chapter-grader. 
+The features of Codelabs include
+\begin{itemize}
+\item  
+\textbf{manual grading:} allowing course staff to review code and leave comments and point
+score on them,
+
+\item
+\textbf{regrade requests:} allowing students to create regrade
+requests and course staff to respond to them
+
+\item
+  \textbf{submission management:} reviewing, rerunning/resubmitting submissions
+
+\item
+  \textbf{grade management:} viewing and downloading grades.
+\end{itemize}
 %
-In the standalone mode, students submit their assignments to a CodeLab
-by using the CodeLabs interface or the Diderot CLI.
+Please see the video above by Ria Pradeep of Carnegie Mellon University for a brief tutorial on Codelabs.
+
+In addition to serving as a standalone auto-grader, codelabs, can also
+be used to provide automatic feedback to the students.
 %
-In the chapter-grader mode, the CodeLab is coupled with a submittable
+In this ``chapter-grader'' mode, the CodeLab is coupled with a submittable
 (quiz) chapter.
 %
 When a student makes a submission on the chapter, the (coupled) CodeLab is invoked with the answers of the student.
