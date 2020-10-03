@@ -1,7 +1,7 @@
 \chapter{Diderot Exams and Quizzes}
 \label{ch:quiz}
  
-\begin{preamble}
+<\begin{preamble}
 You can use Diderot to administer tests, quizzes, and exams.  This
 chapter presents an overview of how these work.
 \end{preamble}
@@ -37,18 +37,18 @@ Each submittable chapter may also be assigned a \defn{due date} specifying a dat
 \end{gram}
 
 \begin{gram}[Taking the Exam]
-Once a submittable chapter is released, a student can create a submission and take the test.  During the test, the students will see the remaining time on their screen.  The remaining time is calculated for each student as minimum of the unused portion of the time limit, and time left until the due date of the chapter.  This means that if a students starts an exam 30 minutes later that it is scheduled time, they will have 30 minutes less time to complete the exam.
+Once a submittable chapter is published, a student can create a submission and take the test.  During the test, the students will see the remaining time on their screen.  The remaining time is calculated for each student as minimum of the unused portion of the time limit, and time left until the due date of the chapter.  This means that if a students starts an exam 30 minutes later that it is scheduled time, they will have 30 minutes less time to complete the exam.
 
 After the due date of a submittable chapter, the students may not take the exam and will not see its contents.
 
-Diderot does not use the release date of a chapter to enforce that the students start only at that time.  The students can start as soon as the chapter is released.
+Diderot does not use the publication date of a chapter to enforce that the students start only at that time.  The students can start as soon as the chapter is published.
 \end{gram}
 
 
 \begin{gram}[Accommodations]
 Personal accommodations of the students are automatically taken into account when a student is taking the exam.  For example, if a student has 50\% extra-time accommodation, then Diderot will take this is into account when administering the exam to that student.  
 
-The instructor can change accommodations for each student on the Users page. 
+The instructor can enter accommodations for each student on the Users page. 
 \end{gram}
 
 \begin{gram}[Make Up Exams]
@@ -71,6 +71,18 @@ Diderot saves a test-taker's exam frequently (every few seconds) to make sure th
 At any time, the student can submit their exam by clicking the ``Submit'' button.
 
 When the time expires, the most recent version of the exam is submitted automatically.
+
+If the test-taker opens the exam in a second tab, the first tab will remain ``writeable'' but the second will open in ``read-only'' mode.  
+%
+This makes sure that only one copy of the exam is saved at a time, and thereby prevents multiple tabs overwriting each other.
+%
+The test-taker can at any time make a read-only tab writable.  Doing
+so, refreshes the exam with the most recent saved copy of the exams,
+so that the test-taker can continue from where they have left off.  
+%
+When a tab is made writeable, all other active tabs become read-only.
+
+
 \end{gram}
 
 
@@ -180,7 +192,73 @@ number of solution prompts.
 Any number of questions may be attached  to an atom.
 \end{gram}
 
+\begin{example}[Multiple Choice]
+
+The following code illustrates a multiple-choice question with both
+single and multi-answer possibilities
+
+\begin{lstlisting}
+\begin{problem}[Geography]
+\onechoice
+Which country has the most tornadoes by area?
+
+\choice France
+\choice Greece
+\choice Guam
+\choice Spain
+\choice* United Kingdom
+
+\anychoice 
+Select the countries where English is the most commonly spoken language?
+
+\choice Chinae
+\choice* England
+\choice Japan
+\choice Panama
+\choice Mexico
+\choice Spain
+\choice* United States
+
+\end{problem}
+
+\end{lstlisting}
+\end{example}
+
+\begin{example}[Fill in the blanks]
+
+Fill-in-the-blanks questions are easy to write. In the example below, the \lstinline`\fin` command marks the region that will be blanked out.  The command optionally takes a number to indicate the width of the blank (in terms of the number of characters).
+
+
+\begin{lstlisting}
+\begin{problem}[Fibonnacci]
+In mathematics numbers can be added, for example,
+$2 + 2 = 4$. 
+
+\ask
+Fill in the result of the following additions
+
+
+\solfin
+$2 + 7$ $=$ \fin{$9$}
+\\
+and
+\\ 
+$1 + 8$ $=$ \fin[10]{$7$}
+\end{problem}
+\end{lstlisting}
+\end{example}
+
+
+
+\begin{example}[Code Fill in the Blanks]
+You can also create fill-in-the-blanks questions with code.  To do this use the \lstinline`lstlisting` environment and enclose or ``fence'' the blanked parts by four underscores.
 %
+
+This file illustrates 
+\href{https://github.com/diderot-edu/diderot-guide/blob/master/booklet/quiz/bingled.tex}
+{an example}.
+\end{example}
+
 
 \begin{gram}[Point Values]
 There are several ways to specify point values to questions, some more
