@@ -3,6 +3,9 @@
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 DC: Diderot Compiler
@@ -25,6 +28,9 @@ ch:dc
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Overview
@@ -46,6 +52,9 @@ sec:dc::overview
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -142,6 +151,9 @@ and slide decks for upload.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -221,6 +233,9 @@ In \href{ch:publish}{the next chapter}, we discuss some important points about h
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -308,6 +323,9 @@ Please send feeback by \href{https://github.com/diderot-edu/diderot-guide/issues
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Typesetting with LaTex
@@ -329,6 +347,9 @@ sec:dc::typesetting-with-latex
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -410,6 +431,9 @@ compile your LaTeX sources to XML.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -500,6 +524,9 @@ A Diderot \defn{booklet} is a collection of chapters.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -581,6 +608,9 @@ the folders \lstinline`book` and \lstinline`booklet` contain a sample book (cons
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Books, Chapters, and Sections
@@ -602,6 +632,9 @@ sec:dc::books-chapters-and-sections
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -680,6 +713,9 @@ DC requires a book (or booklet) to be organized into chapters, each of which the
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -813,6 +849,9 @@ The term \lstinline`element` in the example refers to an "atom" or a "group".
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Atoms
@@ -834,6 +873,9 @@ sec:mtl::atoms
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -974,6 +1016,9 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1221,6 +1266,9 @@ Energy efficiency of  internal-combustion engines are significantly lower than t
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1317,6 +1365,9 @@ But it is wrong, because it includes an atom inside of a LaTeX environment.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1395,6 +1446,9 @@ While an atom can be a paragraph, not every paragraph is an atom.  Paragraphs on
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1475,6 +1529,9 @@ In the mean time, you can request new atoms by
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1582,6 +1639,9 @@ The following is a definition atom, because it is single standing.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Controlling granularity
@@ -1603,6 +1663,9 @@ sec:dc::controlling-granularity
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1693,6 +1756,9 @@ This if and only of if that.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1813,6 +1879,9 @@ Both will have no impact on the PDF but on Diderot, you will have only one atom 
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Groups
@@ -1834,6 +1903,9 @@ sec:mtl::groups
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -1951,6 +2023,9 @@ Simple example 2
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2032,6 +2107,9 @@ at the bottom left to open the `flex` and click again to close it.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2226,6 +2304,9 @@ Simple example 2
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Labels and References
@@ -2247,6 +2328,9 @@ sec:dc::labels-refs
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2334,6 +2418,9 @@ within that chapter.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2471,6 +2558,9 @@ Here is another paragraph atom, consisting of two environments:
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2567,6 +2657,9 @@ Note that you can use \lstinline`\href{url}{ref text}` to generate a link to a u
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2707,6 +2800,9 @@ theorem : "thm"
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2809,6 +2905,9 @@ If you know the book that you are referencing, you can also use the following sy
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2892,6 +2991,9 @@ the course.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -2973,6 +3075,9 @@ Here is the Diderot website: \url{https://diderot.one}.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3058,6 +3163,9 @@ Learn more about the
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Code
@@ -3079,6 +3187,9 @@ sec:mtl::code
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3160,6 +3271,9 @@ If you need a custom language, you can probably write one with a bit of effort b
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3285,11 +3399,11 @@ grm:dc::render
 <field name='body'>
 <![CDATA[
 <p>The code above will render like this:</p>
-<div class="sourceCode" id="cb1" data-numbers="left"><pre class="sourceCode numberSource python numberLines"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">def</span> is_even (i):  </a>
-<a class="sourceLine" id="cb1-2" title="2">  <span class="cf">if</span> i <span class="op">%</span><span class="dv">2</span> <span class="op">=</span> <span class="dv">0</span>:  </a>
-<a class="sourceLine" id="cb1-3" title="3">    <span class="cf">return</span> true  </a>
-<a class="sourceLine" id="cb1-4" title="4">  <span class="cf">else</span>   </a>
-<a class="sourceLine" id="cb1-5" title="5">    <span class="cf">return</span> false  </a></code></pre></div>
+<div class="sourceCode" id="cb1" data-numbers="left"><pre class="sourceCode numberSource python numberLines python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> is_even (i):  </span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">if</span> i <span class="op">%</span><span class="dv">2</span> <span class="op">=</span> <span class="dv">0</span>:  </span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">return</span> true  </span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="cf">else</span>   </span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="cf">return</span> false  </span></code></pre></div>
 ]]>
 </field> <!-- body -->
 <field name='body_src'>
@@ -3323,6 +3437,9 @@ def is_even (i):
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3418,6 +3535,9 @@ main () {
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Images
@@ -3439,6 +3559,9 @@ sec:dc::images
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3519,6 +3642,9 @@ When including images, there are two points to be careful about: naming and sizi
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3601,6 +3727,9 @@ as the same .
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3694,6 +3823,9 @@ When specifying the width, it is important to always include the fraction.  For 
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3773,6 +3905,9 @@ But this is not meaningful for HTML output, and will not work as expected.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3858,6 +3993,9 @@ This means that the image should be shown at 50\% of its actual dimensions.  Thi
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -3939,6 +4077,9 @@ When uploading a chapter, via the UI or via the CLI, the user needs to upload th
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Typesetting Mathematics
@@ -3960,6 +4101,9 @@ sec:dc::typesetting-mathematics
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4044,6 +4188,9 @@ $\lstinline`xyz`$
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4123,6 +4270,9 @@ To refer to an equation label simply use the macro \lstinline`\eqref` or \lstinl
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4231,6 +4381,9 @@ Consider Equation~$\eqref{eq:sample}$ shown above.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4355,6 +4508,9 @@ Equation~$\eqref{eq:sample-3}$ follows from Equation~$\eqref{eq:sample-2}$.  And
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Indexing
@@ -4376,6 +4532,9 @@ sec:dc::indexing
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4537,6 +4696,9 @@ Dijkstra's algorithm solves the SSSP problem.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Colors
@@ -4558,6 +4720,9 @@ sec:dc::colors
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4643,6 +4808,9 @@ You can use colors as follows
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Embedding Videos
@@ -4664,6 +4832,9 @@ sec:dc::embedding-videos
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4747,6 +4918,9 @@ Here is a \video{https://www.youtube.com/embed/8QyE9D_3ezQ}{tango video.}
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4836,6 +5010,9 @@ Here is a tango video
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 File Attachments
@@ -4857,6 +5034,9 @@ sec:dc::file-attachments
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -4936,6 +5116,9 @@ When uploading your chapter, simply include the file \lstinline{name.ext} in you
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5021,6 +5204,9 @@ Here is the \href{file://dc.tex}{LaTeX source code} for this chapter of the guid
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5106,6 +5292,9 @@ as the same.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Limitations
@@ -5127,6 +5316,9 @@ sec:mtl::limitations
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5233,6 +5425,9 @@ Here is a list of known limitations.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5317,6 +5512,9 @@ PDF.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Typesetting with Markdown
@@ -5338,6 +5536,9 @@ sec:dc::typesetting-with-markdown
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5416,6 +5617,9 @@ DC has basic support for Markdown to XML translation.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5521,6 +5725,9 @@ Frontmatter
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5624,6 +5831,9 @@ Here is an example html tag `<table>`
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5704,6 +5914,9 @@ This ensures that all chapters are uniquely labeled: \lstinline`dc` assigns a ch
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Chapters and Sections
@@ -5725,6 +5938,9 @@ sec:dc::chapters-and-sections
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5826,6 +6042,9 @@ We support the atx-sytle headers, which start by 1-6 hash (\#) signs, e.g.,
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Code
@@ -5847,6 +6066,9 @@ sec:dc::md::code
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -5925,6 +6147,9 @@ Usual Markdown conventions apply.  You can include inline code by using the back
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -6048,6 +6273,9 @@ def fun x:
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Typesetting Mathematics
@@ -6069,6 +6297,9 @@ sec:dc::typesetting
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -6151,6 +6382,9 @@ For math blocks use double-dollars or \lstinline`\[`.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Images
@@ -6172,6 +6406,9 @@ sec:dc::include
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -6316,6 +6553,9 @@ The following code displays the image \lstinline`papers.svg`.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Limitations
@@ -6337,6 +6577,9 @@ sec:dc::limitations
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -6461,6 +6704,9 @@ Here are few known limitations.
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 Compiling Markdown To XML
@@ -6482,6 +6728,9 @@ sec:dc::compiling-markdown-to-xml
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -6560,6 +6809,9 @@ The guide includes a very simple markdown document\lstinline`markdown/example.md
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -6648,6 +6900,9 @@ $ make verbose=true markdown/example.xml
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...
@@ -6732,6 +6987,9 @@ $ dc markdown/example.md
 <field name='point_value'>
 0.0
 </field> <!-- point_value -->
+<field name='nestingmode'>
+all
+</field> <!-- nestingmode -->
 <field name='title'>
 <![CDATA[
 ...NOT.PROVIDED.TITLE...

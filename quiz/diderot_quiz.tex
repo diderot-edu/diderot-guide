@@ -6,8 +6,24 @@
 
 \begin{preamble}
 \label{prmbl:quiz::diderot}
-You can use Diderot to administer tests, quizzes, and exams.  This
-chapter presents an overview of how these work.
+You can use Diderot to administer tests, quizzes, and exams.
+The exams support interactive features such as on demand hints.
+The exams also support \href{}{algorithmic feedback}, where the
+student can obtain feedback computed by a cloud-executed Javascript or
+Python script specified by the instructors.
+
+There are several ways for grading the quizzes.
+Simple quizzes consisting of multiple choice and short answer
+questions can be graded automatically on side.
+More complex exams may be graded by using Diderot's algorithmic
+feedback system and scripts written in Python or Javascript.
+Complex exams can also be graded fully automatically by suppling a
+docker container that digest a submission and assigns it a grade.
+The docker container is itself managed and  run by
+\href{ch:codelabs}{Codelabs}.
+Contact Umut at \lstinline`umut@cmu.edu` to learn more about how this works.
+Quizzes may also be manually graded by exporting them as PDFs and
+grading them in a platform such as Gradescope.
 
 \end{preamble}
 \end{cluster}
@@ -49,20 +65,12 @@ Algorithms or code in fixed-font can be included in all problems, including in f
 \label{ch:quiz::time-management}
 
 \begin{cluster}
-\label{grp:grm:quiz::manages}
-
-\begin{gram}
-\label{grm:quiz::manages}
-Diderot manages exam time in a way that mirrors in-class exams.
-
-\end{gram}
-\end{cluster}
-
-\begin{cluster}
 \label{grp:grm:quiz::time-limit-and-due-date}
 
 \begin{gram}[Time Limit and Due Date]
 \label{grm:quiz::time-limit-and-due-date}
+Diderot manages exam time in a way that mirrors in-class exams.
+
 Each submittable chapter may be assigned a \defn{time limit} that
 specifies the duration of the test.  For example, a quiz may be 20
 minutes long.
@@ -196,6 +204,10 @@ these steps.
 
 \end{gram}
 \end{cluster}
+
+
+\section{Algorithmic Feedback and Grading}
+\label{sec:quiz::algorithmic-feedback-and-grading}
 
 
 \section{Type Setting Quizzes Using LaTeX}
