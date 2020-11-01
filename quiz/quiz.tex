@@ -6,14 +6,14 @@ You can use Diderot to administer tests, quizzes, and exams.
 %
 The exams support interactive features such as on demand hints.
 %
-The exams also support \href{}{algorithmic feedback}, where the
+The exams also support \href{sec:quiz::algorithmic-feedback}{algorithmic feedback}, where the
 student can obtain feedback computed by a cloud-executed Javascript or
 Python script specified by the instructors.
 
 There are several ways for grading the quizzes.
 %
 Simple quizzes consisting of multiple choice and short answer
-questions can be graded automatically on side.
+questions can be graded automatically.
 %
 More complex exams may be graded by using Diderot's algorithmic
 feedback system and scripts written in Python or Javascript.
@@ -149,6 +149,69 @@ these steps.
 
 
 \section{Algorithmic Feedback and Grading}
+\label{sec:quiz::algorithmic-feedback}
+Diderot supports algorithm feedback and grading by allowing
+instructors to use programs written in various languages (e.g.,
+Javascript, Python, and really anything) to analyze student answers
+and give them feedback automatically.
+%
+This comes in three flavors:
+\begin{itemize}
+\item Instant algorithmic feedback to students answers by using Javascript and Python
+\item Instant autograding and feedback  by using Javascript and Python
+\item Full autograding and feedback by using Docker containers (using essentially any language and system).
+\end{itemize}
+
+
+\begin{gram}[Instant Algorithmic Feedback]
+This allows the students to request feedback every time they fill a free-response or fill-in-blanks box.
+%
+To implement this the instructor provides a Javascript or Python code than can digest the students answer and give them feedback.
+%
+There is no limit to what this code can do: it can run a simple analysis,
+perform natural language comprehension, or can even run a formal analysis tool (relevant if the answer has a formal structure such as a mathematical formalism).
+%
+This instant feedback is not meant for grading per se, but for actually helping students.
+%
+The feedback scripts runs on the cloud and consumes no resources of
+the user's device; response time for this service is typically a
+couple of seconds.
+\end{gram}
+
+\begin{gram}[Instant Algorithmic Grading]
+This allows the students to request a grade every time they complete a
+test problem (interactive mode) or a test (batch mode).
+%
+This is automatically handled for multiple choice questions.
+%
+For free response or fill-in-the-blanks questions, the instructor
+provides a Javascript or Python code that can digest the students
+answer and assign them a grade.
+%
+When doing the grading, the code has access to all parts of the problem and the students' answer to them, so the grades could be adjusted based on context.
+%
+There is no limit to what the grader code can do.
+%
+The grader runs on the cloud and consumes no resources of
+the user's device; response time for this service is typically a
+couple of seconds.
+\end{gram}
+
+
+\begin{gram}[Full Algorithmic Grading]
+This allows the students to request a grade every time they complete a test.
+%
+To enable this, the instructor provides a Docker container that it set
+up to digest a test submission and assign it a grade and generate feedback.
+%
+When doing the grading, the code has access to whole submission.
+%
+There is no limit to what the grader code can do.
+%
+The grader runs on the cloud and consumes no resources of
+the user's device; response time for this service is typically a
+couple of minutes.
+\end{gram}
 
 \section{Type Setting Quizzes Using LaTeX}
 \label{ch:quiz::typesetting}
