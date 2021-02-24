@@ -81,13 +81,23 @@ submissions based on their score, include in the autograder aboutput a \lstinlin
 \begin{gram}[Autograder output format]
 \label{sec:codelabs::chapter::output}
   
-In the chapter-grade mode, the JSON string should include additional information, including the rank for the problem (1, 2, 3, ...) and the total points available.  For example
-
+In the chapter-grade mode, the autograder is expected to generate an
+output than ends with a JSON string defining the problem names and the
+scores for that submission, e.g.,
+  
 \begin{lstlisting}
-{"scores":
-    {"1: Shortest path (10 pts)": 5.0,
-     "2: Longest path (20 pts)": 7.0,
-     "3: Widest path (30 pts)": 15.0,
- }}
+{
+  "problems":
+    {"Shortest path": 10.0,
+      "Longest path": 15.0
+    },
+  "scores":
+    {"Shortest path": 5.0,
+      "Longest path": 7.0}
+}
 \end{lstlisting}
+
+The \lstinline`"problems"` key maps each problem to its point value.
+The \lstinline`"scores"` key maps each problem to the score for that submission.
+The problem as defined will determine the columns of the gradetable.
 \end{gram}
