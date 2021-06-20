@@ -174,6 +174,7 @@ some commands relating to manipulation of books and assignments.
   \item \verb|list_books|: List all books, can optionally filter by course.
   \item \verb|list_parts|: List all parts of a book.
   \item \verb|list_chapters|: List all chapters of a book.
+  \item \verb|create_book|: Create a book in a course.
   \item \verb|create_part|: List all parts of a book.
   \item \verb|create_chapter|: Create a chapter in a given part of a
     book. Optionally specify the new chapter's label and or title. If
@@ -236,6 +237,23 @@ Example Usage:
 \begin{verbatim}
 $  diderot_admin list_chapters courselabel booklabel
 \end{verbatim}
+
+
+\subsection{create\_book}
+
+\verb|create_book| creates a book within a target course. It accepts 3 required arguments.
+
+\begin{itemize}
+  \item \verb|course|: Course label that the target book belongs to.
+  \item \verb|--label|: Label for the book.
+  \item \verb|--title|: Title for the book.
+\end{itemize}
+
+Example Usage:
+\begin{verbatim}
+$ diderot_admin create_book courselabel --label ``notes'' --title ``Lecture Notes''
+\end{verbatim}
+
 
 \subsection{create\_part}
 
@@ -396,12 +414,26 @@ diderot_admin upload_book  "CMU:Pittsburgh, PA:15210:Community:2020" volume-1.js
  
 \begin{gram}[JSON  for book uploads]
 The JSON format required by book uploads is relatively self explanatory.
-The file must specify the label of the book or booklet and then the parts (if applicable) and the chapters in the book. 
+The file must specify the label of the book, the parts, and the chapters in the book. 
 %
+Each chapter field must contain \verb|number| specifying the chapter
+number and and a \verb|part| number specifying the part for the chapter.
+
+For each chapter, you can specify the content to upload in terms of
+XML and PDF files.  To this end, use either the \lstinline{xml} or a
+\lstinline{pdf} field, along with the file name that you would like to
+upload into that chapter.
+%
+For an \lstinline{xml} chapter, you can optionally provide an
+\lstinline{xml\_pdf} file, which is the PDF version of the chapter.
+%
+If neither an xml or a pdf file is specified, then the chapter will be
+created as an empty (unpublished) chapter, along with the parts.
+
 \begin{itemize}
 \item Here is an example 
 \href{file://cli/attachments/booklet-example.json}
-{JSON file for a booklet}.
+{JSON file for a small book with only one part}.
 \item Here is an example JSON file 
 \href{file://cli/attachment/book-example.json}
 {JSON file for a book}.

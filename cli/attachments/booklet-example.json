@@ -1,77 +1,101 @@
 {
-  "book" : "BAL",
+		"book" : "BAL",
+    "title": "Book of All Labs",     		
+
+    "parts": [
+    {
+      "number": 1,
+      "title": "All",
+      "label": "part:all"
+    }
+   ],
+
+
   "chapters": [
     {
-       "number": 1,
+ 			 "number": 1,
+			 "part": 1,
        "xml": "mcsslab/main.xml",
        "xml_pdf": "mcsslab/main.pdf",
        "attachments": ["mcsslab/media/*.jpg"]
     },
     {
        "number": 2,
+			 "part": 1,				
        "xml": "parenlab/main.xml",
        "xml_pdf": "parenlab/main.pdf"
     },
     {
-       "number": 3,
+			 "number": 3,
+			 "part": 1,				
        "xml": "skylinelab/main.xml",
        "xml_pdf": "skylinelab/main.pdf",
        "attachments": ["skylinelab/media/*.png"]
     },
     {
-       "number": 4,
+			 "number": 4,
+			 "part": 1,				
        "xml": "wafflelab/main.xml",
        "xml_pdf": "wafflelab/main.pdf",
        "attachments": ["wafflelab/media/*.jpg", "wafflelab/media/*.png"]
     },
     {
-       "number": 5,
+		   "number": 5,
+			 "part": 1,				
        "xml": "randomlab/main.xml",
        "xml_pdf": "randomlab/main.pdf"
     },
     {
-       "number": 6,
+			 "number": 6,
+			 "part": 1,				
        "xml": "fingerlab/main.xml",
        "xml_pdf": "fingerlab/main.pdf",
        "attachments": ["fingerlab/media/*.png"]
     },
     {
-       "number": 7,
+			 "number": 7,
+			 "part": 1,				
        "xml": "rangelab/main.xml",
        "xml_pdf": "rangelab/main.pdf",
        "attachments": ["rangelab/media/*.png"]
     },
     {
-       "number": 8,
+			 "number": 8,
+			 "part": 1,				
        "xml": "criticallab/main.xml",
        "xml_pdf": "criticallab/main.pdf",
        "attachments": ["criticallab/media/*.jpg", "criticallab/media/*.png"]
     },
     {
-       "number": 9,
+			 "number": 9,
+			 "part": 1,				
        "xml": "shortlab/main.xml",
        "xml_pdf": "shortlab/main.pdf",
        "attachments": ["shortlab/media/*.png"]
     },
     {
-       "number": 10,
+			 "number": 10,
+			 "part": 1,				
        "xml": "sandwichlab/main.xml",
        "xml_pdf": "sandwichlab/main.pdf",
        "attachments": ["sandwichlab/media/*.png"]
     },
     {
-       "number": 11,
+			 "number": 11,
+			 "part": 1,				
        "xml": "dplab/main.xml",
        "xml_pdf": "dplab/main.pdf",
        "attachments": ["dplab/media/*.png"]
     },
     {
-       "number": 12,
+			 "number": 12,
+			 "part": 1,				
        "xml": "concurlab/main.xml",
        "xml_pdf": "concurlab/main.pdf"
     },
     {
-       "number": 13,
+			 "number": 13,
+			 "part": 1,				
        "xml": "schedulelab/main.xml",
        "xml_pdf": "schedulelab/main.pdf"
     }
