@@ -427,6 +427,9 @@ upload into that chapter.
 For an \lstinline{xml} chapter, you can optionally provide an
 \lstinline{xml\_pdf} file, which is the PDF version of the chapter.
 %
+You can also provide attachments for the chapter, by using the
+\lstinline{attachment} field along with a list of attachments.
+%
 If neither an xml or a pdf file is specified, then the chapter will be
 created as an empty (unpublished) chapter, along with the parts.
 
@@ -446,7 +449,6 @@ number and in addition may contain any subset of \verb|xml|,
 precedence over specified in the json file if any.
 
 \end{gram}
-
 
 
 \subsection{update\_assignment}
