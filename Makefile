@@ -109,5 +109,5 @@ upload_codelabs: codelabs upload_xml_pdf
 cli: cli/cli.xml cli/cli.pdf
 upload_cli: NO=8
 upload_cli: FILE=cli/cli
-upload_cli: ATTACH=cli/attachments
+upload_cli: ATTACH=./cli/attachments/*
 upload_cli: cli upload_xml_pdf_attach
