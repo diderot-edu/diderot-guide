@@ -4,7 +4,7 @@
 Diderot offers a command line interface to simplify interaction with
 the platform via the command line.
 %
-The main advantage of the CLI over the web interface is that it is possible to upload materials onto the platform more quickly.
+The CLI makes it possible to upload materials onto the platform more quickly than the GUI .
 
 \begin{important}[Sources and Contributions]
 
@@ -28,6 +28,21 @@ This guide is public and it source are available
 Please send feeback by \href{https://github.com/diderot-edu/diderot-guide/issues}{opening an issue}.
 \end{important}
 
+\begin{important}
+For most up to date information about the CLI commands, please use the
+help mode of the CLI. For example if you type 
+
+\begin{lstlisting}
+$ diderot_admin
+\end{lstlisting}
+
+You can see the whole list of available commands.  You can then
+request help for how to use a command by typing.
+\begin{lstlisting}
+$ diderot_admin <command name>
+\end{lstlisting}
+
+\end{important}
 
 \section{Basic Usage}
 
@@ -179,12 +194,13 @@ some commands relating to manipulation of books and assignments.
   \item \verb|create_chapter|: Create a chapter in a given part of a
     book. Optionally specify the new chapter's label and or title. If
     not, these values are filled in with a default.
-  \item \verb|{release/unrelease}_chapter|: Release or unrelease an existing chapter.
+  \item \verb|{publish/retract}_chapter|: Publish or retract an existing chapter.
   \item \verb|upload_chapter|: Update the content of an existing
     chapter. Upload either a standalone pdf, pdf of a slideshow, or an
     xml document and image attachments.  The image upload accepts
     filenames, globs, and folder names (folders are recursively
     traversed).
+  \item \verb|set_publish_date|: Set the publish date for a chapter.
   \item \verb|update_assignment|: Update the files relating to an existing homework on Diderot.  Upload any of the autograder tar, autograder makefile, pdf writeup, and student handout.
 \end{itemize}
 
@@ -296,21 +312,21 @@ $ diderot_admin create_chapter courselabel booklabel --part partnum \
   --number newnum --title newtitle --label newlabel
 \end{verbatim}
 
-\subsection{release/unrelease\_chapter}
+\subsection{publish/retract\_chapter}
 
-\verb|release_chapter| and \verb|unrelease_chapter| are used to release or unrelease a chapter. They each accept 3 arguments.
+\verb|publish_chapter| and \verb|retract_chapter| are used to publish or retract a chapter. They each accept 3 arguments.
 
 \begin{itemize}
-  \item \verb|course|: Course label to release a chapter in. 
-  \item \verb|book|: Book label to release a chapter in.
+  \item \verb|course|: Course label to publish a chapter in. 
+  \item \verb|book|: Book label to publish a chapter in.
 
-  \item \verb|--chapter_number| or \verb|--chapter_label|: Use one of these arguments to specify which chapter to release. Use either the chapter's number within the book, or its label.
+  \item \verb|--chapter_number| or \verb|--chapter_label|: Use one of these arguments to specify which chapter to publish. Use either the chapter's number within the book, or its label.
 \end{itemize}
 
 Example Usage:
 \begin{verbatim}
-$ diderot_admin release_chapter courselabel booklabel --chapter_label chapterlabel
-$ diderot_admin unrelease_chapter courselabel booklabel --chapter_label chapterlabel
+$ diderot_admin publish_chapter courselabel booklabel --chapter_label chapterlabel
+$ diderot_admin retract_chapter courselabel booklabel --chapter_label chapterlabel
 \end{verbatim}
 
 \subsection{upload\_chapter}
@@ -346,6 +362,21 @@ $ diderot_admin upload_chapter courselabel bookname --chapter_number chapternumb
   --xml Path/to/Xml --xml_pdf Path/To/XmlPdf \
   --attach Path/To/File Path/To/Folder/ Path/With/Glob/*
 \end{verbatim}
+
+\subsection{Set Publish Date}
+You can set the publish date for a book in two ways.
+\begin{itemize}
+\item Specify the date for publication using the format
+  ``yyyy-mm-ddTHH:MM'' For example, "2021-06-10T14:15'' means
+  10$^{th}$ day of June in Year 2021 at 14:15 (2:15pm)
+\item Specify a relative date by using ``W/D, HH:MM'' format.  For
+  example, ``3/5, 14:15'' means means the fifth day of the third week
+  at 14:15 (2:15pm) and ``11/3, 14:15'' means means the third day of
+  the elevent week at 14:15 (2:15pm).  The days of the week are
+  relative to the first day of the week that you have set in your
+  course settings.  The weeks are also relative to the beginning day
+  of your course date.
+\end{itemize}
 
 \subsection{Uploading Chapters with a Makefile}
 
@@ -431,7 +462,27 @@ You can also provide attachments for the chapter, by using the
 \lstinline{attachment} field along with a list of attachments.
 %
 If neither an xml or a pdf file is specified, then the chapter will be
-created as an empty (unpublished) chapter, along with the parts.
+created as an empty (retracted) chapter, along with the parts.
+
+
+For each chapter you may specify a publication date by using
+``publish_on_date'' or "publish_on_week" attributes.
+
+
+\begin{itemize}
+\item Using ``publish_on_date'', specify the date for publication
+  using the format ``yyyy-mm-ddTHH:MM'' For example,
+  "2021-06-10T14:15'' means 10$^{th}$ day of June in Year 2021 at
+  14:15 (2:15pm)
+\item Using ``publish_on_week'', specify a relative date by using
+  ``W/D, HH:MM'' format.  For example, ``3/5, 14:15'' means means the
+  fifth day of the third week at 14:15 (2:15pm) and ``11/3, 14:15''
+  means means the third day of the elevent week at 14:15 (2:15pm).
+  The days of the week are relative to the first day of the week that
+  you have set in your course settings.  The weeks are also relative
+  to the beginning day of your course date.
+\end{itemize}
+
 
 \begin{itemize}
 \item Here is an example 
