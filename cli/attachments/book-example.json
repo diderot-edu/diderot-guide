@@ -51,8 +51,7 @@
        "number": 3,
        "part": 1,
        "xml": "introduction/spec.xml",
-       "xml_pdf": "introduction/spec.pdf",
-       "attachments": ["skylinelab/media/*.png"]
+       "xml_pdf": "introduction/spec.pdf"
     },
     {
        "number": 4,
