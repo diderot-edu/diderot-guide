@@ -5,6 +5,10 @@ Diderot offers a command line interface to simplify interaction with
 the platform via the command line.
 %
 The CLI makes it possible to upload materials onto the platform more quickly than the GUI .
+%
+The CLI has a built in help system that can be used to learn about the
+various commands and their options.  This chapter therefore focuses on
+higher level bits.
 
 \begin{important}[Sources and Contributions]
 
@@ -30,23 +34,27 @@ Please send feeback by \href{https://github.com/diderot-edu/diderot-guide/issues
 
 \begin{important}
 For most up to date information about the CLI commands, please use the
-help mode of the CLI. For example if you type 
+help mode of the CLI. 
+%
+The CLI has two modes ``admin'' and ``student''.
+%
+The admin mode is available to course instructors and TAs and the
+student mode is accessible to all course members including students, TAs, and instructors.
+
+
+You can access the CLI's help by typing, for example, one of the following.
 
 \begin{lstlisting}
-$ diderot_admin
+$ diderot admin
+$ diderot admin <command name>
+$ diderot student
+$ diderot student <command name>
 \end{lstlisting}
-
-You can see the whole list of available commands.  You can then
-request help for how to use a command by typing.
-\begin{lstlisting}
-$ diderot_admin <command name>
-\end{lstlisting}
-
 \end{important}
 
 \section{Basic Usage}
 
-Use the \verb|diderot_student| or \verb|diderot_admin| scripts to interface with the CLI.
+Use the \verb|diderot student| or \verb|diderot admin| scripts to interface with the CLI.
 %
 For help about the CLI, use the \verb|-h| or \verb|--help| commands.
 
@@ -92,45 +100,45 @@ additional commands!
 
 For example, this command is correct:
 \begin{verbatim}
-$ diderot_student --credentials Path/To/My/Creds list_courses
+$ diderot student --credentials Path/To/My/Creds list-courses
 \end{verbatim}
   
 This command is incorrect:
 \begin{verbatim}
-$ diderot_student list_courses --credentials Path/To/My/Creds
+$ diderot student list-courses --credentials Path/To/My/Creds
 \end{verbatim}
 \end{important}
 
 \section{Student Interface}
 
 \begin{itemize}
-  \item \verb|list_courses|: List all available course labels that the user can access.
+  \item \verb|list-courses|: List all available course labels that the user can access.
     Operations which require a course input must use the one of the labels returned from this command.
-  \item \verb|list_assignments|: Lists all assignments for a course.
-  \item \verb|download_assignment|: Downloads all handout/writeup files (if present) from a
+  \item \verb|list-assignments|: Lists all assignments for a course.
+  \item \verb|download-assignment|: Downloads all handout/writeup files (if present) from a
     target course and assignment into the current directory.
-  \item \verb|submit_assignment|: Submit a file to a given course and homework.
+  \item \verb|submit-assignment|: Submit a file to a given course and homework.
 \end{itemize}
 
 More details about each command are below.
 
-\subsection{list\_courses}
+\subsection{list-courses}
 
-\verb|list_courses| lists all course labels that the user has access to.
+\verb|list-courses| lists all course labels that the user has access to.
 %
-The labels returned from \verb|list_courses| must be used as arguments to all other
+The labels returned from \verb|list-courses| must be used as arguments to all other
 operations that require a course label.
 %
 It accepts 0 arguments.
 
 Example Usage:
 \begin{verbatim}
-$ diderot_student list_courses
+$ diderot student list-courses
 \end{verbatim}
 
-\subsection{list\_assignments}
+\subsection{list-assignments}
 
-\verb|list_assignments| is used to list all available assignments for a particular course.
+\verb|list-assignments| is used to list all available assignments for a particular course.
 %
 It accepts only 1 argument.
 \begin{itemize}
@@ -139,12 +147,12 @@ It accepts only 1 argument.
 
 Example Usage:
 \begin{verbatim}
-$  diderot_student list_assignments courselabel
+$  diderot student list-assignments courselabel
 \end{verbatim}
 
-\subsection{download\_assignment}
+\subsection{download-assignment}
 
-\verb|download_assignment| is used to download handout files associated with an assignment.
+\verb|download-assignment| is used to download handout files associated with an assignment.
 %
 It attempts to download all handout files into the current directory.
 % 
@@ -157,12 +165,12 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-$  diderot_student download_assignment courselabel homeworkname
+$  diderot student download-assignment courselabel homeworkname
 \end{verbatim}
 
-\subsection{submit\_assignment}
+\subsection{submit-assignment}
 
-\verb|submit_assignment| is used to submit handin files to an assignment.
+\verb|submit-assignment| is used to submit handin files to an assignment.
 %
 Please make sure to check your homework handouts to see what file types
 your homework expects.
@@ -172,12 +180,12 @@ It accepts 3 arguments.
 \begin{itemize}
   \item \verb|course|: Course label that the homework belongs to.
   \item \verb|homework|: Name of the homework to submit to.
-  \item \verb|handin_path|: Path to the handin file.
+  \item \verb|handin-path|: Path to the handin file.
 \end{itemize}
 
 Example Usage:
 \begin{verbatim}
-$  diderot_student submit_assignment courselabel homeworkname ~/Path/To/My/Handin
+$  diderot student submit-assignment courselabel homeworkname ~/Path/To/My/Handin
 \end{verbatim}
 
 \section{Admin Interface}
@@ -186,29 +194,29 @@ The admin CLI contains all the above commands, and expands the set to include
 some commands relating to manipulation of books and assignments.
 
 \begin{itemize}
-  \item \verb|list_books|: List all books, can optionally filter by course.
-  \item \verb|list_parts|: List all parts of a book.
-  \item \verb|list_chapters|: List all chapters of a book.
-  \item \verb|create_book|: Create a book in a course.
-  \item \verb|create_part|: List all parts of a book.
-  \item \verb|create_chapter|: Create a chapter in a given part of a
+  \item \verb|list-books|: List all books, can optionally filter by course.
+  \item \verb|list-parts|: List all parts of a book.
+  \item \verb|list-chapters|: List all chapters of a book.
+  \item \verb|create-book|: Create a book in a course.
+  \item \verb|create-part|: List all parts of a book.
+  \item \verb|create-chapter|: Create a chapter in a given part of a
     book. Optionally specify the new chapter's label and or title. If
     not, these values are filled in with a default.
-  \item \verb|{publish/retract}_chapter|: Publish or retract an existing chapter.
-  \item \verb|upload_chapter|: Update the content of an existing
+  \item \verb|{publish/retract}-chapter|: Publish or retract an existing chapter.
+  \item \verb|upload-chapter|: Update the content of an existing
     chapter. Upload either a standalone pdf, pdf of a slideshow, or an
     xml document and image attachments.  The image upload accepts
     filenames, globs, and folder names (folders are recursively
     traversed).
-  \item \verb|set_publish_date|: Set the publish date for a chapter.
-  \item \verb|update_assignment|: Update the files relating to an existing homework on Diderot.  Upload any of the autograder tar, autograder makefile, pdf writeup, and student handout.
+  \item \verb|set-publish-date|: Set the publish date for a chapter.
+  \item \verb|update-assignment|: Update the files relating to an existing homework on Diderot.  Upload any of the autograder tar, autograder makefile, pdf writeup, and student handout.
 \end{itemize}
 
-\subsection{list\_books}
+\subsection{list-books}
 
-\verb|list_books| is used to list book labels that the user has access to.
+\verb|list-books| is used to list book labels that the user has access to.
 %
-The result from \verb|list_books| is used as the argument book label for commands
+The result from \verb|list-books| is used as the argument book label for commands
 that require a book label.
 %
 It accepts 2 arguments.
@@ -220,13 +228,13 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-$  diderot_admin list_books courselabel
-$  diderot_admin list_books --all
+$  diderot admin list-books courselabel
+$  diderot admin list-books --all
 \end{verbatim}
 
-\subsection{list\_parts}
+\subsection{list-parts}
 
-\verb|list_parts| is used list the parts and numbers within a target book.
+\verb|list-parts| is used list the parts and numbers within a target book.
 It accepts 2 arguments.
 
 \begin{itemize}
@@ -236,12 +244,12 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-$  diderot_admin list_parts courselabel booklabel
+$  diderot admin list-parts courselabel booklabel
 \end{verbatim}
 
-\subsection{list\_chapters}
+\subsection{list-chapters}
 
-\verb|list_chapters| is used list the chapters and numbers within a target book.
+\verb|list-chapters| is used list the chapters and numbers within a target book.
 It accepts 2 arguments.
 
 \begin{itemize}
@@ -251,13 +259,13 @@ It accepts 2 arguments.
 
 Example Usage:
 \begin{verbatim}
-$  diderot_admin list_chapters courselabel booklabel
+$  diderot admin list-chapters courselabel booklabel
 \end{verbatim}
 
 
-\subsection{create\_book}
+\subsection{create-book}
 
-\verb|create_book| creates a book within a target course. It accepts 3 required arguments.
+\verb|create-book| creates a book within a target course. It accepts 3 required arguments.
 
 \begin{itemize}
   \item \verb|course|: Course label that the target book belongs to.
@@ -267,71 +275,72 @@ $  diderot_admin list_chapters courselabel booklabel
 
 Example Usage:
 \begin{verbatim}
-$ diderot_admin create_book courselabel --label ``notes'' --title ``Lecture Notes''
+$ diderot admin create-book courselabel --label ``notes'' --title ``Lecture Notes''
 \end{verbatim}
 
 
-\subsection{create\_part}
+\subsection{create-part}
 
-\verb|create_part| is used to create a part within a target book. It accepts 5 arguments.
-
+\verb|create-part| is used to create a part within a target book. It accepts 5 arguments.
+%
 \begin{itemize}
   \item \verb|course|: Course label that the target book belongs to.
   \item \verb|book|: Label of the target book.
   \item \verb|title|: Title to give to the newly created part.
-  \item \verb|number|: Number to give the newly created part.
-  \item \verb|--label|: Optional label to give to the newly created part. It defaults to a random value if not provided.
+  \item \verb|--part-number|: Number to give the newly created part.
+  \item \verb|--part-label|: Optional label to give to the newly created part. It defaults to a random value if not provided.
 \end{itemize}
-
+%
 The command will error out if there already exists a part within the book with the same number.
 
+\begin{example}[Create Part]
 Example Usage:
 \begin{verbatim}
-$ diderot_admin create_part courselabel booklabel title number --label new-label
+$ diderot admin create-part courselabel booklabel title number --label new-label
 \end{verbatim}
+\end{example}
 
+\subsection{create-chapter}
 
-\subsection{create\_chapter}
-
-\verb|create_chapter| is used to create a chapter within a target book. It accepts 6 arguments.
+\verb|create-chapter| is used to create a chapter within a target book. It accepts 6 arguments.
 
 \begin{itemize}
   \item \verb|course|: Course label that the target book belongs to.
   \item \verb|book|: Label of the target book.
-  \item \verb|--part|: Number of the part to create the chapter within. This argument is not used when the target book \emph{is a booklet}.
-  \item \verb|--number|: Number to give the newly created chapter.
+  \item \verb|--part-number|: Number of the part to create the chapter within.
+  \item \verb|--chapter-number|: Number to give the newly created chapter.
   \item \verb|--title|: Optional title to give to the newly created chapter. It defaults to 'Chapter'.
-  \item \verb|--label|: Optional label to give to the newly created chapter. It defaults to a random value if not provided.
+  \item \verb|--chapter-label|: Optional label to give to the newly created chapter. It defaults to a random value if not provided.
 \end{itemize}
 
 The command will error out if there already exists a chapter within the book with the same number.
 
 Example Usage:
 \begin{verbatim}
-$ diderot_admin create_chapter courselabel booklabel --part partnum \
-  --number newnum --title newtitle --label newlabel
+$ diderot admin create-chapter courselabel booklabel --part-number 1 \
+  --chapter-number 2 --title "chapter title" --label "chapter label"
 \end{verbatim}
 
-\subsection{publish/retract\_chapter}
+\subsection{publish/retract-chapter}
 
-\verb|publish_chapter| and \verb|retract_chapter| are used to publish or retract a chapter. They each accept 3 arguments.
+\verb|publish-chapter| and \verb|retract-chapter| are used to publish or retract a chapter. They each accept 3 arguments.
 
 \begin{itemize}
   \item \verb|course|: Course label to publish a chapter in. 
   \item \verb|book|: Book label to publish a chapter in.
 
-  \item \verb|--chapter_number| or \verb|--chapter_label|: Use one of these arguments to specify which chapter to publish. Use either the chapter's number within the book, or its label.
+  \item \verb|--chapter-number| or \verb|--chapter-label|: Use one of these arguments to specify which chapter to publish. Use either the chapter's number within the book, or its label.
 \end{itemize}
 
 Example Usage:
 \begin{verbatim}
-$ diderot_admin publish_chapter courselabel booklabel --chapter_label chapterlabel
-$ diderot_admin retract_chapter courselabel booklabel --chapter_label chapterlabel
+$ diderot admin publish-chapter courselabel booklabel --chapter-label chapterlabel
+$ diderot admin retract-chapter courselabel booklabel --chapter-label chapterlabel
 \end{verbatim}
 
-\subsection{upload\_chapter}
+\subsection{upload-chapter}
 
-\verb|upload_chapter| is used to upload PDF, slide, or xml/mlx content to a chapter.
+\verb|upload-chapter| is used to upload PDF, slide, or xml/mlx content to a chapter.
 %
 It accepts quite a few arguments and combinations.
 
@@ -339,28 +348,24 @@ It accepts quite a few arguments and combinations.
   \item \verb|course|: Course label to upload chapter to.
   \item \verb|book|: Book label to upload a chapter to.
 
-  \item \verb|--chapter_number| or \verb|--chapter_label|: Use one of these arguments to specify which chapter to upload content to. Use either the chapter's number within the book, or its label.
+  \item \verb|--chapter-number| or \verb|--chapter-label|: Use one of these arguments to specify which chapter to upload content to. Use either the chapter's number within the book, or its label.
 
   \item \verb|--pdf| or \verb|--slides| or \verb|--xml|: Use one of these arguments, specifying the desired file type to upload. Note that your slides must be in a PDF format to use the \verb|--slides| argument. The \verb|--xml| argument accepts both XML and MLX file formats.
 
-  \item \verb|--video_url|: Optional URL to a video to embed within the chapter. This argument can only be used with the \verb|--pdf| and \verb|--slides| arguments.
+  \item \verb|--video-url|: Optional URL to a video to embed within the chapter. This argument can only be used with the \verb|--pdf| and \verb|--slides| arguments.
 
-  \item \verb|--xml_pdf|: Optional path to a PDF version of the XML content for printing. This argument can only be used with the \verb|--xml| argument.
+  \item \verb|--xml-pdf|: Optional path to a PDF version of the XML content for printing. This argument can only be used with the \verb|--xml| argument.
 
   \item \verb|--attach|: Optional list of paths to attachments to upload along with an XML chapter upload. This argument can only be used with the \verb|--xml| argument. The command accepts paths to individual files, globs, and folders. Folders are recursively traversed.
 \end{itemize}
 
 Example Usage:
 \begin{verbatim}
-$ diderot_admin upload_chapter courselabel bookname --chapter_number chapternumber \
-  --pdf Path/to/Pdf --video_url someurl
+$ diderot admin upload-chapter courselabel bookname --chapter-number chapternumber \
+  --pdf Path/to/Pdf --video-url someurl
 
-$ diderot_admin upload_chapter courselabel bookname --chapter_number chapternumber \
-  --slides Path/to/slides --video_url someurl
-
-$ diderot_admin upload_chapter courselabel bookname --chapter_number chapternumber \
-  --xml Path/to/Xml --xml_pdf Path/To/XmlPdf \
-  --attach Path/To/File Path/To/Folder/ Path/With/Glob/*
+$ diderot admin upload-chapter courselabel bookname --chapter-number chapternumber \
+  --xml Path/to/Xml --xml-pdf Path/To/XmlPdf  --attach Path/To/File
 \end{verbatim}
 
 \subsection{Set Publish Date}
@@ -387,16 +392,16 @@ Diderot without.  To this end, the user will need to include
 Makefile and then use rules that look like this
 \begin{verbatim}
 overview: overview/overview.xml overview/overview.pdf
-upload_overview: NO=1
-upload_overview: FILE=overview/overview
-upload_overview: overview upload_xml_pdf
+upload-overview: NO=1
+upload-overview: FILE=overview/overview
+upload-overview: overview upload-xml-pdf
 \end{verbatim}
 
 Here the variable \verb|NO| specifies the chapter number and \verb|FILE| specifies the xml and pdf file names, assumed to be \verb|FILE.xml| and \verb|FILE.pdf| respectively.  
 %
-For a book chapter, the part can be specified using \verb|PART_NO| variable.
+For a book chapter, the part can be specified using \verb|PART-NO| variable.
 %
-For attachments, the \verb|ATTACH| variable may be used.
+For attachments, the \verb|ATTACH| variable may be used to specify a directory or a single file; it is not possible to specify multiple files or use wildcards.
 %
 The user can specify the course and the book being uploaded into by using the
 \verb|LABEL_COURSE| and \verb|LABEL_TEXTBOOK| variables. 
@@ -409,7 +414,7 @@ upload_introduction_genome: TEXTBOOK="TB.VOL.1"
 upload_introduction_genome: PART_NO=1 
 upload_introduction_genome: NO=4
 upload_introduction_genome: FILE=genome/genome
-upload_introduction_genome: ATTACH=genome/media/*.jpg 
+upload_introduction_genome: ATTACH=genome/media
 upload_introduction_genome: genome/genome.xml genome/genome.pdf upload_xml_pdf_attach
 \end{verbatim}
 \end{gram}
@@ -419,27 +424,31 @@ The \href{file://cli/attachments/Makefile-guide}{Makefile for the guide} uses th
 
 \end{gram}
 
-\subsection{upload\_book}
+\subsection{upload-book}
 
 \begin{gram}
-\verb|upload_book| uploads a set of parts and chapters into a book or booklet.
+\verb|upload-book| uploads a set of parts and chapters into a book.
 %
-It can be used to upload a complete booklet or book by creating all
-the necessary parts and chapters specified in a json file.
+It can be used to upload a complete book by creating all
+the necessary parts and chapters specified in a JSON file.
 %
 It can also be used to upload any subset of parts and chapters.
+%
+The JSON file format is quite expressive and it can be used to specify individual files or list of files as attachments.
+%
+It can also be used to specify publication dates.
 
 It accepts two arguments.
 %
 \begin{itemize}
   \item \verb|course|: Course label that the book belongs to.
-  \item \verb|book-data|: JSON file describing the parts and chapters to be uploaded (or the book/booklet).
+  \item \verb|book-data|: JSON file describing the parts and chapters to be uploaded (or the book).
 \end{itemize}
 \end{gram}
 
 Example Usage:
 \begin{verbatim}
-diderot_admin upload_book  "CMU:Pittsburgh, PA:15210:Community:2020" volume-1.json
+diderot admin upload-book  "CMU:Pittsburgh, PA:15210:Community:2020" volume-1.json
 \end{verbatim}
 %
  
@@ -456,7 +465,7 @@ XML and PDF files.  To this end, use either the \lstinline{xml} or a
 upload into that chapter.
 %
 For an \lstinline{xml} chapter, you can optionally provide an
-\lstinline{xml_pdf} file, which is the PDF version of the chapter.
+\lstinline{xml-pdf} file, which is the PDF version of the chapter.
 %
 You can also provide attachments for the chapter, by using the
 \lstinline{attachment} field along with a list of attachments.
@@ -466,15 +475,15 @@ created as an empty (retracted) chapter, along with the parts.
 
 
 For each chapter you may specify a publication date by using
-\verb|publish_on_date| or \verb|publish_on_week| attributes.
+\verb|publish-on-date| or \verb|publish-on-week| attributes.
 
 
 \begin{itemize}
-\item Using \verb|publish_on_date|, specify the date for publication
+\item Using \verb|publish-on-date|, specify the date for publication
   using the format ``yyyy-mm-ddTHH:MM'' For example,
   "2021-06-10T14:15'' means 10$^{th}$ day of June in Year 2021 at
   14:15 (2:15pm)
-\item Using \verb|publish_on_week|, specify a relative date by using
+\item Using \verb|publish-on-week|, specify a relative date by using
   ``W/D, HH:MM'' format.  For example, ``3/5, 14:15'' means means the
   fifth day of the third week at 14:15 (2:15pm) and ``11/3, 14:15''
   means means the third day of the elevent week at 14:15 (2:15pm).
@@ -495,16 +504,16 @@ For each chapter you may specify a publication date by using
 
 Each chapter field must contain \verb|number| specifying the chapter
 number and in addition may contain any subset of \verb|xml|,
-\verb|xml_pdf|, \verb|pdf|, \verb|title|, \verb|label|.  Note that for
+\verb|xml-pdf|, \verb|pdf|, \verb|title|, \verb|label|.  Note that for
 \verb|xml| chapters, the label specified in the chapter takes
 precedence over specified in the json file if any.
 
 \end{gram}
 
 
-\subsection{update\_assignment}
+\subsection{update-assignment}
 
-\verb|update_assignment| is used to update files related to an assignment on Diderot.
+\verb|update-assignment| is used to update files related to an assignment on Diderot.
 %
 It accepts 6 arguments.
 
@@ -519,7 +528,7 @@ It accepts 6 arguments.
 
 Example Usage:
 \begin{verbatim}
-$ diderot_admin update_assignment courselabel homeworkname \
+$ diderot admin update-assignment courselabel homeworkname \
   --autograde-tar Path/To/Tar \
   --autograde-makefile Path/To/Makefile \
   --writeup Path/To/Writeup --handout Path/To/Handout
