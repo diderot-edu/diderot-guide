@@ -147,13 +147,10 @@ The term \lstinline`element` in the example refers to an "atom" or a "group".
 
 
 \begin{definition}[Atom]
-To increase interactivity, Diderot relies on atoms.
+To increase interactivity, Diderot breaks up content into ``atoms'', which 
+can be included in any section (i.e., section,  subsection, subsubsection, and paragraph).
 %
-Atoms are smallest unit of sections and can be included in any section (i.e., section,  subsection, subsubsection, and paragraph).
-%
-In diderot, essentially all content  must be inside of atoms.
-%
-Like any other LaTeX section, an atom cannot be included inside of a
+As with ordinary LaTeX section, an atom cannot be included inside of a
 LaTeX environment.
 %
 
@@ -194,7 +191,7 @@ The term \lstinline`<atom>` above can be replaced with any of the following:
 \begin{flex}
 
 \begin{important}[Figure and Table Atoms]
-In addition to the atoms above, Diderot also supports \lstinline`figure` and \lstinline`table` atoms, which have slightly different syntax:
+In addition to the atoms above, Diderot also supports \lstinline`figure` and \lstinline`table` atoms, which can include a caption, e.g., as below:
 \begin{lstlisting}
 \begin{<atom>}[Optional title]
 <atom body>
@@ -236,7 +233,7 @@ Electric Motor & \%90
 \end{table}
 \end{flex}
 
-\begin{important}[Nesting of Atoms]
+\begin{important}[Nested Atoms]
 A named atom cannot be nested inside another named atom.
 %
 Similarly, a named atom cannot be nested inside a LaTeX environment.
@@ -253,7 +250,7 @@ But it is wrong, because it includes an atom inside of a LaTeX environment.
 \end{important}
 
 \begin{note}
-While an atom can be a paragraph, not every paragraph is an atom.  Paragraphs only at the ``top level'', not inside LaTeX environments are atoms. 
+An atom can be a paragraph but not every paragraph is an atom.  Paragraphs only at the ``top level'', not inside LaTeX environments are atoms. 
 \end{note}
 
 \begin{note}
@@ -263,28 +260,29 @@ In the mean time, you can request new atoms by
 \href{mailto:umut@cs.cmu.edu}{emailing Umut}.
 \end{note}
 
-\begin{important}
-Atoms are \defn{single standing}, that is to say surrounded by "vertical
-white spaces" or blank lines on both ends (or LaTeX comments).
-%
-Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code is a plain paragraph atom but not a definition atom, because definition is not single standing.
+%% %% We do not need atoms to be single standing anymore. 
+%% \begin{important}
+%% Atoms are \defn{single standing}, that is to say surrounded by "vertical
+%% white spaces" or blank lines on both ends (or LaTeX comments).
+%% %
+%% Therefore,  white space  matters. In the common case, this goes along with our intuition of how text is organized but is worth keeping in mind. For example, the following code is a plain paragraph atom but not a definition atom, because definition is not single standing.
 
-\begin{lstlisting}
-We can now define Kleene closure as follows.
-\begin{definition}
-...
-\end{definition}
-\end{lstlisting}
+%% \begin{lstlisting}
+%% We can now define Kleene closure as follows.
+%% \begin{definition}
+%% ...
+%% \end{definition}
+%% \end{lstlisting}
 
-The following is a definition atom, because it is single standing.
-\begin{lstlisting}
+%% The following is a definition atom, because it is single standing.
+%% \begin{lstlisting}
 
-\begin{definition}
-...
-\end{definition}
+%% \begin{definition}
+%% ...
+%% \end{definition}
 
-\end{lstlisting}
-\end{important}
+%% \end{lstlisting}
+%% \end{important}
 
 \subsubsection{Controlling granularity}
 
