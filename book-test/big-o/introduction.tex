@@ -76,8 +76,8 @@ To show that this is true, recall the log rule that $\log_a(b) = \frac{\log(b)}{
     \begin{algorithmic}[1]
         \Procedure{LinearSearch}{list $A$, size of list $n$, value $v$}
             \For{$i = 0$ to $n-1$} \Comment{This function performs everything in the loop $n$ times}
-                \If{$A[i] == v$}   
-                \Return $i$          \Comment{This is a constant time operation}
+                \If{$A[i] == v$}   \Comment{This is a constant time operation}
+                \State \Return $i$  \Comment{This is a constant time operation}
                 \EndIf
             \EndFor
             \Return False
@@ -91,9 +91,24 @@ In the worst case scenario, \texttt{LinearSearch} performs a constant time opera
     \caption{Binary Search}
     \label{alg:binary-search}
     \begin{algorithmic}[1]
-        \Procedure{BinarySearch}{list $A$, size of list $n$, value $v$}
+        \Procedure{BinarySearch}{sorted list $A$, size of list $n$, value $v$}
             \State $left = 0$
             \State $right = n$
+            \While{$left < right$}
+            \State $middle = (left + right) // 2$ \Comment{The function eliminates half of $A$ at each step}
+            \If{$A[middle] \leq v$} \Comment{This is a constant time operation}
+            \State $left = middle + 1$ \Comment{This is a constant time operation}
+            \Else 
+            \State $right = middle$ \Comment{This is a constant time operation}
+            \EndIf
+            \EndWhile
+            \If{$left > 0 \textbf{ and } A[left - 1] == v$} \Comment{This is a constant time operation}
+            \State \Return $left$ \Comment{This is a constant time operation}
+            \Else 
+            \State \Return False \Comment{This is a constant time operation}
+            \EndIf
         \EndProcedure
     \end{algorithmic}
 \end{algorithm}
+
+In teach iteration until $left \geq right$, \texttt{BinarySearch} performs a constant time operations. 
