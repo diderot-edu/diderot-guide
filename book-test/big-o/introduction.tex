@@ -42,28 +42,31 @@ While the big-O bound for any function $f$can be defined by any other valid func
 
 Based on this definition, we get a few interesting properties as consequence:
 
-\subsubsection{Transitivity}
-\begin{definition}[Transitivity]\label{def:bigO::trans}
+\begin{flex}
+    \begin{definition}[Transitivity]\label{def:bigO::trans}
     For three functions $f, g, h$ all on $\mathbb{R}_+$, if $f(n) \in O(g(n))$ and $g(n) \in O(h(n))$, then $f(n) \in O(h(n))$.
 \end{definition}
 
 A result of the transitivity property is that a function $f$ does not have a unique big-O bound, as we can always come up with faster growing functions than $f$. However, in computer science we normally want the \emph{tightest} Big-O bound in order to formalize what realistically happens ``in the worst case."
+\end{flex}
 
 
-\subsubsection{Lower-Order Ambivalence}
-\begin{definition}[Lower-Order Ambivalence]\label{def:bigO::loa}
+\begin{flex}
+    \begin{definition}[Lower-Order Ambivalence]\label{def:bigO::loa}
     If $f(n) = f_1(n) + f_2(n)$ for some functions $f_1, f_2$ such that $f_2(n) \in O(f_1(n))$, then $f(n) \in O(f_1(n))$.
 \end{definition}
 
 In words, this means that we only care about the \emph{fastest} growing part of a function to determine its Big-O complexity. So if $f(n) = 5n^3 + 2n$, then $f(n) \in O(n^3)$ (i.e. we can disregard the $2n$ term, as asymptotically $5n^3$ becomes much larger than $2n$).
+\end{flex}
 
-
-\subsubsection{Log Equivalence}
-\begin{definition}[Log Equivalence]\label{def:bigO::le}
+\begin{flex}
+    \begin{definition}[Log Equivalence]\label{def:bigO::le}
     If $f(n) = \log_p(n)$ and $g(n) = \log_q(n)$ for two bases $p, q \in \mathbb{N}$, then $f(n) \in O(g(n))$ \textbf{and} $g(n) \in O(f(n))$.
 \end{definition}
 
 To show that this is true, recall the log rule that $\log_a(b) = \frac{\log(b)}{\log(a)}$ where $\log$ is the natural log. Given this, $f(n) = \frac{1}{\log(p)}\log(n)$ and $g(n) = \frac{1}{\log(q)}\log(n)$, and thus $f(n)$ and $g(n)$ are equivalent up to a constant.
+\end{flex}
+
 
 \section{Code Examples}
 
@@ -76,7 +79,7 @@ To show that this is true, recall the log rule that $\log_a(b) = \frac{\log(b)}{
                 \If{$A[i] == v$} 
                 \Return i
                 \EndIf
-                \Else{uhhhh}
+                \Else{$$}
             \EndFor
         \EndProcedure
     \end{algorithmic}
