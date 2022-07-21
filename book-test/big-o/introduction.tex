@@ -72,15 +72,29 @@ To show that this is true, recall the log rule that $\log_a(b) = \frac{\log(b)}{
 
 \begin{algorithm}[H]
     \caption{Linear Search}
-    \label{alg:log-sum-exp-trick}
+    \label{alg:linear-search}
     \begin{algorithmic}[1]
         \Procedure{LinearSearch}{list $A$, size of list $n$, value $v$}
-            \For{$i = 0$ to $n-1$}
-                \If{$A[i] == v$} 
-                \Return i
+            \For{$i = 0$ to $n-1$} \Comment{This function performs everything in the loop $n$ times}
+                \If{$A[i] == v$}   
+                \Return $i$          \Comment{This is a constant time operation}
                 \EndIf
-                \Else{$$}
             \EndFor
+            \Return False
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+In the worst case scenario, \texttt{LinearSearch} performs a constant time operation $n$ times. As such, we say the run time of of \texttt{LinearSearch} is in $O(n)$.
+
+\begin{algorithm}[H]
+    \caption{Binary Search}
+    \label{alg:binary-search}
+    \begin{algorithmic}[1]
+        \Procedure{BinarySearch}{list $A$, size of list $n$, value $v$}
+            \State $left = 0$
+            \State $right = n$
+            
         \EndProcedure
     \end{algorithmic}
 \end{algorithm}
