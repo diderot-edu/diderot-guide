@@ -1,0 +1,37 @@
+% This is the main file for generating pdfs.
+
+\documentclass{book}
+\usepackage{scalerel, amssymb}
+
+% All packages
+\usepackage{templates/packages}
+% Diderot environments
+\usepackage{templates/diderot}
+% All macros/commands
+\input{templates/preamble}
+\input{book-test/big-o/configurations.tex}
+
+% Leave out chapter numbers from section numbers
+\renewcommand*\thesection{\arabic{section}}
+% number up to and including subsubsection
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+\def\rr{{\color{red}$\mathrel{\bigcirc}$}}
+\def\bb{{\color{blue}$\mathrel{\bigcirc}$}}
+\include{header}
+\include{book-test/big-o/introduction.tex}
+
+% \include{probability/part}
+% \include{probability/theory}
+% \include{probability/randomvars}
+% \include{probability/expectation}
+
+% \include{graph-contraction/part}
+% \include{graph-contraction/introduction}
+% \include{graph-contraction/edge}
+% \include{graph-contraction/star}
+% \include{graph-contraction/connectivity}
+
+
+\end{document}

@@ -1,11 +1,83 @@
-\documentclass[11pt,addpoints,answers]{exam}
-\input{configurations.tex}
+\chapter{Big-O}
+\label{ch:bigO}
 
-\usepackage{scalerel, amssymb}
+\section{Overview}\label{sec:bigO::ovrvw}
+We can measure the run time, spatial complexity, or general resource consumption of a given function through Big-O notation. Informally, if the function \texttt{my\_fn(x)} runs in $O(f(n))$, this means that when the input \texttt{x} is of size $n$, the worst-case scenario run time of \texttt{my\_fn(x)} is asymptotically a constant multiple of $f(n)$.
 
-\def\rr{{\color{red}$\mathrel{\bigcirc}$}}
-\def\bb{{\color{blue}$\mathrel{\bigcirc}$}}
+Note that run time here refers to the number of algorithmic steps that the function takes rather than wall-clock time. 
 
-\begin{document}
+\section{Definition and Mathematical Properties}\label{sec:bigO::math}
+For the purposes of this course, (and \emph{most} future MLD courses you may or may not take), it's best to think of big-O for comparing two arbitrary functions, which we will call $f$ and $g$ respectively. For simplicity, we'll assume that both $f$ and $g$ are defined over $\mathbb{R}_+$ (that is, $f$ and $g$ only take positive real numbers as inputs) only, which is enough for this course. Formally, Big-O is defined as:
+\begin{definition}[Big-O Notation]\label{def:bigO::bigO}
+    If $f(n) \in O(g(n))$, then there exists some $c, n_0 \in \mathbb{R}_+$ such that:
+    \[    \forall n \ge n_0, \quad f(n) \le c g(n)\]
+\end{definition}
+%
 
-\end{document}
+(Note: if you've seen Big-O before, you may be more familiar with the notation $f(n) = O(g(n))$. We avoid using this alternative as the equality operator implies a certain degree of symmetry that is not present.)
+
+In words, this means that if $f(n) \in O(g(n))$, then at some point as the inputs increase, $f(n)$ will \emph{\textbf{always}} be less than or equal to a constant multiple of $g(n)$. 
+
+\subsection{An aside on verbiage}
+It can sometimes be confusing to talk about big-O in the context of computer science and the math behind it, as functions like $n!$ are simultaneously described as ``fast-growing" and ``slow". This is not incorrect: calling  $n!$ ``fast-growing" refers to the fact that as $n$ increases $n!$ quickly explodes (1, 1, 2, 6, 24, 120,720, 540, ...), while calling $n!$ ``slow" refers to the fact that an algorithm that runs in $O(n!)$ time takes a constant multiple of $n!$ steps to run, which can take a long time! Normally, ``fast-growing" is used more when talking about big-O in the pure mathematical sense (e.g. comparing arbitrary functions), while ``slow" is used more in computer science when talking about run-time complexity, so we expect you to be comfortable with both!
+
+
+\subsection{Standard Complexity Classes}
+
+While the big-O bound for any function $f$can be defined by any other valid function $g$, in computer science we generally only talk about the following complexity classes (shown in increasing order of complexity):
+
+\begin{enumerate}
+    \item $O(1)$: Constant time
+    \item $O(\log(n))$: logarithmic time
+    \item $O(n)$: linear time
+    \item $O(n\log(n))$: log-linear time
+    \item $O(n^2)$: quadratic time
+    \item $O(n^p)$: polynomial time, for some $p > 2$
+    \item $O(p^n)$: exponential time
+    \item $O(n!)$: factorial time
+\end{enumerate}
+
+
+\subsection{Big-O properties}
+
+Based on this definition, we get a few interesting properties as consequence:
+
+\subsubsection{Transitivity}
+\begin{definition}[Transitivity]\label{def:bigO::trans}
+    For three functions $f, g, h$ all on $\mathbb{R}_+$, if $f(n) \in O(g(n))$ and $g(n) \in O(h(n))$, then $f(n) \in O(h(n))$.
+\end{definition}
+
+A result of the transitivity property is that a function $f$ does not have a unique big-O bound, as we can always come up with faster growing functions than $f$. However, in computer science we normally want the \emph{tightest} Big-O bound in order to formalize what realistically happens ``in the worst case."
+
+
+\subsubsection{Lower-Order Ambivalence}
+\begin{definition}[Lower-Order Ambivalence]\label{def:bigO::loa}
+    If $f(n) = f_1(n) + f_2(n)$ for some functions $f_1, f_2$ such that $f_2(n) \in O(f_1(n))$, then $f(n) \in O(f_1(n))$.
+\end{definition}
+
+In words, this means that we only care about the \emph{fastest} growing part of a function to determine its Big-O complexity. So if $f(n) = 5n^3 + 2n$, then $f(n) \in O(n^3)$ (i.e. we can disregard the $2n$ term, as asymptotically $5n^3$ becomes much larger than $2n$).
+
+
+\subsubsection{Log Equivalence}
+\begin{definition}[Log Equivalence]\label{def:bigO::le}
+    If $f(n) = \log_p(n)$ and $g(n) = \log_q(n)$ for two bases $p, q \in \mathbb{N}$, then $f(n) \in O(g(n))$ \textbf{and} $g(n) \in O(f(n))$.
+\end{definition}
+
+To show that this is true, recall the log rule that $\log_a(b) = \frac{\log(b)}{\log(a)}$ where $\log$ is the natural log. Given this, $f(n) = \frac{1}{\log(p)}\log(n)$ and $g(n) = \frac{1}{\log(q)}\log(n)$, and thus $f(n)$ and $g(n)$ are equivalent up to a constant.
+
+\section{Code Examples}
+
+\begin{algorithm}[H]
+    \caption{Linear Search}
+    \label{alg:log-sum-exp-trick}
+    \begin{algorithmic}[1]
+        \Procedure{LinearSearch}{list $A$, size of list $n$, value $v$}
+            \For{$i = 0$ to $n-1$}
+                \If{$A[i] == v$} 
+                \Return i
+                \EndIf
+                \Else{uhhhh}
+            \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}

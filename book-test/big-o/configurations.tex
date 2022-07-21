@@ -381,40 +381,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Commands for customizing the assignment %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\courseNum}{10-301 / 10-601}
-\newcommand{\courseName}{Introduction to Machine Learning}
-\newcommand{\courseSem}{Spring 2022}
+\newcommand{\courseNum}{10-600}
+\newcommand{\courseName}{Machine Learning Primer}
+\newcommand{\courseSem}{Fall 2022}
 \newcommand{\courseUrl}{\url{http://www.cs.cmu.edu/~mgormley/courses/10601/}}
-\newcommand{\hwNum}{Homework 8}
-\newcommand{\hwTopic}{Reinforcement Learning}
+\newcommand{\hwNum}{MLP}
+\newcommand{\hwTopic}{Big-O}
 \newcommand{\hwName}{\hwNum: \hwTopic}
-\newcommand{\outDate}{April 12, 2021}
-\newcommand{\dueDate}{April 21, 2021}
-\newcommand{\taNames}{Sana, Chu, Hayden, Tori, Prasoon}
+\newcommand{\outDate}{}
+\newcommand{\dueDate}{}
+\newcommand{\taNames}{}
 
 
+
+%% Had to comment out this block for formatting issues
 %\pagestyle{fancyplain}
-\newcommand{\homeworktype}{\string written/programming}
-\lhead{\hwName}
-\rhead{\courseNum}
-\cfoot{\thepage{} of \numpages{}}
+% \newcommand{\homeworktype}{\string written/programming}
+% \lhead{\hwName}
+% \rhead{\courseNum}
+% \cfoot{\thepage{} of \numpages{}}
 
-\title{\textsc{\hwNum}\\
-\textsc{\hwTopic}
-\thanks{Compiled on \today{} at \currenttime{}}\\
-\vspace{1em}
-} % Title
+% \title{\textsc{\hwNum}\\
+% \textsc{\hwTopic}
+% \thanks{Compiled on \today{} at \currenttime{}}\\
+% \vspace{1em}
+% } % Title
 
 
-\author{\textsc{\large \courseNum{} \courseName{} (\courseSem)}\\
-\courseUrl
-\vspace{1em}\\
-  OUT: \outDate \\
-  DUE: \dueDate \\
-  TAs: \taNames\\
-}
+% \author{\textsc{\large \courseNum{} \courseName{} (\courseSem)}\\
+% \courseUrl
+% \vspace{1em}\\
+%   OUT: \outDate \\
+%   DUE: \dueDate \\
+%   TAs: \taNames\\
+% }
 
-\date{}
+% \date{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -435,9 +437,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Don't display a date in the title and remove the white space
-\predate{}
-\postdate{}
-\date{}
+%\predate{}
+%\postdate{}
+%\date{}
 
 % Don't display an author and remove the white space
 %\preauthor{}
@@ -461,8 +463,8 @@
 \newcommand{\PrS}{\hat{\Pr_{(x_i, y_i) \sim S}}}
 \newcommand{\PrSinline}{\hat{\Pr}_{(x_i, y_i) \sim S}}  % inline PrS
 
-% Abhi messing around with examdoc
-\qformat{\textbf{{\Large \thequestion \; \; \thequestiontitle \ (\totalpoints \ points)}} \hfill}
+% Abhi messing around with examdoc, commented out for diderot formatting
+%\qformat{\textbf{{\Large \thequestion \; \; \thequestiontitle \ (\totalpoints \ points)}} \hfill}
 \renewcommand{\thequestion}{\arabic{question}}
 \renewcommand{\questionlabel}{\thequestion.}
 
