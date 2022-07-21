@@ -1,0 +1,366 @@
+\usepackage{xparse}    % used to deal with optional arguments
+\usepackage{environ}   % A better command for defining environments, used
+                       % to drop contents when needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: DIDEROT COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% For PDF, we delegate download and attach to href.
+\newcommand{\download}[2]{\href{#1}{#2}}
+\newcommand{\attach}[2]{\href{#1}{#2}}
+\newcommand{\video}[2]{#2 (this video link is not available here)}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: DIDEROT COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NewDocumentEnvironment{diderotfig}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Figure.}}
+{\paragraph*{Figure [#1].}}
+}
+{ 
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: AMSMath Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{algorithm}[definition]{Algorithm}
+\newtheorem{code}[definition]{Pseudo Code}
+\newtheorem{costspec}[definition]{Cost Specification}
+\newtheorem{datatype}[definition]{Data Type}
+\newtheorem{datastr}[definition]{Data Structure}
+\newtheorem{example}{Example}[chapter]
+\newtheorem{syntax}[definition]{Syntax}
+
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{problem}[exercise]{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{task}{Task}
+
+\theoremstyle{remark}
+\newtheorem*{assumption}{Assumption}
+\newtheorem*{hint}{Hint}
+\newtheorem*{important}{Important}
+\newtheorem*{note}{Note}
+\newtheorem*{remark}{Remark}
+\newtheorem*{reminder}{Reminder}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: AMSMath Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \NewDocumentEnvironment{algorithm}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Algorithm.}}
+%% {\paragraph*{Algorithm [#1].}}
+%% }
+%% { 
+
+%% }
+
+
+%% \NewDocumentEnvironment{costspec}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Cost Specification.}}  
+%% {\paragraph*{Cost Specification [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{datastr}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Data Structure}} 
+%% {\paragraph*{Data Structure [#1].}} 
+%% }
+%% { 
+%% }
+
+
+%% \NewDocumentEnvironment{datatype}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Datatype.}} 
+%% {\paragraph*{Datatype [#1].}} 
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{definition}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Definition.}}
+%% {\paragraph*{Definition [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{example}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Example.}}
+%% {\paragraph*{Example [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{exercise}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Exercise.}}
+%% {\paragraph*{Exercise [#1].}}
+%% }
+%% { 
+%% }
+
+
+\NewDocumentEnvironment{flex}{o}
+{
+\IfNoValueTF{#1}
+{\smallskip}
+{
+\hfill\break
+\medskip 
+\noindent
+{\large \textbf{#1.}}}
+}
+
+{ 
+\IfNoValueTF{#1}
+{\smallskip}
+{\medskip}
+}
+
+
+\NewDocumentEnvironment{answer}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Answer.}}
+{\paragraph*{Answer [#1].}}
+}
+{ 
+}
+
+
+\NewDocumentEnvironment{gram}{o}
+{
+\IfNoValueTF{#1}
+{}
+{\paragraph*{#1.}}
+}
+{ 
+}
+%% \NewDocumentEnvironment{important}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Important.}}
+%% {\paragraph*{Important [#1].}}
+%% }
+%% { 
+
+%% }
+
+%% \NewDocumentEnvironment{lemma}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Lemma.}}
+%% {\paragraph*{Lemma [#1].}}
+%% }
+%% { 
+
+%% }
+
+
+%% \NewDocumentEnvironment{note}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Note.}}  
+%% {\paragraph*{Note [#1].}}  
+%% }
+%% { 
+%% }
+
+\NewDocumentEnvironment{preamble}{o}
+{
+\IfNoValueTF{#1}
+%{\paragraph*{Preamble.}}  
+{}
+{\paragraph*{#1.}}  
+}
+{ 
+}
+
+%% \NewDocumentEnvironment{problem}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Problem.}}
+%% {\paragraph*{Problem [#1].}}
+
+%% }
+%% { 
+
+%% }
+
+\NewDocumentEnvironment{proposition}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Proposition.}}
+{\paragraph*{Proposition [#1].}}
+}
+{ 
+}
+
+\NewDocumentEnvironment{question}{o}
+{
+\IfNoValueTF{#1}
+{\paragraph*{Question.}}
+{\paragraph*{Question [#1].}}
+}
+{ 
+}
+
+%% \NewDocumentEnvironment{remark}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Remark.}}
+%% {\paragraph*{Remark [#1].}}
+%% }
+%% { 
+%% }
+
+%% \NewDocumentEnvironment{solution}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Solution.}}
+%% {\paragraph*{Solution [#1].}}
+%% }
+%% { 
+
+%% }
+
+%% \NewDocumentEnvironment{syntax}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Syntax.}} 
+%% {\paragraph*{Syntax [#1].}} 
+%% }
+%% { 
+
+%% }
+
+%% \NewDocumentEnvironment{theorem}{o}
+%% {
+%% \IfNoValueTF{#1}
+%% {\paragraph*{Theorem.}}
+%% {\paragraph*{Theorem [#1].}}
+%% }
+%% { 
+
+%% }
+
+\ifdefined\teachingnotes
+\NewDocumentEnvironment{teachnote}{o}
+{
+%Drop \BODY
+}
+{
+}
+\else
+\NewEnviron{teachnote}{}  % This drops body.
+\fi
+\ifdefined\teachingnotes
+\NewDocumentEnvironment{teachask}{o}
+{
+%Drop \BODY
+}
+{
+}
+\else
+\NewEnviron{teachask}{}  % This drops body.
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Diderot Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% BEGIN: Diderot Exams
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\explain}{\paragraph{Explanation.}}
+\newcommand{\notes}{\paragraph{Notes.}}
+
+%% True False
+\newcommand{\asktf}[1][]{\paragraph{True or False?}}
+\newcommand{\solt}[1][]{\textbf{Solution: True}}
+\newcommand{\solf}[1][]{\textbf{Solution: False}}
+\newcommand{\solfin}[1][]{\textbf{Fill in the blanks:}}
+% \newcommand{\fin}[1]{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\newcommand{\fin}[1]{#1}
+\newcommand{\continue}{}
+
+
+%% Free Response
+\NewDocumentCommand{\ask}{o}{
+    \IfNoValueTF{#1}
+    {\medskip\noindent\textbf{Question.}}             % No points
+    {\medskip\noindent\textbf{Question (#1 Points).}}  % Points
+}
+
+\NewDocumentCommand{\sol}{o}{
+    \IfNoValueTF{#1}
+    {\noindent\textbf{Solution.}}             % No points
+    {\noindent\textbf{Solution (#1 Factors).}}  % Points
+}
+
+
+
+
+%% Multiple choire
+\newcommand{\onechoice}[1][]{\paragraph{Select one:}}
+
+%% Multiple answer
+\newcommand{\anychoice}[1][]{\paragraph{Select any:}}
+\NewDocumentCommand{\choice}{so}{
+  \IfBooleanTF#1
+    {\par $\checkmark$}% Star 
+    {\par --}% No star
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% END: Diderot Exams
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
